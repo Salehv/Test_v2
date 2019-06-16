@@ -275,7 +275,7 @@
             </Way>
         </Level>
     </Chapter>
-    <Chapter name="تخت جمشید" cost="140" id="01">
+    <Chapter name="تخت جمشید" cost="35" id="01">
         <Level id="00" type="3">
             <Start>
                 تاج
@@ -812,7 +812,7 @@
             </Way>
         </Level>
     </Chapter>
-    <Chapter name="خلیج فارس" cost="275" id="02">
+    <Chapter name="خلیج فارس" cost="115" id="02">
         <Level id="00" type="3">
             <Start>
                 رود
@@ -1433,7 +1433,7 @@
             </Way>
         </Level>
     </Chapter>
-    <Chapter name="دماوند" cost="380" id="03">
+    <Chapter name="دماوند" cost="200" id="03">
         <Level id="00" type="3">
             <Start>
                 بز
@@ -2033,7 +2033,7 @@
             </Way>
         </Level>
     </Chapter>
-    <Chapter name="تفتان" cost="480" id="04">
+    <Chapter name="تفتان" cost="290" id="04">
         <Level id="00" type="3">
             <Start>
                 زهر
@@ -2630,7 +2630,636 @@
             </Way>
         </Level>
     </Chapter>
-
+    <Chapter name="جزیره گنج" cost="400" id="05">
+        <Level id="00" type="3">
+            <Start>
+                مار
+            </Start>
+            <End>
+                مرداب
+            </End>
+            <Way>
+                <Word>
+                    مدار
+                </Word>
+                <Word>
+                    مردار
+                </Word>
+            </Way>
+        </Level>
+        <Level id="01" type="3">
+            <Start>
+                تیر
+            </Start>
+            <End>
+                کمان
+            </End>
+            <Way>
+                <Word>
+                    تین
+                </Word>
+                <Word>
+                    کین
+                </Word>
+                <Word>
+                    کمین
+                </Word>
+            </Way>
+        </Level>
+        <Level id="02" type="3">
+            <Start>
+                چشم
+            </Start>
+            <End>
+                بند
+            </End>
+            <Way>
+                <Word>
+                    چم
+                </Word>
+                <Word>
+                    بم
+                </Word>
+                <Word>
+                    بد
+                </Word>
+            </Way>
+        </Level>
+        <Level id="03" type="3">
+            <Start>
+                تشت
+            </Start>
+            <End>
+                طلا
+            </End>
+            <Way>
+                <Word>
+                    تات
+                </Word>
+                <Word>
+                    تا
+                </Word>
+                <Word>
+                    لا
+                </Word>
+            </Way>
+        </Level>
+        <Level id="04" type="3">
+            <Start>
+                کشتی
+            </Start>
+            <End>
+                دکل
+            </End>
+            <Way>
+                <Word>
+                    کشت
+                </Word>
+                <Word>
+                    کت
+                </Word>
+                <Word>
+                    کل
+                </Word>
+            </Way>
+        </Level>
+        <Level id="05" type="3">
+            <Start>
+                جزیره
+            </Start>
+            <End>
+                گنج
+            </End>
+            <Way>
+                <Word>
+                    زیره
+                </Word>
+                <Word>
+                    زره
+                </Word>
+                <Word>
+                    گره
+                </Word>
+                <Word>
+                    گنه
+                </Word>
+            </Way>
+        </Level>
+        <Level id="06" type="3">
+            <Start>
+                کوه
+            </Start>
+            <End>
+                یخ
+            </End>
+            <Way>
+                <Word>
+                    کره
+                </Word>
+                <Word>
+                    ره
+                </Word>
+                <Word>
+                    رخ
+                </Word>
+            </Way>
+        </Level>
+        <Level id="07" type="3">
+            <Start>
+                غار
+            </Start>
+            <End>
+                اسرار
+            </End>
+            <Way>
+                <Word>
+                    شار
+                </Word>
+                <Word>
+                    شرار
+                </Word>
+                <Word>
+                    اشرار
+                </Word>
+            </Way>
+        </Level>
+        <Level id="08" type="3">
+            <Start>
+                گنج
+            </Start>
+            <End>
+                طلا
+            </End>
+            <Way>
+                <Word>
+                    خنج
+                </Word>
+                <Word>
+                    خلج
+                </Word>
+                <Word>
+                    خلا
+                </Word>
+            </Way>
+        </Level>
+        <Level id="09" type="3">
+            <Start>
+                توپ
+            </Start>
+            <End>
+                تفنگ
+            </End>
+            <Way>
+                <Word>
+                    تو
+                </Word>
+                <Word>
+                    تن
+                </Word>
+                <Word>
+                    تنگ
+                </Word>
+            </Way>
+        </Level>
+        <Level id="10" type="3">
+            <Start>
+                پارو
+            </Start>
+            <End>
+                برده
+            </End>
+            <Way>
+                <Word>
+                    پاره
+                </Word>
+                <Word>
+                    اره
+                </Word>
+                <Word>
+                    ارده
+                </Word>
+            </Way>
+        </Level>
+        <Level id="11" type="3">
+            <Start>
+                طناب
+            </Start>
+            <End>
+                پرچم
+            </End>
+            <Way>
+                <Word>
+                    ناب
+                </Word>
+                <Word>
+                    نار
+                </Word>
+                <Word>
+                    پار
+                </Word>
+                <Word>
+                    پارچ
+                </Word>
+                <Word>
+                    پرچ
+                </Word>
+            </Way>
+        </Level>
+        <Level id="12" type="3">
+            <Start>
+                بشکه
+            </Start>
+            <End>
+                اب
+            </End>
+            <Way>
+                <Word>
+                    برکه
+                </Word>
+                <Word>
+                    بره
+                </Word>
+                <Word>
+                    اره
+                </Word>
+                <Word>
+                    اه
+                </Word>
+            </Way>
+        </Level>
+        <Level id="13" type="3">
+            <Start>
+                قداره
+            </Start>
+            <End>
+                تیغه
+            </End>
+            <Way>
+                <Word>
+                    قاره
+                </Word>
+                <Word>
+                    اره
+                </Word>
+                <Word>
+                    تره
+                </Word>
+                <Word>
+                    تیره
+                </Word>
+            </Way>
+        </Level>
+        <Level id="14" type="3">
+            <Start>
+                نقشه
+            </Start>
+            <End>
+                گنج
+            </End>
+            <Way>
+                <Word>
+                    نقره
+                </Word>
+                <Word>
+                    نگره
+                </Word>
+                <Word>
+                    گره
+                </Word>
+                <Word>
+                    گنه
+                </Word>
+            </Way>
+        </Level>
+        <Level id="15" type="3">
+            <Start>
+                صندوق
+            </Start>
+            <End>
+                سکه
+            </End>
+            <Way>
+                <Word>
+                    صدوق
+                </Word>
+                <Word>
+                    صدق
+                </Word>
+                <Word>
+                    دق
+                </Word>
+                <Word>
+                    دک
+                </Word>
+                <Word>
+                    دکه
+                </Word>
+            </Way>
+        </Level>
+        <Level id="16" type="3">
+            <Start>
+                طوطی
+            </Start>
+            <End>
+                سخن
+            </End>
+            <Way>
+                <Word>
+                    قوطی
+                </Word>
+                <Word>
+                    قوی
+                </Word>
+                <Word>
+                    قوا
+                </Word>
+                <Word>
+                    سوا
+                </Word>
+                <Word>
+                    سخا
+                </Word>
+            </Way>
+        </Level>
+        <Level id="17" type="3">
+            <Start>
+                غلاف
+            </Start>
+            <End>
+                شمشیر
+            </End>
+            <Way>
+                <Word>
+                    لاف
+                </Word>
+                <Word>
+                    لار
+                </Word>
+                <Word>
+                    شار
+                </Word>
+                <Word>
+                    شیر
+                </Word>
+                <Word>
+                    مشیر
+                </Word>
+            </Way>
+        </Level>
+        <Level id="18" type="3">
+            <Start>
+                دندان
+            </Start>
+            <End>
+                طلا
+            </End>
+            <Way>
+                <Word>
+                    سندان
+                </Word>
+                <Word>
+                    سنان
+                </Word>
+                <Word>
+                    سنا
+                </Word>
+                <Word>
+                    بنا
+                </Word>
+                <Word>
+                    بلا
+                </Word>
+            </Way>
+        </Level>
+        <Level id="19" type="3">
+            <Start>
+                قایق
+            </Start>
+            <End>
+                نجات
+            </End>
+            <Way>
+                <Word>
+                    لایق
+                </Word>
+                <Word>
+                    لای
+                </Word>
+                <Word>
+                    جای
+                </Word>
+                <Word>
+                    جار
+                </Word>
+                <Word>
+                    نجار
+                </Word>
+            </Way>
+        </Level>
+        <Level id="20" type="3">
+            <Start>
+                باد
+            </Start>
+            <End>
+                موافق
+            </End>
+            <Way>
+                <Word>
+                    عاد
+                </Word>
+                <Word>
+                    معاد
+                </Word>
+                <Word>
+                    معاف
+                </Word>
+                <Word>
+                    مناف
+                </Word>
+                <Word>
+                    منافق
+                </Word>
+            </Way>
+        </Level>
+        <Level id="21" type="3">
+            <Start>
+                ساحل
+            </Start>
+            <End>
+                جزیره
+            </End>
+            <Way>
+                <Word>
+                    ساحر
+                </Word>
+                <Word>
+                    سار
+                </Word>
+                <Word>
+                    جار
+                </Word>
+                <Word>
+                    جیر
+                </Word>
+                <Word>
+                    جیره
+                </Word>
+            </Way>
+        </Level>
+        <Level id="22" type="3">
+            <Start>
+                پرچم
+            </Start>
+            <End>
+                سفید
+            </End>
+            <Way>
+                <Word>
+                    پرچ
+                </Word>
+                <Word>
+                    پری
+                </Word>
+                <Word>
+                    سری
+                </Word>
+                <Word>
+                    سعی
+                </Word>
+                <Word>
+                    سعید
+                </Word>
+            </Way>
+        </Level>
+        <Level id="23" type="3">
+            <Start>
+                خنجر
+            </Start>
+            <End>
+                دشنه
+            </End>
+            <Way>
+                <Word>
+                    خنج
+                </Word>
+                <Word>
+                    رنج
+                </Word>
+                <Word>
+                    ترنج
+                </Word>
+                <Word>
+                    تشنج
+                </Word>
+                <Word>
+                    تشنه
+                </Word>
+            </Way>
+        </Level>
+        <Level id="24" type="3">
+            <Start>
+                باد
+            </Start>
+            <End>
+                مخالف
+            </End>
+            <Way>
+                <Word>
+                    بال
+                </Word>
+                <Word>
+                    مال
+                </Word>
+                <Word>
+                    متل
+                </Word>
+                <Word>
+                    مختل
+                </Word>
+                <Word>
+                    مختلف
+                </Word>
+            </Way>
+        </Level>
+        <Level id="25" type="3">
+            <Start>
+                لنگر
+            </Start>
+            <End>
+                صخره
+            </End>
+            <Way>
+                <Word>
+                    سنگر
+                </Word>
+                <Word>
+                    سنگ
+                </Word>
+                <Word>
+                    سنه
+                </Word>
+                <Word>
+                    سره
+                </Word>
+                <Word>
+                    سخره
+                </Word>
+            </Way>
+        </Level>
+        <Level id="26" type="3">
+            <Start>
+                عرشه
+            </Start>
+            <End>
+                سکان
+            </End>
+            <Way>
+                <Word>
+                    عرش
+                </Word>
+                <Word>
+                    ارش
+                </Word>
+                <Word>
+                    کاش
+                </Word>
+                <Word>
+                    کان
+                </Word>
+            </Way>
+        </Level>
+        <Level id="27" type="3">
+            <Start>
+                اسکلت
+            </Start>
+            <End>
+                تاج
+            </End>
+            <Way>
+                <Word>
+                    اسکیت
+                </Word>
+                <Word>
+                    اسکی
+                </Word>
+                <Word>
+                    ابکی
+                </Word>
+                <Word>
+                    ابی
+                </Word>
+                <Word>
+                    اب
+                </Word>
+                <Word>
+                    اج
+                </Word>
+            </Way>
+        </Level>
+    </Chapter>
+    
+    
+    
     <!--
     <Chapter name="" cost="" id="">
         <Level id="00" type="3">
