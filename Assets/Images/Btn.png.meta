@@ -1,0 +1,1217 @@
+fileFormatVersion: 2
+guid: 59d0c3f4c1184d142b622bfd6951aeb5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Btn
+    21300002: BtnArrowDown
+    21300004: BtnArrowLeft
+    21300006: BtnArrowRight
+    21300008: BtnArrowUp
+    21300010: BtnBack
+    21300012: BtnClose
+    21300014: BtnExit
+    21300016: BtnHint
+    21300018: BtnHintNextFive
+    21300020: BtnHintOurWay
+    21300022: BtnHintShineLetter
+    21300024: BtnInfo
+    21300026: BtnMusicOff
+    21300028: BtnMusicOn
+    21300030: BtnNext
+    21300032: BtnOK
+    21300034: BtnPlay
+    21300036: BtnReset
+    21300038: BtnRules
+    21300040: BtnSetting
+    21300042: BtnShop
+    21300044: BtnShopMainMenu
+    21300046: BtnShuffle
+    21300048: BtnShuffleNewLetter
+    21300050: BtnShuffleNextPool
+    21300052: BtnSoundOff
+    21300054: BtnSoundOn
+    21300056: BtnUndo
+    21300058: ChapterName
+    21300060: Coin
+    21300062: Gem
+    21300064: GemCount
+    21300066: Loading Orb
+    21300068: LvlLocked
+    21300070: LvlSolved
+    21300072: LvlUnsolved
+    21300074: R
+    21300076: TileCorrect
+    21300078: TileGold
+    21300080: TileNormal
+    21300082: TileWrong
+    21300084: HintWordRow
+    21300086: HintWordRowChecked
+    21300088: Instagram
+    21300090: Lock
+    21300092: telegram
+    21300094: Twitter
+    21300096: PopUpHeader
+    21300098: Btn_Back
+    21300100: Btn_Blank
+    21300102: Btn_Close
+    21300104: Btn_Coins
+    21300106: Btn_Down
+    21300108: Btn_Exit
+    21300110: Btn_Gear
+    21300112: Btn_Gem
+    21300114: Btn_Hint
+    21300116: Btn_HintOurWay
+    21300118: Btn_HintSimilarWords
+    21300120: Btn_Info
+    21300122: Btn_Left
+    21300124: Btn_MoreLetters
+    21300126: Btn_MusicOff
+    21300128: Btn_MusicOn
+    21300130: Btn_Next
+    21300132: Btn_Qolenj
+    21300134: Btn_Reset
+    21300136: Btn_Right
+    21300138: Btn_Round
+    21300140: Btn_Rules
+    21300142: Btn_Shop
+    21300144: Btn_SoundOff
+    21300146: Btn_SoundOn
+    21300148: Btn_Tool
+    21300150: Btn_Undo
+    21300152: Btn_Up
+    21300154: LvlBG-01
+    21300156: LvlBG-02
+    21300158: LvlBG-03
+    21300160: LvlBG-04
+    21300162: LvlBG-05
+    21300164: LvlBG-06
+    21300166: LvlBG-07
+    21300168: LvlBG-GemPlacehoder
+    21300170: LvlBG-Lock
+    21300172: Games_Amirza
+    21300174: Games_Ballz
+    21300176: Games_CandyCrush
+    21300178: Games_ClashOfClans
+    21300180: Games_ClashRoyale
+    21300182: Games_CutTheRope
+    21300184: Games_QuizOfKings
+    21300186: Games_Sudoku
+    21300188: QF_Blank
+    21300190: QF_Difficulty01
+    21300192: QF_Difficulty02
+    21300194: QF_Difficulty03
+    21300196: QF_Difficulty04
+    21300198: QF_Missing01
+    21300200: QF_Missing02
+    21300202: QF_Missing03
+    21300204: QF_Missing04
+    21300206: StarBlank
+    21300208: StarFill
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Btn_Back
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1720
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Blank
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1946
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Close
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1699
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Coins
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1618
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Down
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1618
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Exit
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1575
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Gear
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1575
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Gem
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1946
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Hint
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1544
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_HintOurWay
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1544
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_HintSimilarWords
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1518
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Info
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1500
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Left
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 1500
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_MoreLetters
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1497
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_MusicOff
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1416
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_MusicOn
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1416
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Next
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1373
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Qolenj
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1373
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Reset
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1342
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Right
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1342
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Round
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1316
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Rules
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1298
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Shop
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 1298
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_SoundOff
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1295
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_SoundOn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1214
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Tool
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1214
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Undo
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1171
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Btn_Up
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1171
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BtnOK
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1746
+        width: 494
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BtnPlay
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 566
+        width: 208
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BtnShop
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1777
+        width: 303
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ChapterName
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1901
+        width: 397
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Coin
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1943
+        width: 254
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_Amirza
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1139
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_Ballz
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1113
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_CandyCrush
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1095
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_ClashOfClans
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 1095
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_ClashRoyale
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1092
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_CutTheRope
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1011
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_QuizOfKings
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1011
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Games_Sudoku
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 968
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: GemCount
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1946
+        width: 261
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HintWordRow
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1922
+        width: 559
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HintWordRowChecked
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1820
+        width: 559
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Instagram
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1946
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Loading Orb
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 63
+        width: 331
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lock
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1140
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-01
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 390
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-02
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 390
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-03
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 390
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-04
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 172
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-05
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 172
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-06
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 104
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-GemPlacehoder
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 83
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LvlBG-Lock
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 83
+        width: 300
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: PopUpHeader
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 697
+        width: 907
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Blank
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 968
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Difficulty01
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 937
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Difficulty02
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 936
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Difficulty03
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 910
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Difficulty04
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 892
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Missing01
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 892
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Missing02
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 889
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Missing03
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 808
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: QF_Missing04
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 808
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: R
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1702
+        width: 270
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: StarBlank
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 765
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: StarFill
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 765
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: telegram
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1946
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TileCorrect
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 479
+        width: 290
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TileGold
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 479
+        width: 290
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TileNormal
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 411
+        width: 290
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TileWrong
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 719
+        width: 221
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Twitter
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1946
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

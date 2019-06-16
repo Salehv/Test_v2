@@ -1,0 +1,2957 @@
+fileFormatVersion: 2
+guid: 6f9afe9b30a779d4290e393d1d93a73d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Letters
+    21300002: Lt_Brown_00
+    21300004: Lt_Brown_01
+    21300006: Lt_Brown_02
+    21300008: Lt_Brown_03
+    21300010: Lt_Brown_04
+    21300012: Lt_Brown_05
+    21300014: Lt_Brown_06
+    21300016: Lt_Brown_07
+    21300018: Lt_Brown_08
+    21300020: Lt_Brown_09
+    21300022: Lt_Brown_10
+    21300024: Lt_Brown_11
+    21300026: Lt_Brown_12
+    21300028: Lt_Brown_13
+    21300030: Lt_Brown_14
+    21300032: Lt_Brown_15
+    21300034: Lt_Brown_16
+    21300036: Lt_Brown_17
+    21300038: Lt_Brown_18
+    21300040: Lt_Brown_19
+    21300042: Lt_Brown_20
+    21300044: Lt_Brown_21
+    21300046: Lt_Brown_22
+    21300048: Lt_Brown_23
+    21300050: Lt_Brown_24
+    21300052: Lt_Brown_25
+    21300054: Lt_Brown_26
+    21300056: Lt_Brown_27
+    21300058: Lt_Brown_28
+    21300060: Lt_Brown_29
+    21300062: Lt_Brown_30
+    21300064: Lt_Brown_31
+    21300066: Lt_Gold_00
+    21300068: Lt_Gold_01
+    21300070: Lt_Gold_02
+    21300072: Lt_Gold_03
+    21300074: Lt_Gold_04
+    21300076: Lt_Gold_05
+    21300078: Lt_Gold_06
+    21300080: Lt_Gold_07
+    21300082: Lt_Gold_08
+    21300084: Lt_Gold_09
+    21300086: Lt_Gold_10
+    21300088: Lt_Gold_11
+    21300090: Lt_Gold_12
+    21300092: Lt_Gold_13
+    21300094: Lt_Gold_14
+    21300096: Lt_Gold_15
+    21300098: Lt_Gold_16
+    21300100: Lt_Gold_17
+    21300102: Lt_Gold_18
+    21300104: Lt_Gold_19
+    21300106: Lt_Gold_20
+    21300108: Lt_Gold_21
+    21300110: Lt_Gold_22
+    21300112: Lt_Gold_23
+    21300114: Lt_Gold_24
+    21300116: Lt_Gold_25
+    21300118: Lt_Gold_26
+    21300120: Lt_Gold_27
+    21300122: Lt_Gold_28
+    21300124: Lt_Gold_29
+    21300126: Lt_Gold_30
+    21300128: Lt_Gold_31
+    21300130: Lt_Green_00
+    21300132: Lt_Green_01
+    21300134: Lt_Green_02
+    21300136: Lt_Green_03
+    21300138: Lt_Green_04
+    21300140: Lt_Green_05
+    21300142: Lt_Green_06
+    21300144: Lt_Green_07
+    21300146: Lt_Green_08
+    21300148: Lt_Green_09
+    21300150: Lt_Green_10
+    21300152: Lt_Green_11
+    21300154: Lt_Green_12
+    21300156: Lt_Green_13
+    21300158: Lt_Green_14
+    21300160: Lt_Green_15
+    21300162: Lt_Green_16
+    21300164: Lt_Green_17
+    21300166: Lt_Green_18
+    21300168: Lt_Green_19
+    21300170: Lt_Green_20
+    21300172: Lt_Green_21
+    21300174: Lt_Green_22
+    21300176: Lt_Green_23
+    21300178: Lt_Green_24
+    21300180: Lt_Green_25
+    21300182: Lt_Green_26
+    21300184: Lt_Green_27
+    21300186: Lt_Green_28
+    21300188: Lt_Green_29
+    21300190: Lt_Green_30
+    21300192: Lt_Green_31
+    21300194: Lt_Grey_00
+    21300196: Lt_Grey_01
+    21300198: Lt_Grey_02
+    21300200: Lt_Grey_03
+    21300202: Lt_Grey_04
+    21300204: Lt_Grey_05
+    21300206: Lt_Grey_06
+    21300208: Lt_Grey_07
+    21300210: Lt_Grey_08
+    21300212: Lt_Grey_09
+    21300214: Lt_Grey_10
+    21300216: Lt_Grey_11
+    21300218: Lt_Grey_12
+    21300220: Lt_Grey_13
+    21300222: Lt_Grey_14
+    21300224: Lt_Grey_15
+    21300226: Lt_Grey_16
+    21300228: Lt_Grey_17
+    21300230: Lt_Grey_18
+    21300232: Lt_Grey_19
+    21300234: Lt_Grey_20
+    21300236: Lt_Grey_21
+    21300238: Lt_Grey_22
+    21300240: Lt_Grey_23
+    21300242: Lt_Grey_24
+    21300244: Lt_Grey_25
+    21300246: Lt_Grey_26
+    21300248: Lt_Grey_27
+    21300250: Lt_Grey_28
+    21300252: Lt_Grey_29
+    21300254: Lt_Grey_30
+    21300256: Lt_Grey_31
+    21300258: Lt_Red_00
+    21300260: Lt_Red_01
+    21300262: Lt_Red_02
+    21300264: Lt_Red_03
+    21300266: Lt_Red_04
+    21300268: Lt_Red_05
+    21300270: Lt_Red_06
+    21300272: Lt_Red_07
+    21300274: Lt_Red_08
+    21300276: Lt_Red_09
+    21300278: Lt_Red_10
+    21300280: Lt_Red_11
+    21300282: Lt_Red_12
+    21300284: Lt_Red_13
+    21300286: Lt_Red_14
+    21300288: Lt_Red_15
+    21300290: Lt_Red_16
+    21300292: Lt_Red_17
+    21300294: Lt_Red_18
+    21300296: Lt_Red_19
+    21300298: Lt_Red_20
+    21300300: Lt_Red_21
+    21300302: Lt_Red_22
+    21300304: Lt_Red_23
+    21300306: Lt_Red_24
+    21300308: Lt_Red_25
+    21300310: Lt_Red_26
+    21300312: Lt_Red_27
+    21300314: Lt_Red_28
+    21300316: Lt_Red_29
+    21300318: Lt_Red_30
+    21300320: Lt_Red_31
+    21300322: Lt_Shined_00
+    21300324: Lt_Shined_01
+    21300326: Lt_Shined_02
+    21300328: Lt_Shined_03
+    21300330: Lt_Shined_04
+    21300332: Lt_Shined_05
+    21300334: Lt_Shined_06
+    21300336: Lt_Shined_07
+    21300338: Lt_Shined_08
+    21300340: Lt_Shined_09
+    21300342: Lt_Shined_10
+    21300344: Lt_Shined_11
+    21300346: Lt_Shined_12
+    21300348: Lt_Shined_13
+    21300350: Lt_Shined_14
+    21300352: Lt_Shined_15
+    21300354: Lt_Shined_16
+    21300356: Lt_Shined_17
+    21300358: Lt_Shined_18
+    21300360: Lt_Shined_19
+    21300362: Lt_Shined_20
+    21300364: Lt_Shined_21
+    21300366: Lt_Shined_22
+    21300368: Lt_Shined_23
+    21300370: Lt_Shined_24
+    21300372: Lt_Shined_25
+    21300374: Lt_Shined_26
+    21300376: Lt_Shined_27
+    21300378: Lt_Shined_28
+    21300380: Lt_Shined_29
+    21300382: Lt_Shined_30
+    21300384: Lt_Shined_31
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lt_Brown_00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_01
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_02
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_03
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_04
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_05
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_06
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_07
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_08
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_09
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_10
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_11
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_12
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_13
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1906
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_27
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_28
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_29
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_30
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Brown_31
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_00
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_01
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_02
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_03
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_04
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_05
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_06
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_07
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1763
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_08
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_09
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_10
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_11
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_12
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_13
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_14
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_15
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_17
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_18
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_19
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_20
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_21
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_22
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_23
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_24
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_25
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_26
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_27
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_28
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_29
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_30
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Gold_31
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1620
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_00
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_01
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_02
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_03
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_04
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_05
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_06
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_07
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_08
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_09
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_10
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_11
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_12
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_13
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_14
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_15
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_16
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_17
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_18
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_19
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_20
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_21
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1477
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_22
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_23
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_24
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_25
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_26
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_27
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_28
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_29
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_30
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Green_31
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_00
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_01
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_02
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_03
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_04
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_05
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_06
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_07
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_08
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_09
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1334
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_10
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_11
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_12
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_13
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_14
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_15
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_16
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_17
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_18
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_19
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_20
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_21
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_22
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_23
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_24
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_25
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_26
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_27
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1191
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_28
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_29
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_30
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Grey_31
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_00
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_01
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_02
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_03
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_04
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_05
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_06
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_07
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_08
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_09
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_10
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_11
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1048
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_12
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_13
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_14
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_15
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_16
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_17
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_18
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_19
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_20
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_21
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_22
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_23
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_24
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_25
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 905
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_26
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_27
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_28
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_29
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_30
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Red_31
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_00
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_01
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_02
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_03
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_04
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_05
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 762
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_06
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_07
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_08
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_09
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_10
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_11
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_12
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_13
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_14
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_15
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 619
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_16
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_17
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_18
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_19
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_20
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_21
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_22
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_23
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 476
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_24
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_25
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_26
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_27
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_28
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_29
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 333
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_30
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 190
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lt_Shined_31
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 47
+        width: 144
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

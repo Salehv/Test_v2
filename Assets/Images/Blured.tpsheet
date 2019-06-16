@@ -1,0 +1,22 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:705dff0ec791854220335154be03dc13:482e682adf902f6f685f7af4c16b9f2f:8c1fb344716d526833842e8d33c3b8c2$
+#
+:format=40300
+:texture=Blured.png
+:size=2048x4096
+:pivotpoints=enabled
+:borders=disabled
+
+Chapter01BGBlured;2;2884;680;1210; 0.5;0.5; 0;0;0;0
+Chapter02BGBlured;684;2884;680;1210; 0.5;0.5; 0;0;0;0
+Chapter03BGBlured;1366;2884;680;1210; 0.5;0.5; 0;0;0;0
+Chapter04BGBlured;2;1672;680;1210; 0.5;0.5; 0;0;0;0
+InGame01BG;2;460;680;1210; 0.5;0.5; 0;0;0;0
+InGame02BG;684;1672;680;1210; 0.5;0.5; 0;0;0;0
+InGame03BG;1366;1672;680;1210; 0.5;0.5; 0;0;0;0
+InGame04BG;684;460;680;1210; 0.5;0.5; 0;0;0;0
