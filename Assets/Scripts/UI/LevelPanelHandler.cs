@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 
 
+// TODO: Perfomance Problem (First Intantiate 30 Levels and Init just changes the values)
+
 public class LevelPanelHandler : MonoBehaviour
 {
     public GameObject passedLevelPrefab;

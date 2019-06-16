@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: E:/[Qolenj]/Projects/[VersionControlled]/kalanjar/kalanjar.keystore
+  AndroidKeystoreName: E:/[Qolenj]/Projects/[VersionControlled]/Kalanjar_v2/kalanjar.keystore
   AndroidKeyaliasName: kalanjar
   AndroidTVCompatibility: 0
   AndroidIsGame: 0

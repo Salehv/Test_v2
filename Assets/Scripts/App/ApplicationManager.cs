@@ -11,17 +11,16 @@ using TapsellSDK;
 public class ApplicationManager : MonoBehaviour
 {
     private ViewManager view;
-    
+
     /*** Menus and Panels ***/
-    [Header("Menu Objects")]
-    public ChaptersHandler chaptersHandler;
-    
+    [Header("Menu Objects")] public ChaptersHandler chaptersHandler;
+
     public GameObject levelsPanel;
     public GameObject adPanel;
-    
+
     [Header("Canvases")] public GameObject gameCanvasObject;
     public GameObject mainMenuCanvas;
-    
+
     [Header("UI Objects")] public Text[] coins;
     public Text[] allGems;
     public Text[] chapGems;
@@ -48,18 +47,19 @@ public class ApplicationManager : MonoBehaviour
     internal void Init()
     {
         view = ViewManager.instance;
-        
+
         view.ShowBlackPage();
         view.ShowMainMenu();
-        
+
         UpdateCoins();
         UpdateGems();
-        
+
         chaptersHandler.GetComponent<ChaptersHandler>().UpdateChaptersState();
 
         GameAnalytics.Initialize();
 
         Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
+
         Tapsell.setRewardListener(AdReward);
 
 
@@ -119,22 +119,22 @@ public class ApplicationManager : MonoBehaviour
     #endregion
 
 
+    // TODO: Refactor here
+
     #region Advertisement
 
-    [Header("Ad Panels")] 
-    public GameObject adLoading;
+    [Header("Ad Panels")] public GameObject adLoading;
     public GameObject adNotAvailable;
 
-    public void ShowAdPanel()
+    public void RequestAd()
     {
         if (adTimeRemained > 0)
         {
-            PopupHandler.ShowDebug("برای مشاهده تبلیغ باید صبر کنید.");
+            view.AdTimeRemained();
             return;
         }
 
-        state = ApplicationState.AD;
-        adPanel.SetActive(true);
+        view.ShowAdPanel();
     }
 
     private long SecondsToEndAdWait(string fileTime)
@@ -147,8 +147,6 @@ public class ApplicationManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("adWatched"))
         {
-            print("adWatched");
-
             string s = PlayerPrefs.GetString("adWatched");
             long t = SecondsToEndAdWait(s);
             if (t > 0)
@@ -205,7 +203,6 @@ public class ApplicationManager : MonoBehaviour
         );
     }
 
-
     public void ShowChapterEndAd()
     {
         adLoading.SetActive(true);
@@ -219,7 +216,6 @@ public class ApplicationManager : MonoBehaviour
             , (string zoneId) => { adLoading.SetActive(false); }
             , (TapsellAd result) => { adLoading.SetActive(false); });
     }
-
 
     private string ad_zone_winDoublePrize = "5cd16a3ddae9a60001f48aec";
     private string ad_zone_mainMenu = "5c6c233aa3455800014d5f40";
@@ -240,9 +236,6 @@ public class ApplicationManager : MonoBehaviour
     #endregion
 
 
-    #region Events
-
-    /***** Events *****/
     public void MainMenu_PlayClicked()
     {
         if (firstPlay)
@@ -251,7 +244,7 @@ public class ApplicationManager : MonoBehaviour
             state = ApplicationState.FIRSTTUT;
             gameCanvasObject.SetActive(true);
             mainMenuCanvas.SetActive(false);
-            
+
             TutorialHandler.instance.PlayTutorial_01();
         }
         else
@@ -259,31 +252,6 @@ public class ApplicationManager : MonoBehaviour
             view.MainMenuToChapters();
         }
     }
-
-    [Header("Levels transition")] public Animator[] levelsTransition;
-
-
-    [Header("Levels")] public GameObject levelsChapterName;
-    public string[] levelsChapterNames;
-
-    public void Chapters_PlayClicked(int chapterId)
-    {
-        levelsPanel.GetComponentInChildren<LevelPanelHandler>().Init(chapterId);
-        AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
-
-        state = ApplicationState.LEVELS;
-
-        levelsPanel.GetComponent<Image>().sprite = ResourceManager.instance.GetChapterBluredBackground(chapterId);
-
-        foreach (Animator a in levelsTransition)
-        {
-            a.SetTrigger("chapter_to_levels");
-        }
-
-        levelsChapterName.GetComponentInChildren<Text>().text = GameManager.instance.chapters[chapterId].name;
-    }
-
-    #endregion
 
 
     internal void RunLevel(Level level)
@@ -321,7 +289,7 @@ public class ApplicationManager : MonoBehaviour
         if (adTimeRemained > 0)
         {
             adTimeRemainedText.transform.parent.gameObject.SetActive(true);
-            adTimeRemainedText.text = GetTimeFormat(adTimeRemained);
+            adTimeRemainedText.text = Utilities.GetTimeFormat(adTimeRemained);
         }
         else
         {
@@ -329,13 +297,7 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
-    private string GetTimeFormat(float time)
-    {
-        return (((int) time) / 60 + ":" + ((int) time % 60));
-    }
 
-    
-    
     private void HideAll()
     {
         TutorialHandler.instance.ResetAll();
@@ -343,23 +305,16 @@ public class ApplicationManager : MonoBehaviour
         adPanel.SetActive(false);
         adLoading.SetActive(false);
         adNotAvailable.SetActive(false);
-        questionForm.gameObject.SetActive(false);
-        
+
         ChestHandler.instance.chest.SetActive(false);
     }
 
-   
+
     internal void Game_ExitToMenu(int chapter)
     {
         view.GameToMenu();
-        levelsPanel.SetActive(true);
-        levelsPanel.GetComponentInChildren<LevelPanelHandler>().Init(chapter);
-        state = ApplicationState.LEVELS;
-
         AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapter));
-
-        chaptersHandler.GetComponent<ChaptersHandler>().UpdateChaptersState();
-        mainMenuCanvas.SetActive(true);
+        chaptersHandler.UpdateChaptersState();
     }
 
     public void UpdateCoins()
@@ -419,11 +374,6 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
-    
-
-
-    [Header("Question Form")] 
-    public QuestionFormHandler questionForm;
 
     public void Telegram()
     {
@@ -450,13 +400,8 @@ public class ApplicationManager : MonoBehaviour
         return state == ApplicationState.INGAME;
     }
 
-    public void ShowQuestionForm()
-    {
-        questionForm.gameObject.SetActive(true);
-    }
-
-
     // TODO: ViewManager
+
     #region Developer
 
     [Header(("Developer Options"))] public GameObject developerPanel;
@@ -519,8 +464,6 @@ public class ApplicationManager : MonoBehaviour
 
 enum ApplicationState
 {
-    LEVELS,
     INGAME,
-    AD,
     FIRSTTUT,
 }

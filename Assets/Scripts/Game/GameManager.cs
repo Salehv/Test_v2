@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using App;
 using GameAnalyticsSDK;
 using Initialize;
 using TapsellSDK;
@@ -292,7 +293,7 @@ public class GameManager : DynamicsHandler
 
         if (lvl.chapterId == 0 & lvl.id == 10 && !PlayerPrefs.HasKey("question_form_showed"))
         {
-            ApplicationManager.instance.ShowQuestionForm();
+            ViewManager.instance.ShowQuestionForm();
             PlayerPrefs.SetInt("question_form_showed", 1);
             PlayerPrefs.Save();
         }
