@@ -58,6 +58,7 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
+    
     void Awake()
     {
         if (instance != null)
@@ -77,20 +78,23 @@ public class ApplicationManager : MonoBehaviour
         view.ShowBlackPage();
         view.ShowMainMenu();
 
+        chaptersHandler.InitializeChapters();
+        chaptersHandler.UpdateChaptersLockState();
+        chapterScroller.Init();
+
         UpdateCoins();
         UpdateGems();
 
-        chaptersHandler.GetComponent<ChaptersHandler>().UpdateChaptersState();
+        chaptersHandler.UpdateChaptersLockState();
 
         GameAnalytics.Initialize();
 
         Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
-
         Tapsell.setRewardListener(AdReward);
-
 
         AudioManager.instance.PlayNewMusic(AudioManager.instance.mainThemeMusic);
 
+        // First Play
         if (!PlayerPrefs.HasKey("first_enter_done"))
         {
             FirstPlay();
@@ -98,6 +102,7 @@ public class ApplicationManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        // Ad Time
         if (PlayerPrefs.HasKey("adWatched"))
         {
             adTimeRemained = SecondsToEndAdWait(PlayerPrefs.GetString("adWatched"));
@@ -151,6 +156,58 @@ public class ApplicationManager : MonoBehaviour
 
     // TODO: Refactor here
 
+    public void UpdateCoins()
+    {
+        int coin = DatabaseManager.instance.GetCoins();
+
+        foreach (Text t in coins)
+        {
+            t.text = coin + "";
+        }
+    }
+
+    public void UpdateGems()
+    {
+        GameProgression progress = GameManager.instance.progress;
+
+        for (int c = 0; c < GameManager.instance.chapters.Length; c++)
+        {
+            int chapG = GetChapterGems(c);
+            int levelCount = GameManager.instance.chapters[c].levels.Length;
+
+            chaptersHandler.UpdateChapterGems(c, chapG, levelCount * 3);
+        }
+
+
+        foreach (Text g in allGems)
+        {
+            g.text = GetAllGemCount() + "";
+        }
+    }
+
+    private int GetChapterGems(int id)
+    {
+        GameProgression progress = GameManager.instance.progress;
+
+        int chapG = 0;
+        for (int l = 0; l < GameManager.instance.chapters[id].levels.Length; l++)
+        {
+            if (progress.GetLevelProgress(id, l) != null)
+            {
+                chapG += progress.GetLevelProgress(id, l).gemTaken;
+            }
+        }
+
+        return chapG;
+    }
+
+    private int GetAllGemCount()
+    {
+        return DatabaseManager.instance.GetGems();
+    }
+    
+    
+    
     #region Advertisement
 
     [Header("Ad Panels")] public GameObject adLoading;
@@ -344,65 +401,9 @@ public class ApplicationManager : MonoBehaviour
     {
         view.GameToMenu();
         AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapter));
-        chaptersHandler.UpdateChaptersState();
+        chaptersHandler.UpdateChaptersLockState();
     }
 
-    public void UpdateCoins()
-    {
-        int coin = DatabaseManager.instance.GetCoins();
-
-        foreach (Text t in coins)
-        {
-            t.text = coin + "";
-        }
-    }
-
-    internal int GetChapterGems(int id)
-    {
-        GameProgression progress = GameManager.instance.progress;
-
-        int chapG = 0;
-        for (int l = 0; l < GameManager.instance.chapters[id].levels.Length; l++)
-        {
-            if (progress.GetLevelProgress(id, l) != null)
-            {
-                chapG += progress.GetLevelProgress(id, l).gemTaken;
-            }
-        }
-
-        return chapG;
-    }
-
-    internal int GetAllGemCount()
-    {
-        return DatabaseManager.instance.GetGems();
-    }
-
-    public void UpdateGems()
-    {
-        GameProgression progress = GameManager.instance.progress;
-
-        for (int c = 0; c < GameManager.instance.chapters.Length; c++)
-        {
-            int chapG = 0;
-            for (int l = 0; l < GameManager.instance.chapters[c].levels.Length; l++)
-            {
-                if (progress.GetLevelProgress(c, l) != null)
-                {
-                    chapG += progress.GetLevelProgress(c, l).gemTaken;
-                }
-            }
-
-            chapGems[c].text =
-                string.Format("{0:00}/{1:00}", chapG, GameManager.instance.chapters[c].levels.Length * 3);
-        }
-
-
-        foreach (Text g in allGems)
-        {
-            g.text = GetAllGemCount() + "";
-        }
-    }
 
 
     public void Telegram()
@@ -469,7 +470,7 @@ public class ApplicationManager : MonoBehaviour
         DatabaseManager.instance.ResetProgress();
         UpdateGems();
         UpdateCoins();
-        chaptersHandler.GetComponent<ChaptersHandler>().UpdateChaptersState();
+        chaptersHandler.UpdateChaptersLockState();
     }
 
     public void DEV_SolveLevel()

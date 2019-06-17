@@ -5,35 +5,50 @@ using UnityEngine.UI;
 
 public class ChaptersHandler : MonoBehaviour
 {
-    public GameObject[] locks;
+    public GameObject chapterObjectPrefab;
+    public Transform fphssContent;
+    
+    private List<ChapterObject> chapters;
 
-    public void UpdateChaptersState()
+    internal void InitializeChapters()
     {
-        for (int i = 1; i < GameManager.instance.chapters.Length; i++)
+        chapters = new List<ChapterObject>();
+        
+        for (int i = 0; i < GameManager.instance.chapters.Length; i++)
         {
-            if (ApplicationManager.instance.GetAllGemCount() >= GameManager.instance.chapters[i].cost)
-                locks[i].SetActive(false);
-            else
-            {
-                locks[i].SetActive(true);
-                locks[i].GetComponentInChildren<Text>().text = GetCompeletionText(
-                    ApplicationManager.instance.GetAllGemCount(),
-                    GameManager.instance.chapters[i].cost);
-            }
+            chapters.Add(fphssContent.GetChild(i).GetComponent<ChapterObject>());
+            InitializeChapter(i, chapters[i]);
         }
     }
 
-    private string GetCompeletionText(int current, int max)
+    private void InitializeChapter(int id, ChapterObject chapter)
     {
-        string txt = (current < 10 ? "0" : "") + current + "/" + max;
-        return txt;
+        var res = ResourceManager.instance;
+        chapter.id = id;
+        chapter.background.sprite = res.GetChapterSprite(id);
+        
+        chapter.CreateOnClick();
     }
+    
+    public void UpdateChaptersLockState()
+    {
+            
+    }
+    
+    public void UpdateChapterGems(int id, int gems, int max)
+    {
+        chapters[id].chapterGems.text = Utilities.GetCompletionText(gems, max);
+    }
+    
 
     internal void UnlockAll()
     {
         for (int i = 1; i < GameManager.instance.chapters.Length; i++)
         {
-            locks[i].SetActive(false);
+            chapters[i].chapterLock.SetActive(false);
         }
     }
+
+
+    
 }

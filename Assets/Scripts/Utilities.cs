@@ -13,9 +13,13 @@
         return result;
     }
 
-
     internal static string GetTimeFormat(float time)
     {
         return (((int) time) / 60 + ":" + ((int) time % 60));
+    }
+    
+    internal static string GetCompletionText(int current, int max)
+    {
+        return string.Format("{0:00}/{1:00}", current, max);
     }
 }

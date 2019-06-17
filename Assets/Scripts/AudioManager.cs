@@ -8,8 +8,6 @@ public class AudioManager : MonoBehaviour
 {
     internal static AudioManager instance;
 
-    public AudioSource musicSource;
-
     [Header("Audio Clips")] public AudioClip mainThemeMusic;
     public AudioClip[] sfxClips;
     public AudioClip[] inGameMusic;
@@ -39,18 +37,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(SFX sfx)
     {
         PlaySFX((int) sfx);
-    }
-
-
-    public void FadeMusic(bool fade)
-    {
-        musicSource.GetComponent<Animator>().SetBool("fade", fade);
-    }
-
-    public void SetMusic(AudioClip clip)
-    {
-        musicSource.clip = clip;
-        musicSource.Play();
     }
 
 

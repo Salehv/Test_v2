@@ -22,8 +22,16 @@ public class FullPageHorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, ID
     private float _speed;
     private int _startedPage;
 
-
+    
+    /**
     private void Start()
+    {
+        Init();
+    }
+    /**/
+
+
+    internal void Init()
     {
         if (GetComponentInParent<CanvasScaler>().uiScaleMode == CanvasScaler.ScaleMode.ConstantPixelSize)
             screenWidth = Screen.width;
