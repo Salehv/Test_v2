@@ -43,6 +43,8 @@ TextureImporter:
     21300076: ChesxtOpen
     21300078: InGame06BG
     21300080: InGame06TEP
+    21300082: InGame05BG
+    21300084: InGame05TEP
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -154,9 +156,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 3005
-        width: 612
-        height: 1089
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,9 +170,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 1914
-        width: 612
-        height: 1089
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +183,10 @@ TextureImporter:
       name: bubble256
       rect:
         serializedVersion: 2
-        x: 691
-        y: 59
-        width: 145
-        height: 145
+        x: 2
+        y: 96
+        width: 138
+        height: 138
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,9 +198,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 823
-        width: 612
-        height: 1089
+        y: 985
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,9 +212,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 17
-        width: 24
-        height: 16
+        y: 8
+        width: 23
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +225,10 @@ TextureImporter:
       name: Chapter01PlayBtn
       rect:
         serializedVersion: 2
-        x: 736
-        y: 216
-        width: 111
-        height: 131
+        x: 142
+        y: 109
+        width: 105
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,24 +239,10 @@ TextureImporter:
       name: Chapter02BG
       rect:
         serializedVersion: 2
-        x: 616
-        y: 3005
-        width: 612
-        height: 1089
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Chapter02PlayBtn
-      rect:
-        serializedVersion: 2
-        x: 838
-        y: 83
-        width: 111
-        height: 131
+        x: 586
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,24 +253,10 @@ TextureImporter:
       name: Chapter03BG
       rect:
         serializedVersion: 2
-        x: 616
-        y: 1914
-        width: 612
-        height: 1089
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Chapter03PlayBtn
-      rect:
-        serializedVersion: 2
-        x: 849
-        y: 222
-        width: 111
-        height: 131
+        x: 586
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,24 +267,10 @@ TextureImporter:
       name: Chapter04BG
       rect:
         serializedVersion: 2
-        x: 616
-        y: 823
-        width: 612
-        height: 1089
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Chapter04PlayBtn
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 89
-        width: 111
-        height: 131
+        x: 586
+        y: 985
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +281,10 @@ TextureImporter:
       name: Chapter05BG
       rect:
         serializedVersion: 2
-        x: 1324
-        y: 3005
-        width: 612
-        height: 1089
+        x: 1170
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +295,10 @@ TextureImporter:
       name: Chapter06BG
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 1914
-        width: 612
-        height: 1089
+        x: 1170
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +309,10 @@ TextureImporter:
       name: ChapterLock
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 823
-        width: 612
-        height: 1089
+        x: 1170
+        y: 985
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +323,10 @@ TextureImporter:
       name: ChestClosed
       rect:
         serializedVersion: 2
-        x: 755
-        y: 355
-        width: 567
-        height: 466
+        x: 701
+        y: 89
+        width: 539
+        height: 443
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,10 +337,10 @@ TextureImporter:
       name: ChesxtOpen
       rect:
         serializedVersion: 2
-        x: 1324
-        y: 355
-        width: 567
-        height: 466
+        x: 719
+        y: 540
+        width: 539
+        height: 443
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,9 +352,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 35
-        width: 612
-        height: 786
+        y: 236
+        width: 582
+        height: 747
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,10 +365,10 @@ TextureImporter:
       name: Hooray
       rect:
         serializedVersion: 2
-        x: 616
-        y: 19
-        width: 73
-        height: 73
+        x: 2
+        y: 25
+        width: 69
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +379,10 @@ TextureImporter:
       name: InGame01TEP
       rect:
         serializedVersion: 2
-        x: 1844
-        y: 1914
-        width: 612
-        height: 1089
+        x: 1754
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,10 +393,10 @@ TextureImporter:
       name: InGame02TEP
       rect:
         serializedVersion: 2
-        x: 1938
-        y: 3005
-        width: 612
-        height: 1089
+        x: 2338
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +407,10 @@ TextureImporter:
       name: InGame03TEP
       rect:
         serializedVersion: 2
-        x: 1844
-        y: 823
-        width: 612
-        height: 1089
+        x: 2922
+        y: 3059
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +421,38 @@ TextureImporter:
       name: InGame04TEP
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 3005
-        width: 612
-        height: 1089
+        x: 3506
+        y: 3059
+        width: 582
+        height: 1035
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: InGame05BG
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 6
+        width: 582
+        height: 999
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: InGame05TEP
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1007
+        width: 582
+        height: 1013
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +463,10 @@ TextureImporter:
       name: InGame06BG
       rect:
         serializedVersion: 2
-        x: 3166
-        y: 3005
-        width: 612
-        height: 1089
+        x: 1754
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +477,10 @@ TextureImporter:
       name: InGame06TEP
       rect:
         serializedVersion: 2
-        x: 2458
-        y: 1914
-        width: 612
-        height: 1089
+        x: 1754
+        y: 985
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +491,10 @@ TextureImporter:
       name: Lantern1
       rect:
         serializedVersion: 2
-        x: 616
-        y: 94
-        width: 52
-        height: 727
+        x: 586
+        y: 291
+        width: 50
+        height: 692
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,10 +505,10 @@ TextureImporter:
       name: Lantern2
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 3636
-        width: 50
-        height: 458
+        x: 1242
+        y: 103
+        width: 48
+        height: 435
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,10 +519,10 @@ TextureImporter:
       name: Lantern3
       rect:
         serializedVersion: 2
-        x: 670
-        y: 206
-        width: 64
-        height: 615
+        x: 638
+        y: 398
+        width: 61
+        height: 585
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,10 +533,10 @@ TextureImporter:
       name: PlayChain
       rect:
         serializedVersion: 2
-        x: 736
-        y: 349
-        width: 17
-        height: 472
+        x: 701
+        y: 534
+        width: 16
+        height: 449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +547,10 @@ TextureImporter:
       name: Staff
       rect:
         serializedVersion: 2
-        x: 3072
-        y: 1914
-        width: 612
-        height: 1089
+        x: 2338
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,10 +561,10 @@ TextureImporter:
       name: TransitionDown
       rect:
         serializedVersion: 2
-        x: 2458
-        y: 823
-        width: 612
-        height: 1089
+        x: 2922
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,10 +575,10 @@ TextureImporter:
       name: TransitionUp
       rect:
         serializedVersion: 2
-        x: 3072
-        y: 823
-        width: 612
-        height: 1089
+        x: 3506
+        y: 2022
+        width: 582
+        height: 1035
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
