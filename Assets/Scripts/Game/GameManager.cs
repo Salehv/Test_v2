@@ -818,12 +818,17 @@ public class GameManager : DynamicsHandler
         else
         {
             Exit();
-            if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
-                return;
+            if (ApplicationManager.instance.IsEnoughEnergy())
+            {
+                ApplicationManager.instance.UseEnergy();
 
-            ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
-            PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
-            PlayerPrefs.Save();
+                if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
+                    return;
+
+                ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
+                PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 

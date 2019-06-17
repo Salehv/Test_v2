@@ -11,6 +11,8 @@ public class LevelObject : MonoBehaviour
     [Space(10)] public Text levelID;
 
     public Image background;
+    
+    public Text lockCountDownTime;
 
     public GameObject[] gems;
 

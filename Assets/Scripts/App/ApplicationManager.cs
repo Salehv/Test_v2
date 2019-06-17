@@ -32,6 +32,32 @@ public class ApplicationManager : MonoBehaviour
     public FullPageHorizontalScrollSnap chapterScroller;
 
 
+    private int energy;
+
+    private int maxEnergy;
+
+    public void UseEnergy()
+    {
+        energy -=1;
+    }
+
+    public void IncreaseEnergy()
+    {
+        energy += 1;
+    }
+
+    public bool IsEnoughEnergy()
+    {
+        if (energy == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     void Awake()
     {
         if (instance != null)
@@ -87,6 +113,10 @@ public class ApplicationManager : MonoBehaviour
         firstPlay = true;
         PlayerPrefs.SetInt("arcade_high_score", 0);
         PlayerPrefs.Save();
+
+
+        maxEnergy = 10;
+        energy = maxEnergy;
     }
 
     public void IntroEnded()

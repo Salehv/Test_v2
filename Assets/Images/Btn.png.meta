@@ -107,6 +107,8 @@ TextureImporter:
     21300204: QF_Missing04
     21300206: StarBlank
     21300208: StarFill
+    21300210: Btn_Arcade
+    21300212: Pointer
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -174,11 +176,25 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Btn_Arcade
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 413
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: Btn_Back
       rect:
         serializedVersion: 2
-        x: 1364
-        y: 1720
+        x: 406
+        y: 211
         width: 200
         height: 200
       alignment: 0
@@ -191,8 +207,8 @@ TextureImporter:
       name: Btn_Blank
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1946
+        x: 1210
+        y: 1644
         width: 100
         height: 100
       alignment: 0
@@ -205,8 +221,8 @@ TextureImporter:
       name: Btn_Close
       rect:
         serializedVersion: 2
-        x: 1838
-        y: 1699
+        x: 406
+        y: 9
         width: 200
         height: 200
       alignment: 0
@@ -219,8 +235,8 @@ TextureImporter:
       name: Btn_Coins
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1618
+        x: 864
+        y: 698
         width: 200
         height: 200
       alignment: 0
@@ -233,8 +249,8 @@ TextureImporter:
       name: Btn_Down
       rect:
         serializedVersion: 2
-        x: 204
-        y: 1618
+        x: 608
+        y: 545
         width: 200
         height: 200
       alignment: 0
@@ -247,8 +263,8 @@ TextureImporter:
       name: Btn_Exit
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1575
+        x: 1066
+        y: 698
         width: 200
         height: 200
       alignment: 0
@@ -261,8 +277,8 @@ TextureImporter:
       name: Btn_Gear
       rect:
         serializedVersion: 2
-        x: 608
-        y: 1575
+        x: 1268
+        y: 698
         width: 200
         height: 200
       alignment: 0
@@ -275,8 +291,8 @@ TextureImporter:
       name: Btn_Gem
       rect:
         serializedVersion: 2
-        x: 104
-        y: 1946
+        x: 1916
+        y: 1296
         width: 99
         height: 100
       alignment: 0
@@ -289,8 +305,8 @@ TextureImporter:
       name: Btn_Hint
       rect:
         serializedVersion: 2
-        x: 810
-        y: 1544
+        x: 608
+        y: 343
         width: 200
         height: 200
       alignment: 0
@@ -303,8 +319,8 @@ TextureImporter:
       name: Btn_HintOurWay
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 1544
+        x: 608
+        y: 141
         width: 200
         height: 200
       alignment: 0
@@ -317,8 +333,8 @@ TextureImporter:
       name: Btn_HintSimilarWords
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 1518
+        x: 1470
+        y: 686
         width: 200
         height: 200
       alignment: 0
@@ -331,8 +347,8 @@ TextureImporter:
       name: Btn_Info
       rect:
         serializedVersion: 2
-        x: 1416
-        y: 1500
+        x: 1672
+        y: 686
         width: 200
         height: 200
       alignment: 0
@@ -345,8 +361,8 @@ TextureImporter:
       name: Btn_Left
       rect:
         serializedVersion: 2
-        x: 1618
-        y: 1500
+        x: 810
+        y: 496
         width: 200
         height: 200
       alignment: 0
@@ -359,8 +375,8 @@ TextureImporter:
       name: Btn_MoreLetters
       rect:
         serializedVersion: 2
-        x: 1820
-        y: 1497
+        x: 1012
+        y: 496
         width: 200
         height: 200
       alignment: 0
@@ -373,8 +389,8 @@ TextureImporter:
       name: Btn_MusicOff
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1416
+        x: 1214
+        y: 496
         width: 200
         height: 200
       alignment: 0
@@ -387,8 +403,8 @@ TextureImporter:
       name: Btn_MusicOn
       rect:
         serializedVersion: 2
-        x: 204
-        y: 1416
+        x: 810
+        y: 294
         width: 200
         height: 200
       alignment: 0
@@ -401,8 +417,8 @@ TextureImporter:
       name: Btn_Next
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1373
+        x: 810
+        y: 92
         width: 200
         height: 200
       alignment: 0
@@ -415,8 +431,8 @@ TextureImporter:
       name: Btn_Qolenj
       rect:
         serializedVersion: 2
-        x: 608
-        y: 1373
+        x: 1012
+        y: 294
         width: 200
         height: 200
       alignment: 0
@@ -429,8 +445,8 @@ TextureImporter:
       name: Btn_Reset
       rect:
         serializedVersion: 2
-        x: 810
-        y: 1342
+        x: 1012
+        y: 92
         width: 200
         height: 200
       alignment: 0
@@ -443,8 +459,8 @@ TextureImporter:
       name: Btn_Right
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 1342
+        x: 1214
+        y: 294
         width: 200
         height: 200
       alignment: 0
@@ -458,7 +474,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1214
-        y: 1316
+        y: 92
         width: 200
         height: 200
       alignment: 0
@@ -472,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1416
-        y: 1298
+        y: 484
         width: 200
         height: 200
       alignment: 0
@@ -486,7 +502,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1618
-        y: 1298
+        y: 484
         width: 200
         height: 200
       alignment: 0
@@ -500,7 +516,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1820
-        y: 1295
+        y: 484
         width: 200
         height: 200
       alignment: 0
@@ -513,8 +529,8 @@ TextureImporter:
       name: Btn_SoundOn
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1214
+        x: 1416
+        y: 282
         width: 200
         height: 200
       alignment: 0
@@ -527,8 +543,8 @@ TextureImporter:
       name: Btn_Tool
       rect:
         serializedVersion: 2
-        x: 204
-        y: 1214
+        x: 1416
+        y: 80
         width: 200
         height: 200
       alignment: 0
@@ -541,8 +557,8 @@ TextureImporter:
       name: Btn_Undo
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1171
+        x: 1618
+        y: 282
         width: 200
         height: 200
       alignment: 0
@@ -555,8 +571,8 @@ TextureImporter:
       name: Btn_Up
       rect:
         serializedVersion: 2
-        x: 608
-        y: 1171
+        x: 1820
+        y: 282
         width: 200
         height: 200
       alignment: 0
@@ -569,7 +585,7 @@ TextureImporter:
       name: BtnOK
       rect:
         serializedVersion: 2
-        x: 868
+        x: 911
         y: 1746
         width: 494
         height: 174
@@ -583,8 +599,8 @@ TextureImporter:
       name: BtnPlay
       rect:
         serializedVersion: 2
-        x: 2
-        y: 566
+        x: 567
+        y: 1021
         width: 208
         height: 240
       alignment: 0
@@ -597,8 +613,8 @@ TextureImporter:
       name: BtnShop
       rect:
         serializedVersion: 2
-        x: 563
-        y: 1777
+        x: 1407
+        y: 1609
         width: 303
         height: 164
       alignment: 0
@@ -611,8 +627,8 @@ TextureImporter:
       name: ChapterName
       rect:
         serializedVersion: 2
-        x: 1591
-        y: 1901
+        x: 1407
+        y: 1775
         width: 397
         height: 145
       alignment: 0
@@ -625,8 +641,8 @@ TextureImporter:
       name: Coin
       rect:
         serializedVersion: 2
-        x: 774
-        y: 1943
+        x: 2
+        y: 1137
         width: 254
         height: 103
       alignment: 0
@@ -639,8 +655,8 @@ TextureImporter:
       name: Games_Amirza
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 1139
+        x: 258
+        y: 958
         width: 200
         height: 201
       alignment: 0
@@ -653,8 +669,8 @@ TextureImporter:
       name: Games_Ballz
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 1113
+        x: 2
+        y: 934
         width: 200
         height: 201
       alignment: 0
@@ -667,8 +683,8 @@ TextureImporter:
       name: Games_CandyCrush
       rect:
         serializedVersion: 2
-        x: 1416
-        y: 1095
+        x: 777
+        y: 950
         width: 200
         height: 201
       alignment: 0
@@ -681,8 +697,8 @@ TextureImporter:
       name: Games_ClashOfClans
       rect:
         serializedVersion: 2
-        x: 1618
-        y: 1095
+        x: 460
+        y: 818
         width: 200
         height: 201
       alignment: 0
@@ -695,8 +711,8 @@ TextureImporter:
       name: Games_ClashRoyale
       rect:
         serializedVersion: 2
-        x: 1820
-        y: 1092
+        x: 204
+        y: 755
         width: 200
         height: 201
       alignment: 0
@@ -710,7 +726,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 1011
+        y: 731
         width: 200
         height: 201
       alignment: 0
@@ -723,8 +739,8 @@ TextureImporter:
       name: Games_QuizOfKings
       rect:
         serializedVersion: 2
-        x: 204
-        y: 1011
+        x: 979
+        y: 900
         width: 200
         height: 201
       alignment: 0
@@ -737,8 +753,8 @@ TextureImporter:
       name: Games_Sudoku
       rect:
         serializedVersion: 2
-        x: 406
-        y: 968
+        x: 662
+        y: 747
         width: 200
         height: 201
       alignment: 0
@@ -751,8 +767,8 @@ TextureImporter:
       name: GemCount
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1946
+        x: 304
+        y: 1161
         width: 261
         height: 100
       alignment: 0
@@ -765,7 +781,7 @@ TextureImporter:
       name: HintWordRow
       rect:
         serializedVersion: 2
-        x: 1030
+        x: 911
         y: 1922
         width: 559
         height: 124
@@ -779,8 +795,8 @@ TextureImporter:
       name: HintWordRowChecked
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1820
+        x: 1472
+        y: 1922
         width: 559
         height: 124
       alignment: 0
@@ -793,24 +809,10 @@ TextureImporter:
       name: Instagram
       rect:
         serializedVersion: 2
-        x: 468
-        y: 1946
+        x: 1210
+        y: 1542
         width: 100
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Loading Orb
-      rect:
-        serializedVersion: 2
-        x: 1512
-        y: 63
-        width: 331
-        height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -821,8 +823,8 @@ TextureImporter:
       name: Lock
       rect:
         serializedVersion: 2
-        x: 810
-        y: 1140
+        x: 1618
+        y: 80
         width: 200
         height: 200
       alignment: 0
@@ -835,8 +837,8 @@ TextureImporter:
       name: LvlBG-01
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 390
+        x: 1712
+        y: 1398
         width: 300
         height: 305
       alignment: 0
@@ -849,8 +851,8 @@ TextureImporter:
       name: LvlBG-02
       rect:
         serializedVersion: 2
-        x: 1390
-        y: 390
+        x: 2
+        y: 1549
         width: 300
         height: 305
       alignment: 0
@@ -863,8 +865,8 @@ TextureImporter:
       name: LvlBG-03
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 390
+        x: 304
+        y: 1549
         width: 300
         height: 305
       alignment: 0
@@ -877,8 +879,8 @@ TextureImporter:
       name: LvlBG-04
       rect:
         serializedVersion: 2
-        x: 2
-        y: 172
+        x: 606
+        y: 1549
         width: 300
         height: 305
       alignment: 0
@@ -891,8 +893,8 @@ TextureImporter:
       name: LvlBG-05
       rect:
         serializedVersion: 2
-        x: 304
-        y: 172
+        x: 908
+        y: 1439
         width: 300
         height: 305
       alignment: 0
@@ -905,8 +907,8 @@ TextureImporter:
       name: LvlBG-06
       rect:
         serializedVersion: 2
-        x: 606
-        y: 104
+        x: 1312
+        y: 1302
         width: 300
         height: 305
       alignment: 0
@@ -919,8 +921,8 @@ TextureImporter:
       name: LvlBG-GemPlacehoder
       rect:
         serializedVersion: 2
-        x: 908
-        y: 83
+        x: 1614
+        y: 1091
         width: 300
         height: 305
       alignment: 0
@@ -933,10 +935,24 @@ TextureImporter:
       name: LvlBG-Lock
       rect:
         serializedVersion: 2
-        x: 1210
-        y: 83
+        x: 2
+        y: 1242
         width: 300
         height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Pointer
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 80
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -947,8 +963,8 @@ TextureImporter:
       name: PopUpHeader
       rect:
         serializedVersion: 2
-        x: 1033
-        y: 697
+        x: 2
+        y: 1856
         width: 907
         height: 190
       alignment: 0
@@ -961,8 +977,8 @@ TextureImporter:
       name: QF_Blank
       rect:
         serializedVersion: 2
-        x: 608
-        y: 968
+        x: 406
+        y: 615
         width: 200
         height: 201
       alignment: 0
@@ -975,8 +991,8 @@ TextureImporter:
       name: QF_Difficulty01
       rect:
         serializedVersion: 2
-        x: 810
-        y: 937
+        x: 204
+        y: 552
         width: 200
         height: 201
       alignment: 0
@@ -989,8 +1005,8 @@ TextureImporter:
       name: QF_Difficulty02
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 936
+        x: 2
+        y: 528
         width: 200
         height: 201
       alignment: 0
@@ -1003,8 +1019,8 @@ TextureImporter:
       name: QF_Difficulty03
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 910
+        x: 1181
+        y: 900
         width: 200
         height: 201
       alignment: 0
@@ -1017,8 +1033,8 @@ TextureImporter:
       name: QF_Difficulty04
       rect:
         serializedVersion: 2
-        x: 1416
-        y: 892
+        x: 1383
+        y: 900
         width: 200
         height: 201
       alignment: 0
@@ -1031,8 +1047,8 @@ TextureImporter:
       name: QF_Missing01
       rect:
         serializedVersion: 2
-        x: 1618
-        y: 892
+        x: 1585
+        y: 888
         width: 200
         height: 201
       alignment: 0
@@ -1045,8 +1061,8 @@ TextureImporter:
       name: QF_Missing02
       rect:
         serializedVersion: 2
-        x: 1820
-        y: 889
+        x: 1787
+        y: 888
         width: 200
         height: 201
       alignment: 0
@@ -1060,7 +1076,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 808
+        y: 325
         width: 200
         height: 201
       alignment: 0
@@ -1073,8 +1089,8 @@ TextureImporter:
       name: QF_Missing04
       rect:
         serializedVersion: 2
-        x: 204
-        y: 808
+        x: 2
+        y: 122
         width: 200
         height: 201
       alignment: 0
@@ -1087,8 +1103,8 @@ TextureImporter:
       name: R
       rect:
         serializedVersion: 2
-        x: 1566
-        y: 1702
+        x: 1180
+        y: 1103
         width: 270
         height: 197
       alignment: 0
@@ -1101,8 +1117,8 @@ TextureImporter:
       name: StarBlank
       rect:
         serializedVersion: 2
-        x: 406
-        y: 765
+        x: 204
+        y: 349
         width: 200
         height: 201
       alignment: 0
@@ -1115,8 +1131,8 @@ TextureImporter:
       name: StarFill
       rect:
         serializedVersion: 2
-        x: 608
-        y: 765
+        x: 204
+        y: 146
         width: 200
         height: 201
       alignment: 0
@@ -1129,8 +1145,8 @@ TextureImporter:
       name: telegram
       rect:
         serializedVersion: 2
-        x: 672
-        y: 1946
+        x: 1210
+        y: 1338
         width: 100
         height: 100
       alignment: 0
@@ -1143,8 +1159,8 @@ TextureImporter:
       name: TileCorrect
       rect:
         serializedVersion: 2
-        x: 212
-        y: 479
+        x: 304
+        y: 1263
         width: 290
         height: 284
       alignment: 0
@@ -1157,8 +1173,8 @@ TextureImporter:
       name: TileGold
       rect:
         serializedVersion: 2
-        x: 504
-        y: 479
+        x: 596
+        y: 1263
         width: 290
         height: 284
       alignment: 0
@@ -1171,8 +1187,8 @@ TextureImporter:
       name: TileNormal
       rect:
         serializedVersion: 2
-        x: 796
-        y: 411
+        x: 888
+        y: 1153
         width: 290
         height: 284
       alignment: 0
@@ -1185,8 +1201,8 @@ TextureImporter:
       name: TileWrong
       rect:
         serializedVersion: 2
-        x: 810
-        y: 719
+        x: 1806
+        y: 1705
         width: 221
         height: 215
       alignment: 0
@@ -1199,8 +1215,8 @@ TextureImporter:
       name: Twitter
       rect:
         serializedVersion: 2
-        x: 570
-        y: 1946
+        x: 1210
+        y: 1440
         width: 100
         height: 100
       alignment: 0

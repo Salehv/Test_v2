@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UPersian.Components;
 
 
 // TODO: Perfomance Problem (First Intantiate 30 Levels and Init just changes the values)
