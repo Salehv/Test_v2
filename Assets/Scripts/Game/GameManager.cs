@@ -821,6 +821,7 @@ public class GameManager : DynamicsHandler
             if (ApplicationManager.instance.IsEnoughEnergy())
             {
                 ApplicationManager.instance.UseEnergy();
+                
 
                 if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
                     return;

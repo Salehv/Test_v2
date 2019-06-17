@@ -16,6 +16,8 @@ public class LevelObject : MonoBehaviour
 
     public GameObject[] gems;
 
+    internal bool isUnlicked;
+
 
     public void LevelClicked()
     {

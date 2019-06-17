@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:3e7da15ade3a64f9d1805ac1097bc12f:e7a7f20a32884d525a99dfb90c369070:6f878889a1ab77a3c36eda7ea0e98e77$
+# $TexturePacker:SmartUpdate:4d71b8becd480f14add30c1a84d7ac7b:c4a5623c81515366705507e79f0c5160:6f878889a1ab77a3c36eda7ea0e98e77$
 #
 :format=40300
 :texture=ChapterBG.png
@@ -19,11 +19,8 @@ Chapter01BG;2;823;612;1089; 0.5;0.5; 0;0;0;0
 Chapter01Leaf03;2;17;24;16; 0.5;0.5; 0;0;0;0
 Chapter01PlayBtn;736;216;111;131; 0.5;0.5; 0;0;0;0
 Chapter02BG;616;3005;612;1089; 0.5;0.5; 0;0;0;0
-Chapter02PlayBtn;838;83;111;131; 0.5;0.5; 0;0;0;0
 Chapter03BG;616;1914;612;1089; 0.5;0.5; 0;0;0;0
-Chapter03PlayBtn;849;222;111;131; 0.5;0.5; 0;0;0;0
 Chapter04BG;616;823;612;1089; 0.5;0.5; 0;0;0;0
-Chapter04PlayBtn;951;89;111;131; 0.5;0.5; 0;0;0;0
 Chapter05BG;1324;3005;612;1089; 0.5;0.5; 0;0;0;0
 Chapter06BG;1230;1914;612;1089; 0.5;0.5; 0;0;0;0
 ChapterLock;1230;823;612;1089; 0.5;0.5; 0;0;0;0
