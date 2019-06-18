@@ -105,35 +105,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 053e09f676d4de54385ab1bf252dbcd8
-      internalID: 113165832256449062
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: InGame05TEP
-      rect:
-        serializedVersion: 2
-        x: 1040
-        y: 226
-        width: 517
-        height: 899
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f2850e448c5d2a849a57764cbd830821
-      internalID: 6117714030602341294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InGame06TEP
       rect:
         serializedVersion: 2
         x: 2
@@ -147,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3176b07af5b994d4d8fa926944cda16a
-      internalID: 4616370434843588116
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Staff
+      name: InGame06TEP
       rect:
         serializedVersion: 2
         x: 521
@@ -168,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f99e2226aafca424f9257b8b98e6c703
-      internalID: 8759871349884944488
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TransitionDown
+      name: Staff
       rect:
         serializedVersion: 2
         x: 521
@@ -189,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a923bb240ed2a3a499052c198609210c
-      internalID: 65088921106527997
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TransitionUp
+      name: TransitionDown
       rect:
         serializedVersion: 2
         x: 1040
@@ -210,8 +189,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc81c4a318de21b4eb6b199894322ca2
-      internalID: -1783385868317691048
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TransitionUp
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 206
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []

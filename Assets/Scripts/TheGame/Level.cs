@@ -40,6 +40,24 @@ public class Level
     internal int CalculateCoinGain(int steps)
     {
         int diff = steps - way.Length;
-        return 10 - (2 - diff) * 2;
+        return (int)(10 - diff * 1.5);
+    }
+
+    internal int CalculateGemGain(int steps)
+    {
+        int diff = steps - way.Length;
+        
+        if (diff == 0)
+        {
+            return 3;
+        }
+        
+        else if (way.Length > 2)
+        {
+            return diff <= way.Length / 3 ? 2 : 1;
+        }
+
+        return diff == 1 ? 2 : 1;
+
     }
 }

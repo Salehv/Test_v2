@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:ef32c56eb4fe265d02fa8b9c07384811:25d74da26617918f4a61d3c4e470cf91:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:77b4c1d2ca6a69327776c1e3b89d8ba6:b8039ad69bbc5b865f7a442fb411a029:65b6e72418b136aebb682b32e80fcc76$
 #
 :format=40300
 :texture=ChapterBG-2.png
@@ -13,8 +13,8 @@
 :borders=disabled
 
 InGame04TEP;2;1127;517;919; 0.5;0.5; 0;0;0;0
-InGame05TEP;1040;226;517;899; 0.5;0.5; 0;0;0;0
-InGame06TEP;2;206;517;919; 0.5;0.5; 0;0;0;0
-Staff;521;1127;517;919; 0.5;0.5; 0;0;0;0
-TransitionDown;521;206;517;919; 0.5;0.5; 0;0;0;0
-TransitionUp;1040;1127;517;919; 0.5;0.5; 0;0;0;0
+InGame05TEP;2;206;517;919; 0.5;0.5; 0;0;0;0
+InGame06TEP;521;1127;517;919; 0.5;0.5; 0;0;0;0
+Staff;521;206;517;919; 0.5;0.5; 0;0;0;0
+TransitionDown;1040;1127;517;919; 0.5;0.5; 0;0;0;0
+TransitionUp;1040;206;517;919; 0.5;0.5; 0;0;0;0
