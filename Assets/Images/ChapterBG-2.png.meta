@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e22dce1b70dba674e9f0bd0927d63d7b
+guid: 46cdcd3a5d00ad0419ba139081fac560
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -105,7 +105,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8080c43c8631b94498c3f42bc742667
+      spriteID: 053e09f676d4de54385ab1bf252dbcd8
       internalID: 113165832256449062
       vertices: []
       indices: 
@@ -126,7 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d787bd36aaa5f040835cb668bd0efc1
+      spriteID: f2850e448c5d2a849a57764cbd830821
       internalID: 6117714030602341294
       vertices: []
       indices: 
@@ -147,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cce2087fb14e27440a541ef01c0e7c77
+      spriteID: 3176b07af5b994d4d8fa926944cda16a
       internalID: 4616370434843588116
       vertices: []
       indices: 
@@ -168,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e6182871e0bfe744942e9f0ac6614a4
+      spriteID: f99e2226aafca424f9257b8b98e6c703
       internalID: 8759871349884944488
       vertices: []
       indices: 
@@ -189,7 +189,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 843e784e04cafcc488f4dc4da6a9740b
+      spriteID: a923bb240ed2a3a499052c198609210c
       internalID: 65088921106527997
       vertices: []
       indices: 
@@ -210,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cac8c83b600d64f48b320c10c2505812
+      spriteID: bc81c4a318de21b4eb6b199894322ca2
       internalID: -1783385868317691048
       vertices: []
       indices: 
@@ -219,7 +219,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0ca9ca86a5bfc2346a4d9c60b64662e6
+    spriteID: 3c41efd12b82b6a47bd2ba9d343590c2
     internalID: 0
     vertices: []
     indices: 

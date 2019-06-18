@@ -115,8 +115,6 @@ namespace App
             levelsHandler.SetToChapter(chapterId);
             AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
-            state = ViewState.LEVELS;
-
             levelsBackground.sprite = ResourceManager.instance.GetChapterBluredBackground(chapterId);
 
             foreach (Animator a in levelsTransitions)
@@ -125,6 +123,8 @@ namespace App
             }
 
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
+            
+            state = ViewState.LEVELS;
         }
 
         public void LevelClicked(Level level)
@@ -162,6 +162,7 @@ namespace App
             gameCanvas.SetActive(true);
             gameView.SetActive(true);
             gameViewManager.ShowGame();
+            state = ViewState.IN_GAME;
         }
 
         public void GameToMenu()
@@ -352,7 +353,7 @@ namespace App
             panel.SetTrigger(TRIG_PANEL_OUT);
         }
 
-        private void ShowPanel(GameObject panel)
+        internal void ShowPanel(GameObject panel)
         {
             onScreenPanels.Push(panel);
             panel.SetActive(true);
