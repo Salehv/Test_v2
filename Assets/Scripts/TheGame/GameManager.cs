@@ -79,6 +79,8 @@ public class GameManager : DynamicsHandler
 
     internal void Init(XMLGame game)
     {
+        viewManager = GameViewManager.instance;
+        
         coins = DatabaseManager.instance.GetCoins();
 
 
@@ -100,7 +102,6 @@ public class GameManager : DynamicsHandler
         hintWayCostText.text = showWayHintCost + "";
 
 
-        viewManager = GameViewManager.instance;
 
     }
 
@@ -715,23 +716,28 @@ public class GameManager : DynamicsHandler
     {
         if (chapters[currentLevel.chapterId].levels.Length > currentLevel.id + 1)
         {
-            TransitionHandler.instance.StartTransition(chapters[currentLevel.chapterId].levels[currentLevel.id + 1]);
+            try
+            {
+                EnergyHandler.instance.UseEnergy();
+
+                TransitionHandler.instance.StartTransition(chapters[currentLevel.chapterId]
+                    .levels[currentLevel.id + 1]);
+            }
+            catch (NoEnergyException e)
+            {
+                PopupHandler.ShowDebug("کلیدات تموم شده باید صبر کنی کلید پیدا کنم");
+            }
         }
         else
         {
             Exit();
-            if (ApplicationManager.instance.IsEnoughEnergy())
-            {
-                ApplicationManager.instance.UseEnergy();
-                
+            if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
+                return;
 
-                if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
-                    return;
+            ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
+            PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
+            PlayerPrefs.Save();
 
-                ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
-                PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
-                PlayerPrefs.Save();
-            }
         }
     }
 

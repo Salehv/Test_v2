@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222797083355695812}
   - component: {fileID: 114439812084648276}
   m_Layer: 5
-  m_Name: AvailableLetter
+  m_Name: Letter_Available
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

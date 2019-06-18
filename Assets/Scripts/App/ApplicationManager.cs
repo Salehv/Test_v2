@@ -28,36 +28,8 @@ public class ApplicationManager : MonoBehaviour
 
     public FullPageHorizontalScrollSnap chapterScroller;
 
+    private EnergyHandler energyHandler;
 
-
-    #region Energy
-    
-    private int energy;
-    private int maxEnergy;
-    public bool isLastLevelUnlocked;
-
-    public void UseEnergy()
-    {
-        energy -=1;
-    }
-
-    public void IncreaseEnergy()
-    {
-        energy += 1;
-    }
-
-    public bool IsEnoughEnergy()
-    {
-        if (energy == 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    #endregion
 
 
     
@@ -76,6 +48,7 @@ public class ApplicationManager : MonoBehaviour
     internal void Init()
     {
         view = ViewManager.instance;
+        energyHandler = EnergyHandler.instance;
 
         view.ShowBlackPage();
         view.ShowMainMenu();
@@ -127,11 +100,9 @@ public class ApplicationManager : MonoBehaviour
         firstPlay = true;
         PlayerPrefs.SetInt("arcade_high_score", 0);
         PlayerPrefs.Save();
+        
+        energyHandler.FirstInit();
 
-
-        maxEnergy = 10;
-        energy = maxEnergy;
-        isLastLevelUnlocked = true;
     }
 
     public void IntroEnded()

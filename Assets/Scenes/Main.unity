@@ -91287,6 +91287,7 @@ GameObject:
   - component: {fileID: 1496918055}
   - component: {fileID: 1496918054}
   - component: {fileID: 1496918063}
+  - component: {fileID: 1496918065}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -91909,6 +91910,18 @@ MonoBehaviour:
   blackPage: {fileID: 2092391638}
   blackPageAnimator: {fileID: 2092391642}
   toast: {fileID: 1496918055}
+--- !u!114 &1496918065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496918048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2f7550e2afe0d488f0490b068f5f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1497409076
 GameObject:
   m_ObjectHideFlags: 0

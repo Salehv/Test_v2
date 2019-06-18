@@ -1,5 +1,5 @@
 <Game>
-    <Chapter name="جنگل ابر" cost="10" id="00">
+    <Chapter name="جنگل ابر" cost="0" id="00">
         <Level id="00" type="1">
             <Start>
                 اب
@@ -274,7 +274,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>          <!-- 0   55 -->
     <Chapter name="تخت جمشید" cost="35" id="01">
         <Level id="00" type="3">
             <Start>
@@ -811,7 +811,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>        <!-- 94  144 -->
     <Chapter name="خلیج فارس" cost="115" id="02">
         <Level id="00" type="3">
             <Start>
@@ -1432,7 +1432,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>       <!-- 94  238 -->
     <Chapter name="دماوند" cost="200" id="03">
         <Level id="00" type="3">
             <Start>
@@ -2032,7 +2032,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>          <!-- 94  332 -->
     <Chapter name="تفتان" cost="290" id="04">
         <Level id="00" type="3">
             <Start>
@@ -2629,7 +2629,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>           <!-- 94  426-->
     <Chapter name="جزیره گنج" cost="400" id="05">
         <Level id="00" type="3">
             <Start>
@@ -3256,7 +3256,7 @@
                 </Word>
             </Way>
         </Level>
-    </Chapter>
+    </Chapter>       <!-- 94  520-->
     
     
     
