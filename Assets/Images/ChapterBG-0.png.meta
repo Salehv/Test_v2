@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: a8853e928aef7714aa2ee6adde4a1668
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8322638465422002425
+    second: BG-Blured
+  - first:
+      213: 7118613571338210707
+    second: BG
+  - first:
+      213: 5078150029752506001
+    second: Chapter01BG
+  - first:
+      213: 8015649134828304312
+    second: Chapter01PlayBtn
+  - first:
+      213: -3433430041968579994
+    second: Chapter02BG
+  - first:
+      213: -7829339745776961248
+    second: Chapter03BG
+  - first:
+      213: 6095288530853737170
+    second: Chapter04BG
+  - first:
+      213: 4927969714591270107
+    second: ChestClosed
+  - first:
+      213: 3631427753842240048
+    second: ChesxtOpen
+  - first:
+      213: 7976402759298883240
+    second: Hooray
+  - first:
+      213: 6247072073633344140
+    second: Lantern1
+  - first:
+      213: -2177685549579597603
+    second: Lantern2
+  - first:
+      213: -9066375726257480448
+    second: Lantern3
+  - first:
+      213: 8979431339867779886
+    second: PlayChain
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BG-Blured
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1127
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856941ba4ed3f3942aee3a38979f5176
+      internalID: -8322638465422002425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 206
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccce990f9a4178945909efd1d65f66c7
+      internalID: 7118613571338210707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter01BG
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1127
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d60958b7273cab4b88321e5f4dea301
+      internalID: 5078150029752506001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter01PlayBtn
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 93
+        width: 93
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64dbfd9348d8c94c876f3cec96c938b
+      internalID: 8015649134828304312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter02BG
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 206
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be42e7a448463aa46b8a3eee3b2f1c77
+      internalID: -3433430041968579994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter03BG
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1127
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db82bcf8017e3a045a6c511f1fe33e24
+      internalID: -7829339745776961248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chapter04BG
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 206
+        width: 517
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a2ec3b39a8b0042b0887db795811d6
+      internalID: 6095288530853737170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestClosed
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1653
+        width: 479
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36583dcd1437234bab96788db872e48
+      internalID: 4927969714591270107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChesxtOpen
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1258
+        width: 479
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7d6abb7ad14da429f755fe1b9b3d77
+      internalID: 3631427753842240048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hooray
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 30
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f1f46a8f19dc4439c51d600120b40f
+      internalID: 7976402759298883240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern1
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 121
+        width: 44
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c653594a8266ed4cad5255d71e33cb3
+      internalID: 6247072073633344140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern2
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 870
+        width: 43
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5460a7e6a14172c44ade967b0b8f93db
+      internalID: -2177685549579597603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern3
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 737
+        width: 54
+        height: 519
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932a6d857ec287f4191cbd6861bfbda8
+      internalID: -9066375726257480448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayChain
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 337
+        width: 14
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12f3362306d6954c91d9069c999518e
+      internalID: 8979431339867779886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4dfa2c1e74b80c648bcf2b13ef42509f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
