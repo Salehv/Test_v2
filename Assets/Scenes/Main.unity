@@ -59043,20 +59043,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114467639610698612, guid: d4c298c26b9ae884c873a9ff083a4b25,
-        type: 2}
-      propertyPath: lockCountDownTime
-      value: 
-      objectReference: {fileID: 908949229}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4c298c26b9ae884c873a9ff083a4b25, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &908949229 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114822616014794010, guid: d4c298c26b9ae884c873a9ff083a4b25,
-    type: 2}
-  m_PrefabInternal: {fileID: 908949228}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &909584711
 Prefab:
   m_ObjectHideFlags: 0
@@ -109129,6 +109118,7 @@ MonoBehaviour:
   - {fileID: 575690290}
   - {fileID: 1632267971}
   chapterScroller: {fileID: 1398008715}
+  isLastLevelUnlocked: 0
   adLoading: {fileID: 1325363955}
   adNotAvailable: {fileID: 0}
   adTimeRemainedText: {fileID: 863433562}

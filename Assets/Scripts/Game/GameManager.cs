@@ -821,7 +821,7 @@ public class GameManager : DynamicsHandler
             if (ApplicationManager.instance.IsEnoughEnergy())
             {
                 ApplicationManager.instance.UseEnergy();
-                
+                ApplicationManager.instance.isLastLevelUnlocked = true;
 
                 if (PlayerPrefs.HasKey(string.Format("chapter_{0}_completed", currentLevel.chapterId)))
                     return;
@@ -829,6 +829,10 @@ public class GameManager : DynamicsHandler
                 ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
                 PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
                 PlayerPrefs.Save();
+            }
+            else
+            {
+                ApplicationManager.instance.isLastLevelUnlocked = false;
             }
         }
     }
