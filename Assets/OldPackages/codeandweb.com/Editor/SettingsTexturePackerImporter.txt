@@ -1,0 +1,18 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/Images/Blured.tpsheet
+- Assets/Images/Btn.tpsheet
+- Assets/Images/ChapterBG.tpsheet
+- Assets/Resources/Letters.tpsheet
+textureFileNames:
+- Assets/Images/Blured.png
+- Assets/Images/Btn.png
+- Assets/Images/ChapterBG.png
+- Assets/Resources/Letters.png
+normalmapFileNames:
+- 
+- 
+- 
+- 
+enableDebugOutput: 0

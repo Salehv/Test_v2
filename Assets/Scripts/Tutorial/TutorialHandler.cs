@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
-using System.Runtime.Remoting.Messaging;
 using GameAnalyticsSDK.Setup;
 using UnityEngine;
 using UnityEngine.Serialization;

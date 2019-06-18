@@ -11,7 +11,6 @@ public class TransitionHandler : MonoBehaviour
     public Text textTop;
     public Text textBottom;
     public Text levelID;
-    public Text hint;
 
 
     private void Awake()
@@ -29,9 +28,12 @@ public class TransitionHandler : MonoBehaviour
         textTop.text = lvl.begin;
         textBottom.text = lvl.end;
         selectedLevel = lvl;
+        // TODO: Chapter name instead of number
         levelID.text = "فصل " + (lvl.chapterId + 1) + " - مرحله " + (lvl.id < 9 ? "0" : "") + (lvl.id + 1);
+        
         animatorTop.SetBool("Close", true);
         animatorBottom.SetBool("Close", true);
+        
         GetComponent<Image>().raycastTarget = true;
     }
 

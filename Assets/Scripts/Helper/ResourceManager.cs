@@ -4,23 +4,27 @@ public class ResourceManager : MonoBehaviour
 {
     internal static ResourceManager instance;
 
-    [Header("Level Object Sprites")] 
-    public Sprite[] levelMenuSprites;
+    [Header("Sprites")] 
+    [SerializeField] private Sprite[] levelMenuSprites;
 
-    [Header("Chapter Images")] 
-    public Sprite[] chapterBluredBackgrounds;
-    public Sprite[] chapterBackgrounds;
+    [SerializeField] private Sprite[] chapterBluredBackgrounds;
+    [SerializeField] private Sprite[] chapterBackgrounds;
 
-    [Header("Chapter in Game Graphics")] public Sprite[] inGameBacks;
-    public Sprite[] inGameFeatures;
+    [SerializeField] private Sprite[] inGameBacks;
+    [SerializeField] private Sprite[] inGameFeatures;
 
-
+    [Header("Music & Sounds")] 
+    [SerializeField] private AudioClip[] levelsViewMusics;
+    [SerializeField] private AudioClip[] inGameMusic;
+    [SerializeField] private AudioClip mainMenuMusic;
+    
+    
     private void Awake()
     {
         instance = this;
     }
 
-    internal Sprite GetChapterLevelMenuSprite(int chapter)
+    internal Sprite GetLevelSprite(int chapter)
     {
         return levelMenuSprites[chapter];
     }
@@ -30,12 +34,12 @@ public class ResourceManager : MonoBehaviour
         return chapterBluredBackgrounds[chapter];
     }
 
-    internal Sprite GetChapterInGameBackground(int chapter)
+    internal Sprite GetInGameBackground(int chapter)
     {
         return inGameBacks[chapter];
     }
 
-    internal Sprite GetChapterInGameFeaturesSprite(int chapter)
+    internal Sprite GetInGameFeatures(int chapter)
     {
         return inGameFeatures[chapter];
     }
@@ -43,5 +47,20 @@ public class ResourceManager : MonoBehaviour
     internal Sprite GetChapterSprite(int id)
     {
         return chapterBackgrounds[id];
+    }
+
+    public AudioClip GetLevelsViewMusic(int chapterId)
+    {
+        return levelsViewMusics[chapterId];
+    }
+
+    public AudioClip GetInGameMusic(int chapterId)
+    {
+        return inGameMusic[chapterId];
+    }
+
+    public AudioClip GetMainMenuMusic()
+    {
+        return mainMenuMusic;
     }
 }

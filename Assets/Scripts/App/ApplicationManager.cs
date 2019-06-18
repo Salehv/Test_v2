@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Runtime.CompilerServices;
 using App;
 using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.UI;
 using TapsellSDK;
+using TheGame.Arcade;
 
 
 public class ApplicationManager : MonoBehaviour
@@ -14,7 +13,6 @@ public class ApplicationManager : MonoBehaviour
 
     /*** Menus and Panels ***/
     [Header("Menu Objects")] public ChaptersHandler chaptersHandler;
-
     public GameObject levelsPanel;
     public GameObject adPanel;
 
@@ -23,8 +21,7 @@ public class ApplicationManager : MonoBehaviour
 
     [Header("UI Objects")] public Text[] coins;
     public Text[] allGems;
-    public Text[] chapGems;
-
+    
     internal static ApplicationManager instance;
 
     private ApplicationState state;
@@ -82,11 +79,13 @@ public class ApplicationManager : MonoBehaviour
 
         view.ShowBlackPage();
         view.ShowMainMenu();
-
+        
         chaptersHandler.InitializeChapters();
         chaptersHandler.UpdateChaptersLockState();
         chapterScroller.Init();
 
+        AudioManager.instance.PlayNewMusic(ResourceManager.instance.GetMainMenuMusic());
+        
         UpdateCoins();
         UpdateGems();
 
@@ -97,8 +96,13 @@ public class ApplicationManager : MonoBehaviour
         Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
         Tapsell.setRewardListener(AdReward);
 
-        AudioManager.instance.PlayNewMusic(AudioManager.instance.mainThemeMusic);
-
+        /*Test*
+        Level test = new Level(0, 0, 0, "علی", "اصغر", 0);
+        test.SetDynamicFlags(DynamicsFlag.DF_FULL);
+        view.LevelClicked(test);
+        return;
+        /***/
+        
         // First Play
         if (!PlayerPrefs.HasKey("first_enter_done"))
         {
@@ -160,8 +164,6 @@ public class ApplicationManager : MonoBehaviour
     #endregion
 
 
-    // TODO: Refactor here
-
     public void UpdateCoins()
     {
         int coin = DatabaseManager.instance.GetCoins();
@@ -207,7 +209,7 @@ public class ApplicationManager : MonoBehaviour
         return chapG;
     }
 
-    private int GetAllGemCount()
+    internal int GetAllGemCount()
     {
         return DatabaseManager.instance.GetGems();
     }

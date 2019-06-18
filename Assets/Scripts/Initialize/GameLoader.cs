@@ -64,12 +64,12 @@ namespace Initialize
             {
                 for (int l = 0; l < game.chapters[c].levels.Count; l++)
                 {
-                    game.chapters[c].levels[l].start = Utilities.FarsiNormalize(game.chapters[c].levels[l].start);
-                    game.chapters[c].levels[l].end = Utilities.FarsiNormalize(game.chapters[c].levels[l].end);
+                    game.chapters[c].levels[l].start = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].start);
+                    game.chapters[c].levels[l].end = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].end);
 
                     for (int w = 0; w < game.chapters[c].levels[l].way.words.Count; w++)
                     {
-                        game.chapters[c].levels[l].way.words[w] = Utilities.FarsiNormalize(game.chapters[c].levels[l].way.words[w]);
+                        game.chapters[c].levels[l].way.words[w] = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].way.words[w]);
                     }
                 }
             }
