@@ -25,8 +25,18 @@ public class EnergyHandler : MonoBehaviour
     {
         maxEnergy = 10;
         energy = maxEnergy;
+        
+        
+        
+        
+        energy = 3; //TODO: erase this shit
+        
+        
+        
+        
         isLastLevelUnlocked = true;
         energyChargeTime = 3600;
+        lastUsedEnergy = DateTime.UtcNow.ToFileTimeUtc() / 10000000;
         
         PlayerPrefs.SetInt("maxEnergy", maxEnergy);
         PlayerPrefs.SetInt("energy", energy);
@@ -82,14 +92,15 @@ public class EnergyHandler : MonoBehaviour
             Destroy(energyItemParent.transform.GetChild(i).gameObject);
         }
         
-        for (int i = 0; i < energy; i++)
-        {
-            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
-        }
         for (int i = 0; i < maxEnergy-energy; i++)
         {
             energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
-            energyItems[i+energy].GetComponent<Image>().color = new Color(1,1,1,0.3f); 
+            energyItems[i].GetComponent<Image>().color = new Color(1,1,1,0.3f); 
+        }
+        
+        for (int i = 0; i < energy; i++)
+        {
+            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
         }
     }
 
@@ -97,11 +108,21 @@ public class EnergyHandler : MonoBehaviour
     {
         instance = this;
         energyItems = new List<GameObject>();
+        
+        
+        
+        FirstInit();//TODO: and also erase this shit
+        
+        
+        
+        
+        
+        
+        GraphicalUpdate();
     }
 
     void Update()
     {
-        UpdateEnergy();
     }
 }
 

@@ -1,116 +1,336 @@
 fileFormatVersion: 2
 guid: 59d0c3f4c1184d142b622bfd6951aeb5
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Btn
-    21300002: BtnArrowDown
-    21300004: BtnArrowLeft
-    21300006: BtnArrowRight
-    21300008: BtnArrowUp
-    21300010: BtnBack
-    21300012: BtnClose
-    21300014: BtnExit
-    21300016: BtnHint
-    21300018: BtnHintNextFive
-    21300020: BtnHintOurWay
-    21300022: BtnHintShineLetter
-    21300024: BtnInfo
-    21300026: BtnMusicOff
-    21300028: BtnMusicOn
-    21300030: BtnNext
-    21300032: BtnOK
-    21300034: BtnPlay
-    21300036: BtnReset
-    21300038: BtnRules
-    21300040: BtnSetting
-    21300042: BtnShop
-    21300044: BtnShopMainMenu
-    21300046: BtnShuffle
-    21300048: BtnShuffleNewLetter
-    21300050: BtnShuffleNextPool
-    21300052: BtnSoundOff
-    21300054: BtnSoundOn
-    21300056: BtnUndo
-    21300058: ChapterName
-    21300060: Coin
-    21300062: Gem
-    21300064: GemCount
-    21300066: Loading Orb
-    21300068: LvlLocked
-    21300070: LvlSolved
-    21300072: LvlUnsolved
-    21300074: R
-    21300076: TileCorrect
-    21300078: TileGold
-    21300080: TileNormal
-    21300082: TileWrong
-    21300084: HintWordRow
-    21300086: HintWordRowChecked
-    21300088: Instagram
-    21300090: Lock
-    21300092: telegram
-    21300094: Twitter
-    21300096: PopUpHeader
-    21300098: Btn_Back
-    21300100: Btn_Blank
-    21300102: Btn_Close
-    21300104: Btn_Coins
-    21300106: Btn_Down
-    21300108: Btn_Exit
-    21300110: Btn_Gear
-    21300112: Btn_Gem
-    21300114: Btn_Hint
-    21300116: Btn_HintOurWay
-    21300118: Btn_HintSimilarWords
-    21300120: Btn_Info
-    21300122: Btn_Left
-    21300124: Btn_MoreLetters
-    21300126: Btn_MusicOff
-    21300128: Btn_MusicOn
-    21300130: Btn_Next
-    21300132: Btn_Qolenj
-    21300134: Btn_Reset
-    21300136: Btn_Right
-    21300138: Btn_Round
-    21300140: Btn_Rules
-    21300142: Btn_Shop
-    21300144: Btn_SoundOff
-    21300146: Btn_SoundOn
-    21300148: Btn_Tool
-    21300150: Btn_Undo
-    21300152: Btn_Up
-    21300154: LvlBG-01
-    21300156: LvlBG-02
-    21300158: LvlBG-03
-    21300160: LvlBG-04
-    21300162: LvlBG-05
-    21300164: LvlBG-06
-    21300166: LvlBG-07
-    21300168: LvlBG-GemPlacehoder
-    21300170: LvlBG-Lock
-    21300172: Games_Amirza
-    21300174: Games_Ballz
-    21300176: Games_CandyCrush
-    21300178: Games_ClashOfClans
-    21300180: Games_ClashRoyale
-    21300182: Games_CutTheRope
-    21300184: Games_QuizOfKings
-    21300186: Games_Sudoku
-    21300188: QF_Blank
-    21300190: QF_Difficulty01
-    21300192: QF_Difficulty02
-    21300194: QF_Difficulty03
-    21300196: QF_Difficulty04
-    21300198: QF_Missing01
-    21300200: QF_Missing02
-    21300202: QF_Missing03
-    21300204: QF_Missing04
-    21300206: StarBlank
-    21300208: StarFill
-    21300210: Btn_Arcade
-    21300212: Pointer
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Btn
+  - first:
+      213: 21300002
+    second: BtnArrowDown
+  - first:
+      213: 21300004
+    second: BtnArrowLeft
+  - first:
+      213: 21300006
+    second: BtnArrowRight
+  - first:
+      213: 21300008
+    second: BtnArrowUp
+  - first:
+      213: 21300010
+    second: BtnBack
+  - first:
+      213: 21300012
+    second: BtnClose
+  - first:
+      213: 21300014
+    second: BtnExit
+  - first:
+      213: 21300016
+    second: BtnHint
+  - first:
+      213: 21300018
+    second: BtnHintNextFive
+  - first:
+      213: 21300020
+    second: BtnHintOurWay
+  - first:
+      213: 21300022
+    second: BtnHintShineLetter
+  - first:
+      213: 21300024
+    second: BtnInfo
+  - first:
+      213: 21300026
+    second: BtnMusicOff
+  - first:
+      213: 21300028
+    second: BtnMusicOn
+  - first:
+      213: 21300030
+    second: BtnNext
+  - first:
+      213: 21300032
+    second: BtnOK
+  - first:
+      213: 21300034
+    second: BtnPlay
+  - first:
+      213: 21300036
+    second: BtnReset
+  - first:
+      213: 21300038
+    second: BtnRules
+  - first:
+      213: 21300040
+    second: BtnSetting
+  - first:
+      213: 21300042
+    second: BtnShop
+  - first:
+      213: 21300044
+    second: BtnShopMainMenu
+  - first:
+      213: 21300046
+    second: BtnShuffle
+  - first:
+      213: 21300048
+    second: BtnShuffleNewLetter
+  - first:
+      213: 21300050
+    second: BtnShuffleNextPool
+  - first:
+      213: 21300052
+    second: BtnSoundOff
+  - first:
+      213: 21300054
+    second: BtnSoundOn
+  - first:
+      213: 21300056
+    second: BtnUndo
+  - first:
+      213: 21300058
+    second: ChapterName
+  - first:
+      213: 21300060
+    second: Coin
+  - first:
+      213: 21300062
+    second: Gem
+  - first:
+      213: 21300064
+    second: GemCount
+  - first:
+      213: 21300066
+    second: Loading Orb
+  - first:
+      213: 21300068
+    second: LvlLocked
+  - first:
+      213: 21300070
+    second: LvlSolved
+  - first:
+      213: 21300072
+    second: LvlUnsolved
+  - first:
+      213: 21300074
+    second: R
+  - first:
+      213: 21300076
+    second: TileCorrect
+  - first:
+      213: 21300078
+    second: TileGold
+  - first:
+      213: 21300080
+    second: TileNormal
+  - first:
+      213: 21300082
+    second: TileWrong
+  - first:
+      213: 21300084
+    second: HintWordRow
+  - first:
+      213: 21300086
+    second: HintWordRowChecked
+  - first:
+      213: 21300088
+    second: Instagram
+  - first:
+      213: 21300090
+    second: Lock
+  - first:
+      213: 21300092
+    second: telegram
+  - first:
+      213: 21300094
+    second: Twitter
+  - first:
+      213: 21300096
+    second: PopUpHeader
+  - first:
+      213: 21300098
+    second: Btn_Back
+  - first:
+      213: 21300100
+    second: Btn_Blank
+  - first:
+      213: 21300102
+    second: Btn_Close
+  - first:
+      213: 21300104
+    second: Btn_Coins
+  - first:
+      213: 21300106
+    second: Btn_Down
+  - first:
+      213: 21300108
+    second: Btn_Exit
+  - first:
+      213: 21300110
+    second: Btn_Gear
+  - first:
+      213: 21300112
+    second: Btn_Gem
+  - first:
+      213: 21300114
+    second: Btn_Hint
+  - first:
+      213: 21300116
+    second: Btn_HintOurWay
+  - first:
+      213: 21300118
+    second: Btn_HintSimilarWords
+  - first:
+      213: 21300120
+    second: Btn_Info
+  - first:
+      213: 21300122
+    second: Btn_Left
+  - first:
+      213: 21300124
+    second: Btn_MoreLetters
+  - first:
+      213: 21300126
+    second: Btn_MusicOff
+  - first:
+      213: 21300128
+    second: Btn_MusicOn
+  - first:
+      213: 21300130
+    second: Btn_Next
+  - first:
+      213: 21300132
+    second: Btn_Qolenj
+  - first:
+      213: 21300134
+    second: Btn_Reset
+  - first:
+      213: 21300136
+    second: Btn_Right
+  - first:
+      213: 21300138
+    second: Btn_Round
+  - first:
+      213: 21300140
+    second: Btn_Rules
+  - first:
+      213: 21300142
+    second: Btn_Shop
+  - first:
+      213: 21300144
+    second: Btn_SoundOff
+  - first:
+      213: 21300146
+    second: Btn_SoundOn
+  - first:
+      213: 21300148
+    second: Btn_Tool
+  - first:
+      213: 21300150
+    second: Btn_Undo
+  - first:
+      213: 21300152
+    second: Btn_Up
+  - first:
+      213: 21300154
+    second: LvlBG-01
+  - first:
+      213: 21300156
+    second: LvlBG-02
+  - first:
+      213: 21300158
+    second: LvlBG-03
+  - first:
+      213: 21300160
+    second: LvlBG-04
+  - first:
+      213: 21300162
+    second: LvlBG-05
+  - first:
+      213: 21300164
+    second: LvlBG-06
+  - first:
+      213: 21300166
+    second: LvlBG-07
+  - first:
+      213: 21300168
+    second: LvlBG-GemPlacehoder
+  - first:
+      213: 21300170
+    second: LvlBG-Lock
+  - first:
+      213: 21300172
+    second: Games_Amirza
+  - first:
+      213: 21300174
+    second: Games_Ballz
+  - first:
+      213: 21300176
+    second: Games_CandyCrush
+  - first:
+      213: 21300178
+    second: Games_ClashOfClans
+  - first:
+      213: 21300180
+    second: Games_ClashRoyale
+  - first:
+      213: 21300182
+    second: Games_CutTheRope
+  - first:
+      213: 21300184
+    second: Games_QuizOfKings
+  - first:
+      213: 21300186
+    second: Games_Sudoku
+  - first:
+      213: 21300188
+    second: QF_Blank
+  - first:
+      213: 21300190
+    second: QF_Difficulty01
+  - first:
+      213: 21300192
+    second: QF_Difficulty02
+  - first:
+      213: 21300194
+    second: QF_Difficulty03
+  - first:
+      213: 21300196
+    second: QF_Difficulty04
+  - first:
+      213: 21300198
+    second: QF_Missing01
+  - first:
+      213: 21300200
+    second: QF_Missing02
+  - first:
+      213: 21300202
+    second: QF_Missing03
+  - first:
+      213: 21300204
+    second: QF_Missing04
+  - first:
+      213: 21300206
+    second: StarBlank
+  - first:
+      213: 21300208
+    second: StarFill
+  - first:
+      213: 21300210
+    second: Btn_Arcade
+  - first:
+      213: 21300212
+    second: Pointer
+  - first:
+      213: 2119838551683699440
+    second: Btn_Key
+  - first:
+      213: -9016431706496627957
+    second: Btn_KeyItem
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -128,6 +348,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -138,7 +360,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -158,11 +380,13 @@ TextureImporter:
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -179,63 +403,7 @@ TextureImporter:
       name: Btn_Arcade
       rect:
         serializedVersion: 2
-        x: 406
-        y: 413
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Back
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 211
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Blank
-      rect:
-        serializedVersion: 2
-        x: 1210
-        y: 1644
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Close
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 9
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Coins
-      rect:
-        serializedVersion: 2
-        x: 864
+        x: 1120
         y: 698
         width: 200
         height: 200
@@ -245,8 +413,57 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c32f0bbe33e93f040aad7eb3e0c9b964
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Down
+      name: Btn_Back
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 698
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b064116c12faeb440bb4db82ea024e71
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Blank
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1576
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8267c0766979879499ca085a05fbcc75
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Close
       rect:
         serializedVersion: 2
         x: 608
@@ -259,12 +476,61 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: d0e69eea0595eb746911d1f85c56b31d
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Coins
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 452
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94ab7e8718934948a79eb65b8e54f5b
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Down
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 413
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6854223b1c765c444945a6adff4ed9cb
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Exit
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 698
+        x: 810
+        y: 545
         width: 200
         height: 200
       alignment: 0
@@ -273,12 +539,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 16504ae33ff7b274ebb1b86b85574823
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Gear
       rect:
         serializedVersion: 2
-        x: 1268
-        y: 698
+        x: 204
+        y: 211
         width: 200
         height: 200
       alignment: 0
@@ -287,12 +560,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c708259bff6b0394995c610c280d94fd
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Gem
       rect:
         serializedVersion: 2
         x: 1916
-        y: 1296
+        y: 1194
         width: 99
         height: 100
       alignment: 0
@@ -301,8 +581,183 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 4da78387af7d7614fabcd7a21d01e135
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Hint
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 9
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957c4aa86040a9a4b96da3b0a5f62c3f
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_HintOurWay
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 250
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385f7d8be949f5a4c946f3f59effc2ab
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_HintSimilarWords
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 48
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a91bbf60a0cd7f4392409312202aeb9
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Info
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 686
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab62e69f18df5c54aa9f75ad06acfc2a
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Key
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 686
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad65e673d8dc07746bfeced47cb07401
+      internalID: 2119838551683699440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_KeyItem
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1678
+        width: 180
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0704a9838ead4aa468425f1da85b8db9
+      internalID: -9016431706496627957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Left
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 496
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f51734d11250e94785e4f9c478aa1d3
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_MoreLetters
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 496
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f29c3d79a320a84fa2a8c28d2a00600
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_MusicOff
       rect:
         serializedVersion: 2
         x: 608
@@ -315,8 +770,36 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e46304ac02a7e4243b8f31ba36f60377
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_HintOurWay
+      name: Btn_MusicOn
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 343
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f2a09bc35d2b84f98ad9b7cf06518c
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Next
       rect:
         serializedVersion: 2
         x: 608
@@ -329,110 +812,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_HintSimilarWords
-      rect:
-        serializedVersion: 2
-        x: 1470
-        y: 686
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Info
-      rect:
-        serializedVersion: 2
-        x: 1672
-        y: 686
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Left
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 496
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_MoreLetters
-      rect:
-        serializedVersion: 2
-        x: 1012
-        y: 496
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_MusicOff
-      rect:
-        serializedVersion: 2
-        x: 1214
-        y: 496
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_MusicOn
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 294
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Next
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 92
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: eedf06a2a2e95da41b40721885b77c36
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Qolenj
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 294
+        x: 810
+        y: 141
         width: 200
         height: 200
       alignment: 0
@@ -441,11 +833,39 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: bf9415c83b4de544f9be9658fa4a57b9
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Btn_Reset
       rect:
         serializedVersion: 2
         x: 1012
+        y: 294
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48114c4bc2204d64792423c420c55776
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Btn_Right
+      rect:
+        serializedVersion: 2
+        x: 1012
         y: 92
         width: 200
         height: 200
@@ -455,8 +875,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 5bd5e13ce121eb842b632313a8115c94
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Right
+      name: Btn_Round
       rect:
         serializedVersion: 2
         x: 1214
@@ -469,8 +896,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e332fbf766160a94aba5b6dbb11065fd
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Round
+      name: Btn_Rules
       rect:
         serializedVersion: 2
         x: 1214
@@ -483,8 +917,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 22bae75fd9b9e8d4c8806cd9f985f9ae
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Rules
+      name: Btn_Shop
       rect:
         serializedVersion: 2
         x: 1416
@@ -497,8 +938,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 38fa4546b722a3748b405620e3f67a9f
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Shop
+      name: Btn_SoundOff
       rect:
         serializedVersion: 2
         x: 1618
@@ -511,8 +959,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 0f55aeaa8c6c9344ea90e434c8de9a71
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_SoundOff
+      name: Btn_SoundOn
       rect:
         serializedVersion: 2
         x: 1820
@@ -525,8 +980,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 0c3610689027d6242b3806698b30fe40
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_SoundOn
+      name: Btn_Tool
       rect:
         serializedVersion: 2
         x: 1416
@@ -539,8 +1001,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 6cb2a6274c2addf4eb327205abd23519
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Tool
+      name: Btn_Undo
       rect:
         serializedVersion: 2
         x: 1416
@@ -553,8 +1022,15 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: fed90e839cf5d724eb9b133d90e90765
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Btn_Undo
+      name: Btn_Up
       rect:
         serializedVersion: 2
         x: 1618
@@ -567,20 +1043,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: Btn_Up
-      rect:
-        serializedVersion: 2
-        x: 1820
-        y: 282
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: a60df2cdebc3e494bb0c9dc175715900
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: BtnOK
       rect:
@@ -595,11 +1064,18 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ea317cb13daa5704f80b49cada16de1c
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: BtnPlay
       rect:
         serializedVersion: 2
-        x: 567
+        x: 304
         y: 1021
         width: 208
         height: 240
@@ -609,6 +1085,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 15a1f5d2cb667144db69c9b011eacdd0
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: BtnShop
       rect:
@@ -623,6 +1106,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: cc8f83cc211c1bf48b06bc1755c893b9
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: ChapterName
       rect:
@@ -637,26 +1127,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: Coin
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1137
-        width: 254
-        height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6c21f579a5164468a6f39ab2f17ed8
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Games_Amirza
       rect:
         serializedVersion: 2
-        x: 258
-        y: 958
+        x: 2
+        y: 1039
         width: 200
         height: 201
       alignment: 0
@@ -665,12 +1148,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ec19c40dffff6ae45a1f67b1a5f539f0
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Games_Ballz
       rect:
         serializedVersion: 2
         x: 2
-        y: 934
+        y: 836
         width: 200
         height: 201
       alignment: 0
@@ -679,11 +1169,39 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 6be7aa9975a057f4e9323447fcb63c3f
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Games_CandyCrush
       rect:
         serializedVersion: 2
-        x: 777
+        x: 514
+        y: 1060
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d2f39f7045e7940b8d809c46f0c1b7
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_ClashOfClans
+      rect:
+        serializedVersion: 2
+        x: 716
         y: 950
         width: 200
         height: 201
@@ -693,11 +1211,60 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e755be69bcc7a2f42846088a82fd625f
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Games_ClashOfClans
+      name: Games_ClashRoyale
       rect:
         serializedVersion: 2
-        x: 460
+        x: 514
+        y: 857
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50af3b6bd062904b9ce84d30a567ced
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_CutTheRope
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 950
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27282ab4e3ea3c747a3852f21a7792cc
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_QuizOfKings
+      rect:
+        serializedVersion: 2
+        x: 204
         y: 818
         width: 200
         height: 201
@@ -707,54 +1274,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: Games_ClashRoyale
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 755
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Games_CutTheRope
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 731
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: Games_QuizOfKings
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 900
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: 683d558b9c0c62040a3c5d6c50c7b042
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Games_Sudoku
       rect:
         serializedVersion: 2
-        x: 662
-        y: 747
+        x: 2
+        y: 633
         width: 200
         height: 201
       alignment: 0
@@ -763,20 +1295,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: GemCount
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 1161
-        width: 261
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: ad407c1cde66d094fa98a95d6e66249f
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: HintWordRow
       rect:
@@ -791,6 +1316,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: caa8786778e114e4da2f826620b6e3ac
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: HintWordRowChecked
       rect:
@@ -805,12 +1337,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 65e72ec57cc2c3d4c962142dc243ad98
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Instagram
       rect:
         serializedVersion: 2
         x: 1210
-        y: 1542
+        y: 1474
         width: 100
         height: 100
       alignment: 0
@@ -819,12 +1358,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: aee970a41ae9b6a4ab38067abcb159be
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Lock
       rect:
         serializedVersion: 2
-        x: 1618
-        y: 80
+        x: 1820
+        y: 282
         width: 200
         height: 200
       alignment: 0
@@ -833,6 +1379,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: d58093846e8f22d418cd07cddc15e4e6
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-01
       rect:
@@ -847,6 +1400,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: d5b2b95871130e241a0c54877ba75862
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-02
       rect:
@@ -861,6 +1421,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 04e90065479876047bbae43d5cad4580
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-03
       rect:
@@ -875,6 +1442,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c61f9efc6f04d484daf24c132b9ed24a
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-04
       rect:
@@ -889,6 +1463,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 91f2a3a477d207f488cfdb62a0494082
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-05
       rect:
@@ -903,6 +1484,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 4fde12775a8210c48ab8dbe3d4d6efa5
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-06
       rect:
@@ -917,6 +1505,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: af5ab04479ab7164c9ef7004349a2113
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-GemPlacehoder
       rect:
@@ -931,6 +1526,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 624448243763da14793cef69fb1113e2
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: LvlBG-Lock
       rect:
@@ -945,11 +1547,18 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 43bcd57a5a66cad4d93056e8d81b62b7
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Pointer
       rect:
         serializedVersion: 2
-        x: 1820
+        x: 1618
         y: 80
         width: 200
         height: 200
@@ -959,6 +1568,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: f7fdd2218d60ea042953c851a3e40b8d
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: PopUpHeader
       rect:
@@ -973,11 +1589,123 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 8040b2837030a164bb539e7e2de8e552
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: QF_Blank
       rect:
         serializedVersion: 2
+        x: 1120
+        y: 900
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e3ab4f400e676489b9a19b539de40f
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QF_Difficulty01
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 900
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562cf1fea35001643ad826fd60a2e531
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QF_Difficulty02
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 747
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc23a621a201d144ba6827515e7266c
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QF_Difficulty03
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 747
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3973bff662848e740916ca0b74d0ebd6
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QF_Difficulty04
+      rect:
+        serializedVersion: 2
         x: 406
+        y: 654
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ce7254771e87747806e6963c0c5c37
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QF_Missing01
+      rect:
+        serializedVersion: 2
+        x: 204
         y: 615
         width: 200
         height: 201
@@ -987,82 +1715,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: QF_Difficulty01
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 552
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: QF_Difficulty02
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 528
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: QF_Difficulty03
-      rect:
-        serializedVersion: 2
-        x: 1181
-        y: 900
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: QF_Difficulty04
-      rect:
-        serializedVersion: 2
-        x: 1383
-        y: 900
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: QF_Missing01
-      rect:
-        serializedVersion: 2
-        x: 1585
-        y: 888
-        width: 200
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: 312186a61b8c2124d9c693fab8f23890
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: QF_Missing02
       rect:
         serializedVersion: 2
-        x: 1787
-        y: 888
+        x: 2
+        y: 430
         width: 200
         height: 201
       alignment: 0
@@ -1071,12 +1736,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: d9f648d7688f6dc459aa421b12ab956c
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: QF_Missing03
       rect:
         serializedVersion: 2
         x: 2
-        y: 325
+        y: 227
         width: 200
         height: 201
       alignment: 0
@@ -1085,12 +1757,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 8de6d1993ffd8494eb6aec56d9df3401
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: QF_Missing04
       rect:
         serializedVersion: 2
         x: 2
-        y: 122
+        y: 24
         width: 200
         height: 201
       alignment: 0
@@ -1099,6 +1778,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ce1831318cff64b4ead364c692d7414f
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: R
       rect:
@@ -1113,12 +1799,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 5eaf10aa3e8f0374388e00ea97ddb2ff
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: StarBlank
       rect:
         serializedVersion: 2
-        x: 204
-        y: 349
+        x: 1524
+        y: 888
         width: 200
         height: 201
       alignment: 0
@@ -1127,12 +1820,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: bf8fc876dbaad2c4587c154627de8704
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: StarFill
       rect:
         serializedVersion: 2
-        x: 204
-        y: 146
+        x: 1726
+        y: 888
         width: 200
         height: 201
       alignment: 0
@@ -1141,12 +1841,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: fd365c12db9012e42962fdf06205b833
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: telegram
       rect:
         serializedVersion: 2
-        x: 1210
-        y: 1338
+        x: 1916
+        y: 1296
         width: 100
         height: 100
       alignment: 0
@@ -1155,6 +1862,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 20f0ff9436fc9324bbb027815435bb76
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: TileCorrect
       rect:
@@ -1169,6 +1883,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 7308e1f5774dcde43b99d7e4ee532dd2
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: TileGold
       rect:
@@ -1183,6 +1904,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 9eef2c69693262145aee940c4ec646cd
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: TileNormal
       rect:
@@ -1197,6 +1925,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ccd8aa3c17e0c124d98f4a1746fc02f0
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: TileWrong
       rect:
@@ -1211,12 +1946,19 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 1585057463f31904e916124f368469f4
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Twitter
       rect:
         serializedVersion: 2
         x: 1210
-        y: 1440
+        y: 1372
         width: 100
         height: 100
       alignment: 0
@@ -1225,9 +1967,26 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 61e631fdbaec8424788ba9de18630ef4
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
