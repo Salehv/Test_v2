@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class EnergyHandler : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class EnergyHandler : MonoBehaviour
     private long lastUsedEnergy;
     private bool isCharging;
     private int energyChargeTime;
+
+    public GameObject energyItemParent;
+    public GameObject energyItemsPrefab;
+    private List<GameObject> energyItems;
 
 
     public void FirstInit()
@@ -29,7 +34,7 @@ public class EnergyHandler : MonoBehaviour
     }
     public void UseEnergy()
     {
-        if (energy == 0)
+        if (energy != 0)
         {
             energy -= 1;
             if (!isCharging)
@@ -58,12 +63,6 @@ public class EnergyHandler : MonoBehaviour
         }
     }
 
-
-    public int EnergyLeft()
-    {
-        return energy;
-    }
-
     public void UpdateEnergy()
     {
         long now = DateTime.UtcNow.ToFileTimeUtc() / 10000000;
@@ -72,11 +71,32 @@ public class EnergyHandler : MonoBehaviour
             energy += 1;
             lastUsedEnergy += energyChargeTime;
         }
+        
+        GraphicalUpdate();
+    }
+
+    public void GraphicalUpdate()
+    {
+        for (int i = 0; i < energyItemParent.transform.childCount; i++)
+        {
+            Destroy(energyItemParent.transform.GetChild(i));
+        }
+        
+        for (int i = 0; i < energy; i++)
+        {
+            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
+        }
+        for (int i = 0; i < maxEnergy-energy; i++)
+        {
+            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
+            energyItems[i+energy].GetComponent<Image>().color = new Color(1,1,1,0.3f); 
+        }
     }
 
     void Awake()
     {
         instance = this;
+        energyItems = new List<GameObject>();
     }
 
     void Update()
