@@ -19,7 +19,7 @@ namespace App
 
 
         public ViewState state;
-
+        
         private void Awake()
         {
             if (instance != null)
@@ -31,6 +31,8 @@ namespace App
             instance = this;
 
             onScreenPanels = new Stack<GameObject>();
+            
+            levelsHandler.Init();
         }
 
         private void Start()
@@ -110,7 +112,7 @@ namespace App
         public void ChaptersToLevels(int chapterId)
         {
             levelsCanvas.SetActive(true);
-            levelsHandler.Init(chapterId);
+            levelsHandler.SetToChapter(chapterId);
             AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
             state = ViewState.LEVELS;
@@ -125,6 +127,15 @@ namespace App
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
         }
 
+        public void LevelClicked(Level level)
+        {
+            menuCanvas.SetActive(false);
+            frontCanvas.SetActive(true);
+            transition.SetActive(true);
+            
+            TransitionHandler.instance.StartTransition(level);
+        }
+        
         #endregion
 
 
@@ -160,7 +171,9 @@ namespace App
 
         public void ShowArcade()
         {
-            throw new System.NotImplementedException();
+            gameCanvas.SetActive(true);
+            gameView.SetActive(false);
+            arcadeView.SetActive(true);
         }
 
         public void EndArcade()
@@ -275,7 +288,7 @@ namespace App
                         a.SetTrigger(TRIG_LEVELS_TO_CHAPTER);
                     }
 
-                    AudioManager.instance.PlayNewMusic(AudioManager.instance.mainThemeMusic);
+                    AudioManager.instance.PlayNewMusic(ResourceManager.instance.GetMainMenuMusic());
 
                     state = ViewState.CHAPTERS;
                     break;
@@ -348,6 +361,8 @@ namespace App
         }
 
         #endregion
+
+        
     }
 }
 

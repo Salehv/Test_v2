@@ -24,7 +24,7 @@ public class EditorSettings
             }
         }
 
-        System.IO.File.WriteAllText(@"all_levels.txt", GameManager.NormalizeText(s));
+        System.IO.File.WriteAllText(@"all_levels.txt", Utilities.GetNormalizedFarsi(s));
         Debug.Log("Done");
     }
 

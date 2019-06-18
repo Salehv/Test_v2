@@ -26,21 +26,27 @@ public class ChaptersHandler : MonoBehaviour
         var res = ResourceManager.instance;
         chapter.id = id;
         chapter.background.sprite = res.GetChapterSprite(id);
+        chapter.chapterLockBackground.sprite = res.GetChapterBluredBackground(id);
+        chapter.chapterName.text = GameManager.instance.chapters[id].name;
         
         chapter.CreateOnClick();
     }
     
     public void UpdateChaptersLockState()
     {
-            
+        int totalGems = ApplicationManager.instance.GetAllGemCount();
+        
+        for (int i = 0; i < chapters.Count; i++)
+        {
+            chapters[i].SetLockState(GameManager.instance.chapters[i].cost, totalGems);
+        }
     }
     
     public void UpdateChapterGems(int id, int gems, int max)
     {
         chapters[id].chapterGems.text = Utilities.GetCompletionText(gems, max);
     }
-    
-
+ 
     internal void UnlockAll()
     {
         for (int i = 1; i < GameManager.instance.chapters.Length; i++)
@@ -48,7 +54,4 @@ public class ChaptersHandler : MonoBehaviour
             chapters[i].chapterLock.SetActive(false);
         }
     }
-
-
-    
 }

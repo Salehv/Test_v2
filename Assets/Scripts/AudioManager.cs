@@ -8,10 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     internal static AudioManager instance;
 
-    [Header("Audio Clips")] public AudioClip mainThemeMusic;
+    [Header("Audio Clips")] 
     public AudioClip[] sfxClips;
-    public AudioClip[] inGameMusic;
-    public AudioClip[] chapterMusics;
 
     private bool musicOn = true, sfxOn = true;
 
@@ -21,9 +19,9 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public AudioClip GetGameMusic(int levelChapterId)
+    public AudioClip GetGameMusic(int chapterId)
     {
-        return inGameMusic[levelChapterId];
+        return ResourceManager.instance.GetInGameMusic(chapterId);
     }
 
     public void PlaySFX(int sfx)
@@ -142,7 +140,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip GetChapterMusic(int chapterId)
     {
-        return chapterMusics[chapterId];
+        return ResourceManager.instance.GetLevelsViewMusic(chapterId);
     }
 }
 
