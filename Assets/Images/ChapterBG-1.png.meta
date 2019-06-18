@@ -1,20 +1,27 @@
 fileFormatVersion: 2
-guid: 74a2f8af3a5e61f42ba9481f9b453c8b
+guid: f5933225677358d46a18850511624d63
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Blured
-    21300002: Chapter01BGBlured
-    21300004: Chapter02BGBlured
-    21300006: Chapter03BGBlured
-    21300008: Chapter04BGBlured
-    21300010: InGame01BG
-    21300012: InGame02BG
-    21300014: InGame03BG
-    21300016: InGame04BG
-    21300018: Chapter05BGBlured
-    21300020: Chapter06BGBlured
+  internalIDToNameTable:
+  - first:
+      213: 2509165409642109433
+    second: Chapter05BG
+  - first:
+      213: -2101042713465515296
+    second: Chapter06BG
+  - first:
+      213: 5065311263215661669
+    second: ChapterLock
+  - first:
+      213: 295062274530320306
+    second: InGame01TEP
+  - first:
+      213: -6497845130014826947
+    second: InGame02TEP
+  - first:
+      213: 7412750819503278479
+    second: InGame03TEP
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -32,6 +39,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -42,7 +51,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -62,11 +71,13 @@ TextureImporter:
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -80,148 +91,144 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chapter01BGBlured
+      name: Chapter05BG
       rect:
         serializedVersion: 2
         x: 2
-        y: 2884
-        width: 680
-        height: 1210
+        y: 1127
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a39e1a76374781f4c803677793df1961
+      internalID: 2509165409642109433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Chapter02BGBlured
+      name: Chapter06BG
       rect:
         serializedVersion: 2
         x: 2
-        y: 1672
-        width: 680
-        height: 1210
+        y: 206
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 8a0cc501acdd42444aa78864c89c14da
+      internalID: -2101042713465515296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Chapter03BGBlured
+      name: ChapterLock
       rect:
         serializedVersion: 2
-        x: 2
-        y: 460
-        width: 680
-        height: 1210
+        x: 521
+        y: 1127
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c68bd5f8ffc4529479d7d0800ca75efe
+      internalID: 5065311263215661669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Chapter04BGBlured
+      name: InGame01TEP
       rect:
         serializedVersion: 2
-        x: 684
-        y: 2884
-        width: 680
-        height: 1210
+        x: 521
+        y: 206
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a59dd01d80b5b6b4d95d2e20227f7c49
+      internalID: 295062274530320306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Chapter05BGBlured
+      name: InGame02TEP
       rect:
         serializedVersion: 2
-        x: 684
-        y: 1672
-        width: 680
-        height: 1210
+        x: 1040
+        y: 1127
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 614f975e480cb4e43880329474179a81
+      internalID: -6497845130014826947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: Chapter06BGBlured
+      name: InGame03TEP
       rect:
         serializedVersion: 2
-        x: 684
-        y: 460
-        width: 680
-        height: 1210
+        x: 1040
+        y: 206
+        width: 517
+        height: 919
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
-    - serializedVersion: 2
-      name: InGame01BG
-      rect:
-        serializedVersion: 2
-        x: 1366
-        y: 2884
-        width: 680
-        height: 1210
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: InGame02BG
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 2884
-        width: 680
-        height: 1210
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: InGame03BG
-      rect:
-        serializedVersion: 2
-        x: 2730
-        y: 2884
-        width: 680
-        height: 1210
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: InGame04BG
-      rect:
-        serializedVersion: 2
-        x: 3412
-        y: 2884
-        width: 680
-        height: 1210
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      bones: []
+      spriteID: 2734ea573f3c44d41a51d4d5a199023c
+      internalID: 7412750819503278479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 6c2f172a9a5127f418ced05a674e2890
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

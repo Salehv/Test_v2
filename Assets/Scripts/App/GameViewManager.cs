@@ -28,6 +28,9 @@ namespace App
         public WinPanelHandler winHandler;
         public EndWordHandler endWordHandler;
 
+
+        private GameViewState state;
+        
         private void Awake()
         {
             instance = this;
@@ -36,6 +39,7 @@ namespace App
         public void ShowGame()
         {
             gamePanelsObject.SetActive(true);
+            state = GameViewState.MAIN_VIEW;
         }
 
         public void ClearWordsView()
@@ -71,7 +75,12 @@ namespace App
 
         public void Escape()
         {
-        
+            switch (state)
+            {
+                case GameViewState.MAIN_VIEW:
+                    ViewManager.instance.ShowPanel(pausePanel);
+                break;
+            }
         }
 
 
@@ -80,4 +89,9 @@ namespace App
         
         }
     }
+}
+
+public enum GameViewState
+{
+    MAIN_VIEW,
 }
