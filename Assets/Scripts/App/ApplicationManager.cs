@@ -32,9 +32,12 @@ public class ApplicationManager : MonoBehaviour
     public FullPageHorizontalScrollSnap chapterScroller;
 
 
-    private int energy;
 
+    #region Energy
+    
+    private int energy;
     private int maxEnergy;
+    public bool isLastLevelUnlocked;
 
     public void UseEnergy()
     {
@@ -57,6 +60,8 @@ public class ApplicationManager : MonoBehaviour
             return true;
         }
     }
+    #endregion
+
 
     
     void Awake()
@@ -122,6 +127,7 @@ public class ApplicationManager : MonoBehaviour
 
         maxEnergy = 10;
         energy = maxEnergy;
+        isLastLevelUnlocked = true;
     }
 
     public void IntroEnded()

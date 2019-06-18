@@ -11,6 +11,8 @@ TextureImporter:
     21300012: InGame02BG
     21300014: InGame03BG
     21300016: InGame04BG
+    21300018: Chapter05BGBlured
+    21300020: Chapter06BGBlured
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -95,8 +97,8 @@ TextureImporter:
       name: Chapter02BGBlured
       rect:
         serializedVersion: 2
-        x: 684
-        y: 2884
+        x: 2
+        y: 1672
         width: 680
         height: 1210
       alignment: 0
@@ -109,8 +111,8 @@ TextureImporter:
       name: Chapter03BGBlured
       rect:
         serializedVersion: 2
-        x: 1366
-        y: 2884
+        x: 2
+        y: 460
         width: 680
         height: 1210
       alignment: 0
@@ -123,8 +125,36 @@ TextureImporter:
       name: Chapter04BGBlured
       rect:
         serializedVersion: 2
-        x: 2
+        x: 684
+        y: 2884
+        width: 680
+        height: 1210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Chapter05BGBlured
+      rect:
+        serializedVersion: 2
+        x: 684
         y: 1672
+        width: 680
+        height: 1210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Chapter06BGBlured
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 460
         width: 680
         height: 1210
       alignment: 0
@@ -137,8 +167,8 @@ TextureImporter:
       name: InGame01BG
       rect:
         serializedVersion: 2
-        x: 2
-        y: 460
+        x: 1366
+        y: 2884
         width: 680
         height: 1210
       alignment: 0
@@ -151,8 +181,8 @@ TextureImporter:
       name: InGame02BG
       rect:
         serializedVersion: 2
-        x: 684
-        y: 1672
+        x: 2048
+        y: 2884
         width: 680
         height: 1210
       alignment: 0
@@ -165,8 +195,8 @@ TextureImporter:
       name: InGame03BG
       rect:
         serializedVersion: 2
-        x: 1366
-        y: 1672
+        x: 2730
+        y: 2884
         width: 680
         height: 1210
       alignment: 0
@@ -179,8 +209,8 @@ TextureImporter:
       name: InGame04BG
       rect:
         serializedVersion: 2
-        x: 684
-        y: 460
+        x: 3412
+        y: 2884
         width: 680
         height: 1210
       alignment: 0
