@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace App
@@ -39,6 +40,7 @@ namespace App
         public void ShowGame()
         {
             gamePanelsObject.SetActive(true);
+            onScreenPanels = new Stack<GameObject>();
             state = GameViewState.MAIN_VIEW;
         }
 
@@ -78,20 +80,57 @@ namespace App
             switch (state)
             {
                 case GameViewState.MAIN_VIEW:
-                    ViewManager.instance.ShowPanel(pausePanel);
-                break;
+                    ShowPanel(pausePanel);
+                    state = GameViewState.ONSCREEN;
+                    break;
+                
+                case GameViewState.ONSCREEN:
+                    GameObject panel = onScreenPanels.Pop();
+                    panel.SetActive(false);
+
+                    if (onScreenPanels.Count == 0)
+                    {
+                        state = lastState;
+                    }
+                    break;
             }
         }
 
 
         public void ShowWinPanel(int gem, int coinGain)
         {
-        
+            winPanel.SetActive(true);
+            winHandler.Init(gem, coinGain);
         }
+        
+        
+        #region Helpers
+        
+        private GameViewState lastState;
+        private Stack<GameObject> onScreenPanels;
+        private static readonly int TRIG_PANEL_OUT = Animator.StringToHash("Panel_Out");
+
+
+        private void ShowPanel(GameObject panel)
+        {
+            onScreenPanels.Push(panel);
+            panel.SetActive(true);
+            lastState = state;
+            state = GameViewState.ONSCREEN;
+        }
+        
+        public void HidePanel(Animator panel)
+        {
+            panel.SetTrigger(TRIG_PANEL_OUT);
+        }
+        #endregion
     }
+    
+    
 }
 
 public enum GameViewState
 {
     MAIN_VIEW,
+    ONSCREEN
 }

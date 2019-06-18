@@ -111,6 +111,7 @@ public class EditorLetterHandler : MonoBehaviour, IPointerDownHandler
         if (_editor.RemoveLetterRequest(selected.position))
         {
             _editor.Correct();
+            // TODO: REFACTORING
             _editor.RemoveLetter(selected.position);
             HideDelete();
         }

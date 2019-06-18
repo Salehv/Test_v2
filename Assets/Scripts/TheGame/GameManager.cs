@@ -646,12 +646,7 @@ public class GameManager : DynamicsHandler
 
 
         // Calculate Gems
-        var gem = 1;
-        var minimumCount = currentLevel.way.Length;
-        if (solvedSteps <= minimumCount)
-            gem = 3;
-        else if (solvedSteps < minimumCount * 2)
-            gem = 2;
+        var gem = currentLevel.CalculateGemGain(solvedSteps - 1);
 
         ResetDynamics();
         viewManager.ShowWinPanel(gem, coinGain);
@@ -757,9 +752,10 @@ public class GameManager : DynamicsHandler
             */
         }
 
-        state = GameState.MAIN_VIEW;
         ResetDynamics();
+        
         ApplicationManager.instance.Game_ExitToMenu(currentLevel.chapterId);
+        
         TimeManager.instance.DiscardTimer("CurrentGame");
     }
 

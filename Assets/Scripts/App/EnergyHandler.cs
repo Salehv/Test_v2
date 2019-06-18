@@ -79,7 +79,7 @@ public class EnergyHandler : MonoBehaviour
     {
         for (int i = 0; i < energyItemParent.transform.childCount; i++)
         {
-            Destroy(energyItemParent.transform.GetChild(i));
+            Destroy(energyItemParent.transform.GetChild(i).gameObject);
         }
         
         for (int i = 0; i < energy; i++)

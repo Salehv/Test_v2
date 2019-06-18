@@ -14,6 +14,7 @@ namespace App
         private static readonly int TRIG_PANEL_OUT = Animator.StringToHash("Panel_Out");
         private static readonly int TRIG_CHAPTER_TO_LEVELS = Animator.StringToHash("chapter_to_levels");
         private static readonly int TRIG_SHOW = Animator.StringToHash("show");
+        private static readonly int TRIG_HIDE = Animator.StringToHash("hide");
         private static readonly int TRIG_CHAPTERS_TO_MAIN = Animator.StringToHash("to_main");
         private static readonly int TRIG_LEVELS_TO_CHAPTER = Animator.StringToHash("levels_to_chapter");
 
@@ -167,7 +168,7 @@ namespace App
 
         public void GameToMenu()
         {
-            throw new System.NotImplementedException();
+            ShowBlackPage(true);
         }
 
         public void ShowArcade()
@@ -243,11 +244,11 @@ namespace App
         public Animator blackPageAnimator;
         public ToastMessage toast;
 
-        internal void ShowBlackPage()
+        internal void ShowBlackPage(bool hide = false)
         {
             frontCanvas.SetActive(true);
             blackPage.SetActive(true);
-            blackPageAnimator.SetTrigger(TRIG_SHOW);
+            blackPageAnimator.SetTrigger(!hide ? TRIG_SHOW : TRIG_HIDE);
         }
 
         public void Escape()
@@ -363,7 +364,17 @@ namespace App
 
         #endregion
 
-        
+
+        public void PageBlacked()
+        {
+            if(state == ViewState.IN_GAME)
+            {
+                gameCanvas.SetActive(false);
+                menuCanvas.SetActive(true);
+                levelsCanvas.SetActive(true);
+                state = ViewState.LEVELS;
+            }
+        }
     }
 }
 
