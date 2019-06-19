@@ -68,4 +68,9 @@ public class LevelPanelHandler : MonoBehaviour
         
         levelObject.SetUnSolved();
     }
+
+    public void UpdateView()
+    {
+        throw new NotImplementedException();
+    }
 }

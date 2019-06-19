@@ -388,6 +388,7 @@ namespace App
                     gameCanvas.SetActive(false);
                     menuCanvas.SetActive(true);
                     levelsCanvas.SetActive(true);
+                    levelsHandler.UpdateView();
                     state = ViewState.LEVELS;
                     break;
                 

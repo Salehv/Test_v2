@@ -43,6 +43,7 @@ public class Level
         return (int)(10 - diff * 1.5);
     }
 
+    
     internal int CalculateGemGain(int steps)
     {
         int diff = steps - way.Length;
@@ -58,6 +59,5 @@ public class Level
         }
 
         return diff == 1 ? 2 : 1;
-
     }
 }

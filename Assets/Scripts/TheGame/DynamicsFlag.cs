@@ -28,4 +28,9 @@ public class DynamicsFlag
     public bool canAddLetter;
     public bool canRemoveLetter;
     public bool canChangeLetter;
+
+    public override string ToString()
+    {
+        return $"CHANGE:{canChangeLetter}, ADD:{canAddLetter}, REMOVE:{canRemoveLetter}";
+    }
 }

@@ -45,11 +45,12 @@ public class TransitionHandler : MonoBehaviour
             return;
         // AudioManager.instance.SetSFXPitch(1);
         AudioManager.instance.PlaySFX(SFX.COLLISION);
-        StartLevel();
+        StartCoroutine(StartLevel());
     }
 
-    private void StartLevel()
+    private IEnumerator StartLevel()
     {
+        yield return new WaitForSeconds(0.5f);
         AudioManager.instance.PlayNewSfx(SFX.WHOOSH);
         ApplicationManager.instance.RunLevel(selectedLevel);
         animatorTop.SetBool("Close", false);

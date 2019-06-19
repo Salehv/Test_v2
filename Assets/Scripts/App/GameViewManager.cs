@@ -12,6 +12,8 @@ namespace App
         [Header("Panels")] 
         public GameObject winPanel;
         public GameObject pausePanel;
+        public GameObject hintPanel;
+        
     
         [Header("Game View")]
         public Image inGameBack;
@@ -37,27 +39,37 @@ namespace App
             instance = this;
         }
 
+        
+        #region Initialize
+        
         public void ShowGame()
         {
             gamePanelsObject.SetActive(true);
+            pausePanel.SetActive(false);
+            hintPanel.SetActive(false);
+            winPanel.SetActive(false);
             onScreenPanels = new Stack<GameObject>();
             state = GameViewState.MAIN_VIEW;
         }
 
+        
+        public void SetInGameGraphics(int chapter)
+        {
+            inGameBack.sprite = ResourceManager.GetInGameBackground(chapter);
+            inGameFeatures.sprite = ResourceManager.GetInGameFeatures(chapter);
+        }
+        
+        #endregion
+
+        #region WordsView
+        
+        
         public void ClearWordsView()
         {
             for(int i = 0; i < wordsView.childCount; i++)
                 Destroy(wordsView.GetChild(i).gameObject);    
         }
 
-        public void SetInGameGraphics(int chapter)
-        {
-            inGameBack.sprite = ResourceManager.GetInGameBackground(chapter);
-            inGameFeatures.sprite = ResourceManager.GetInGameFeatures(chapter);
-        }
-
-        #region WordsView
-        
         public void AddToWordsView(string word)
         {
             GameObject g = Instantiate(acceptedWordPrefab, wordsView);

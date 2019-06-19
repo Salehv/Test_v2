@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using App;
+using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class LevelObject : MonoBehaviour
     internal void Init()
     {
         levelId.text = (level.id + 1) + "";
+        level.flags = GameManager.instance.GetChapter(level.chapterId).GetLevel(level.id).flags;
         background.sprite = ResourceManager.GetLevelSprite(level.chapterId);
         
         if (gems.Length == 3)

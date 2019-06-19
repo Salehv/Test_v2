@@ -48,7 +48,7 @@ public class Chapter
                 0);
 
             if (chapter.levels[i].type == "1")
-                levels[i].SetDynamicFlags(DynamicsFlag.DF_FULL);
+                levels[i].SetDynamicFlags(DynamicsFlag.DF_ONLY_CHANGE);
             else if (chapter.levels[i].type == "2")
                 levels[i].SetDynamicFlags(DynamicsFlag.DF_CHANGE_ADD);
             else

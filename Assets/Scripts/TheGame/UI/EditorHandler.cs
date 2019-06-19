@@ -137,10 +137,10 @@ public class EditorHandler : MonoBehaviour
     private GameObject CreateLetter(int position, char l, bool canRemoveLetter)
     {
         GameObject g = Instantiate(listItemPrefab, contentList.transform, true);
-        g.transform.localScale = Vector3.one;
         g.transform.localPosition = Vector3.zero;
         g.GetComponent<EditorLetterHandler>()
             .Init(_dynamics, this, position, Utilities.dic_charToLetter[l], canRemoveLetter);
+        g.transform.localScale = Vector3.one;
         return g;
     }
 

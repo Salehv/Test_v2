@@ -95,7 +95,6 @@ namespace TheGame
 
         #endregion
 
-    
         internal void PlayLevel(Level lvl)
         {
             ResetGameStatus();
@@ -108,7 +107,8 @@ namespace TheGame
             viewManager.ClearWordsView();
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
-        
+
+            print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));
         
@@ -166,7 +166,8 @@ namespace TheGame
                 PlayerPrefs.Save();
             }
         }
-    
+
+
         private void ResetGameStatus()
         {
             HideAllPanels();
@@ -197,7 +198,7 @@ namespace TheGame
 
             // Calculate Coins
             if (progress.GetLevelProgress(currentLevel) == null)
-                coinGain = currentLevel.CalculateCoinGain(solvedSteps - 1);
+                coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
             AddCoins(coinGain);
             ApplicationManager.instance.UpdateCoins();
 
@@ -611,7 +612,7 @@ namespace TheGame
 
             // Calculate Coins
             if (progress.GetLevelProgress(currentLevel) == null)
-                coinGain = currentLevel.CalculateCoinGain(solvedSteps - 1);
+                coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
             AddCoins(coinGain);
 
             _collectedCoinWaitingForReward = coinGain;
@@ -626,7 +627,7 @@ namespace TheGame
 
 
             // Calculate Gems
-            var gem = currentLevel.CalculateGemGain(solvedSteps - 1);
+            var gem = currentLevel.CalculateGemGain(solvedSteps - 2);
 
             ResetDynamics();
             viewManager.ShowWinPanel(gem, coinGain);
@@ -684,7 +685,8 @@ namespace TheGame
         {
             TimeManager.instance.DiscardTimer("CurrentGame");
             ResetDynamics();
-            PlayLevel(currentLevel);
+            
+            TransitionHandler.instance.StartTransition(currentLevel);
         }
 
         public void NextLevel()
