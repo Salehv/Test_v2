@@ -101,7 +101,7 @@ public class ApplicationManager : MonoBehaviour
         PlayerPrefs.SetInt("arcade_high_score", 0);
         PlayerPrefs.Save();
         
-        energyHandler.FirstInit();
+        energyHandler.Init();
 
     }
 
