@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class IABHandler : MonoBehaviour
 {
     [SerializeField] [Header("Shop items")]
+    public bool debugMode;
     public IABItem[] items;
 
     [Header("UI Objects")] public GameObject shopLock;
@@ -27,7 +28,7 @@ public class IABHandler : MonoBehaviour
         {
             itemMap.Add(item.productId, item);
         }
-
+        
         InitCafeBazaar();
     }
 
@@ -107,6 +108,8 @@ public class IABHandler : MonoBehaviour
 
     public void PurchaseItem(string id)
     {
+        if(debugMode)
+            print($"[IABHandler] Purchase item {id}");
         BazaarIAB.purchaseProduct(id);
     }
 }
