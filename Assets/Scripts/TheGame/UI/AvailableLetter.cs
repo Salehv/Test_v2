@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using TheGame;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;

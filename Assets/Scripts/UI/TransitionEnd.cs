@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TransitionEnd : MonoBehaviour
+namespace UI
 {
-    public void TransitionEnded()
+    public class TransitionEnd : MonoBehaviour
     {
-        TransitionHandler.instance.TransitionEnded();
+        public void TransitionEnded()
+        {
+            TransitionHandler.instance.TransitionEnded();
+        }
     }
 }

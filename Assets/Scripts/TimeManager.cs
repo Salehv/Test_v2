@@ -74,9 +74,19 @@ public class TimeManager : MonoBehaviour
     {
         if (toAdd != "")
         {
-            timers.Add(toAdd, 0);
-            keys.Add(toAdd);
-            toAdd = "";
+            try
+            {
+                timers.Add(toAdd, 0);
+                keys.Add(toAdd);
+                toAdd = "";
+            }
+            catch (ArgumentException e)
+            {
+                print("[TimeManager] Exception Handled");
+                timers[toAdd] = 0;
+                toAdd = "";
+            }
+            
         }
 
         if (toRemove != "")

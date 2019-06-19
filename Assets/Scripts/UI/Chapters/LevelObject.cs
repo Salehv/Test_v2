@@ -29,7 +29,7 @@ public class LevelObject : MonoBehaviour
     internal void Init()
     {
         levelId.text = (level.id + 1) + "";
-        background.sprite = ResourceManager.instance.GetLevelSprite(level.chapterId);
+        background.sprite = ResourceManager.GetLevelSprite(level.chapterId);
         
         if (gems.Length == 3)
         {

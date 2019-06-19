@@ -52,16 +52,26 @@ namespace App
 
         public void SetInGameGraphics(int chapter)
         {
-            inGameBack.sprite = ResourceManager.instance.GetInGameBackground(chapter);
-            inGameFeatures.sprite = ResourceManager.instance.GetInGameFeatures(chapter);
+            inGameBack.sprite = ResourceManager.GetInGameBackground(chapter);
+            inGameFeatures.sprite = ResourceManager.GetInGameFeatures(chapter);
         }
 
+        #region WordsView
+        
         public void AddToWordsView(string word)
         {
             GameObject g = Instantiate(acceptedWordPrefab, wordsView);
             g.GetComponentInChildren<Text>().text = word;
         }
 
+        public void RemoveLastWord()
+        {
+            Destroy(wordsView.GetChild(wordsView.childCount - 1).gameObject);
+        }
+        
+        #endregion
+
+        
         public void SetEndWord(string end)
         {
             for (int i = 0; i < endWordHandler.contents.childCount; i++)
@@ -124,6 +134,7 @@ namespace App
             panel.SetTrigger(TRIG_PANEL_OUT);
         }
         #endregion
+
     }
     
     

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using GameAnalyticsSDK.Setup;
+using TheGame;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -139,10 +140,10 @@ public class TutorialHandler : MonoBehaviour
 
         TUT01_IntroPages[4].SetActive(true);
         TUT01_Arrows[0].SetActive(true);
+        
         CreateMessage(TUT01_Texts[6], Size.Large, Direction.Topmost, Tut01_MsgParent);
 
         Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
-
 
         state = TutorialState.TUT_01_01;
 
@@ -234,20 +235,21 @@ public class TutorialHandler : MonoBehaviour
         state = TutorialState.TUT_01_01;
     }
 
-
-    public void Tutorial_01_Completed()
+    public void Intro_07()
     {
-        ApplicationManager.instance.IntroEnded();
+        if (state != TutorialState.TUT_01_06) return;
 
-        int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
-        TimeManager.instance.DiscardTimer("IntroTimer");
-        AnalyticsHandler.Intro_Finished(timeTaken);
+        TUT01_IntroPages[4].SetActive(false);
+        TUT01_IntroPages[5].SetActive(true);
+        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
 
-        TUT01.SetActive(false);
+        DeleteMessage();
+        CreateMessage(TUT01_Texts[12], Size.Medium, Direction.Downmost, Tut01_MsgParent, false);
+
+        state = TutorialState.INTRO_07;
     }
 
-
-    public void Tutorial_01_IntroEnd()
+    public void Tutorial_01_ScreenClicked()
     {
         if (state != TutorialState.TUT_01_01 && state != TutorialState.TUT_01_06)
             return;
@@ -270,7 +272,6 @@ public class TutorialHandler : MonoBehaviour
         // Intro_07();
     }
 
-
     public void Tutoial_01_FirstCharClicked()
     {
         if (state != TutorialState.TUT_01_02)
@@ -287,7 +288,6 @@ public class TutorialHandler : MonoBehaviour
 
         state = TutorialState.TUT_01_03;
     }
-
 
     public void Tutorial_01_EditCharacter01Clicked()
     {
@@ -309,7 +309,6 @@ public class TutorialHandler : MonoBehaviour
         state = TutorialState.TUT_01_04;
         AnalyticsHandler.Intro_FirstCharacterChanged();
     }
-
 
     public void Tutorial_01_SecondCharacter()
     {
@@ -345,25 +344,23 @@ public class TutorialHandler : MonoBehaviour
         AnalyticsHandler.Intro_SecondCharacterChanged();
     }
 
-    public void Intro_07()
+    
+
+
+    public void Tutorial_01_Completed()
     {
-        if (state != TutorialState.TUT_01_06) return;
+        ApplicationManager.instance.IntroEnded();
 
-        TUT01_IntroPages[4].SetActive(false);
-        TUT01_IntroPages[5].SetActive(true);
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
-
-        DeleteMessage();
-        CreateMessage(TUT01_Texts[12], Size.Medium, Direction.Downmost, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_07;
+        int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
+        TimeManager.instance.DiscardTimer("IntroTimer");
+        AnalyticsHandler.Intro_Finished(timeTaken);
     }
 
 
     public void ExitTutorial_01()
     {
         TUT01.SetActive(false);
-        GameManager.instance.Exit();
+        
     }
 
     #endregion
@@ -713,7 +710,10 @@ public class TutorialHandler : MonoBehaviour
 
     [Header("Tutorial Automation")] public GameObject tutMessagePrefab;
     public GameObject arrowTut;
-
+    public Vector2 messageLargeSize;
+    public Vector2 messageMediumSize;
+    public Vector2 messagesmallSize;
+    
     private GameObject _currentMessage;
     private GameObject _currentArrow;
 
@@ -726,17 +726,17 @@ public class TutorialHandler : MonoBehaviour
 
         if (size == Size.Large)
         {
-            _currentMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(520, 320);
+            _currentMessage.GetComponent<RectTransform>().sizeDelta  = messageLargeSize;
         }
 
         if (size == Size.Medium)
         {
-            _currentMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(520, 220);
+            _currentMessage.GetComponent<RectTransform>().sizeDelta = messageMediumSize;
         }
 
         if (size == Size.Small)
         {
-            _currentMessage.GetComponent<RectTransform>().sizeDelta = new Vector2(520, 120);
+            _currentMessage.GetComponent<RectTransform>().sizeDelta =  messagesmallSize;
         }
 
 

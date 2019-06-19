@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -97,6 +98,20 @@ namespace App
             foreach (Toggle t in sfxs)
                 t.isOn = !sfxOn;
         }
+        
+        public void ShowIntro()
+        {
+            ShowBlackPage(true);
+            AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(0));
+            state = ViewState.INTRO;
+        }
+        
+        public void IntroEnded()
+        {
+            ShowBlackPage(true);
+            AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+            state = ViewState.MAIN_MENU;
+        }
 
         #endregion
 
@@ -116,7 +131,7 @@ namespace App
             levelsHandler.SetToChapter(chapterId);
             AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
-            levelsBackground.sprite = ResourceManager.instance.GetChapterBluredBackground(chapterId);
+            levelsBackground.sprite = ResourceManager.GetChapterBluredBackground(chapterId);
 
             foreach (Animator a in levelsTransitions)
             {
@@ -290,7 +305,7 @@ namespace App
                         a.SetTrigger(TRIG_LEVELS_TO_CHAPTER);
                     }
 
-                    AudioManager.instance.PlayNewMusic(ResourceManager.instance.GetMainMenuMusic());
+                    AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
 
                     state = ViewState.CHAPTERS;
                     break;
@@ -367,14 +382,34 @@ namespace App
 
         public void PageBlacked()
         {
-            if(state == ViewState.IN_GAME)
+            switch (state)
             {
-                gameCanvas.SetActive(false);
-                menuCanvas.SetActive(true);
-                levelsCanvas.SetActive(true);
-                state = ViewState.LEVELS;
+                case ViewState.IN_GAME:
+                    gameCanvas.SetActive(false);
+                    menuCanvas.SetActive(true);
+                    levelsCanvas.SetActive(true);
+                    state = ViewState.LEVELS;
+                    break;
+                
+                case ViewState.INTRO:
+                    menuCanvas.SetActive(false);
+                    
+                    gameCanvas.SetActive(true);
+                    gameView.SetActive(false);
+                    arcadeView.SetActive(false);
+                    introView.SetActive(true);
+                    
+                    TutorialHandler.instance.PlayTutorial_01();
+                    break;
+                
+                case ViewState.MAIN_MENU:
+                    gameCanvas.SetActive(false);
+                    introView.SetActive(false);
+                    menuCanvas.SetActive(true);
+                    break;
             }
         }
+
     }
 }
 
@@ -386,5 +421,6 @@ public enum ViewState
     IN_GAME,
     ONSCREEN,
     AD,
-    EXITING
+    EXITING,
+    INTRO
 }

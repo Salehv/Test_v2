@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,8 +29,8 @@ public class TransitionHandler : MonoBehaviour
         textTop.text = lvl.begin;
         textBottom.text = lvl.end;
         selectedLevel = lvl;
-        // TODO: Chapter name instead of number
-        levelID.text = "فصل " + (lvl.chapterId + 1) + " - مرحله " + (lvl.id < 9 ? "0" : "") + (lvl.id + 1);
+        
+        levelID.text = $"{GameManager.instance.chapters[lvl.chapterId].name} - مرحله {lvl.id + 1:00}";
         
         animatorTop.SetBool("Close", true);
         animatorBottom.SetBool("Close", true);
@@ -44,13 +45,12 @@ public class TransitionHandler : MonoBehaviour
             return;
         // AudioManager.instance.SetSFXPitch(1);
         AudioManager.instance.PlaySFX(SFX.COLLISION);
-        StartCoroutine(StartLevel());
+        StartLevel();
     }
 
-    private IEnumerator StartLevel()
+    private void StartLevel()
     {
-        yield return new WaitForSeconds(1);
-        AudioManager.instance.PlaySFX(SFX.WHOOSH);
+        AudioManager.instance.PlayNewSfx(SFX.WHOOSH);
         ApplicationManager.instance.RunLevel(selectedLevel);
         animatorTop.SetBool("Close", false);
         animatorBottom.SetBool("Close", false);

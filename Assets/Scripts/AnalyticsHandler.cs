@@ -1,4 +1,5 @@
 ﻿using GameAnalyticsSDK;
+using TheGame;
 using UnityEngine;
 
 public class AnalyticsHandler : MonoBehaviour

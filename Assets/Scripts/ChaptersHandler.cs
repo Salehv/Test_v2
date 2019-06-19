@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +24,9 @@ public class ChaptersHandler : MonoBehaviour
 
     private void InitializeChapter(int id, ChapterObject chapter)
     {
-        var res = ResourceManager.instance;
         chapter.id = id;
-        chapter.background.sprite = res.GetChapterSprite(id);
-        chapter.chapterLockBackground.sprite = res.GetChapterBluredBackground(id);
+        chapter.background.sprite = ResourceManager.GetChapterSprite(id);
+        chapter.chapterLockBackground.sprite = ResourceManager.GetChapterBluredBackground(id);
         chapter.chapterName.text = GameManager.instance.chapters[id].name;
         
         chapter.CreateOnClick();
@@ -44,7 +44,8 @@ public class ChaptersHandler : MonoBehaviour
     
     public void UpdateChapterGems(int id, int gems, int max)
     {
-        chapters[id].chapterGems.text = Utilities.GetCompletionText(gems, max);
+        chapters[id].chapterGems.text = gems + "";
+        chapters[id].chapterAllGems.text = max + "";
     }
  
     internal void UnlockAll()

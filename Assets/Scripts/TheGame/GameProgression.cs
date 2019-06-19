@@ -1,4 +1,6 @@
-﻿public class GameProgression
+﻿using TheGame;
+
+public class GameProgression
 {
     private ChapterProgression[] chapterProg;
 

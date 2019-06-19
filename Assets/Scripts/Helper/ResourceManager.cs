@@ -2,7 +2,7 @@
 
 public class ResourceManager : MonoBehaviour
 {
-    internal static ResourceManager instance;
+    private static ResourceManager instance;
 
     [Header("Sprites")] 
     [SerializeField] private Sprite[] levelMenuSprites;
@@ -24,43 +24,43 @@ public class ResourceManager : MonoBehaviour
         instance = this;
     }
 
-    internal Sprite GetLevelSprite(int chapter)
+    internal static Sprite GetLevelSprite(int chapter)
     {
-        return levelMenuSprites[chapter];
+        return instance.levelMenuSprites[chapter];
     }
 
-    internal Sprite GetChapterBluredBackground(int chapter)
+    internal static Sprite GetChapterBluredBackground(int chapter)
     {
-        return chapterBluredBackgrounds[chapter];
+        return instance.chapterBluredBackgrounds[chapter];
     }
 
-    internal Sprite GetInGameBackground(int chapter)
+    internal static Sprite GetInGameBackground(int chapter)
     {
-        return inGameBacks[chapter];
+        return instance.inGameBacks[chapter];
     }
 
-    internal Sprite GetInGameFeatures(int chapter)
+    internal static Sprite GetInGameFeatures(int chapter)
     {
-        return inGameFeatures[chapter];
+        return instance.inGameFeatures[chapter];
     }
 
-    internal Sprite GetChapterSprite(int id)
+    internal static Sprite GetChapterSprite(int id)
     {
-        return chapterBackgrounds[id];
+        return instance.chapterBackgrounds[id];
     }
 
-    public AudioClip GetLevelsViewMusic(int chapterId)
+    public static AudioClip GetLevelsViewMusic(int chapterId)
     {
-        return levelsViewMusics[chapterId];
+        return instance.levelsViewMusics[chapterId];
     }
 
-    public AudioClip GetInGameMusic(int chapterId)
+    public static AudioClip GetInGameMusic(int chapterId)
     {
-        return inGameMusic[chapterId];
+        return instance.inGameMusic[chapterId];
     }
 
-    public AudioClip GetMainMenuMusic()
+    public static AudioClip GetMainMenuMusic()
     {
-        return mainMenuMusic;
+        return instance.mainMenuMusic;
     }
 }

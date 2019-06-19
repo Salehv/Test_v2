@@ -4,6 +4,7 @@ using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.UI;
 using TapsellSDK;
+using TheGame;
 using TheGame.Arcade;
 
 
@@ -57,7 +58,7 @@ public class ApplicationManager : MonoBehaviour
         chaptersHandler.UpdateChaptersLockState();
         chapterScroller.Init();
 
-        AudioManager.instance.PlayNewMusic(ResourceManager.instance.GetMainMenuMusic());
+        AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
         
         UpdateCoins();
         UpdateGems();
@@ -91,10 +92,12 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
+    
+    
+    
     #region First Play
 
     private bool firstPlay = false;
-
     private void FirstPlay()
     {
         firstPlay = true;
@@ -102,16 +105,16 @@ public class ApplicationManager : MonoBehaviour
         PlayerPrefs.Save();
         
         energyHandler.Init();
-
     }
 
     public void IntroEnded()
     {
-        gameCanvasObject.SetActive(false);
-        mainMenuCanvas.SetActive(true);
+        view.IntroEnded();
         firstPlay = false;
     }
 
+    
+    /*
     private void GetInstalledApps()
     {
 #if UNITY_ANDROID
@@ -131,10 +134,13 @@ public class ApplicationManager : MonoBehaviour
         }
 #endif
     }
-
+    */
     #endregion
-
-
+    
+    
+    
+    
+    #region Coins and Gems
     public void UpdateCoins()
     {
         int coin = DatabaseManager.instance.GetCoins();
@@ -184,6 +190,8 @@ public class ApplicationManager : MonoBehaviour
     {
         return DatabaseManager.instance.GetGems();
     }
+    #endregion
+    
     
     
     
@@ -301,17 +309,14 @@ public class ApplicationManager : MonoBehaviour
 
     #endregion
 
+    
+    
 
     public void MainMenu_PlayClicked()
     {
         if (firstPlay)
         {
-            // TODO: View Manager
-            state = ApplicationState.FIRSTTUT;
-            gameCanvasObject.SetActive(true);
-            mainMenuCanvas.SetActive(false);
-
-            TutorialHandler.instance.PlayTutorial_01();
+            view.ShowIntro();
         }
         else
         {

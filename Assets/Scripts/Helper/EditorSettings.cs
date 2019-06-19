@@ -4,6 +4,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 using Newtonsoft.Json;
+using TheGame;
 using UnityEditor.PackageManager;
 
 public class EditorSettings

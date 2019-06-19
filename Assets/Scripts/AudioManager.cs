@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip GetGameMusic(int chapterId)
     {
-        return ResourceManager.instance.GetInGameMusic(chapterId);
+        return ResourceManager.GetInGameMusic(chapterId);
     }
 
     public void PlaySFX(int sfx)
@@ -64,7 +64,11 @@ public class AudioManager : MonoBehaviour
             StartCoroutine(FadeIn(source, 2));
     }
 
-
+    public void PlayNewSfx(SFX sfx)
+    {
+        PlayNewSfx(sfxClips[(int) sfx]);
+    }
+    
     public void PlayNewSfx(AudioClip sfx)
     {
         if (!sfxOn)
@@ -140,7 +144,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip GetChapterMusic(int chapterId)
     {
-        return ResourceManager.instance.GetLevelsViewMusic(chapterId);
+        return ResourceManager.GetLevelsViewMusic(chapterId);
     }
 }
 

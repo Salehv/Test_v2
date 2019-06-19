@@ -11,6 +11,7 @@ public class ChapterObject : MonoBehaviour
 
     [Space(10)] public Text chapterName;
     public Text chapterGems;
+    public Text chapterAllGems;
 
     [Space(10)] public GameObject chapterLock;
     public Image chapterLockBackground;
