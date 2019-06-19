@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
@@ -73,7 +74,7 @@ public class EnergyHandler : MonoBehaviour
         }
     }
 
-    public void UpdateEnergy()
+    public void CalculateEnergyIncrease()
     {
         long now = DateTime.UtcNow.ToFileTimeUtc() / 10000000;
         while (now - lastUsedEnergy > energyChargeTime && energy < maxEnergy)
@@ -81,12 +82,29 @@ public class EnergyHandler : MonoBehaviour
             energy += 1;
             lastUsedEnergy += energyChargeTime;
         }
-        
-        GraphicalUpdate();
+
+        if (energy == maxEnergy)
+        {
+            isCharging = false;
+        }
+    }
+
+    public void UpdateEnergy()
+    {
+        long now = DateTime.UtcNow.ToFileTimeUtc() / 10000000;
+        if (isCharging)
+        {
+            if (now - lastUsedEnergy > energyChargeTime)
+            {
+                CalculateEnergyIncrease();
+                GraphicalUpdate();
+            }
+        }
     }
 
     public void GraphicalUpdate()
     {
+        /*
         for (int i = 0; i < energyItemParent.transform.childCount; i++)
         {
             Destroy(energyItemParent.transform.GetChild(i).gameObject);
@@ -102,6 +120,31 @@ public class EnergyHandler : MonoBehaviour
         {
             energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
         }
+        */
+
+        
+        
+        for (int i = 0; i < energyItemParent.transform.childCount; i++)
+        {
+            Destroy(energyItemParent.transform.GetChild(i).gameObject);
+        }
+        
+        for (int i = 0; i < energy; i++)
+        {
+            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
+            energyItems[i].GetComponent<RectTransform>().anchoredPosition = energyItems[i].GetComponent<RectTransform>()
+                .anchoredPosition.Rotate(180 / maxEnergy * i - 45);
+            energyItems[i].GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0, 180 / maxEnergy * i - 45);
+        }
+        for (int i = energy; i < maxEnergy; i++)
+        {
+            energyItems.Add(Instantiate(energyItemsPrefab, energyItemParent.transform));
+            energyItems[i].GetComponent<RectTransform>().anchoredPosition = energyItems[i].GetComponent<RectTransform>()
+                .anchoredPosition.Rotate(180 / maxEnergy * i - 45);
+            energyItems[i].GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0, 180 / maxEnergy * i - 45);
+            energyItems[i].GetComponent<Image>().color = new Color(1,1,1,0.3f); 
+        }
+        
     }
 
     void Awake()
@@ -123,6 +166,7 @@ public class EnergyHandler : MonoBehaviour
 
     void Update()
     {
+        UpdateEnergy();
     }
 }
 
