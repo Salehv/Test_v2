@@ -327,8 +327,8 @@ public class ApplicationManager : MonoBehaviour
 
     internal void RunLevel(Level level)
     {
-        GameManager.instance.PlayLevel(level);
         view.ShowGame();
+        GameManager.instance.PlayLevel(level);
     }
 
     public void RunArcade()

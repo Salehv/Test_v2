@@ -148,7 +148,7 @@ namespace App
             menuCanvas.SetActive(false);
             frontCanvas.SetActive(true);
             transition.SetActive(true);
-            
+            selectedChapter = level.chapterId;
             TransitionHandler.instance.StartTransition(level);
         }
         
@@ -369,7 +369,7 @@ namespace App
             panel.SetTrigger(TRIG_PANEL_OUT);
         }
 
-        internal void ShowPanel(GameObject panel)
+        private void ShowPanel(GameObject panel)
         {
             onScreenPanels.Push(panel);
             panel.SetActive(true);
@@ -380,6 +380,7 @@ namespace App
         #endregion
 
 
+        private int selectedChapter;
         public void PageBlacked()
         {
             switch (state)
@@ -388,7 +389,7 @@ namespace App
                     gameCanvas.SetActive(false);
                     menuCanvas.SetActive(true);
                     levelsCanvas.SetActive(true);
-                    levelsHandler.UpdateView();
+                    levelsHandler.SetToChapter(selectedChapter);
                     state = ViewState.LEVELS;
                     break;
                 

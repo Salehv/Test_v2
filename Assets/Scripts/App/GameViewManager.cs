@@ -49,6 +49,7 @@ namespace App
             hintPanel.SetActive(false);
             winPanel.SetActive(false);
             onScreenPanels = new Stack<GameObject>();
+            TutorialHandler.instance.ResetAll();
             state = GameViewState.MAIN_VIEW;
         }
 

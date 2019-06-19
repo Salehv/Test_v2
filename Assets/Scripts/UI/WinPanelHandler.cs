@@ -60,7 +60,7 @@ public class WinPanelHandler : MonoBehaviour
     public void ShowGem(int id)
     {
         gems[id].SetActive(true);
-        GameObject g = Instantiate(popPrefab, transform);
-        (g.transform as RectTransform).anchoredPosition = pops[id];
+        // GameObject g = Instantiate(popPrefab, transform);
+        // (g.transform as RectTransform).anchoredPosition = pops[id];
     }
 }

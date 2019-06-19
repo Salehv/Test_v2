@@ -571,10 +571,12 @@ namespace TheGame
         {
             hint_way_used += 1;
             var way = currentLevel.way;
+            hintToShow.Enqueue(Utilities.GetNormalizedFarsi(currentLevel.begin));
             for (int i = 0; i < way.Length; i++)
             {
                 hintToShow.Enqueue(way[i]);
             }
+            hintToShow.Enqueue(currentEndWord);
 
             NextWord();
         }
