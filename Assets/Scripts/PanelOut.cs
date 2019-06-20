@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using App;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PanelOut : StateMachineBehaviour
 {
@@ -9,8 +11,9 @@ public class PanelOut : StateMachineBehaviour
 	{
 		if(stateInfo.IsName("FadeToBlack"))
 			return;
-		
-		ViewManager.instance.Escape();
+
+		Debug.Log("HEHEHEHHEHEHR");
+		animator.GetComponentInParent<Panel>().gameObject.SetActive(false);
 	}
 
 	public override void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)

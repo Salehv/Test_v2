@@ -5110,7 +5110,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 587a235e276697a4693aee65f8b3b614, type: 3}
+  m_Sprite: {fileID: 21300058, guid: 59d0c3f4c1184d142b622bfd6951aeb5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5866,7 +5866,7 @@ Animator:
   m_GameObject: {fileID: 816250814989739646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e64e5c81813e08b45b0f633c90a69bf0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

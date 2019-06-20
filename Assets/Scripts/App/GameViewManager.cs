@@ -7,12 +7,15 @@ namespace App
     public class GameViewManager : MonoBehaviour
     {
         internal static GameViewManager instance;
+        private ViewManager view;
         public GameObject gamePanelsObject;
     
         [Header("Panels")] 
-        public GameObject winPanel;
-        public GameObject pausePanel;
-        public GameObject hintPanel;
+        [SerializeField] private Panel winPanel;
+        [SerializeField] private Panel pausePanel;
+        [SerializeField] private Panel hintPanel;
+        [SerializeField] private Panel hintSimilarWordsPanel;
+
         
     
         [Header("Game View")]
@@ -37,6 +40,7 @@ namespace App
         private void Awake()
         {
             instance = this;
+            view = ViewManager.instance;
         }
 
         
@@ -45,10 +49,10 @@ namespace App
         public void ShowGame()
         {
             gamePanelsObject.SetActive(true);
-            pausePanel.SetActive(false);
-            hintPanel.SetActive(false);
-            winPanel.SetActive(false);
-            onScreenPanels = new Stack<GameObject>();
+            pausePanel.gameObject.SetActive(false);
+            hintPanel.gameObject.SetActive(false);
+            hintSimilarWordsPanel.gameObject.SetActive(false);
+            winPanel.gameObject.SetActive(false);
             TutorialHandler.instance.ResetAll();
             state = GameViewState.MAIN_VIEW;
         }
@@ -59,12 +63,26 @@ namespace App
             inGameBack.sprite = ResourceManager.GetInGameBackground(chapter);
             inGameFeatures.sprite = ResourceManager.GetInGameFeatures(chapter);
         }
+
         
+        public void SetEndWord(string end)
+        {
+            for (int i = 0; i < endWordHandler.contents.childCount; i++)
+            {
+                Destroy(endWordHandler.contents.GetChild(i).gameObject);
+            }
+
+            for (int i = end.Length - 1; i >= 0; i--)
+            {
+                endWordHandler.CreateLetter(end[i]);
+            }
+        }
+
         #endregion
 
+        
         #region WordsView
-        
-        
+
         public void ClearWordsView()
         {
             for(int i = 0; i < wordsView.childCount; i++)
@@ -81,73 +99,50 @@ namespace App
         {
             Destroy(wordsView.GetChild(wordsView.childCount - 1).gameObject);
         }
-        
+
         #endregion
 
         
-        public void SetEndWord(string end)
+        #region Panels
+        
+        public void ShowWinPanel(int gem, int coinGain)
         {
-            for (int i = 0; i < endWordHandler.contents.childCount; i++)
-            {
-                Destroy(endWordHandler.contents.GetChild(i).gameObject);
-            }
-
-            for (int i = end.Length - 1; i >= 0; i--)
-            {
-                endWordHandler.CreateLetter(end[i]);
-            }
+            state = GameViewState.WIN;
+            winPanel.gameObject.SetActive(true);
+            winHandler.Init(gem, coinGain);
         }
 
-        public void Escape()
+        public void ShowHintPanel()
+        {
+            view.ShowPanel(hintPanel);
+        }
+        
+        public void ShowSimilarWordsHintPanel()
+        {
+            view.ShowPanel(hintSimilarWordsPanel);
+            view.SetUnEscapable();
+        }
+
+        public void SimilarSelected()
+        {
+            view.SetEscapable();
+            view.Escape();
+        }
+        
+        #endregion
+        
+        
+        
+        internal void Escape()
         {
             switch (state)
             {
                 case GameViewState.MAIN_VIEW:
-                    ShowPanel(pausePanel);
-                    state = GameViewState.ONSCREEN;
-                    break;
-                
-                case GameViewState.ONSCREEN:
-                    GameObject panel = onScreenPanels.Pop();
-                    panel.SetActive(false);
-
-                    if (onScreenPanels.Count == 0)
-                    {
-                        state = lastState;
-                    }
+                    view.ShowPanel(pausePanel);
                     break;
             }
         }
-
-
-        public void ShowWinPanel(int gem, int coinGain)
-        {
-            winPanel.SetActive(true);
-            winHandler.Init(gem, coinGain);
-        }
         
-        
-        #region Helpers
-        
-        private GameViewState lastState;
-        private Stack<GameObject> onScreenPanels;
-        private static readonly int TRIG_PANEL_OUT = Animator.StringToHash("Panel_Out");
-
-
-        private void ShowPanel(GameObject panel)
-        {
-            onScreenPanels.Push(panel);
-            panel.SetActive(true);
-            lastState = state;
-            state = GameViewState.ONSCREEN;
-        }
-        
-        public void HidePanel(Animator panel)
-        {
-            panel.SetTrigger(TRIG_PANEL_OUT);
-        }
-        #endregion
-
     }
     
     
@@ -156,5 +151,5 @@ namespace App
 public enum GameViewState
 {
     MAIN_VIEW,
-    ONSCREEN
+    WIN
 }

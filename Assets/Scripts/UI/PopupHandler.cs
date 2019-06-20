@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using App;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -20,9 +21,9 @@ public class PopupHandler : MonoBehaviour
         instance.CreateNewInfo(text, onOk);
     }
 
-    internal static void ShowNoMoney(string title)
+    internal static void ShowNoMoney(int need)
     {
-        instance.CreateNoMoneyPopup(title);
+        instance.ShowNoMoney($"شما به {need} عدد سکه نیاز دارید");
     }
 
     private void Awake()
@@ -40,7 +41,7 @@ public class PopupHandler : MonoBehaviour
     public Transform popupParent;
     [Space(10)] public GameObject popupDebugObj;
     public GameObject popupInfoObj;
-    public GameObject popupChoiceObj;
+    public Panel popupNoMoney;
 
 
     private void CreateNewDebug(string text)
@@ -58,10 +59,9 @@ public class PopupHandler : MonoBehaviour
         b.onClick.AddListener(action);
     }
 
-    private void CreateNoMoneyPopup(string title)
+    private void ShowNoMoney(string title)
     {
-        GameObject g = Instantiate(popupChoiceObj, popupParent);
-        g.SetActive(true);
-        g.GetComponent<PopupNoMoney>().mainText.text = title;
+        popupNoMoney.GetComponent<PopupNoMoney>().mainText.text = title;
+        ViewManager.instance.ShowPanel(popupNoMoney);
     }
 }

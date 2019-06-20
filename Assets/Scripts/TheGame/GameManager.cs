@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using App;
 using Initialize;
 using TapsellSDK;
@@ -28,12 +29,9 @@ namespace TheGame
         public EditorHandler textEditor;
         public GameObject letterPrefab;
         public LetterPoolHandler letterPool;
-
+        
         [Header("Game UI")] 
         private GameViewManager viewManager;
-        public GameObject winPanel;
-        public Image inGameBack;
-        public Image inGameFeatures;
         public Text hintSimilarCostText;
         public Text hintWayCostText;
 
@@ -152,7 +150,7 @@ namespace TheGame
             }
 
             // Remove Letter
-            if (lvl.id == 11 && lvl.chapterId == 0)
+            if (lvl.id == 9 && lvl.chapterId == 0)
             {
                 TutorialHandler.instance.Play_Tutorial_05();
                 state = GameState.TUTORIAL;
@@ -358,20 +356,12 @@ namespace TheGame
 
         private void HideAllPanels()
         {
-            winPanel.SetActive(false);
-            hintPanel.SetActive(false);
             hint_showWayPanel.SetActive(false);
-            hint_similarWordsPanel.SetActive(false);
             shuffleLetterPanel.SetActive(false);
             shufflePanel.SetActive(false);
         }
 
-        private void ShowWinPanel(int gemTaken, int coinTaken)
-        {
-            winPanel.SetActive(true);
-            winPanel.GetComponent<WinPanelHandler>().Init(gemTaken, coinTaken);
-        }
-
+        
 
         [Header("Shuffle")] public GameObject shufflePanel;
         public GameObject shuffleLetterPanel;
@@ -467,19 +457,10 @@ namespace TheGame
 
         #region Hint
 
-        [Header("Hint")] public GameObject hintPanel;
+        [Header("Hint")]
         public GameObject hint_showWayPanel;
-        public GameObject hint_similarWordsPanel;
+        public HintSimilarWordsHandler hintSimilarWordsHandler;
 
-
-        public void ShowHintMenu()
-        {
-            hintPanel.SetActive(true);
-            state = GameState.HINT_PANEL;
-        }
-
-
-        private string[] shownSimilars;
 
         public void Hint_ShowSimilarWords()
         {
@@ -489,58 +470,50 @@ namespace TheGame
             }
             catch (NoMoneyException e)
             {
-                PopupHandler.ShowNoMoney("شما " + (similarHintCost - coins) + " سکه نیاز دارید");
+                PopupHandler.ShowNoMoney(similarHintCost - coins);
                 print("poool nadari gooooooooooooozoooooooooooooo");
                 return;
             }
 
             AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.SIMILAR);
             hint_similar_used += 1;
-            hintPanel.SetActive(false);
-            hint_similarWordsPanel.SetActive(true);
-            hintState.canUseSimilar = false;
 
-            var hsw = hint_similarWordsPanel.GetComponent<HintSimilarWordsHandler>();
-            var sWords = DatabaseManager.instance.GetAllSimilarWords(GetLastWord());
-            shownSimilars = new string[sWords.Length];
+            
+            viewManager.ShowSimilarWordsHintPanel();
 
-            for (int i = 0; i < hsw.swParent.childCount; i++)
-                Destroy(hsw.swParent.GetChild(i).gameObject);
-
+            
+            List<string> sWords = new List<string>(DatabaseManager.instance.GetAllSimilarWords(GetLastWord()));
+            hintSimilarWordsHandler.Clear();
+            
             int c = 0;
-            foreach (var word in sWords)
+            for(int i = 0; i < sWords.Count; i++)
             {
-                if ((word.Length != words.Last.Value.Length) && (currentLevel.id < 7) && (currentLevel.chapterId == 0))
-                    continue;
+                if ((sWords[i].Length != words.Last.Value.Length) && (currentLevel.id < 7) &&
+                    (currentLevel.chapterId == 0))
+                {
+                    sWords.Remove(sWords[i]);
+                    i--;
+                }
 
-                else if ((word.Length < words.Last.Value.Length) && (currentLevel.id < 11) && (currentLevel.chapterId == 0))
-                    continue;
+                else if ((sWords[i].Length < words.Last.Value.Length) && (currentLevel.id < 11) &&
+                         (currentLevel.chapterId == 0))
+                {
+                    sWords.Remove(sWords[i]);
+                    i--;
+                }
 
-                GameObject g = Instantiate(hsw.similarWordPrefab, hsw.swParent);
-                g.name = c + "";
-                g.GetComponentInChildren<Toggle>().group = hsw.tg;
-                g.GetComponentInChildren<Text>().text = word;
-                shownSimilars[c] = Utilities.GetNormalizedFarsi(word);
-                c++;
             }
+            
+            hintSimilarWordsHandler.SetSimilarWords(sWords.ToArray());
         }
 
-        public ToggleGroup similarWordsTG;
-
-        public void Hint_SimilarWord_Selected(ToggleGroup tg)
+        public void Hint_SimilarWord_Selected()
         {
-            var ts = tg.GetComponentsInChildren<Toggle>();
-
-            foreach (var t in ts)
-            {
-                if (t.isOn)
-                {
-                    int selected = int.Parse(t.transform.parent.name);
-                    AddCorrectWord(shownSimilars[selected]);
-                    textEditor.Initialize(this, shownSimilars[selected], currentLevel.flags);
-                    break;
-                }
-            }
+            viewManager.SimilarSelected();
+            string word = hintSimilarWordsHandler.GetSelected();
+            
+            AddCorrectWord(word);
+            textEditor.Initialize(this, word, currentLevel.flags);
         }
 
 
@@ -556,14 +529,13 @@ namespace TheGame
             }
             catch (NoMoneyException e)
             {
-                PopupHandler.ShowNoMoney("شما " + (showWayHintCost - coins) + " سکه نیاز دارید");
+                PopupHandler.ShowNoMoney(showWayHintCost - coins);
                 print("poool nadari gooooooooooooozoooooooooooooo");
                 return;
             }
 
             AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.WAY);
 
-            hintPanel.SetActive(false);
             hint_showWayPanel.SetActive(true);
         }
 
@@ -588,7 +560,6 @@ namespace TheGame
                 GameObject g = Instantiate(hintWordPrefab, hint_showWayPanel.transform);
                 Instantiate(hintWordShinePrefab, hint_showWayPanel.transform);
                 g.GetComponent<Text>().text = hintToShow.Dequeue();
-                print(" shit");
             }
             else
             {
@@ -745,12 +716,13 @@ namespace TheGame
 
         public void Escape()
         {
+            throw new NotImplementedException();
+            
             switch (state)
             {
+                
                 case GameState.HINT_PANEL:
-                    hintPanel.SetActive(false);
                     hint_showWayPanel.SetActive(false);
-                    hint_similarWordsPanel.SetActive(false);
                     state = GameState.MAIN_VIEW;
                     break;
                 case GameState.SHUFFLE_MENU:
@@ -790,6 +762,8 @@ namespace TheGame
         {
             DatabaseManager.instance.AddOrRemoveCoins(coin);
             ApplicationManager.instance.UpdateCoins();
+            
+            coins += coin;
         }
 
         public void AddGems(int gem)
@@ -874,17 +848,17 @@ namespace TheGame
 #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.J))
             {
-                ShowWinPanel(1, 100);
+                viewManager.ShowWinPanel(1, 100);
             }
 
             if (Input.GetKeyDown(KeyCode.K))
             {
-                ShowWinPanel(2, 100);
+                viewManager.ShowWinPanel(2, 100);
             }
 
             if (Input.GetKeyDown(KeyCode.L))
             {
-                ShowWinPanel(3, 100);
+                viewManager.ShowWinPanel(3, 100);
             }
 
 #endif

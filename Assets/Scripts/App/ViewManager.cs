@@ -12,16 +12,16 @@ namespace App
 
         // Triggers
         private static readonly int TRIG_TO_CHAPTERS = Animator.StringToHash("to_chapters");
-        private static readonly int TRIG_PANEL_OUT = Animator.StringToHash("Panel_Out");
         private static readonly int TRIG_CHAPTER_TO_LEVELS = Animator.StringToHash("chapter_to_levels");
         private static readonly int TRIG_SHOW = Animator.StringToHash("show");
         private static readonly int TRIG_HIDE = Animator.StringToHash("hide");
         private static readonly int TRIG_CHAPTERS_TO_MAIN = Animator.StringToHash("to_main");
         private static readonly int TRIG_LEVELS_TO_CHAPTER = Animator.StringToHash("levels_to_chapter");
 
-
+        private bool escapable = true;
         public ViewState state;
         
+        #region Init
         private void Awake()
         {
             if (instance != null)
@@ -30,10 +30,7 @@ namespace App
                 return;
             }
 
-            instance = this;
-
-            onScreenPanels = new Stack<GameObject>();
-            
+            instance = this;            
             levelsHandler.Init();
         }
 
@@ -41,7 +38,7 @@ namespace App
         {
             state = ViewState.MAIN_MENU;
         }
-
+        #endregion
 
         #region Menu
 
@@ -115,7 +112,6 @@ namespace App
 
         #endregion
 
-
         #region Levels
 
         [Header("Levels")] public GameObject levelsCanvas;
@@ -153,7 +149,6 @@ namespace App
         }
         
         #endregion
-
 
         #region Game
 
@@ -204,17 +199,16 @@ namespace App
         #region Front
 
         [Header("Front")] public GameObject frontCanvas;
-        public GameObject aboutUsPanel;
-        public GameObject shopPanel;
-        public GameObject adPanel;
-        public QuestionFormHandler questionForm;
+        public Panel aboutUsPanel;
+        public Panel shopPanel;
+        public Panel adPanel;
+        public Panel questionForm;
         public GameObject transition;
 
         private void HideAllFrontPanels()
         {
             transition.SetActive(false);
-            aboutUsPanel.SetActive(false);
-            shopPanel.SetActive(false);
+            panelHandler.HideAll();
         }
 
         public void ShowAboutUs()
@@ -237,16 +231,14 @@ namespace App
             PopupHandler.ShowDebug("برای مشاهده تبلیغ باید صبر کنید.");
         }
 
-
         public void ShowAdPanel()
         {
             ShowPanel(adPanel);
         }
 
-
         public void ShowQuestionForm()
         {
-            ShowPanel(questionForm.gameObject);
+            ShowPanel(questionForm);
         }
 
         #endregion
@@ -266,21 +258,112 @@ namespace App
             blackPageAnimator.SetTrigger(!hide ? TRIG_SHOW : TRIG_HIDE);
         }
 
+
+        private void ShowExitToast()
+        {
+            toast.showToastOnUiThread("برای خروج دوباره دکمه بازگشت را فشار دهید");
+            StartCoroutine(NotExited());
+        }
+
+        private IEnumerator NotExited()
+        {
+            yield return new WaitForSeconds(3);
+            if (state == ViewState.EXITING)
+                state = ViewState.MAIN_MENU;
+        }
+
+        internal void TurnOffCanvases()
+        {
+            menuCanvas.SetActive(false);
+            levelsCanvas.SetActive(false);
+            gameCanvas.SetActive(false);
+            frontCanvas.SetActive(false);
+        }
+
+        #endregion
+
+
+        #region Panel
+
+        [Header("Panels")] 
+        public PanelHandler panelHandler;
+        private ViewState lastState = ViewState.ONSCREEN;
+        
+        internal void ShowPanel(Panel panel)
+        {
+            panelHandler.ShowPanel(panel);
+            if (lastState == ViewState.ONSCREEN)
+                lastState = state; 
+            state = ViewState.ONSCREEN;
+        }
+
+        internal void SetUnEscapable()
+        {
+            escapable = false;
+        }
+
+        internal void SetEscapable()
+        {
+            escapable = true;
+        }
+        
+        #endregion
+
+        
+        private int selectedChapter;
+        public void PageBlacked()
+        {
+            switch (state)
+            {
+                case ViewState.IN_GAME:
+                    gameCanvas.SetActive(false);
+                    menuCanvas.SetActive(true);
+                    levelsCanvas.SetActive(true);
+                    levelsHandler.SetToChapter(selectedChapter);
+                    state = ViewState.LEVELS;
+                    break;
+                
+                case ViewState.INTRO:
+                    menuCanvas.SetActive(false);
+                    
+                    gameCanvas.SetActive(true);
+                    gameView.SetActive(false);
+                    arcadeView.SetActive(false);
+                    introView.SetActive(true);
+                    
+                    TutorialHandler.instance.PlayTutorial_01();
+                    break;
+                
+                case ViewState.MAIN_MENU:
+                    gameCanvas.SetActive(false);
+                    introView.SetActive(false);
+                    menuCanvas.SetActive(true);
+                    break;
+                case ViewState.ONSCREEN:
+                    state = lastState;
+                    PageBlacked();
+                    break;
+            }
+        }
+        
         public void Escape()
         {
+            if (!escapable)
+            {
+                print("[ViewManager] UnEscapable!");
+                return;
+            }
             print("[ViewManager] Escape from " + state.ToString());
 
             switch (state)
             {
                 case ViewState.ONSCREEN:
-                    GameObject panel = onScreenPanels.Pop();
-                    panel.SetActive(false);
-
-                    if (onScreenPanels.Count == 0)
+                    panelHandler.HideTopMostPanel();
+                    if (!panelHandler.isAnyPanelActive())
                     {
                         state = lastState;
+                        lastState = ViewState.ONSCREEN;
                     }
-
                     break;
 
                 case ViewState.MAIN_MENU:
@@ -333,85 +416,6 @@ namespace App
                 default: return;
             }
         }
-
-        private void ShowExitToast()
-        {
-            toast.showToastOnUiThread("برای خروج دوباره دکمه بازگشت را فشار دهید");
-            StartCoroutine(NotExited());
-        }
-
-        private IEnumerator NotExited()
-        {
-            yield return new WaitForSeconds(3);
-            if (state == ViewState.EXITING)
-                state = ViewState.MAIN_MENU;
-        }
-
-        internal void TurnOffCanvases()
-        {
-            menuCanvas.SetActive(false);
-            levelsCanvas.SetActive(false);
-            gameCanvas.SetActive(false);
-            frontCanvas.SetActive(false);
-        }
-
-        #endregion
-
-
-        #region Panel
-
-        private ViewState lastState;
-        private Stack<GameObject> onScreenPanels;
-
-
-        public void HidePanel(Animator panel)
-        {
-            panel.SetTrigger(TRIG_PANEL_OUT);
-        }
-
-        private void ShowPanel(GameObject panel)
-        {
-            onScreenPanels.Push(panel);
-            panel.SetActive(true);
-            lastState = state;
-            state = ViewState.ONSCREEN;
-        }
-
-        #endregion
-
-
-        private int selectedChapter;
-        public void PageBlacked()
-        {
-            switch (state)
-            {
-                case ViewState.IN_GAME:
-                    gameCanvas.SetActive(false);
-                    menuCanvas.SetActive(true);
-                    levelsCanvas.SetActive(true);
-                    levelsHandler.SetToChapter(selectedChapter);
-                    state = ViewState.LEVELS;
-                    break;
-                
-                case ViewState.INTRO:
-                    menuCanvas.SetActive(false);
-                    
-                    gameCanvas.SetActive(true);
-                    gameView.SetActive(false);
-                    arcadeView.SetActive(false);
-                    introView.SetActive(true);
-                    
-                    TutorialHandler.instance.PlayTutorial_01();
-                    break;
-                
-                case ViewState.MAIN_MENU:
-                    gameCanvas.SetActive(false);
-                    introView.SetActive(false);
-                    menuCanvas.SetActive(true);
-                    break;
-            }
-        }
-
     }
 }
 

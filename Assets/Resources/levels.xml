@@ -163,20 +163,23 @@
         </Level>
         <Level id="11" type="3">
             <Start>
-                جنار
+                چنار
             </Start>
             <End>
                 سرو
             </End>
             <Way>
                 <Word>
-                    نار
+                    چدار
                 </Word>
                 <Word>
-                    سار
+                    دار
                 </Word>
                 <Word>
-                    سر
+                    دارو
+                </Word>
+                <Word>
+                    درو
                 </Word>
             </Way>
         </Level>

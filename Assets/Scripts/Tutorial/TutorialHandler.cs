@@ -561,13 +561,12 @@ public class TutorialHandler : MonoBehaviour
         DeleteMessage();
         DeleteArrow();
         CreateMessage(tut04Messages[1], Size.Small, Direction.Downmost, tut04);
-        CreateArrow(tut0402Pluses[1].transform, Direction.Top, tut04, new Vector3(0, 50));
+        CreateArrow(tut0402Pluses[1].transform, Direction.Top, tut04, new Vector3(0, 100));
 
         // Shine
-        tut0401Letter.transform.GetChild(0).GetComponent<Image>().sprite =
+        tut0401Letter.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite =
             GameManager.instance.GetLetterSprite(0, SpriteMode.SHINE);
-
-        tut0401Letter.transform.GetChild(1).gameObject.SetActive(true);
+        tut0401Letter.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
 
         // Active Pluses
         foreach (var plus in tut0402Pluses)
@@ -588,10 +587,11 @@ public class TutorialHandler : MonoBehaviour
 
         DeleteMessage();
         DeleteArrow();
+        
         CreateMessage(tut04Messages[2], Size.Large, Direction.Down, tut04);
 
         // Hide E Letters
-        foreach (var letter in tut04ELetters) // Eletters
+        foreach (var letter in tut04ELetters)
         {
             letter.SetActive(false);
         }
@@ -604,7 +604,7 @@ public class TutorialHandler : MonoBehaviour
         tut0401Letter.transform.GetChild(0).GetComponent<Image>().sprite =
             GameManager.instance.GetLetterSprite(0, SpriteMode.NORMAL);
 
-        tut0401Letter.transform.GetChild(1).gameObject.SetActive(false);
+        tut0401Letter.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
 
         // Hide Pluses
         foreach (var plus in tut0402Pluses)
@@ -665,7 +665,7 @@ public class TutorialHandler : MonoBehaviour
         CreateMessage(tut05Messages[1], Size.Medium, Direction.Down, tut05);
 
         DeleteArrow();
-        CreateArrow(tut05ELetters[0].transform.GetChild(0), Direction.Left, tut05, new Vector2(0, 40));
+        CreateArrow(tut05ELetters[0].transform.GetChild(0), Direction.Left, tut05, new Vector2(-10, 130));
 
         tut05ELetters[0].transform.GetChild(0).GetComponent<Animator>().SetTrigger("show");
     }
