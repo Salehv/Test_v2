@@ -34,7 +34,7 @@ public class ChestHandler : MonoBehaviour
         }
 
         GameManager.instance.AddCoins(coinAmount);
-        GameManager.instance.AddGems(gemAmount);
+        ApplicationManager.instance.AddGems(gemAmount);
 
         AnalyticsHandler.ChestOpened(coinAmount, gemAmount);
 

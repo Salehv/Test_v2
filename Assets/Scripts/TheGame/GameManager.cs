@@ -44,9 +44,6 @@ namespace TheGame
 
         private DynamicsFlag LevelDynamicsFlag => currentLevel.flags;
 
-        // TODO: move to ApplicationManager
-        internal GameProgression progress;
-
         private int coins;
         private HintState hintState;
 
@@ -81,7 +78,7 @@ namespace TheGame
                 chapters[i].InitChapter(game.chapters[i]);
             }
 
-            progress = GetProgress();
+            
 
             letterSprites = Resources.LoadAll<Sprite>("Letters");
 
@@ -195,8 +192,9 @@ namespace TheGame
             var solvedSteps = 3;
 
             // Calculate Coins
-            if (progress.GetLevelProgress(currentLevel) == null)
+            if (ApplicationManager.instance.GetLevelProgress(currentLevel) == null)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
+            
             AddCoins(coinGain);
             ApplicationManager.instance.UpdateCoins();
 
@@ -388,8 +386,6 @@ namespace TheGame
             Transform middle = letterPool.transform.GetChild(4);
             middle.GetComponent<AvailableLetter>().Init(textEditor, Utilities.dic_letterToChar[letter]);
             middle.GetComponent<AvailableLetter>().SetShine(true);
-
-            Escape();
         }
 
         public void ShufflePageBought()
@@ -408,8 +404,7 @@ namespace TheGame
 
             // AddCoins(-20);
             btnNextShuffle.interactable = true;
-
-            Escape();
+            
         }
 
         public void NextShufflePage()
@@ -478,7 +473,6 @@ namespace TheGame
             AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.SIMILAR);
             hint_similar_used += 1;
 
-            
             viewManager.ShowSimilarWordsHintPanel();
 
             
@@ -580,11 +574,13 @@ namespace TheGame
 
         private void Win()
         {
+            ApplicationManager.instance.LevelSolved(currentLevel);
+            
             var coinGain = 0;
             var solvedSteps = words.Count;
 
             // Calculate Coins
-            if (progress.GetLevelProgress(currentLevel) == null)
+            if (ApplicationManager.instance.GetLevelProgress(currentLevel) == null)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
             AddCoins(coinGain);
 
@@ -615,7 +611,7 @@ namespace TheGame
             int oldGem = 0;
             try
             {
-                oldGem = progress.GetLevelProgress(currentLevel.chapterId, currentLevel.id).gemTaken;
+                oldGem = ApplicationManager.instance.GetLevelProgress(currentLevel).gemTaken;
             }
             catch (Exception e)
             {
@@ -668,10 +664,10 @@ namespace TheGame
             {
                 try
                 {
-                    EnergyHandler.instance.UseEnergy();
-
-                    TransitionHandler.instance.StartTransition(chapters[currentLevel.chapterId]
-                        .levels[currentLevel.id + 1]);
+                    Level next = chapters[currentLevel.chapterId].levels[currentLevel.id + 1];
+                        ApplicationManager.instance.LevelStartRequest(next);
+                    
+                    TransitionHandler.instance.StartTransition(next);
                 }
                 catch (NoEnergyException e)
                 {
@@ -714,50 +710,16 @@ namespace TheGame
             TimeManager.instance.DiscardTimer("CurrentGame");
         }
 
-        public void Escape()
-        {
-            throw new NotImplementedException();
-            
-            switch (state)
-            {
-                
-                case GameState.HINT_PANEL:
-                    hint_showWayPanel.SetActive(false);
-                    state = GameState.MAIN_VIEW;
-                    break;
-                case GameState.SHUFFLE_MENU:
-                    shufflePanel.SetActive(false);
-                    shuffleLetterPanel.SetActive(false);
-                    state = GameState.MAIN_VIEW;
-                    break;
-                case GameState.TUTORIAL:
-                    TutorialHandler.instance.Escape();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
+        
         private void UpdateCurrentLevelProgress(int gem, int steps)
         {
             print("Gem: " + gem + ", Steps:" + steps);
             LevelProgression lp = new LevelProgression(currentLevel.chapterId, currentLevel.id, gem, steps);
 
-
-            if (progress.GetLevelProgress(currentLevel) == null)
-            {
-                AddGems(gem);
-                DatabaseManager.instance.UpdateLevelProgress(lp, false);
-            }
-            else if (gem > progress.GetLevelProgress(currentLevel).gemTaken)
-            {
-                AddGems(gem - progress.GetLevelProgress(currentLevel).gemTaken);
-                DatabaseManager.instance.UpdateLevelProgress(lp, true);
-            }
-
-            progress.UpdateLevelProgress(lp);
+            ApplicationManager.instance.UpdateLevelProgress(currentLevel, lp);
         }
 
+        //  TODO: Move to application manager
         public void AddCoins(int coin)
         {
             DatabaseManager.instance.AddOrRemoveCoins(coin);
@@ -766,12 +728,7 @@ namespace TheGame
             coins += coin;
         }
 
-        public void AddGems(int gem)
-        {
-            DatabaseManager.instance.AddOrRemoveGems(gem);
-
-            ApplicationManager.instance.UpdateGems();
-        }
+        
 
         #endregion
 

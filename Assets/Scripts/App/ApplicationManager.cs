@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TapsellSDK;
 using TheGame;
 using TheGame.Arcade;
+using UnityEditor;
 
 
 public class ApplicationManager : MonoBehaviour
@@ -31,6 +32,7 @@ public class ApplicationManager : MonoBehaviour
 
     private EnergyHandler energyHandler;
 
+    private GameProgression progress;
 
 
     
@@ -51,12 +53,25 @@ public class ApplicationManager : MonoBehaviour
         view = ViewManager.instance;
         energyHandler = EnergyHandler.instance;
 
+
+        energyHandler.Init();
+
+        if (isFirstPlay())
+                FirstPlay();
         view.ShowBlackPage();
         view.ShowMainMenu();
-        
+
+        if (!PlayerPrefs.HasKey("last_level_unlocked"))
+        {
+            PlayerPrefs.SetInt("last_level_unlocked", 1);
+            PlayerPrefs.Save();
+        }
+
         chaptersHandler.InitializeChapters();
         chaptersHandler.UpdateChaptersLockState();
         chapterScroller.Init();
+
+        progress = DatabaseManager.instance.GetProgressData();
 
         AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
         
@@ -70,21 +85,7 @@ public class ApplicationManager : MonoBehaviour
         Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
         Tapsell.setRewardListener(AdReward);
 
-        /*Test*
-        Level test = new Level(0, 0, 0, "علی", "اصغر", 0);
-        test.SetDynamicFlags(DynamicsFlag.DF_FULL);
-        view.LevelClicked(test);
-        return;
-        /***/
         
-        // First Play
-        if (!PlayerPrefs.HasKey("first_enter_done"))
-        {
-            FirstPlay();
-            PlayerPrefs.SetInt("first_enter_done", 1);
-            PlayerPrefs.Save();
-        }
-
         // Ad Time
         if (PlayerPrefs.HasKey("adWatched"))
         {
@@ -97,14 +98,22 @@ public class ApplicationManager : MonoBehaviour
     
     #region First Play
 
+    private bool isFirstPlay()
+    {
+        return !PlayerPrefs.HasKey("first_enter_done");
+    }
+    
     private bool firstPlay = false;
     private void FirstPlay()
     {
         firstPlay = true;
+        PlayerPrefs.SetInt("first_enter_done", 1);
+        PlayerPrefs.Save();
+        
         PlayerPrefs.SetInt("arcade_high_score", 0);
         PlayerPrefs.Save();
         
-        energyHandler.Init();
+        energyHandler.FirstEnter();
     }
 
     public void IntroEnded()
@@ -153,8 +162,6 @@ public class ApplicationManager : MonoBehaviour
 
     public void UpdateGems()
     {
-        GameProgression progress = GameManager.instance.progress;
-
         for (int c = 0; c < GameManager.instance.chapters.Length; c++)
         {
             int chapG = GetChapterGems(c);
@@ -169,11 +176,19 @@ public class ApplicationManager : MonoBehaviour
             g.text = GetAllGemCount() + "";
         }
     }
+    
+    
+    public void AddGems(int gem)
+    {
+        if (gem == 0)
+            return;
+        
+        DatabaseManager.instance.AddOrRemoveGems(gem);
+        UpdateGems();
+    }
 
     private int GetChapterGems(int id)
     {
-        GameProgression progress = GameManager.instance.progress;
-
         int chapG = 0;
         for (int l = 0; l < GameManager.instance.chapters[id].levels.Length; l++)
         {
@@ -310,7 +325,20 @@ public class ApplicationManager : MonoBehaviour
     #endregion
 
     
+    #region Progress
+
+    public LevelProgression GetLevelProgress(Level lvl)
+    {
+        return progress.GetLevelProgress(lvl);
+    }
+
+    public LevelProgression GetLevelProgress(int chapterId, int levelId)
+    {
+        return progress.GetLevelProgress(chapterId, levelId);
+    }
     
+    
+    #endregion
 
     public void MainMenu_PlayClicked()
     {
@@ -324,9 +352,38 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
+    
+    internal void LevelStartRequest(Level lvl)
+    {
+        print(lvl);
+        print("Last Level unlocked = " + PlayerPrefs.GetInt("last_level_unlocked"));
+        
+        if(lvl.id == progress.GetLastLevel().id && lvl.chapterId == progress.GetLastLevel().chapterId)
+            if (PlayerPrefs.GetInt("last_level_unlocked") == 0)
+            {
+                energyHandler.UseEnergy();
+                PlayerPrefs.SetInt("last_level_unlocked", 1);
+                PlayerPrefs.Save();
+            }
+    }
+
+    internal void LevelSolved(Level lvl)
+    {
+        print("Level Solved!");
+        print(lvl);
+        print("Last Level:" + progress.GetLastLevel());
+        print("Last Level unlocked = " + PlayerPrefs.GetInt("last_level_unlocked"));
+        
+        if (lvl.id != progress.GetLastLevel().id || lvl.chapterId != progress.GetLastLevel().chapterId)
+            return;
+        
+        PlayerPrefs.SetInt("last_level_unlocked", 0);
+        PlayerPrefs.Save();
+    }
 
     internal void RunLevel(Level level)
     {
+        
         view.ShowGame();
         GameManager.instance.PlayLevel(level);
     }
@@ -438,7 +495,7 @@ public class ApplicationManager : MonoBehaviour
 
     public void DEV_AddGems()
     {
-        GameManager.instance.AddGems(10);
+        AddGems(10);
     }
 
     public void DEV_UnlockAllChapters()
@@ -475,6 +532,23 @@ public class ApplicationManager : MonoBehaviour
     }
 
     #endregion
+
+
+    public void UpdateLevelProgress(Level lvl,  LevelProgression lp)
+    {
+        if (progress.GetLevelProgress(lp.chapterid,  lp.levelid) == null)
+        {
+            AddGems(lp.gemTaken);
+            DatabaseManager.instance.UpdateLevelProgress(lp, false);
+        }
+        else if (lp.gemTaken > progress.GetLevelProgress(lvl).gemTaken)
+        {
+            AddGems(lp.gemTaken - progress.GetLevelProgress(lvl).gemTaken);
+            DatabaseManager.instance.UpdateLevelProgress(lp, true);
+        }
+
+        progress.UpdateLevelProgress(lp);
+    }
 }
 
 enum ApplicationState

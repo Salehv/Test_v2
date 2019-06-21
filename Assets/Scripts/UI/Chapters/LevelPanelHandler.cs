@@ -25,7 +25,7 @@ public class LevelPanelHandler : MonoBehaviour
         for (int i = 0; i < GameManager.instance.GetChapter(chapter).levels.Length; i++)
         {
             levels[i].gameObject.SetActive(true);
-            bool isSolved = GameManager.instance.progress.GetLevelProgress(chapter, i) != null;
+            bool isSolved = ApplicationManager.instance.GetLevelProgress(chapter, i) != null;
 
             SetLevel(levels[i], chapter, i, isSolved, lastLevel);
             
@@ -45,7 +45,7 @@ public class LevelPanelHandler : MonoBehaviour
         try
         {
             levelObject.level.gems =
-                GameManager.instance.progress.GetLevelProgress(chapterId, levelId).gemTaken;
+                ApplicationManager.instance.GetLevelProgress(chapterId, levelId).gemTaken;
         }
         catch (NullReferenceException e)
         {
