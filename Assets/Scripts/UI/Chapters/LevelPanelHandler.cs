@@ -39,6 +39,7 @@ public class LevelPanelHandler : MonoBehaviour
         }
     }
 
+    
     private void SetLevel(LevelObject levelObject, int chapterId, int levelId, bool isSolved = false, bool isLocked = false)
     {
         levelObject.level = GameManager.instance.GetChapter(chapterId).GetLevel(levelId);
@@ -66,6 +67,6 @@ public class LevelPanelHandler : MonoBehaviour
             return;
         }
         
-        levelObject.SetUnSolved();
+        levelObject.SetUnSolved(PlayerPrefs.GetInt("last_level_unlocked") == 1);
     }
 }

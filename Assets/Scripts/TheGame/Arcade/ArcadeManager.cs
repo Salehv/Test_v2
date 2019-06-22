@@ -120,6 +120,7 @@ namespace TheGame.Arcade
         private void End()
         {
             int score = words.Count - 1;
+            started = false;
 
             ViewManager.instance.SetUnEscapable();
             ViewManager.instance.ShowPanel(endPanel);

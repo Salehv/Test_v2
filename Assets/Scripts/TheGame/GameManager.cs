@@ -318,7 +318,6 @@ namespace TheGame
             textEditor.Initialize(this, words.Last.Value, currentLevel.flags);
             ResetDynamics();
 
-            currentShufflePage = 0;
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
         }
 
@@ -330,8 +329,6 @@ namespace TheGame
             words.AddLast(s);
 
             viewManager.AddToWordsView(words.Last.Previous.Value);
-
-            currentShufflePage = 0;
 
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
             textEditor.ResetPluses();
@@ -358,7 +355,6 @@ namespace TheGame
         public GameObject poolBuyButton;
 
 
-        private int maxShufflePage = 2;
         /*
         public void ShowShuffleMenu()
         {
@@ -400,19 +396,22 @@ namespace TheGame
             btnNextShuffle.interactable = true;
         }
         */
-
+        
+        private int maxShufflePage = 2;
         public void NextShufflePage()
         {
+            print($"[Shuffle] Current:{currentShufflePage}, Max:{maxShufflePage}");
             if (currentShufflePage == maxShufflePage)
                 currentShufflePage = -1;
 
-            // btnPrevShuffle.interactable = true;
             currentShufflePage += 1;
+            // btnPrevShuffle.interactable = true;
 
 //            if (currentShufflePage == maxShufflePage)
 //                btnNextShuffle.interactable = false;
-
+            print($"[Shuffle] Selected:{currentShufflePage}");
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
+            print($"[Shuffle] Chars:{GetRelatedChars(GetLastWord(), currentShufflePage)}");
         }
 
         /*
@@ -434,7 +433,6 @@ namespace TheGame
             currentShufflePage = 0;
             btnPrevShuffle.interactable = false;
             btnNextShuffle.interactable = false;
-            maxShufflePage = 0;
             poolBuyButton.GetComponent<Button>().interactable = true;
 
             EditorLetterHandler.RemoveDelete();
@@ -678,20 +676,6 @@ namespace TheGame
 
         public void Exit()
         {
-            if (chapters[currentLevel.chapterId].levels.Length > currentLevel.id + 1)
-            {
-                /*
-            if (!PlayerPrefs.HasKey("chapter_" + currentLevel.chapterID + "_ad_played"))
-            {
-                PlayerPrefs.SetInt("chapter_" + currentLevel.chapterID + "_ad_played", 1);
-                PlayerPrefs.Save();
-
-                // TODO: Fix the issue
-                // ApplicationManager.instance.ShowChapterEndAd();
-            }
-            */
-            }
-
             ResetDynamics();
 
             ApplicationManager.instance.Game_ExitToMenu(currentLevel.chapterId);

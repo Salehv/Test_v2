@@ -126,12 +126,11 @@ public class KeyHandler : MonoBehaviour
 
     private void IncreaseEnergy()
     {
-        print($"[EnergyHandler] Energy Increased! isCharging:{isCharging} & Energy:{energy}");
         energy += 1;
-
-        /*PlayerPrefs.SetInt("energy", energy);
+        
+        PlayerPrefs.SetInt("energy", energy);
         PlayerPrefs.Save();
-        */
+        
 
         lastChargeTime += energyChargeTime;
         PlayerPrefs.SetString("lastChargeTime", "" + lastChargeTime);

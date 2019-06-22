@@ -349,6 +349,7 @@ namespace App
                     levelsCanvas.SetActive(true);
                     levelsHandler.SetToChapter(selectedChapter);
                     state = ViewState.LEVELS;
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.INTRO:
@@ -360,6 +361,7 @@ namespace App
                     introView.SetActive(true);
 
                     TutorialHandler.instance.PlayTutorial_01();
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.MAIN_MENU:
@@ -370,6 +372,7 @@ namespace App
                         menuCanvas.SetActive(false);
                         state = ViewState.ARCADE;
                         ApplicationManager.instance.RunArcade();
+                        print("[ViewManager] State is now " + state.ToString());
                     }
                     else
                     {
@@ -377,6 +380,7 @@ namespace App
                         introView.SetActive(false);
                         menuCanvas.SetActive(true);
                         state = ViewState.MAIN_MENU;
+                        print("[ViewManager] State is now " + state.ToString());
                     }
 
                     break;
@@ -387,11 +391,13 @@ namespace App
                     menuCanvas.SetActive(true);
                     SetEscapable();
                     state = ViewState.MAIN_MENU;
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.ONSCREEN:
-                    state = lastState;
+                    Escape();
                     PageBlacked();
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
             }
         }
@@ -414,6 +420,7 @@ namespace App
                     {
                         state = lastState;
                         lastState = ViewState.ONSCREEN;
+                        print("[ViewManager] State is now " + state.ToString());
                     }
 
                     break;
@@ -431,6 +438,7 @@ namespace App
                     }
 
                     state = ViewState.MAIN_MENU;
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.LEVELS:
@@ -443,10 +451,12 @@ namespace App
                     AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
 
                     state = ViewState.CHAPTERS;
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.IN_GAME:
                     gameViewManager.Escape();
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.EXITING:
@@ -455,6 +465,7 @@ namespace App
 
                 case ViewState.ARCADE:
                     ArcadeManager.instance.Stop();
+                    print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 default: return;

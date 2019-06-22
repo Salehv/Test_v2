@@ -12,7 +12,6 @@ public class PanelOut : StateMachineBehaviour
 		if(stateInfo.IsName("FadeToBlack"))
 			return;
 
-		Debug.Log("HEHEHEHHEHEHR");
 		animator.GetComponentInParent<Panel>().gameObject.SetActive(false);
 	}
 

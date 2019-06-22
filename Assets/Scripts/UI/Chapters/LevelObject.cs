@@ -15,6 +15,8 @@ public class LevelObject : MonoBehaviour
 
     public Image background;
     public Text lockCountDownTime;
+
+    public GameObject keyUsed;
     
     public GameObject lockImage;
     public GameObject gemHolder;
@@ -66,6 +68,7 @@ public class LevelObject : MonoBehaviour
         lockImage.SetActive(true);
         levelId.gameObject.SetActive(false);
         gemHolder.SetActive(false);
+        keyUsed.SetActive(true);
         background.color = new Color(0.6f, 0.6f, 0.6f);
     }
 
@@ -74,14 +77,16 @@ public class LevelObject : MonoBehaviour
         lockImage.SetActive(false);
         levelId.gameObject.SetActive(true);
         gemHolder.SetActive(true);
+        keyUsed.SetActive(false);
         background.color = new Color(0.85f, 0.85f, 0.85f);
     }
 
-    internal void SetUnSolved()
+    internal void SetUnSolved(bool isUnlocked)
     {
         lockImage.SetActive(false);
         levelId.gameObject.SetActive(true);
         gemHolder.SetActive(false);
+        keyUsed.SetActive(!isUnlocked);
         background.color = new Color(1, 1, 1);
     }
 }
