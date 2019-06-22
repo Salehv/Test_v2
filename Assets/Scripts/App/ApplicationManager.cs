@@ -272,7 +272,7 @@ public class ApplicationManager : MonoBehaviour
     private System.Random r = new System.Random();
     private string[] randomStrs = {"بیل", "سیر", "میز", "تار", "ماه", "موش", "سرم", "درد"};
 
-    public void RunArcade()
+    internal void RunArcade()
     {
         ArcadeManager.instance.PlayArcade(randomStrs[r.Next(0, randomStrs.Length)], 80);
     }

@@ -382,8 +382,10 @@ namespace App
                     break;
 
                 case ViewState.ARCADE:
+
                     gameCanvas.SetActive(false);
                     menuCanvas.SetActive(true);
+                    SetEscapable();
                     state = ViewState.MAIN_MENU;
                     break;
 
@@ -452,7 +454,7 @@ namespace App
                     break;
 
                 case ViewState.ARCADE:
-                    ArcadeManager.instance.Pause();
+                    ArcadeManager.instance.Stop();
                     break;
 
                 default: return;

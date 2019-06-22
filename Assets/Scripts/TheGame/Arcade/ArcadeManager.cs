@@ -120,7 +120,6 @@ namespace TheGame.Arcade
         private void End()
         {
             int score = words.Count - 1;
-            started = false;
 
             ViewManager.instance.SetUnEscapable();
             ViewManager.instance.ShowPanel(endPanel);
@@ -138,9 +137,10 @@ namespace TheGame.Arcade
             highScore.text = hs + "";
         }
 
-        public void Pause()
+        public void Stop()
         {
-            ViewManager.instance.ShowPanel(pausePanel);
+            started = false;
+            ViewManager.instance.EndArcade();
         }
 
 

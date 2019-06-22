@@ -47,6 +47,15 @@ TextureImporter:
   - first:
       213: -758845682172452539
     second: WinPanel_Header
+  - first:
+      213: 4957688005299248046
+    second: ChapterLock01
+  - first:
+      213: 7140142522197426076
+    second: ChapterLock02
+  - first:
+      213: 6823078620062941484
+    second: ChapterLock03
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -132,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 619849a999b315a43b1bf03000a31707
+      spriteID: 0f2e0f4d079458644b13ba63e8ea2d34
       internalID: -8322638465422002425
       vertices: []
       indices: 
@@ -153,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce32f0ed64889d84a865baf723c4a689
+      spriteID: 193118414b6f77046892137afdd9fbdb
       internalID: 7118613571338210707
       vertices: []
       indices: 
@@ -174,7 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 802f666fde4ce1840a69eddf442b83f3
+      spriteID: 1f8ecc14e60b50042b3451b10a0486ef
       internalID: 5078150029752506001
       vertices: []
       indices: 
@@ -195,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0db5038e9e9633e47aff0f731eca759c
+      spriteID: f9394b214f425e140b95cded8e3917e9
       internalID: 8015649134828304312
       vertices: []
       indices: 
@@ -216,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3451ca7961d568f479a56c75f867c165
+      spriteID: 305be120320587848aa6ed7c9a0a576f
       internalID: -3433430041968579994
       vertices: []
       indices: 
@@ -237,7 +246,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b5fa7415a6d24f4f8aa97605797b6f2
+      spriteID: 1d91776486cfd9f489d0a405811f5fdd
       internalID: -7829339745776961248
       vertices: []
       indices: 
@@ -258,8 +267,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ff7fa0230cc64b40a95f203c2bf823d
+      spriteID: 857e3bbb94500354899f6d40fe6e8657
       internalID: 6095288530853737170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapterLock01
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 843
+        width: 383
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adcab72116c20b4d8aa914ebb26c05b
+      internalID: 4957688005299248046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapterLock02
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 428
+        width: 383
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525428de20dc88742bb672257b948268
+      internalID: 7140142522197426076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapterLock03
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 13
+        width: 383
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3282e049c8e2642469843cdb61367fba
+      internalID: 6823078620062941484
       vertices: []
       indices: 
       edges: []
@@ -279,7 +351,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 844c11f63b83a874b92b7a55ea0305a6
+      spriteID: 8804b6d7bfc3477439df14ce68cdf032
       internalID: 4927969714591270107
       vertices: []
       indices: 
@@ -300,7 +372,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d535b0ca42b30743a28cd37b47d6e5f
+      spriteID: 13b194cee6ba9864abdb7e6efbf15f34
       internalID: 3631427753842240048
       vertices: []
       indices: 
@@ -321,7 +393,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55ad41d1edad55240b8c549d46ee6fa5
+      spriteID: 7fae9200ceac1c845b2503fa15028979
       internalID: 7976402759298883240
       vertices: []
       indices: 
@@ -342,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 869f0eafd485af94ea7040ef41859ab9
+      spriteID: 2e33bd8d44bb03e48b6d916ef4b3c6a9
       internalID: 6247072073633344140
       vertices: []
       indices: 
@@ -352,8 +424,8 @@ TextureImporter:
       name: Lantern2
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 254
+        x: 1944
+        y: 349
         width: 43
         height: 386
       alignment: 0
@@ -363,7 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86d9d088454b569499fa57cbd6f4ef71
+      spriteID: d9e230220c11ea8469282849b01db5c2
       internalID: -2177685549579597603
       vertices: []
       indices: 
@@ -384,7 +456,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cfd37aa1b937f845ba2e83903d53d8b
+      spriteID: ac25250708015ae4ea7450f76fcdf8de
       internalID: -9066375726257480448
       vertices: []
       indices: 
@@ -394,7 +466,7 @@ TextureImporter:
       name: PlayChain
       rect:
         serializedVersion: 2
-        x: 1559
+        x: 1989
         y: 242
         width: 14
         height: 398
@@ -405,29 +477,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98ec168253c40ce4d9c5149e5a4e4767
+      spriteID: 5546d7c85615f4145ac7a93ea3388dd6
       internalID: 8979431339867779886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WinPanel_Header
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 964
-        width: 383
-        height: 292
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dbea3ad485459114281b789aa8a46aa0
-      internalID: -758845682172452539
       vertices: []
       indices: 
       edges: []
