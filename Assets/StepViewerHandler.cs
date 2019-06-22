@@ -56,7 +56,7 @@ public class StepViewerHandler : MonoBehaviour
         {
             progressBar.value -= (float)(0.33 / steps2);
             step3Counter = 6;
-            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.5f);
             gem2.GetComponent<Image>().color = Color.white;
         }
         else 
@@ -67,8 +67,8 @@ public class StepViewerHandler : MonoBehaviour
             {
                 progressBar.value -= 0.05f;
             }
-            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
-            gem2.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.5f);
+            gem2.GetComponent<Image>().color = new Color(1,1,1,0.5f);
         }
 
         currentStep++;
@@ -88,7 +88,7 @@ public class StepViewerHandler : MonoBehaviour
         {
             progressBar.value += (float)(0.33 / steps2);
             step3Counter = 6;
-            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.5f);
             gem2.GetComponent<Image>().color = Color.white;
         }
         else 
@@ -99,8 +99,8 @@ public class StepViewerHandler : MonoBehaviour
             {
                 progressBar.value += 0.05f;
             }
-            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
-            gem2.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.5f);
+            gem2.GetComponent<Image>().color = new Color(1,1,1,0.5f);
         }
 
         currentStep--;
