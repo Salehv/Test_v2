@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TheGame;
+using TheGame.Arcade;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +51,7 @@ namespace App
         public GameObject chaptersView;
         public GameObject settings;
         public Animator[] menuTransitions;
+        public FullPageHorizontalScrollSnap chapterScroller;
 
         [Header("Music Toggles")] public Toggle[] musics;
         [Header("SFX Toggles")] public Toggle[] sfxs;
@@ -73,12 +75,14 @@ namespace App
         }
 
 
-        public void MainMenuToChapters()
+        public void MainMenuToChapters(int lastChapter)
         {
             foreach (Animator a in menuTransitions)
             {
                 a.SetTrigger(TRIG_TO_CHAPTERS);
             }
+
+            chapterScroller.SetPage(lastChapter);
 
             state = ViewState.CHAPTERS;
         }
@@ -171,7 +175,6 @@ namespace App
         public GameObject introView;
         public GameViewManager gameViewManager;
 
-
         private void HideAllGamePanels()
         {
             gameCanvas.SetActive(false);
@@ -196,14 +199,14 @@ namespace App
 
         public void ShowArcade()
         {
-            gameCanvas.SetActive(true);
-            gameView.SetActive(false);
-            arcadeView.SetActive(true);
+            blackPageDestination = "arcade";
+            ShowBlackPage(true);
         }
 
         public void EndArcade()
         {
-            throw new System.NotImplementedException();
+            blackPageDestination = "main";
+            ShowBlackPage(true);
         }
 
         #endregion
@@ -272,9 +275,9 @@ namespace App
         #region Helpers
 
         [Header("Helpers")] public GameObject blackPage;
-
         public Animator blackPageAnimator;
         public ToastMessage toast;
+        private string blackPageDestination;
 
         internal void ShowBlackPage(bool hide = false)
         {
@@ -360,10 +363,30 @@ namespace App
                     break;
 
                 case ViewState.MAIN_MENU:
-                    gameCanvas.SetActive(false);
-                    introView.SetActive(false);
-                    menuCanvas.SetActive(true);
+                    if (blackPageDestination == "arcade")
+                    {
+                        gameCanvas.SetActive(true);
+                        arcadeView.SetActive(true);
+                        menuCanvas.SetActive(false);
+                        state = ViewState.ARCADE;
+                        ApplicationManager.instance.RunArcade();
+                    }
+                    else
+                    {
+                        gameCanvas.SetActive(false);
+                        introView.SetActive(false);
+                        menuCanvas.SetActive(true);
+                        state = ViewState.MAIN_MENU;
+                    }
+
                     break;
+
+                case ViewState.ARCADE:
+                    gameCanvas.SetActive(false);
+                    menuCanvas.SetActive(true);
+                    state = ViewState.MAIN_MENU;
+                    break;
+
                 case ViewState.ONSCREEN:
                     state = lastState;
                     PageBlacked();
@@ -428,6 +451,10 @@ namespace App
                     Application.Quit();
                     break;
 
+                case ViewState.ARCADE:
+                    ArcadeManager.instance.Pause();
+                    break;
+
                 default: return;
             }
         }
@@ -447,5 +474,6 @@ public enum ViewState
     ONSCREEN,
     AD,
     EXITING,
-    INTRO
+    INTRO,
+    ARCADE
 }
