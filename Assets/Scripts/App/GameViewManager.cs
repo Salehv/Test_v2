@@ -78,6 +78,11 @@ namespace App
             }
         }
 
+        public void InitStepViewer(int steps)
+        {
+            StepViewerHandler.instance.Init(steps);
+        }
+
         #endregion
 
         
@@ -93,11 +98,15 @@ namespace App
         {
             GameObject g = Instantiate(acceptedWordPrefab, wordsView);
             g.GetComponentInChildren<Text>().text = word;
+            
+            StepViewerHandler.instance.StepForward();
         }
 
         public void RemoveLastWord()
         {
             Destroy(wordsView.GetChild(wordsView.childCount - 1).gameObject);
+            
+            StepViewerHandler.instance.StepBackward();
         }
 
         #endregion

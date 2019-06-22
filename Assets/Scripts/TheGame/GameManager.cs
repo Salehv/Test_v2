@@ -96,7 +96,8 @@ namespace TheGame
             viewManager.ClearWordsView();
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
-
+            viewManager.InitStepViewer(currentLevel.way.Length + 2);
+            
             print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));
@@ -108,7 +109,6 @@ namespace TheGame
 
             hintState = new HintState();
             
-            StepViewerHandler.instance.Init(currentLevel.way.Length + 2);
 
             /********* Tutorials *********/
             TimeManager.instance.SetTimer("CurrentGame");
@@ -268,7 +268,6 @@ namespace TheGame
 
         internal override bool AddLetter(int inTextPosition, int code)
         {
-            StepViewerHandler.instance.StepForward();
             
             if (debugMode)
                 Debug.Log("Add Letter [" + Utilities.dic_letterToChar[code] + "] between [" + inTextPosition + ", " +
@@ -316,7 +315,6 @@ namespace TheGame
 
         public void Undo()
         {
-            StepViewerHandler.instance.StepBackward();
             
             if (words.Count < 2)
                 return;

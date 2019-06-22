@@ -26,7 +26,7 @@ public class StepViewerHandler : MonoBehaviour
     public void Init(int steps)
     {
         currentStep = 0;
-        progressBar.value = 100;
+        progressBar.value = 1;
         steps1 = steps;
         if (steps < 2)
         {
@@ -44,36 +44,42 @@ public class StepViewerHandler : MonoBehaviour
     public void StepForward()
     {
         currentStep++;
+        //print($"Current Steps:{currentStep}  +");
         
         if (currentStep < steps1)
         {
-            progressBar.value -= (int)(33 / steps1);
+            //print($"currentStep < steps1 {(0.33 / steps1)}");
+            progressBar.value -= (float)(0.33 / steps1);
         }
         else if (currentStep < steps1 + steps2)
         {
-            progressBar.value -= (int)(33 / steps2);
+            //print($"currentStep < steps1 + steps2 {(0.33 / steps2)}");
+            progressBar.value -= (float)(0.33 / steps2);
         }
         else
         {
-            progressBar.value -= (int) (progressBar.value / 4);
+            progressBar.value -= (float) (progressBar.value / 4);
         }
     }
 
     public void StepBackward()
     {
         currentStep--;
+        //print($"Current Steps:{currentStep}  -");
         
         if (currentStep <= steps1)
         {
-            progressBar.value += (int)(33 / steps1);
+            //print($"currentStep <= steps1 {(0.33 / steps1)}");
+            progressBar.value += (float)(0.33 / steps1);
         }
         else if (currentStep <= steps1 + steps2)
         {
-            progressBar.value += (int)(33 / steps2);
+            //print($"currentStep <= steps1 + steps2 {(0.33 / steps2)}");
+            progressBar.value += (float)(0.33 / steps2);
         }
         else
         {
-            progressBar.value += (int) (progressBar.value / 4);
+            progressBar.value += (float) (progressBar.value / 4);
         }
     }
 }
