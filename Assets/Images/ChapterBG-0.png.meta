@@ -129,8 +129,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eddf30decb8dda4b909be77100b69ba
-      internalID: -8322638465422002425
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 701c77fcd467ebc41ba1f4165ba201e0
-      internalID: 7118613571338210707
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6fa28fd913990e4e9bbe4fdfdf82876
-      internalID: 5078150029752506001
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f631e17d3680124a95180f931b011ba
-      internalID: 8015649134828304312
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66fa4dc1a0798374481b26bbdafeb2c6
-      internalID: -3433430041968579994
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49ca2792a9d7a124c902bdd9c73d5bfe
-      internalID: -7829339745776961248
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -255,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58cff2983a4e65041a33e9d1bc024374
-      internalID: 6095288530853737170
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5260aa830667b7643aaf0324861205b9
-      internalID: 4927969714591270107
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -297,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d31664b882234e4fbda7bb30c2e95b1
-      internalID: 3631427753842240048
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -318,8 +318,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3176d3469e91c643a32a415925e96a4
-      internalID: 7976402759298883240
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -328,8 +328,8 @@ TextureImporter:
       name: Lantern1
       rect:
         serializedVersion: 2
-        x: 1559
-        y: 121
+        x: 2000
+        y: 642
         width: 44
         height: 614
       alignment: 0
@@ -339,8 +339,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cabb74bda2abd7349a4fad0047659b89
-      internalID: 6247072073633344140
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -349,8 +349,8 @@ TextureImporter:
       name: Lantern2
       rect:
         serializedVersion: 2
-        x: 1615
-        y: 870
+        x: 1575
+        y: 254
         width: 43
         height: 386
       alignment: 0
@@ -360,8 +360,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45e1d486098baa946a8c619f9837e277
-      internalID: -2177685549579597603
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -370,7 +370,7 @@ TextureImporter:
       name: Lantern3
       rect:
         serializedVersion: 2
-        x: 1559
+        x: 1944
         y: 737
         width: 54
         height: 519
@@ -381,8 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e409e39e7b491224f86c7b9c1fce3d5a
-      internalID: -9066375726257480448
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -391,8 +391,8 @@ TextureImporter:
       name: PlayChain
       rect:
         serializedVersion: 2
-        x: 1605
-        y: 337
+        x: 1559
+        y: 242
         width: 14
         height: 398
       alignment: 0
@@ -402,8 +402,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19f1eff796638884d8d7d3557c06ab8d
-      internalID: 8979431339867779886
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinPanel_Header
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 964
+        width: 383
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []

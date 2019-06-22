@@ -437,8 +437,8 @@ TextureImporter:
       name: Btn_Arcade
       rect:
         serializedVersion: 2
-        x: 200
-        y: 463
+        x: 398
+        y: 526
         width: 196
         height: 196
       alignment: 0
@@ -458,8 +458,8 @@ TextureImporter:
       name: Btn_Back
       rect:
         serializedVersion: 2
-        x: 992
-        y: 765
+        x: 596
+        y: 526
         width: 196
         height: 196
       alignment: 0
@@ -501,7 +501,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1190
-        y: 765
+        y: 806
         width: 196
         height: 196
       alignment: 0
@@ -522,7 +522,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1388
-        y: 645
+        y: 806
         width: 196
         height: 196
       alignment: 0
@@ -542,8 +542,8 @@ TextureImporter:
       name: Btn_DoubleCoin
       rect:
         serializedVersion: 2
-        x: 594
-        y: 1479
+        x: 890
+        y: 1376
         width: 294
         height: 78
       alignment: 0
@@ -563,8 +563,8 @@ TextureImporter:
       name: Btn_Down
       rect:
         serializedVersion: 2
-        x: 596
-        y: 580
+        x: 1586
+        y: 636
         width: 196
         height: 196
       alignment: 0
@@ -584,8 +584,8 @@ TextureImporter:
       name: Btn_Exit
       rect:
         serializedVersion: 2
-        x: 398
-        y: 404
+        x: 1784
+        y: 636
         width: 196
         height: 196
       alignment: 0
@@ -605,8 +605,8 @@ TextureImporter:
       name: Btn_Gear
       rect:
         serializedVersion: 2
-        x: 200
-        y: 265
+        x: 1190
+        y: 608
         width: 196
         height: 196
       alignment: 0
@@ -647,8 +647,8 @@ TextureImporter:
       name: Btn_Hint
       rect:
         serializedVersion: 2
-        x: 2
-        y: 264
+        x: 992
+        y: 607
         width: 196
         height: 196
       alignment: 0
@@ -669,7 +669,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 794
-        y: 580
+        y: 500
         width: 196
         height: 196
       alignment: 0
@@ -689,8 +689,8 @@ TextureImporter:
       name: Btn_HintSimilarWords
       rect:
         serializedVersion: 2
-        x: 2
-        y: 66
+        x: 1388
+        y: 608
         width: 196
         height: 196
       alignment: 0
@@ -710,8 +710,8 @@ TextureImporter:
       name: Btn_Info
       rect:
         serializedVersion: 2
-        x: 200
-        y: 67
+        x: 398
+        y: 328
         width: 196
         height: 196
       alignment: 0
@@ -731,8 +731,8 @@ TextureImporter:
       name: Btn_Key
       rect:
         serializedVersion: 2
-        x: 992
-        y: 567
+        x: 596
+        y: 328
         width: 196
         height: 196
       alignment: 0
@@ -752,8 +752,8 @@ TextureImporter:
       name: Btn_KeyItem
       rect:
         serializedVersion: 2
-        x: 398
-        y: 1191
+        x: 1856
+        y: 1067
         width: 176
         height: 65
       alignment: 0
@@ -773,8 +773,8 @@ TextureImporter:
       name: Btn_Left
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 567
+        x: 398
+        y: 130
         width: 196
         height: 196
       alignment: 0
@@ -795,7 +795,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 596
-        y: 382
+        y: 130
         width: 196
         height: 196
       alignment: 0
@@ -815,8 +815,8 @@ TextureImporter:
       name: Btn_MusicOff
       rect:
         serializedVersion: 2
-        x: 398
-        y: 206
+        x: 1586
+        y: 438
         width: 196
         height: 196
       alignment: 0
@@ -836,8 +836,8 @@ TextureImporter:
       name: Btn_MusicOn
       rect:
         serializedVersion: 2
-        x: 794
-        y: 382
+        x: 1784
+        y: 438
         width: 196
         height: 196
       alignment: 0
@@ -857,8 +857,8 @@ TextureImporter:
       name: Btn_Next
       rect:
         serializedVersion: 2
-        x: 398
-        y: 8
+        x: 1190
+        y: 410
         width: 196
         height: 196
       alignment: 0
@@ -878,8 +878,8 @@ TextureImporter:
       name: Btn_Qolenj
       rect:
         serializedVersion: 2
-        x: 596
-        y: 184
+        x: 992
+        y: 409
         width: 196
         height: 196
       alignment: 0
@@ -900,7 +900,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 794
-        y: 184
+        y: 302
         width: 196
         height: 196
       alignment: 0
@@ -920,8 +920,8 @@ TextureImporter:
       name: Btn_Right
       rect:
         serializedVersion: 2
-        x: 1586
-        y: 514
+        x: 1388
+        y: 410
         width: 196
         height: 196
       alignment: 0
@@ -941,8 +941,8 @@ TextureImporter:
       name: Btn_Round
       rect:
         serializedVersion: 2
-        x: 1388
-        y: 447
+        x: 794
+        y: 104
         width: 196
         height: 196
       alignment: 0
@@ -962,8 +962,8 @@ TextureImporter:
       name: Btn_Rules
       rect:
         serializedVersion: 2
-        x: 1784
-        y: 514
+        x: 992
+        y: 211
         width: 196
         height: 196
       alignment: 0
@@ -984,7 +984,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 992
-        y: 369
+        y: 13
         width: 196
         height: 196
       alignment: 0
@@ -1005,7 +1005,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1190
-        y: 369
+        y: 212
         width: 196
         height: 196
       alignment: 0
@@ -1025,8 +1025,8 @@ TextureImporter:
       name: Btn_SoundOn
       rect:
         serializedVersion: 2
-        x: 992
-        y: 171
+        x: 1190
+        y: 14
         width: 196
         height: 196
       alignment: 0
@@ -1046,8 +1046,8 @@ TextureImporter:
       name: Btn_Tool
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 171
+        x: 1388
+        y: 212
         width: 196
         height: 196
       alignment: 0
@@ -1068,7 +1068,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1388
-        y: 249
+        y: 14
         width: 196
         height: 196
       alignment: 0
@@ -1088,8 +1088,8 @@ TextureImporter:
       name: Btn_Up
       rect:
         serializedVersion: 2
-        x: 1388
-        y: 51
+        x: 1586
+        y: 240
         width: 196
         height: 196
       alignment: 0
@@ -1130,8 +1130,8 @@ TextureImporter:
       name: BtnPlay
       rect:
         serializedVersion: 2
-        x: 1778
-        y: 1110
+        x: 1452
+        y: 1004
         width: 204
         height: 235
       alignment: 0
@@ -1190,133 +1190,28 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: GameLogo
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1402
+        width: 294
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Games_Amirza
-      rect:
-        serializedVersion: 2
-        x: 1452
-        y: 1042
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_Ballz
-      rect:
-        serializedVersion: 2
-        x: 1650
-        y: 911
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_CandyCrush
-      rect:
-        serializedVersion: 2
-        x: 1452
-        y: 843
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_ClashOfClans
-      rect:
-        serializedVersion: 2
-        x: 1848
-        y: 911
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_ClashRoyale
-      rect:
-        serializedVersion: 2
-        x: 1650
-        y: 712
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_CutTheRope
-      rect:
-        serializedVersion: 2
-        x: 1848
-        y: 712
-        width: 196
-        height: 197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 
-      internalID: 0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Games_QuizOfKings
       rect:
         serializedVersion: 2
         x: 2
@@ -1337,11 +1232,137 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Games_Sudoku
+      name: Games_Ballz
       rect:
         serializedVersion: 2
         x: 200
         y: 1059
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_CandyCrush
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 923
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_ClashOfClans
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 923
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_ClashRoyale
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 897
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_CutTheRope
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 860
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_QuizOfKings
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 860
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Games_Sudoku
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 724
         width: 196
         height: 197
       alignment: 0
@@ -1425,7 +1446,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1586
-        y: 316
+        y: 42
         width: 196
         height: 196
       alignment: 0
@@ -1446,9 +1467,51 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1784
-        y: 316
+        y: 240
         width: 196
         height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_MotherStudio
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 834
+        width: 196
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_White
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 1585
+        width: 218
+        height: 170
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1551,7 +1614,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1186
-        y: 1243
+        y: 1284
         width: 294
         height: 299
       alignment: 0
@@ -1634,8 +1697,8 @@ TextureImporter:
       name: Pointer
       rect:
         serializedVersion: 2
-        x: 1586
-        y: 118
+        x: 1784
+        y: 42
         width: 196
         height: 196
       alignment: 0
@@ -1676,8 +1739,8 @@ TextureImporter:
       name: QF_Blank
       rect:
         serializedVersion: 2
-        x: 576
-        y: 1000
+        x: 596
+        y: 724
         width: 196
         height: 197
       alignment: 0
@@ -1697,8 +1760,8 @@ TextureImporter:
       name: QF_Difficulty01
       rect:
         serializedVersion: 2
-        x: 774
-        y: 977
+        x: 2
+        y: 661
         width: 196
         height: 197
       alignment: 0
@@ -1718,8 +1781,8 @@ TextureImporter:
       name: QF_Difficulty02
       rect:
         serializedVersion: 2
-        x: 2
-        y: 860
+        x: 200
+        y: 661
         width: 196
         height: 197
       alignment: 0
@@ -1739,8 +1802,8 @@ TextureImporter:
       name: QF_Difficulty03
       rect:
         serializedVersion: 2
-        x: 200
-        y: 860
+        x: 2
+        y: 462
         width: 196
         height: 197
       alignment: 0
@@ -1760,8 +1823,8 @@ TextureImporter:
       name: QF_Difficulty04
       rect:
         serializedVersion: 2
-        x: 398
-        y: 801
+        x: 2
+        y: 263
         width: 196
         height: 197
       alignment: 0
@@ -1782,7 +1845,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 661
+        y: 64
         width: 196
         height: 197
       alignment: 0
@@ -1803,7 +1866,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 661
+        y: 462
         width: 196
         height: 197
       alignment: 0
@@ -1823,8 +1886,8 @@ TextureImporter:
       name: QF_Missing03
       rect:
         serializedVersion: 2
-        x: 596
-        y: 778
+        x: 200
+        y: 263
         width: 196
         height: 197
       alignment: 0
@@ -1844,8 +1907,8 @@ TextureImporter:
       name: QF_Missing04
       rect:
         serializedVersion: 2
-        x: 398
-        y: 602
+        x: 200
+        y: 64
         width: 196
         height: 197
       alignment: 0
@@ -1886,8 +1949,8 @@ TextureImporter:
       name: StarBlank
       rect:
         serializedVersion: 2
-        x: 794
-        y: 778
+        x: 992
+        y: 805
         width: 196
         height: 197
       alignment: 0
@@ -1907,8 +1970,8 @@ TextureImporter:
       name: StarFill
       rect:
         serializedVersion: 2
-        x: 2
-        y: 462
+        x: 794
+        y: 698
         width: 196
         height: 197
       alignment: 0
@@ -1971,7 +2034,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 594
-        y: 1199
+        y: 1122
         width: 284
         height: 278
       alignment: 0
@@ -1992,7 +2055,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 880
-        y: 1176
+        y: 1096
         width: 284
         height: 278
       alignment: 0
@@ -2013,7 +2076,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1166
-        y: 963
+        y: 1004
         width: 284
         height: 278
       alignment: 0
@@ -2033,8 +2096,8 @@ TextureImporter:
       name: TileWrong
       rect:
         serializedVersion: 2
-        x: 1186
-        y: 1544
+        x: 1778
+        y: 1134
         width: 217
         height: 211
       alignment: 0
