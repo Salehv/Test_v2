@@ -20,6 +20,30 @@ TextureImporter:
   - first:
       213: -1783385868317691048
     second: TransitionUp
+  - first:
+      213: 2509165409642109433
+    second: Chapter05BG
+  - first:
+      213: -2101042713465515296
+    second: Chapter06BG
+  - first:
+      213: 5065311263215661669
+    second: ChapterLock
+  - first:
+      213: -4681418724905940507
+    second: Character_Pose1
+  - first:
+      213: 6195424918780814615
+    second: Character_Pose2
+  - first:
+      213: 3631427753842240048
+    second: ChesxtOpen
+  - first:
+      213: -2913733169546119899
+    second: Character_Dialogue
+  - first:
+      213: 346136417572998941
+    second: "Character_\u064DError"
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -91,6 +115,48 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Character_Dialogue
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1530
+        width: 239
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f1af7830753f8468df1bee0f725d81
+      internalID: -2913733169546119899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Character_\u064DError"
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1807
+        width: 292
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d4e3847fee0424083ef45395f34a73
+      internalID: 346136417572998941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: InGame04TEP
       rect:
         serializedVersion: 2
@@ -105,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: 03891c9f94226f344b33cd6b1ae965cf
+      internalID: 113165832256449062
       vertices: []
       indices: 
       edges: []
@@ -126,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: fe65ec87e9c0402488d46b4b0afb0f8d
+      internalID: 6117714030602341294
       vertices: []
       indices: 
       edges: []
@@ -147,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: d78139cfc4296dd408646d19ef0b9cfe
+      internalID: 4616370434843588116
       vertices: []
       indices: 
       edges: []
@@ -168,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: cceb6adeb2d19b944ba465d1684499de
+      internalID: 8759871349884944488
       vertices: []
       indices: 
       edges: []
@@ -189,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: ff36f9b7e1487da42a38a310eef6fd3e
+      internalID: 65088921106527997
       vertices: []
       indices: 
       edges: []
@@ -210,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 
-      internalID: 0
+      spriteID: 1a4b8148fa4db694280c923d91710738
+      internalID: -1783385868317691048
       vertices: []
       indices: 
       edges: []
