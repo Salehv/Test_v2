@@ -56,6 +56,12 @@ TextureImporter:
   - first:
       213: 6823078620062941484
     second: ChapterLock03
+  - first:
+      213: -2913733169546119899
+    second: Character_Dialogue
+  - first:
+      213: 346136417572998941
+    second: "Character_\u064DError"
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -141,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc77a92d21e505f4bbbb2445d5c8f537
+      spriteID: fdaf985cc1a29164ea3eb00305db310c
       internalID: -8322638465422002425
       vertices: []
       indices: 
@@ -162,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e1e903b1e0779745b381889d7252811
+      spriteID: 1fbc6c9d0842d0640a9f1b55b35479e3
       internalID: 7118613571338210707
       vertices: []
       indices: 
@@ -183,7 +189,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 299a49257bb1a6541a802dc8a34b543a
+      spriteID: 2e9870407ca2c3c4892778fc4267a07e
       internalID: 5078150029752506001
       vertices: []
       indices: 
@@ -193,7 +199,7 @@ TextureImporter:
       name: Chapter01PlayBtn
       rect:
         serializedVersion: 2
-        x: 2
+        x: 294
         y: 93
         width: 93
         height: 111
@@ -204,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b908be8743a98e4d8621cfb60d8b634
+      spriteID: 8b50b0defc9b9344c80e0000f5077b45
       internalID: 8015649134828304312
       vertices: []
       indices: 
@@ -225,7 +231,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b55772f15c3c6948b1d4a703ae34630
+      spriteID: 5b0a3e02254598245815f9f60792ff7c
       internalID: -3433430041968579994
       vertices: []
       indices: 
@@ -246,7 +252,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7be22e7a58b60f45b654beacd883595
+      spriteID: bf94205c4083f054da1b1b1443ef90da
       internalID: -7829339745776961248
       vertices: []
       indices: 
@@ -267,7 +273,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c436ac32db7ce44ea6570207cac4352
+      spriteID: 84d30e550acbb4545bee9eac1205d20b
       internalID: 6095288530853737170
       vertices: []
       indices: 
@@ -288,7 +294,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1931bed56eed88e428d06513042428e9
+      spriteID: cd0e8d2667fa657488a4526da50a0b5c
       internalID: 4957688005299248046
       vertices: []
       indices: 
@@ -309,7 +315,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a61176c2012f1a3488e0d4440fc5557e
+      spriteID: 18e0a3b58dfa0804688e49448f394736
       internalID: 7140142522197426076
       vertices: []
       indices: 
@@ -330,8 +336,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b06cfda93770c534cbcaaab850a791ad
+      spriteID: 51fc58a40a1910443ab89238ff6bfad7
       internalID: 6823078620062941484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Dialogue
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 39
+        width: 144
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6b8517e76121a48b7e51d4de72f579
+      internalID: -2913733169546119899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Character_\u064DError"
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 86
+        width: 144
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958327afc9daae74198008f6860de98e
+      internalID: 346136417572998941
       vertices: []
       indices: 
       edges: []
@@ -351,7 +399,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab7d5ade89a39d740b19865aba527484
+      spriteID: 8a1fadf86b1c5404a9bffa6b5f78b9af
       internalID: 4927969714591270107
       vertices: []
       indices: 
@@ -372,7 +420,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad1003020d5b2e043a3652af6518205f
+      spriteID: 6e0fc3562c25e2e4499da350a339129b
       internalID: 3631427753842240048
       vertices: []
       indices: 
@@ -382,8 +430,8 @@ TextureImporter:
       name: Hooray
       rect:
         serializedVersion: 2
-        x: 2
-        y: 30
+        x: 148
+        y: 23
         width: 61
         height: 61
       alignment: 0
@@ -393,7 +441,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e88a560a6e5e29a449b7dcfc79999bee
+      spriteID: a156f287b3cfc0c4b93181a5f6e07230
       internalID: 7976402759298883240
       vertices: []
       indices: 
@@ -414,7 +462,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d87a976a3ee5e4440a93bad761e52810
+      spriteID: 698c6cc592caf3348be11def8bff511f
       internalID: 6247072073633344140
       vertices: []
       indices: 
@@ -435,7 +483,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c99138166a57924988c95bff60b6151
+      spriteID: b94cbdd01f7063e4287223c59abc4d64
       internalID: -2177685549579597603
       vertices: []
       indices: 
@@ -456,7 +504,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff895d1c6e8d91e4ca406d60b0e5159b
+      spriteID: ab6809b86d9689648874d938747e1ba9
       internalID: -9066375726257480448
       vertices: []
       indices: 
@@ -477,7 +525,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4224719e26ddf5c428525f9fdcc14864
+      spriteID: f6e501031964ec340ad91ee81abadc6c
       internalID: 8979431339867779886
       vertices: []
       indices: 

@@ -163,7 +163,7 @@ PlayerSettings:
     iPhone: ir.qolenj.kalanjar
   buildNumber:
     iPhone: 9
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 2
