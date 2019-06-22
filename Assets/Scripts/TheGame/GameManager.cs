@@ -107,7 +107,8 @@ namespace TheGame
             letterPool.Init(textEditor, related);
 
             hintState = new HintState();
-
+            
+            StepViewerHandler.instance.Init(currentLevel.way.Length + 2);
 
             /********* Tutorials *********/
             TimeManager.instance.SetTimer("CurrentGame");
@@ -267,6 +268,8 @@ namespace TheGame
 
         internal override bool AddLetter(int inTextPosition, int code)
         {
+            StepViewerHandler.instance.StepForward();
+            
             if (debugMode)
                 Debug.Log("Add Letter [" + Utilities.dic_letterToChar[code] + "] between [" + inTextPosition + ", " +
                           (inTextPosition + 1) + "]");
@@ -313,6 +316,8 @@ namespace TheGame
 
         public void Undo()
         {
+            StepViewerHandler.instance.StepBackward();
+            
             if (words.Count < 2)
                 return;
 

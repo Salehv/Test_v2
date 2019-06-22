@@ -119,11 +119,13 @@ public class AdHandler : MonoBehaviour
     private void AdError(TapsellError error)
     {
         Debug.LogError($"[AdHandler] Ad Error! {error.error}");
+        PopupHandler.ShowDebug("ارتباط از طرف تپسل با مشکل مواجه شد.");
     }
 
     private void AdNetworkNotAvailable(string zoneId)
     {
         Debug.LogError($"[AdHandler] No Internet! {zoneId}");
+        PopupHandler.ShowDebug("ارتباط اینترنت برقرار نشد لطفا اتصال خودتون رو بررسی کنید.");
     }
 
     private void AdExpire(TapsellAd result)
