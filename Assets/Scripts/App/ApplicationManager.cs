@@ -81,15 +81,7 @@ public class ApplicationManager : MonoBehaviour
 
         GameAnalytics.Initialize();
 
-        Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
-        Tapsell.setRewardListener(AdReward);
-
-
-        // Ad Time
-        if (PlayerPrefs.HasKey("adWatched"))
-        {
-            adTimeRemained = SecondsToEndAdWait(PlayerPrefs.GetString("adWatched"));
-        }
+        AdHandler.instance.Init();
     }
 
 
@@ -209,62 +201,6 @@ public class ApplicationManager : MonoBehaviour
 
     #region Advertisement
 
-    [Header("Ad Panels")] public GameObject adLoading;
-    public GameObject adNotAvailable;
-
-    public void RequestAd()
-    {
-        if (adTimeRemained > 0)
-        {
-            view.AdTimeRemained();
-            return;
-        }
-
-        view.ShowAdPanel();
-    }
-
-    private long SecondsToEndAdWait(string fileTime)
-    {
-        long now = DateTime.UtcNow.ToFileTimeUtc() / 10000000;
-        return (15 * 60) - (now - long.Parse(fileTime));
-    }
-
-
-    public void ShowChapterEndAd()
-    {
-        adLoading.SetActive(true);
-        Tapsell.requestAd("5cadc244ac03560001fcab38", false,
-            (TapsellAd result) =>
-            {
-                Tapsell.showAd(result, new TapsellShowOptions());
-                adLoading.SetActive(false);
-            }, (string zoneId) => { adLoading.SetActive(false); },
-            (TapsellError error) => { adLoading.SetActive(false); }
-            , (string zoneId) => { adLoading.SetActive(false); }
-            , (TapsellAd result) => { adLoading.SetActive(false); });
-    }
-
-    private string ad_zone_winDoublePrize = "5cd16a3ddae9a60001f48aec";
-    private string ad_zone_mainMenu = "5c6c233aa3455800014d5f40";
-    private string ad_zone_key = "5d0dbef3ffe1ef0001e3489a";
-
-    private void AdReward(TapsellAdFinishedResult result)
-    {
-        if (result.rewarded && result.completed)
-        {
-            if (result.zoneId == ad_zone_winDoublePrize)
-            {
-                GameManager.instance.DoublePrizeReward();
-            }
-            else if (result.zoneId == ad_zone_mainMenu)
-                GameManager.instance.AddCoins(30);
-            else if (result.zoneId == ad_zone_key)
-            {
-                _keyHandler.AddKeys(3);
-            }
-        }
-    }
-
     #endregion
 
 
@@ -371,11 +307,6 @@ public class ApplicationManager : MonoBehaviour
     private void HideAll()
     {
         TutorialHandler.instance.ResetAll();
-
-        adPanel.SetActive(false);
-        adLoading.SetActive(false);
-        adNotAvailable.SetActive(false);
-
         ChestHandler.instance.chest.SetActive(false);
     }
 

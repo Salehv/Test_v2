@@ -30,7 +30,6 @@ public class TimeManager : MonoBehaviour
         return (int) ((DateTime.UtcNow.ToFileTimeUtc() / 10000000) - long.Parse(time));
     }
 
-
     internal void DiscardRealTimer(string timer)
     {
         if (PlayerPrefs.HasKey(name))
@@ -86,7 +85,6 @@ public class TimeManager : MonoBehaviour
                 timers[toAdd] = 0;
                 toAdd = "";
             }
-            
         }
 
         if (toRemove != "")
@@ -100,5 +98,11 @@ public class TimeManager : MonoBehaviour
         {
             timers[timer] += Time.deltaTime;
         }
+    }
+
+
+    public long Now()
+    {
+        return DateTime.UtcNow.ToFileTimeUtc() / 10000000;
     }
 }

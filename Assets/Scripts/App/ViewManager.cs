@@ -428,20 +428,12 @@ namespace App
                     Application.Quit();
                     break;
 
-                /*
-                case ViewState.AD:
-                    adPanel.SetActive(false);
-                    state = ApplicationState.MAIN_MENU;
-                    AudioManager.instance.PlaySFX(2);
-                    break;
-                case ViewState.QUESTION_FORM:
-                    questionForm.gameObject.SetActive(false);
-                    state = ApplicationState.MAIN_MENU;
-                    break;
-                */
-
                 default: return;
             }
+        }
+
+        public void ShowAdRemainingTime()
+        {
         }
     }
 }
