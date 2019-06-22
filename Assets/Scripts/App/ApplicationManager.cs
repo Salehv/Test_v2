@@ -226,13 +226,16 @@ public class ApplicationManager : MonoBehaviour
         }
         else
         {
-            view.MainMenuToChapters();
+            view.MainMenuToChapters(progress.GetLastLevel().chapterId);
         }
     }
 
 
     internal void LevelStartRequest(Level lvl)
     {
+        if (lvl.chapterId < 1)
+            return;
+
         if (lvl.id == progress.GetLastLevel().id && lvl.chapterId == progress.GetLastLevel().chapterId)
             if (PlayerPrefs.GetInt("last_level_unlocked") == 0)
             {
@@ -266,10 +269,12 @@ public class ApplicationManager : MonoBehaviour
         GameManager.instance.PlayLevel(level);
     }
 
+    private System.Random r = new System.Random();
+    private string[] randomStrs = {"بیل", "سیر", "میز", "تار", "ماه", "موش", "سرم", "درد"};
+
     public void RunArcade()
     {
-        ArcadeManager.instance.PlayArcade("تست", 80);
-        view.ShowArcade();
+        ArcadeManager.instance.PlayArcade(randomStrs[r.Next(0, randomStrs.Length)], 80);
     }
 
     public void Exit()
@@ -337,6 +342,11 @@ public class ApplicationManager : MonoBehaviour
     public void Site()
     {
         Application.OpenURL("http://qolenj.ir/");
+    }
+
+    public void MotherSite()
+    {
+        Application.OpenURL("http://motherstudio.org/");
     }
 
     public bool IsInGame()

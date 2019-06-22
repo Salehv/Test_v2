@@ -22,7 +22,7 @@ public class FullPageHorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, ID
     private float _speed;
     private int _startedPage;
 
-    
+
     /**
     private void Start()
     {
@@ -119,16 +119,24 @@ public class FullPageHorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, ID
         }
     }
 
+
     internal void GoToPageDelayed(int page, float delay)
     {
         _lerpTarget = GetPagePosition(page);
         Invoke("_go", delay);
     }
 
+
     internal void GoToPage(int page)
     {
         _lerpTarget = GetPagePosition(page);
         _go();
+    }
+
+
+    public void SetPage(int lastChapter)
+    {
+        content.anchoredPosition = GetPagePosition(lastChapter);
     }
 
 

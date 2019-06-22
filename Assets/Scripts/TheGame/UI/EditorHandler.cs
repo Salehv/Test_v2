@@ -140,7 +140,7 @@ public class EditorHandler : MonoBehaviour
         g.transform.localPosition = Vector3.zero;
         g.GetComponent<EditorLetterHandler>()
             .Init(_dynamics, this, position, Utilities.dic_charToLetter[l], canRemoveLetter);
-        
+
         (g.transform as RectTransform).localScale = Vector3.one;
         return g;
     }
@@ -197,8 +197,14 @@ public class EditorHandler : MonoBehaviour
     private void ErrorLetter(int xPosition)
     {
         TurnTileTo(SpriteMode.ERROR, xPosition);
-        CharacterCommentHandler.instance.Call("کلمه بی معنی");
         StartCoroutine(TurnBackTile(xPosition));
+        try
+        {
+            CharacterCommentHandler.instance.Call("کلمه بی معنی");
+        }
+        catch (Exception e)
+        {
+        }
     }
 
     private void TurnTileTo(SpriteMode type, int xPosition)

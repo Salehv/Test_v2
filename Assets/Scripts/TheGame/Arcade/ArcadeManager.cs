@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using App;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +11,9 @@ namespace TheGame.Arcade
         internal static ArcadeManager instance;
         public GameObject wordPrefab;
         public GameObject wordsView;
-        public GameObject endPanel;
+        public Panel endPanel;
+        public Panel pausePanel;
+        public Panel introPanel;
         public Text endScore;
         public Text highScore;
 
@@ -34,12 +38,27 @@ namespace TheGame.Arcade
             instance = this;
         }
 
+        public void StartArcade()
+        {
+            ViewManager.instance.SetEscapable();
+            ViewManager.instance.Escape();
+            started = true;
+        }
+
         private void Update()
         {
             if (started)
             {
-                timeText.text = string.Format("{0:00} : {1:00}", remainingTime / 60, remainingTime % 60);
+                timeText.text = Utilities.GetTimeFormat(remainingTime);
                 remainingTime -= Time.deltaTime;
+                if (remainingTime < 10)
+                {
+                    timeText.color = Color.red;
+                }
+                else
+                {
+                    timeText.color = Color.white;
+                }
 
                 if (remainingTime < 0)
                 {
@@ -52,7 +71,7 @@ namespace TheGame.Arcade
         internal void PlayArcade(string start, float time)
         {
             highScoreBeaten.SetActive(false);
-            endPanel.SetActive(false);
+            endPanel.gameObject.SetActive(false);
 
             words = new List<string>();
 
@@ -69,8 +88,11 @@ namespace TheGame.Arcade
             editor.Initialize(this, start, DynamicsFlag.DF_FULL);
 
             remainingTime = time;
+            timeText.text = Utilities.GetTimeFormat(remainingTime);
+            timeText.color = Color.white;
 
-            started = true;
+            ViewManager.instance.SetUnEscapable();
+            ViewManager.instance.ShowPanel(introPanel);
         }
 
 
@@ -97,9 +119,12 @@ namespace TheGame.Arcade
 
         private void End()
         {
-            int score = words.Count;
+            int score = words.Count - 1;
             started = false;
-            endPanel.SetActive(true);
+
+            ViewManager.instance.SetUnEscapable();
+            ViewManager.instance.ShowPanel(endPanel);
+
             endScore.text = score + "";
             int hs = PlayerPrefs.GetInt("arcade_high_score");
 
@@ -111,6 +136,11 @@ namespace TheGame.Arcade
             }
 
             highScore.text = hs + "";
+        }
+
+        public void Pause()
+        {
+            ViewManager.instance.ShowPanel(pausePanel);
         }
 
 
