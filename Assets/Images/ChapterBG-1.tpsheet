@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:74c72c780da89d49f19bf1d3b7addff6:15c44ee18278555818c03f2fe2c6e7db:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:e531a6b35d9461184cfb65179f92bd59:1b5eb506c8755a6035104c3cbed6cef1:65b6e72418b136aebb682b32e80fcc76$
 #
 :format=40300
 :texture=ChapterBG-1.png
@@ -17,6 +17,8 @@ Chapter06BG;2;206;517;919; 0.5;0.5; 0;0;0;0
 ChapterLock;521;1127;517;919; 0.5;0.5; 0;0;0;0
 ChapterLock04;1559;1633;383;413; 0.5;0.5; 0;0;0;0
 ChapterLock05;1559;1218;383;413; 0.5;0.5; 0;0;0;0
+Character_Pose1;1559;202;239;359; 0.5;0.5; 0;0;0;0
+Character_Pose2;1559;563;261;359; 0.5;0.5; 0;0;0;0
 InGame01TEP;521;206;517;919; 0.5;0.5; 0;0;0;0
 InGame02TEP;1040;1127;517;919; 0.5;0.5; 0;0;0;0
 InGame03TEP;1040;206;517;919; 0.5;0.5; 0;0;0;0

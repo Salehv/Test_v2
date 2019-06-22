@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:74c72c780da89d49f19bf1d3b7addff6:15c44ee18278555818c03f2fe2c6e7db:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:e531a6b35d9461184cfb65179f92bd59:1b5eb506c8755a6035104c3cbed6cef1:65b6e72418b136aebb682b32e80fcc76$
 #
 :format=40300
 :texture=ChapterBG-0.png
@@ -15,16 +15,18 @@
 BG-Blured;2;1127;517;919; 0.5;0.5; 0;0;0;0
 BG;2;206;517;919; 0.5;0.5; 0;0;0;0
 Chapter01BG;521;1127;517;919; 0.5;0.5; 0;0;0;0
-Chapter01PlayBtn;2;93;93;111; 0.5;0.5; 0;0;0;0
+Chapter01PlayBtn;294;93;93;111; 0.5;0.5; 0;0;0;0
 Chapter02BG;521;206;517;919; 0.5;0.5; 0;0;0;0
 Chapter03BG;1040;1127;517;919; 0.5;0.5; 0;0;0;0
 Chapter04BG;1040;206;517;919; 0.5;0.5; 0;0;0;0
 ChapterLock01;1559;843;383;413; 0.5;0.5; 0;0;0;0
 ChapterLock02;1559;428;383;413; 0.5;0.5; 0;0;0;0
 ChapterLock03;1559;13;383;413; 0.5;0.5; 0;0;0;0
+Character_Dialogue;2;39;144;165; 0.5;0.5; 0;0;0;0
+Character_ٍError;148;86;144;118; 0.5;0.5; 0;0;0;0
 ChestClosed;1559;1653;479;393; 0.5;0.5; 0;0;0;0
 ChesxtOpen;1559;1258;479;393; 0.5;0.5; 0;0;0;0
-Hooray;2;30;61;61; 0.5;0.5; 0;0;0;0
+Hooray;148;23;61;61; 0.5;0.5; 0;0;0;0
 Lantern1;2000;642;44;614; 0.5;0.5; 0;0;0;0
 Lantern2;1944;349;43;386; 0.5;0.5; 0;0;0;0
 Lantern3;1944;737;54;519; 0.5;0.5; 0;0;0;0
