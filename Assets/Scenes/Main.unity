@@ -48055,6 +48055,12 @@ RectTransform:
   m_AnchoredPosition: {x: 82.1, y: 160.1}
   m_SizeDelta: {x: 100, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &761022590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8348173789826219273, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1115144592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &761184404
 GameObject:
   m_ObjectHideFlags: 0
@@ -81551,6 +81557,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642593183221262581, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.728
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003141218440261840, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 82.899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678274876327942867, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: baf9e96ba0169f34c8937e164d33f81e,
+        type: 3}
+    - target: {fileID: 1678274876327942867, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ee216d2dad3464fbdd8b3777abb0a9, type: 3}
@@ -116072,9 +116099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90a8016763677d4598b909e8d0a49ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressBar: {fileID: 1598362891}
   textStep1: {fileID: 2059564433}
   textStep2: {fileID: 266954407}
-  progressBar: {fileID: 1598362891}
+  gem3: {fileID: 761022590}
+  gem2: {fileID: 2045045178}
 --- !u!1 &1849304484
 GameObject:
   m_ObjectHideFlags: 0
@@ -126550,6 +126579,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044243799}
   m_CullTransparentMesh: 0
+--- !u!1 &2045045178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2877351686626632197, guid: 13ee216d2dad3464fbdd8b3777abb0a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1115144592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2046960797
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,15 @@ public class StepViewerHandler : MonoBehaviour
 {
     public static StepViewerHandler instance;
     
+    public Slider progressBar;
     public Text textStep1;
     public Text textStep2;
-    public Slider progressBar;
+    public GameObject gem3;
+    public GameObject gem2;
 
     private int steps1;
     private int steps2;
+    private int step3Counter;
     private int stage;
     private int currentStep;
 
@@ -43,43 +46,65 @@ public class StepViewerHandler : MonoBehaviour
 
     public void StepForward()
     {
-        currentStep++;
-        //print($"Current Steps:{currentStep}  +");
-        
         if (currentStep < steps1)
         {
-            //print($"currentStep < steps1 {(0.33 / steps1)}");
             progressBar.value -= (float)(0.33 / steps1);
+            step3Counter = 6;
+            gem3.GetComponent<Image>().color = Color.white;
+            gem2.GetComponent<Image>().color = Color.white;
         }
         else if (currentStep < steps1 + steps2)
         {
-            //print($"currentStep < steps1 + steps2 {(0.33 / steps2)}");
             progressBar.value -= (float)(0.33 / steps2);
+            step3Counter = 6;
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem2.GetComponent<Image>().color = Color.white;
         }
-        else
+        else 
         {
-            progressBar.value -= (float) (progressBar.value / 4);
+            step3Counter --;
+            print($"step 3 Counter: {step3Counter}    --");
+            if (step3Counter > 0)
+            {
+                progressBar.value -= 0.05f;
+            }
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem2.GetComponent<Image>().color = new Color(1,1,1,0.3f);
         }
+
+        currentStep++;
+        //print($"Current Steps:{currentStep}  +");
     }
 
     public void StepBackward()
     {
-        currentStep--;
-        //print($"Current Steps:{currentStep}  -");
-        
         if (currentStep <= steps1)
         {
-            //print($"currentStep <= steps1 {(0.33 / steps1)}");
             progressBar.value += (float)(0.33 / steps1);
+            step3Counter = 6;
+            gem3.GetComponent<Image>().color = Color.white;
+            gem2.GetComponent<Image>().color = Color.white;
         }
         else if (currentStep <= steps1 + steps2)
         {
-            //print($"currentStep <= steps1 + steps2 {(0.33 / steps2)}");
             progressBar.value += (float)(0.33 / steps2);
+            step3Counter = 6;
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem2.GetComponent<Image>().color = Color.white;
         }
-        else
+        else 
         {
-            progressBar.value += (float) (progressBar.value / 4);
+            step3Counter ++;
+            print($"step 3 Counter: {step3Counter}    ++");
+            if (step3Counter  > 1)
+            {
+                progressBar.value += 0.05f;
+            }
+            gem3.GetComponent<Image>().color = new Color(1,1,1,0.3f);
+            gem2.GetComponent<Image>().color = new Color(1,1,1,0.3f);
         }
+
+        currentStep--;
+        //print($"Current Steps:{currentStep}  -");
     }
 }
