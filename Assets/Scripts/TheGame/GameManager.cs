@@ -97,7 +97,7 @@ namespace TheGame
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
             viewManager.InitStepViewer(currentLevel.way.Length + 2);
-            
+
             print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));
@@ -108,7 +108,7 @@ namespace TheGame
             letterPool.Init(textEditor, related);
 
             hintState = new HintState();
-            
+
 
             /********* Tutorials *********/
             TimeManager.instance.SetTimer("CurrentGame");
@@ -207,11 +207,6 @@ namespace TheGame
         }
 
 
-        private GameProgression GetProgress()
-        {
-            return DatabaseManager.instance.GetProgressData();
-        }
-
         internal Chapter GetChapter(int n)
         {
             return chapters[n];
@@ -268,7 +263,6 @@ namespace TheGame
 
         internal override bool AddLetter(int inTextPosition, int code)
         {
-            
             if (debugMode)
                 Debug.Log("Add Letter [" + Utilities.dic_letterToChar[code] + "] between [" + inTextPosition + ", " +
                           (inTextPosition + 1) + "]");
@@ -315,7 +309,6 @@ namespace TheGame
 
         public void Undo()
         {
-            
             if (words.Count < 2)
                 return;
 
@@ -324,6 +317,8 @@ namespace TheGame
 
             textEditor.Initialize(this, words.Last.Value, currentLevel.flags);
             ResetDynamics();
+
+            currentShufflePage = 0;
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
         }
 
@@ -335,6 +330,8 @@ namespace TheGame
             words.AddLast(s);
 
             viewManager.AddToWordsView(words.Last.Previous.Value);
+
+            currentShufflePage = 0;
 
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
             textEditor.ResetPluses();
@@ -360,9 +357,9 @@ namespace TheGame
         public GameObject shuffleLetterPanel;
         public GameObject poolBuyButton;
 
-        private int maxShufflePage = 0;
 
-
+        private int maxShufflePage = 2;
+        /*
         public void ShowShuffleMenu()
         {
             shufflePanel.SetActive(true);
@@ -382,7 +379,9 @@ namespace TheGame
             middle.GetComponent<AvailableLetter>().Init(textEditor, Utilities.dic_letterToChar[letter]);
             middle.GetComponent<AvailableLetter>().SetShine(true);
         }
+        */
 
+        /*
         public void ShufflePageBought()
         {
             maxShufflePage += 1;
@@ -400,19 +399,23 @@ namespace TheGame
             // AddCoins(-20);
             btnNextShuffle.interactable = true;
         }
+        */
 
         public void NextShufflePage()
         {
             if (currentShufflePage == maxShufflePage)
-                return;
+                currentShufflePage = -1;
 
-            btnPrevShuffle.interactable = true;
+            // btnPrevShuffle.interactable = true;
             currentShufflePage += 1;
-            if (currentShufflePage == maxShufflePage)
-                btnNextShuffle.interactable = false;
+
+//            if (currentShufflePage == maxShufflePage)
+//                btnNextShuffle.interactable = false;
+
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
         }
 
+        /*
         public void PrevShufflePage()
         {
             if (currentShufflePage == 0)
@@ -424,6 +427,7 @@ namespace TheGame
                 btnPrevShuffle.interactable = false;
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
         }
+        */
 
         private void ResetDynamics()
         {
@@ -624,13 +628,7 @@ namespace TheGame
 
         public void DoublePrize()
         {
-            Tapsell.requestAd("5cd16a3ddae9a60001f48aec", false,
-                (TapsellAd ad) => { Tapsell.showAd(ad, new TapsellShowOptions()); },
-                (noAd) => { },
-                (TapsellError e) => { },
-                (string e) => { },
-                (ad) => { }
-            );
+            AdHandler.instance.ShowPrizeAd();
         }
 
         private int _collectedCoinWaitingForReward = 0;
@@ -731,11 +729,13 @@ namespace TheGame
 
             List<int> availableChars = new List<int>();
 
+            // Remove Duplicates
             string prior = currentEndWord;
             for (int i = 0; i < prior.Length; i++)
             for (int j = i + 1; j < prior.Length; j++)
                 if (prior[i] == prior[j])
                     prior = prior.Remove(j);
+
 
             for (int i = 0; i < prior.Length; i++)
             {
