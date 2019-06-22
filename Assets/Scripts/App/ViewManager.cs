@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TheGame;
 using UnityEngine;
@@ -141,6 +142,17 @@ namespace App
 
         public void LevelClicked(Level level)
         {
+            try
+            {
+                ApplicationManager.instance.LevelStartRequest(level);
+            }
+            catch (NoEnergyException e)
+            {
+                // TODO: Show No  Energy Exception!
+                return;
+            }
+            
+            
             menuCanvas.SetActive(false);
             frontCanvas.SetActive(true);
             transition.SetActive(true);

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Initialize;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Level
     public readonly string begin;
     public readonly string end;
     public string[] way;
+    public bool unlocked;
 
     public Level(int id, int chapterId, int solvedSteps, string begin, string end, int gems)
     {
@@ -59,5 +61,10 @@ public class Level
         }
 
         return diff == 1 ? 2 : 1;
+    }
+
+    public override string ToString()
+    {
+        return $"[Level] Chapter:{chapterId} - ID:{id} - Begin:{begin} - End:{end}";
     }
 }

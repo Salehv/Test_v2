@@ -94,7 +94,6 @@ public class EditorLetterHandler : MonoBehaviour, IPointerDownHandler
 
     private void ShowDelete()
     {
-        print("here");
         delete.GetComponent<Animator>().SetTrigger("show");
     }
 

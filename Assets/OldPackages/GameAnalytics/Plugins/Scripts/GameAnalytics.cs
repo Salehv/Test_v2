@@ -732,7 +732,7 @@ namespace GameAnalyticsSDK
             if (go != null && go.GetComponent<GameAnalytics>() != null)
             {
                 float addX = 0;
-                if (go.GetComponent("PlayMakerFSM") != null)
+                if (go.GetComponent($"PlayMakerFSM") != null)
                     addX = selectionRect.height + 2;
 
                 if (GameAnalytics.SettingsGA.Logo == null)
