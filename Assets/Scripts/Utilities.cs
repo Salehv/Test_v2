@@ -8,7 +8,7 @@ public static class Utilities
     {
         InitDictionaries();
     }
-    
+
     internal static string GetOnlyFarsi(string str)
     {
         string result = "";
@@ -24,18 +24,18 @@ public static class Utilities
 
     internal static string GetTimeFormat(float time)
     {
-        return (((int) time) / 60 + ":" + ((int) time % 60));
+        return $"{((int) time) / 60:00}:{(int) time % 60:00}";
     }
-    
+
     internal static string GetCompletionText(int current, int max)
     {
         return string.Format("{0:00}/{1:00}", current, max);
     }
-    
-    
+
+
     internal static Dictionary<char, int> dic_charToLetter;
     internal static Dictionary<int, char> dic_letterToChar;
-    
+
     private static void InitDictionaries()
     {
         dic_charToLetter = new Dictionary<char, int>
@@ -145,7 +145,8 @@ public static class Utilities
             }
             catch (KeyNotFoundException e)
             {
-                Debug.LogError(string.Format("[Utilities] Letter is not recognized in <{0}> until <{1}>", simpleFarsi, result));
+                Debug.LogError(string.Format("[Utilities] Letter is not recognized in <{0}> until <{1}>", simpleFarsi,
+                    result));
                 result += simpleFarsi[i];
             }
         }
@@ -153,7 +154,7 @@ public static class Utilities
 
         return result;
     }
-    
+
     internal static int GetLevensteinDistance(string s, string t)
     {
         int n = s.Length;
@@ -194,12 +195,13 @@ public static class Utilities
         // Step 7
         return d[n, m];
     }
-    
-    
-    internal static Vector2 Rotate(this Vector2 v, float degrees) {
+
+
+    internal static Vector2 Rotate(this Vector2 v, float degrees)
+    {
         float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
         float cos = Mathf.Cos(degrees * Mathf.Deg2Rad);
-         
+
         float tx = v.x;
         float ty = v.y;
         v.x = (cos * tx) - (sin * ty);

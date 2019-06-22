@@ -21,8 +21,9 @@ namespace App
 
         private bool escapable = true;
         public ViewState state;
-        
+
         #region Init
+
         private void Awake()
         {
             if (instance != null)
@@ -31,7 +32,7 @@ namespace App
                 return;
             }
 
-            instance = this;            
+            instance = this;
             levelsHandler.Init();
         }
 
@@ -39,6 +40,7 @@ namespace App
         {
             state = ViewState.MAIN_MENU;
         }
+
         #endregion
 
         #region Menu
@@ -96,14 +98,14 @@ namespace App
             foreach (Toggle t in sfxs)
                 t.isOn = !sfxOn;
         }
-        
+
         public void ShowIntro()
         {
             ShowBlackPage(true);
             AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(0));
             state = ViewState.INTRO;
         }
-        
+
         public void IntroEnded()
         {
             ShowBlackPage(true);
@@ -136,7 +138,7 @@ namespace App
             }
 
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
-            
+
             state = ViewState.LEVELS;
         }
 
@@ -146,20 +148,19 @@ namespace App
             {
                 ApplicationManager.instance.LevelStartRequest(level);
             }
-            catch (NoEnergyException e)
+            catch (NoKeyException e)
             {
-                // TODO: Show No  Energy Exception!
                 return;
             }
-            
-            
+
+
             menuCanvas.SetActive(false);
             frontCanvas.SetActive(true);
             transition.SetActive(true);
             selectedChapter = level.chapterId;
             TransitionHandler.instance.StartTransition(level);
         }
-        
+
         #endregion
 
         #region Game
@@ -215,6 +216,8 @@ namespace App
         public Panel shopPanel;
         public Panel adPanel;
         public Panel questionForm;
+        public Panel noKeyPanel;
+        public Panel keyShopPanel;
         public GameObject transition;
 
         private void HideAllFrontPanels()
@@ -251,6 +254,16 @@ namespace App
         public void ShowQuestionForm()
         {
             ShowPanel(questionForm);
+        }
+
+        public void ShowNoKeyPanel()
+        {
+            ShowPanel(noKeyPanel);
+        }
+
+        public void ShowKeyShop()
+        {
+            ShowPanel(keyShopPanel);
         }
 
         #endregion
@@ -297,15 +310,14 @@ namespace App
 
         #region Panel
 
-        [Header("Panels")] 
-        public PanelHandler panelHandler;
+        [Header("Panels")] public PanelHandler panelHandler;
         private ViewState lastState = ViewState.ONSCREEN;
-        
+
         internal void ShowPanel(Panel panel)
         {
             panelHandler.ShowPanel(panel);
             if (lastState == ViewState.ONSCREEN)
-                lastState = state; 
+                lastState = state;
             state = ViewState.ONSCREEN;
         }
 
@@ -318,11 +330,12 @@ namespace App
         {
             escapable = true;
         }
-        
+
         #endregion
 
-        
+
         private int selectedChapter;
+
         public void PageBlacked()
         {
             switch (state)
@@ -334,18 +347,18 @@ namespace App
                     levelsHandler.SetToChapter(selectedChapter);
                     state = ViewState.LEVELS;
                     break;
-                
+
                 case ViewState.INTRO:
                     menuCanvas.SetActive(false);
-                    
+
                     gameCanvas.SetActive(true);
                     gameView.SetActive(false);
                     arcadeView.SetActive(false);
                     introView.SetActive(true);
-                    
+
                     TutorialHandler.instance.PlayTutorial_01();
                     break;
-                
+
                 case ViewState.MAIN_MENU:
                     gameCanvas.SetActive(false);
                     introView.SetActive(false);
@@ -357,7 +370,7 @@ namespace App
                     break;
             }
         }
-        
+
         public void Escape()
         {
             if (!escapable)
@@ -365,6 +378,7 @@ namespace App
                 print("[ViewManager] UnEscapable!");
                 return;
             }
+
             print("[ViewManager] Escape from " + state.ToString());
 
             switch (state)
@@ -376,6 +390,7 @@ namespace App
                         state = lastState;
                         lastState = ViewState.ONSCREEN;
                     }
+
                     break;
 
                 case ViewState.MAIN_MENU:

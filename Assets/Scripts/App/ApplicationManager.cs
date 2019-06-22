@@ -23,19 +23,18 @@ public class ApplicationManager : MonoBehaviour
 
     [Header("UI Objects")] public Text[] coins;
     public Text[] allGems;
-    
+
     internal static ApplicationManager instance;
 
     private ApplicationState state;
 
     public FullPageHorizontalScrollSnap chapterScroller;
 
-    private EnergyHandler energyHandler;
+    private KeyHandler _keyHandler;
 
     private GameProgression progress;
 
 
-    
     void Awake()
     {
         if (instance != null)
@@ -51,13 +50,13 @@ public class ApplicationManager : MonoBehaviour
     internal void Init()
     {
         view = ViewManager.instance;
-        energyHandler = EnergyHandler.instance;
+        _keyHandler = KeyHandler.instance;
 
 
-        energyHandler.Init();
+        _keyHandler.Init();
 
         if (isFirstPlay())
-                FirstPlay();
+            FirstPlay();
         view.ShowBlackPage();
         view.ShowMainMenu();
 
@@ -74,7 +73,7 @@ public class ApplicationManager : MonoBehaviour
         progress = DatabaseManager.instance.GetProgressData();
 
         AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
-        
+
         UpdateCoins();
         UpdateGems();
 
@@ -85,7 +84,7 @@ public class ApplicationManager : MonoBehaviour
         Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
         Tapsell.setRewardListener(AdReward);
 
-        
+
         // Ad Time
         if (PlayerPrefs.HasKey("adWatched"))
         {
@@ -93,27 +92,26 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
-    
-    
-    
+
     #region First Play
 
     private bool isFirstPlay()
     {
         return !PlayerPrefs.HasKey("first_enter_done");
     }
-    
+
     private bool firstPlay = false;
+
     private void FirstPlay()
     {
         firstPlay = true;
         PlayerPrefs.SetInt("first_enter_done", 1);
         PlayerPrefs.Save();
-        
+
         PlayerPrefs.SetInt("arcade_high_score", 0);
         PlayerPrefs.Save();
-        
-        energyHandler.FirstEnter();
+
+        _keyHandler.FirstEnter();
     }
 
     public void IntroEnded()
@@ -122,7 +120,7 @@ public class ApplicationManager : MonoBehaviour
         firstPlay = false;
     }
 
-    
+
     /*
     private void GetInstalledApps()
     {
@@ -144,12 +142,12 @@ public class ApplicationManager : MonoBehaviour
 #endif
     }
     */
+
     #endregion
-    
-    
-    
-    
+
+
     #region Coins and Gems
+
     public void UpdateCoins()
     {
         int coin = DatabaseManager.instance.GetCoins();
@@ -176,13 +174,13 @@ public class ApplicationManager : MonoBehaviour
             g.text = GetAllGemCount() + "";
         }
     }
-    
-    
+
+
     public void AddGems(int gem)
     {
         if (gem == 0)
             return;
-        
+
         DatabaseManager.instance.AddOrRemoveGems(gem);
         UpdateGems();
     }
@@ -205,11 +203,10 @@ public class ApplicationManager : MonoBehaviour
     {
         return DatabaseManager.instance.GetGems();
     }
+
     #endregion
-    
-    
-    
-    
+
+
     #region Advertisement
 
     [Header("Ad Panels")] public GameObject adLoading;
@@ -232,65 +229,6 @@ public class ApplicationManager : MonoBehaviour
         return (15 * 60) - (now - long.Parse(fileTime));
     }
 
-    public void ShowTabligh()
-    {
-        if (PlayerPrefs.HasKey("adWatched"))
-        {
-            string s = PlayerPrefs.GetString("adWatched");
-            long t = SecondsToEndAdWait(s);
-            if (t > 0)
-            {
-                print(t + " Remained!");
-                // toast.showToastOnUiThread("");
-                // TODO: Show remaining time
-
-                return;
-            }
-        }
-
-        adLoading.SetActive(true);
-        Tapsell.requestAd("5c6c233aa3455800014d5f40", false,
-            (TapsellAd result) =>
-            {
-                // onAdAvailable
-                // Debug.Log("Action: onAdAvailable");
-                TapsellAd ad = result; // store this to show the ad later
-                Tapsell.showAd(ad, new TapsellShowOptions());
-                adLoading.SetActive(false);
-                PlayerPrefs.SetString("adWatched", "" + DateTime.UtcNow.ToFileTimeUtc() / 10000000);
-                PlayerPrefs.Save();
-                adTimeRemained = 15 * 60;
-                view.Escape();
-                AnalyticsHandler.AdWatched();
-            },
-            (string zoneId) =>
-            {
-                // onNoAdAvailable
-                Debug.Log("No Ad Available");
-                adLoading.SetActive(false);
-                adNotAvailable.SetActive(true);
-            },
-            (TapsellError error) =>
-            {
-                // onError
-                adLoading.SetActive(false);
-                Debug.Log(error.error);
-            },
-            (string zoneId) =>
-            {
-                // onNoNetwork
-                adLoading.SetActive(false);
-                adNotAvailable.SetActive(true);
-            },
-            (TapsellAd result) =>
-            {
-                // onExpiring
-                Debug.Log("Expiring");
-                adLoading.SetActive(false);
-                // this ad is expired, you must download a new ad for this zone
-            }
-        );
-    }
 
     public void ShowChapterEndAd()
     {
@@ -308,6 +246,7 @@ public class ApplicationManager : MonoBehaviour
 
     private string ad_zone_winDoublePrize = "5cd16a3ddae9a60001f48aec";
     private string ad_zone_mainMenu = "5c6c233aa3455800014d5f40";
+    private string ad_zone_key = "5d0dbef3ffe1ef0001e3489a";
 
     private void AdReward(TapsellAdFinishedResult result)
     {
@@ -319,12 +258,16 @@ public class ApplicationManager : MonoBehaviour
             }
             else if (result.zoneId == ad_zone_mainMenu)
                 GameManager.instance.AddCoins(30);
+            else if (result.zoneId == ad_zone_key)
+            {
+                _keyHandler.AddKeys(3);
+            }
         }
     }
 
     #endregion
 
-    
+
     #region Progress
 
     public LevelProgression GetLevelProgress(Level lvl)
@@ -336,8 +279,7 @@ public class ApplicationManager : MonoBehaviour
     {
         return progress.GetLevelProgress(chapterId, levelId);
     }
-    
-    
+
     #endregion
 
     public void MainMenu_PlayClicked()
@@ -352,16 +294,22 @@ public class ApplicationManager : MonoBehaviour
         }
     }
 
-    
+
     internal void LevelStartRequest(Level lvl)
     {
-        print(lvl);
-        print("Last Level unlocked = " + PlayerPrefs.GetInt("last_level_unlocked"));
-        
-        if(lvl.id == progress.GetLastLevel().id && lvl.chapterId == progress.GetLastLevel().chapterId)
+        if (lvl.id == progress.GetLastLevel().id && lvl.chapterId == progress.GetLastLevel().chapterId)
             if (PlayerPrefs.GetInt("last_level_unlocked") == 0)
             {
-                energyHandler.UseEnergy();
+                try
+                {
+                    _keyHandler.UseEnergy();
+                }
+                catch (NoKeyException e)
+                {
+                    view.ShowNoKeyPanel();
+                    throw e;
+                }
+
                 PlayerPrefs.SetInt("last_level_unlocked", 1);
                 PlayerPrefs.Save();
             }
@@ -369,21 +317,15 @@ public class ApplicationManager : MonoBehaviour
 
     internal void LevelSolved(Level lvl)
     {
-        print("Level Solved!");
-        print(lvl);
-        print("Last Level:" + progress.GetLastLevel());
-        print("Last Level unlocked = " + PlayerPrefs.GetInt("last_level_unlocked"));
-        
         if (lvl.id != progress.GetLastLevel().id || lvl.chapterId != progress.GetLastLevel().chapterId)
             return;
-        
+
         PlayerPrefs.SetInt("last_level_unlocked", 0);
         PlayerPrefs.Save();
     }
 
     internal void RunLevel(Level level)
     {
-        
         view.ShowGame();
         GameManager.instance.PlayLevel(level);
     }
@@ -444,7 +386,6 @@ public class ApplicationManager : MonoBehaviour
         AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapter));
         chaptersHandler.UpdateChaptersLockState();
     }
-
 
 
     public void Telegram()
@@ -534,9 +475,9 @@ public class ApplicationManager : MonoBehaviour
     #endregion
 
 
-    public void UpdateLevelProgress(Level lvl,  LevelProgression lp)
+    public void UpdateLevelProgress(Level lvl, LevelProgression lp)
     {
-        if (progress.GetLevelProgress(lp.chapterid,  lp.levelid) == null)
+        if (progress.GetLevelProgress(lp.chapterid, lp.levelid) == null)
         {
             AddGems(lp.gemTaken);
             DatabaseManager.instance.UpdateLevelProgress(lp, false);

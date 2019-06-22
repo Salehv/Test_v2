@@ -14,10 +14,9 @@ namespace TheGame
         internal static GameManager instance;
         public bool debugMode;
 
-        [Header("Game Design")] 
-        public int similarHintCost;
+        [Header("Game Design")] public int similarHintCost;
         public int showWayHintCost;
-    
+
         internal Chapter[] chapters;
         private LinkedList<string> words;
         private string currentEndWord;
@@ -25,13 +24,11 @@ namespace TheGame
 
         private Level currentLevel;
 
-        [Header("Objects of game")] 
-        public EditorHandler textEditor;
+        [Header("Objects of game")] public EditorHandler textEditor;
         public GameObject letterPrefab;
         public LetterPoolHandler letterPool;
-        
-        [Header("Game UI")] 
-        private GameViewManager viewManager;
+
+        [Header("Game UI")] private GameViewManager viewManager;
         public Text hintSimilarCostText;
         public Text hintWayCostText;
 
@@ -48,9 +45,7 @@ namespace TheGame
         private HintState hintState;
 
 
-    
         #region Initialize
-
 
         private void Awake()
         {
@@ -66,7 +61,7 @@ namespace TheGame
         internal void Init(XMLGame game)
         {
             viewManager = GameViewManager.instance;
-        
+
             coins = DatabaseManager.instance.GetCoins();
 
 
@@ -78,7 +73,6 @@ namespace TheGame
                 chapters[i].InitChapter(game.chapters[i]);
             }
 
-            
 
             letterSprites = Resources.LoadAll<Sprite>("Letters");
 
@@ -93,10 +87,10 @@ namespace TheGame
         internal void PlayLevel(Level lvl)
         {
             ResetGameStatus();
-        
+
             currentLevel = lvl;
             currentEndWord = Utilities.GetNormalizedFarsi(lvl.end);
-        
+
             state = GameState.MAIN_VIEW;
 
             viewManager.ClearWordsView();
@@ -106,10 +100,10 @@ namespace TheGame
             print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));
-        
+
             ResetDynamics();
             int[] related = GetRelatedChars(Utilities.GetNormalizedFarsi(lvl.begin), currentShufflePage);
-        
+
             letterPool.Init(textEditor, related);
 
             hintState = new HintState();
@@ -129,7 +123,7 @@ namespace TheGame
                 state = GameState.TUTORIAL;
                 return;
             }
-        
+
 
             // Hint
             if (lvl.id == 4 && lvl.chapterId == 0)
@@ -167,16 +161,15 @@ namespace TheGame
         {
             HideAllPanels();
             textEditor.ResetPluses();
-        
+
             hintBlinkState = 0;
             hint_way_used = 0;
             hint_similar_used = 0;
-        
+
             words = new LinkedList<string>();
         }
-    
-    
-    
+
+
         #region UnclassifiedShit
 
         private int hint_way_used;
@@ -185,7 +178,7 @@ namespace TheGame
         private float gameTime;
         private int hintBlinkState;
 
-    
+
         public int Tut01Completed()
         {
             var coinGain = 10;
@@ -194,7 +187,7 @@ namespace TheGame
             // Calculate Coins
             if (ApplicationManager.instance.GetLevelProgress(currentLevel) == null)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
-            
+
             AddCoins(coinGain);
             ApplicationManager.instance.UpdateCoins();
 
@@ -333,16 +326,16 @@ namespace TheGame
 
         private void AddCorrectWord(string s)
         {
-            if(debugMode)
+            if (debugMode)
                 Debug.Log("Word Added: " + s);
-        
+
             words.AddLast(s);
-        
+
             viewManager.AddToWordsView(words.Last.Previous.Value);
-        
+
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
             textEditor.ResetPluses();
-        
+
             CheckWin();
         }
 
@@ -359,7 +352,6 @@ namespace TheGame
             shufflePanel.SetActive(false);
         }
 
-        
 
         [Header("Shuffle")] public GameObject shufflePanel;
         public GameObject shuffleLetterPanel;
@@ -404,7 +396,6 @@ namespace TheGame
 
             // AddCoins(-20);
             btnNextShuffle.interactable = true;
-            
         }
 
         public void NextShufflePage()
@@ -452,8 +443,7 @@ namespace TheGame
 
         #region Hint
 
-        [Header("Hint")]
-        public GameObject hint_showWayPanel;
+        [Header("Hint")] public GameObject hint_showWayPanel;
         public HintSimilarWordsHandler hintSimilarWordsHandler;
 
 
@@ -475,12 +465,12 @@ namespace TheGame
 
             viewManager.ShowSimilarWordsHintPanel();
 
-            
+
             List<string> sWords = new List<string>(DatabaseManager.instance.GetAllSimilarWords(GetLastWord()));
             hintSimilarWordsHandler.Clear();
-            
+
             int c = 0;
-            for(int i = 0; i < sWords.Count; i++)
+            for (int i = 0; i < sWords.Count; i++)
             {
                 if ((sWords[i].Length != words.Last.Value.Length) && (currentLevel.id < 7) &&
                     (currentLevel.chapterId == 0))
@@ -495,9 +485,8 @@ namespace TheGame
                     sWords.Remove(sWords[i]);
                     i--;
                 }
-
             }
-            
+
             hintSimilarWordsHandler.SetSimilarWords(sWords.ToArray());
         }
 
@@ -505,7 +494,7 @@ namespace TheGame
         {
             viewManager.SimilarSelected();
             string word = hintSimilarWordsHandler.GetSelected();
-            
+
             AddCorrectWord(word);
             textEditor.Initialize(this, word, currentLevel.flags);
         }
@@ -542,6 +531,7 @@ namespace TheGame
             {
                 hintToShow.Enqueue(way[i]);
             }
+
             hintToShow.Enqueue(currentEndWord);
 
             NextWord();
@@ -575,7 +565,7 @@ namespace TheGame
         private void Win()
         {
             ApplicationManager.instance.LevelSolved(currentLevel);
-            
+
             var coinGain = 0;
             var solvedSteps = words.Count;
 
@@ -654,7 +644,7 @@ namespace TheGame
         {
             TimeManager.instance.DiscardTimer("CurrentGame");
             ResetDynamics();
-            
+
             TransitionHandler.instance.StartTransition(currentLevel);
         }
 
@@ -665,13 +655,12 @@ namespace TheGame
                 try
                 {
                     Level next = chapters[currentLevel.chapterId].levels[currentLevel.id + 1];
-                        ApplicationManager.instance.LevelStartRequest(next);
-                    
+                    ApplicationManager.instance.LevelStartRequest(next);
+
                     TransitionHandler.instance.StartTransition(next);
                 }
-                catch (NoEnergyException e)
+                catch (NoKeyException e)
                 {
-                    PopupHandler.ShowDebug("کلیدات تموم شده باید صبر کنی کلید پیدا کنم");
                 }
             }
             else
@@ -683,7 +672,6 @@ namespace TheGame
                 ChestHandler.instance.CallChest(100, 10, true, currentLevel.chapterId + 1);
                 PlayerPrefs.SetInt(string.Format("chapter_{0}_completed", currentLevel.chapterId), 1);
                 PlayerPrefs.Save();
-
             }
         }
 
@@ -704,13 +692,13 @@ namespace TheGame
             }
 
             ResetDynamics();
-        
+
             ApplicationManager.instance.Game_ExitToMenu(currentLevel.chapterId);
-        
+
             TimeManager.instance.DiscardTimer("CurrentGame");
         }
 
-        
+
         private void UpdateCurrentLevelProgress(int gem, int steps)
         {
             print("Gem: " + gem + ", Steps:" + steps);
@@ -724,11 +712,9 @@ namespace TheGame
         {
             DatabaseManager.instance.AddOrRemoveCoins(coin);
             ApplicationManager.instance.UpdateCoins();
-            
+
             coins += coin;
         }
-
-        
 
         #endregion
 
