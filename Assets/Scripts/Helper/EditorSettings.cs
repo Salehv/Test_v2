@@ -96,6 +96,18 @@ public class EditorSettings
     {
         PlayerPrefs.DeleteAll();
     }
+
+    [MenuItem("Kalanjar/Reset All Progress")]
+    private static void RemoveAll()
+    {
+        ApplicationManager.instance.DEV_FirstPlay();
+    }
+
+    [MenuItem("Kalanjar/Unlock All Chapters")]
+    private static void unlockAll()
+    {
+        ApplicationManager.instance.DEV_UnlockAllChapters();
+    }
 }
 
 [Serializable]

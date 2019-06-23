@@ -65,9 +65,9 @@ namespace TheGame
             coins = DatabaseManager.instance.GetCoins();
 
 
-            chapters = new Chapter[game.chapters.Count];
+            chapters = new Chapter[game.chapters.Length];
 
-            for (int i = 0; i < game.chapters.Count; i++)
+            for (int i = 0; i < game.chapters.Length; i++)
             {
                 chapters[i] = new Chapter();
                 chapters[i].InitChapter(game.chapters[i]);
@@ -396,8 +396,9 @@ namespace TheGame
             btnNextShuffle.interactable = true;
         }
         */
-        
+
         private int maxShufflePage = 2;
+
         public void NextShufflePage()
         {
             print($"[Shuffle] Current:{currentShufflePage}, Max:{maxShufflePage}");
@@ -616,7 +617,7 @@ namespace TheGame
                 lvlTime);
 
 
-            UpdateCurrentLevelProgress(gem, solvedSteps);
+            UpdateCurrentLevelProgress(gem - oldGem, solvedSteps);
 
             ApplicationManager.instance.UpdateGems();
 

@@ -18,12 +18,11 @@ namespace Initialize
         private XMLGame game;
 
 
-        [Header("Update")]
-        public string version;
+        [Header("Update")] public string version;
         private string updateURL = "http://support.qolenj.ir/kalanjar/version.php?v=";
         public GameObject updatePanel;
 
-        
+
         // loadingControl
         private bool loaded = false;
         private bool splashed = false;
@@ -43,7 +42,7 @@ namespace Initialize
 
         private void TurnOffCanvases()
         {
-            ViewManager.instance.TurnOffCanvases(); 
+            ViewManager.instance.TurnOffCanvases();
         }
 
         void Start()
@@ -61,23 +60,25 @@ namespace Initialize
             XmlSerializer serializer = new XmlSerializer(typeof(XMLGame));
             game = (XMLGame) serializer.Deserialize(new MemoryStream(levelsXml.bytes));
 
-            for (int c = 0; c < game.chapters.Count; c++)
+            for (int c = 0; c < game.chapters.Length; c++)
             {
-                for (int l = 0; l < game.chapters[c].levels.Count; l++)
+                for (int l = 0; l < game.chapters[c].levels.Length; l++)
                 {
                     game.chapters[c].levels[l].start = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].start);
                     game.chapters[c].levels[l].end = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].end);
 
-                    for (int w = 0; w < game.chapters[c].levels[l].way.words.Count; w++)
+                    for (int w = 0; w < game.chapters[c].levels[l].way.words.Length; w++)
                     {
-                        game.chapters[c].levels[l].way.words[w] = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].way.words[w]);
+                        game.chapters[c].levels[l].way.words[w] =
+                            Utilities.GetOnlyFarsi(game.chapters[c].levels[l].way.words[w]);
                     }
                 }
             }
         }
 
-        
+
         #region Load
+
         private IEnumerator Load()
         {
             // When in editor
@@ -141,7 +142,7 @@ namespace Initialize
             loaded = true;
             LoadingFinished();
         }
-        
+
         private IEnumerator CopyDataBases()
         {
             if (!PlayerPrefs.HasKey("db_version") || PlayerPrefs.GetString("db_version") != version)
@@ -179,7 +180,7 @@ namespace Initialize
                 }
             }
         }
-        
+
         private void LoadingFinished()
         {
             if (loaded && splashed)
@@ -190,9 +191,10 @@ namespace Initialize
                 ApplicationManager.instance.Init();
             }
         }
+
         #endregion
 
-        
+
         private void ShowUpdateRequest()
         {
             updatePanel.SetActive(true);
@@ -203,7 +205,7 @@ namespace Initialize
             Application.OpenURL("market://details?id=ir.qolenj.kalanjar");
         }
 
-        
+
         public void SplashEnded()
         {
             splashed = true;

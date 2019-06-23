@@ -3,41 +3,61 @@ using System.Xml.Serialization;
 
 namespace Initialize
 {
+    [System.Serializable]
     [XmlRoot(ElementName = "Game")]
     public class XMLGame
     {
-        [XmlElement(ElementName = "Chapter")] public List<XMLChapter> chapters;
+        public XMLGame()
+        {
+        }
+
+        [XmlElement(ElementName = "Chapter")] public XMLChapter[] chapters { get; set; }
     }
 
+    [System.Serializable]
     [XmlRoot(ElementName = "Chapter")]
     public class XMLChapter
     {
-        [XmlAttribute(AttributeName = "name")] public string name;
+        public XMLChapter()
+        {
+        }
 
-        [XmlAttribute(AttributeName = "cost")] public string cost;
+        [XmlAttribute(AttributeName = "name")] public string name { get; set; }
 
-        [XmlAttribute(AttributeName = "id")] public string id;
+        [XmlAttribute(AttributeName = "cost")] public string cost { get; set; }
 
-        [XmlElement(ElementName = "Level")] public List<XMLLevel> levels;
+        [XmlAttribute(AttributeName = "id")] public string id { get; set; }
+
+        [XmlElement(ElementName = "Level")] public XMLLevel[] levels { get; set; }
     }
 
+    [System.Serializable]
     [XmlRoot(ElementName = "Level")]
     public class XMLLevel
     {
-        [XmlAttribute(AttributeName = "id")] public string id;
+        public XMLLevel()
+        {
+        }
 
-        [XmlAttribute(AttributeName = "type")] public string type;
+        [XmlAttribute(AttributeName = "id")] public string id { get; set; }
 
-        [XmlElement(ElementName = "Start")] public string start;
+        [XmlAttribute(AttributeName = "type")] public string type { get; set; }
 
-        [XmlElement(ElementName = "End")] public string end;
+        [XmlElement(ElementName = "Start")] public string start { get; set; }
 
-        [XmlElement(ElementName = "Way")] public XMLWay way;
+        [XmlElement(ElementName = "End")] public string end { get; set; }
+
+        [XmlElement(ElementName = "Way")] public XMLWay way { get; set; }
     }
 
+    [System.Serializable]
     [XmlRoot(ElementName = "Way")]
     public class XMLWay
     {
-        [XmlElement(ElementName = "Word")] public List<string> words;
+        public XMLWay()
+        {
+        }
+
+        [XmlElement(ElementName = "Word")] public string[] words { get; set; }
     }
 }

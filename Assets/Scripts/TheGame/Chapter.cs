@@ -35,7 +35,7 @@ public class Chapter
 
 
         lvls = new Dictionary<int, Level>();
-        levels = new Level[chapter.levels.Count];
+        levels = new Level[chapter.levels.Length];
 
         for (int i = 0; i < levels.Length; i++)
         {
@@ -54,7 +54,7 @@ public class Chapter
             else
                 levels[i].SetDynamicFlags(DynamicsFlag.DF_FULL);
 
-            levels[i].SetWay(chapter.levels[i].way.words.ToArray());
+            levels[i].SetWay(chapter.levels[i].way.words);
 
             AddLevel(i, levels[i]);
         }
