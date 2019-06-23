@@ -445,13 +445,10 @@
             </End>
             <Way>
                 <Word>
-                    قر
+                    قدر
                 </Word>
                 <Word>
-                    قد
-                </Word>
-                <Word>
-                    مد
+                    قدح
                 </Word>
             </Way>
         </Level>
@@ -524,7 +521,10 @@
             </End>
             <Way>
                 <Word>
-                    تین
+                    تیم
+                </Word>
+                <Word>
+                    بیم
                 </Word>
                 <Word>
                     بین
@@ -622,6 +622,9 @@
             </End>
             <Way>
                 <Word>
+                    جان
+                </Word>
+                <Word>
                     جا
                 </Word>
                 <Word>
@@ -686,9 +689,6 @@
                 </Word>
                 <Word>
                     امان
-                </Word>
-                <Word>
-                    کمان
                 </Word>
             </Way>
         </Level>
@@ -801,10 +801,10 @@
                     همت
                 </Word>
                 <Word>
-                    هم
+                    سمت
                 </Word>
                 <Word>
-                    رم
+                    سم
                 </Word>
                 <Word>
                     رسم
@@ -1219,13 +1219,10 @@
                     اندر
                 </Word>
                 <Word>
-                    انار
+                    انور
                 </Word>
                 <Word>
-                    نار
-                </Word>
-                <Word>
-                    ناو
+                    نور
                 </Word>
             </Way>
         </Level>
@@ -1507,10 +1504,10 @@
             </End>
             <Way>
                 <Word>
-                    یل
+                    میخ
                 </Word>
                 <Word>
-                    لیل
+                    میز
                 </Word>
             </Way>
         </Level>
@@ -1522,9 +1519,6 @@
                 خانه
             </End>
             <Way>
-                <Word>
-                    کرسی
-                </Word>
                 <Word>
                     کردی
                 </Word>
@@ -2450,7 +2444,10 @@
                     ال
                 </Word>
                 <Word>
-                    ذال
+                    زال
+                </Word>
+                <Word>
+                    زغال
                 </Word>
             </Way>
         </Level>
@@ -2656,10 +2653,10 @@
             </End>
             <Way>
                 <Word>
-                    تین
+                    میر
                 </Word>
                 <Word>
-                    کین
+                    مین
                 </Word>
                 <Word>
                     کمین
@@ -2852,13 +2849,13 @@
                     ناب
                 </Word>
                 <Word>
-                    نار
+                    نا
                 </Word>
                 <Word>
-                    پار
+                    پا
                 </Word>
                 <Word>
-                    پارچ
+                    پر
                 </Word>
                 <Word>
                     پرچ

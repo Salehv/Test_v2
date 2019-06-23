@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using App;
+using TheGame;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Analytics;
@@ -124,15 +126,15 @@ public class KeyHandler : MonoBehaviour
         }
     }
 
-    private void IncreaseEnergy()
+    private void IncreaseEnergy(bool purchase = false)
     {
         energy += 1;
-        
+
         PlayerPrefs.SetInt("energy", energy);
         PlayerPrefs.Save();
-        
 
-        lastChargeTime += energyChargeTime;
+        if (!purchase)
+            lastChargeTime += energyChargeTime;
         PlayerPrefs.SetString("lastChargeTime", "" + lastChargeTime);
         PlayerPrefs.Save();
 
@@ -246,9 +248,58 @@ public class KeyHandler : MonoBehaviour
         }
     }
 
-    public void AddKeys(int keys)
+    internal void AddKeys(int keys)
     {
         for (int i = 0; i < keys; i++)
-            IncreaseEnergy();
+            IncreaseEnergy(true);
+    }
+
+    public void HalfKey()
+    {
+        try
+        {
+            GameManager.instance.AddCoins(-60);
+        }
+        catch (NoMoneyException e)
+        {
+            PopupHandler.ShowNoMoney(60 - GameManager.instance.GetCoins());
+            return;
+        }
+
+
+        try
+        {
+            AddKeys(5);
+        }
+        catch (Exception e)
+        {
+        }
+
+        ViewManager.instance.Escape();
+        ViewManager.instance.Escape();
+    }
+
+    public void FullKey()
+    {
+        try
+        {
+            GameManager.instance.AddCoins(-100);
+        }
+        catch (NoMoneyException e)
+        {
+            PopupHandler.ShowNoMoney(100 - GameManager.instance.GetCoins());
+            return;
+        }
+
+        try
+        {
+            AddKeys(10);
+        }
+        catch (Exception e)
+        {
+        }
+
+        ViewManager.instance.Escape();
+        ViewManager.instance.Escape();
     }
 }

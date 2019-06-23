@@ -105,8 +105,17 @@ namespace App
 
         public void ShowIntro()
         {
-            ShowBlackPage(true);
+            // ShowBlackPage(true);
+            menuCanvas.SetActive(false);
+
+            gameCanvas.SetActive(true);
+            gameView.SetActive(false);
+            arcadeView.SetActive(false);
+            introView.SetActive(true);
+
+            TutorialHandler.instance.PlayTutorial_01();
             AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(0));
+
             state = ViewState.INTRO;
         }
 
@@ -389,12 +398,12 @@ namespace App
 
                     gameCanvas.SetActive(false);
                     menuCanvas.SetActive(true);
-                    SetEscapable();
                     state = ViewState.MAIN_MENU;
                     print("[ViewManager] State is now " + state.ToString());
                     break;
 
                 case ViewState.ONSCREEN:
+                    SetEscapable();
                     Escape();
                     PageBlacked();
                     print("[ViewManager] State is now " + state.ToString());

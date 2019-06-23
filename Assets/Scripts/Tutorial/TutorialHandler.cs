@@ -8,6 +8,38 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using UPersian.Components;
 
+public enum TutorialState
+{
+    INTRO_01,
+    INTRO_02,
+    INTRO_03,
+    INTRO_04,
+    INTRO_05,
+    INTRO_06,
+    INTRO_07,
+    TUT_01_01,
+    TUT_01_02,
+    TUT_01_03,
+    TUT_01_04,
+    TUT_01_05,
+    TUT_01_06,
+    TUT_02_01,
+    TUT_03_01,
+    TUT_03_02,
+    TUT_03_03,
+    TUT_03_04,
+    TUT_03_05,
+    TUT_03_06,
+    TUT_03_PASSED,
+    TUT_04_01,
+    TUT_04_02,
+    TUT_04_03,
+    TUT_05_01,
+    TUT_05_02,
+    TUT_05_03,
+    TUT_02_02
+}
+
 public class TutorialHandler : MonoBehaviour
 {
     public static TutorialHandler instance;
@@ -137,33 +169,27 @@ public class TutorialHandler : MonoBehaviour
         TimeManager.instance.SetTimer("IntroTimer");
         AnalyticsHandler.Intro_Started();
 
-
-        TUT01_IntroPages[4].SetActive(true);
-        TUT01_Arrows[0].SetActive(true);
-        
-        CreateMessage(TUT01_Texts[6], Size.Large, Direction.Topmost, Tut01_MsgParent);
-
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
-
-        state = TutorialState.TUT_01_01;
-
-        /**
+        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
         TUT01_IntroPages[0].SetActive(true);
 
-        CreateMessage(TUT01_Texts[0], Size.Large, Direction.Downmost, Tut01_MsgParent, false);
+
+        CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
 
         AnalyticsHandler.Intro_Started();
         TimeManager.instance.SetTimer("IntroTimer");
 
         state = TutorialState.INTRO_01;
-        /**/
     }
 
     public void Intro_01()
     {
         if (state != TutorialState.INTRO_01) return;
 
+        TUT01_IntroPages[0].SetActive(false);
+        TUT01_IntroPages[1].SetActive(true);
+
         DeleteMessageImmediate();
+
         CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, false);
 
         state = TutorialState.INTRO_02;
@@ -173,11 +199,11 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.INTRO_02) return;
 
-        TUT01_IntroPages[0].SetActive(false);
-        TUT01_IntroPages[1].SetActive(true);
+        TUT01_IntroPages[1].SetActive(false);
+        TUT01_IntroPages[2].SetActive(true);
 
         DeleteMessageImmediate();
-        CreateMessage(TUT01_Texts[2], Size.Small, Direction.Topmost, Tut01_MsgParent, false);
+        CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
 
         state = TutorialState.INTRO_03;
     }
@@ -186,67 +212,14 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.INTRO_03) return;
 
-        DeleteMessageImmediate();
-        CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_04;
-    }
-
-    public void Intro_04()
-    {
-        if (state != TutorialState.INTRO_04) return;
-
-        TUT01_IntroPages[1].SetActive(false);
-        TUT01_IntroPages[2].SetActive(true);
-
-        DeleteMessage();
-        CreateMessage(TUT01_Texts[4], Size.Medium, Direction.Middle, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_05;
-    }
-
-    public void Intro_05()
-    {
-        if (state != TutorialState.INTRO_05) return;
-
+        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
         TUT01_IntroPages[2].SetActive(false);
         TUT01_IntroPages[3].SetActive(true);
 
-        DeleteMessage();
-        CreateMessage(TUT01_Texts[5], Size.Medium, Direction.Middle, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_06;
-    }
-
-    public void Intro_06()
-    {
-        if (state != TutorialState.INTRO_06) return;
-
-        TUT01_IntroPages[3].SetActive(false);
-        TUT01_IntroPages[4].SetActive(true);
-
-        DeleteMessage();
-        TUT01_Arrows[0].SetActive(true);
-        CreateMessage(TUT01_Texts[6], Size.Large, Direction.Topmost, Tut01_MsgParent);
-
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
-
+        DeleteMessageImmediate();
+        CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, true);
 
         state = TutorialState.TUT_01_01;
-    }
-
-    public void Intro_07()
-    {
-        if (state != TutorialState.TUT_01_06) return;
-
-        TUT01_IntroPages[4].SetActive(false);
-        TUT01_IntroPages[5].SetActive(true);
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
-
-        DeleteMessage();
-        CreateMessage(TUT01_Texts[12], Size.Medium, Direction.Downmost, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_07;
     }
 
     public void Tutorial_01_ScreenClicked()
@@ -262,15 +235,16 @@ public class TutorialHandler : MonoBehaviour
             TUT01_Arrows[1].SetActive(true);
 
             DeleteMessage();
-            CreateMessage(TUT01_Texts[7], Size.Small, Direction.Topmost, Tut01_MsgParent);
+            CreateMessage(TUT01_Texts[4], Size.Small, Direction.Topmost, Tut01_MsgParent);
 
             Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
             return;
         }
 
-        Tutorial_01_Completed();
-        // Intro_07();
+        //Tutorial_01_Completed();
+        Intro_04();
     }
+
 
     public void Tutoial_01_FirstCharClicked()
     {
@@ -284,7 +258,7 @@ public class TutorialHandler : MonoBehaviour
         TUT01_Arrows[2].SetActive(true);
 
         DeleteMessage();
-        CreateMessage(TUT01_Texts[8], Size.Medium, Direction.Topmost, Tut01_MsgParent);
+        CreateMessage(TUT01_Texts[5], Size.Medium, Direction.Topmost, Tut01_MsgParent);
 
         state = TutorialState.TUT_01_03;
     }
@@ -300,7 +274,7 @@ public class TutorialHandler : MonoBehaviour
         TUT01_Arrows[3].SetActive(true);
 
         DeleteMessage();
-        CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent);
+        CreateMessage(TUT01_Texts[6], Size.Medium, Direction.Topmost, Tut01_MsgParent);
 
         TUT01_03_ALetterImage.sprite = GameManager.instance.GetLetterSprite(12, SpriteMode.NORMAL);
 
@@ -310,13 +284,14 @@ public class TutorialHandler : MonoBehaviour
         AnalyticsHandler.Intro_FirstCharacterChanged();
     }
 
+
     public void Tutorial_01_SecondCharacter()
     {
         if (state != TutorialState.TUT_01_04)
             return;
 
         DeleteMessage();
-        CreateMessage(TUT01_Texts[10], Size.Small, Direction.Topmost, Tut01_MsgParent);
+        CreateMessage(TUT01_Texts[7], Size.Small, Direction.Topmost, Tut01_MsgParent);
 
         TUT01_Arrows[3].SetActive(false);
         TUT01_Arrows[4].SetActive(true);
@@ -335,7 +310,7 @@ public class TutorialHandler : MonoBehaviour
         TutELetter.selected = 11;
         TUT01_05_Letter.SetTrigger("rotate");
         DeleteMessage();
-        CreateMessage(TUT01_Texts[11], Size.Large, Direction.Topmost, Tut01_MsgParent);
+        CreateMessage(TUT01_Texts[8], Size.Large, Direction.Topmost, Tut01_MsgParent);
         TUT01_Arrows[4].SetActive(false);
         TUT01_05_Shine.SetActive(false);
         TUT01_05_ALetterImage.sprite = GameManager.instance.GetLetterSprite(11, SpriteMode.NORMAL);
@@ -344,7 +319,21 @@ public class TutorialHandler : MonoBehaviour
         AnalyticsHandler.Intro_SecondCharacterChanged();
     }
 
-    
+
+    public void Intro_04()
+    {
+        if (state != TutorialState.TUT_01_06) return;
+
+        TUT01_IntroPages[3].SetActive(false);
+        TUT01_IntroPages[4].SetActive(true);
+
+        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
+
+        DeleteMessage();
+        CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+
+        state = TutorialState.INTRO_04;
+    }
 
 
     public void Tutorial_01_Completed()
@@ -360,7 +349,6 @@ public class TutorialHandler : MonoBehaviour
     public void ExitTutorial_01()
     {
         TUT01.SetActive(false);
-        
     }
 
     #endregion
@@ -587,7 +575,7 @@ public class TutorialHandler : MonoBehaviour
 
         DeleteMessage();
         DeleteArrow();
-        
+
         CreateMessage(tut04Messages[2], Size.Large, Direction.Down, tut04);
 
         // Hide E Letters
@@ -713,7 +701,7 @@ public class TutorialHandler : MonoBehaviour
     public Vector2 messageLargeSize;
     public Vector2 messageMediumSize;
     public Vector2 messagesmallSize;
-    
+
     private GameObject _currentMessage;
     private GameObject _currentArrow;
 
@@ -726,7 +714,7 @@ public class TutorialHandler : MonoBehaviour
 
         if (size == Size.Large)
         {
-            _currentMessage.GetComponent<RectTransform>().sizeDelta  = messageLargeSize;
+            _currentMessage.GetComponent<RectTransform>().sizeDelta = messageLargeSize;
         }
 
         if (size == Size.Medium)
@@ -736,7 +724,7 @@ public class TutorialHandler : MonoBehaviour
 
         if (size == Size.Small)
         {
-            _currentMessage.GetComponent<RectTransform>().sizeDelta =  messagesmallSize;
+            _currentMessage.GetComponent<RectTransform>().sizeDelta = messagesmallSize;
         }
 
 
@@ -848,38 +836,6 @@ public class TutorialHandler : MonoBehaviour
     public void Escape()
     {
     }
-}
-
-public enum TutorialState
-{
-    INTRO_01,
-    INTRO_02,
-    INTRO_03,
-    INTRO_04,
-    INTRO_05,
-    INTRO_06,
-    INTRO_07,
-    TUT_01_01,
-    TUT_01_02,
-    TUT_01_03,
-    TUT_01_04,
-    TUT_01_05,
-    TUT_01_06,
-    TUT_02_01,
-    TUT_03_01,
-    TUT_03_02,
-    TUT_03_03,
-    TUT_03_04,
-    TUT_03_05,
-    TUT_03_06,
-    TUT_03_PASSED,
-    TUT_04_01,
-    TUT_04_02,
-    TUT_04_03,
-    TUT_05_01,
-    TUT_05_02,
-    TUT_05_03,
-    TUT_02_02
 }
 
 public enum Direction

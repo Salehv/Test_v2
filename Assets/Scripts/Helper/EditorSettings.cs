@@ -108,6 +108,19 @@ public class EditorSettings
     {
         ApplicationManager.instance.DEV_UnlockAllChapters();
     }
+
+    [MenuItem("Kalanjar/Reset Key Charger")]
+    private static void reset()
+    {
+        PlayerPrefs.SetString("lastChargeTime", "-1");
+        PlayerPrefs.Save();
+    }
+
+    [MenuItem("Kalanjar/Add Key")]
+    private static void add()
+    {
+        KeyHandler.instance.AddKeys(1);
+    }
 }
 
 [Serializable]

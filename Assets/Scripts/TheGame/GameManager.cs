@@ -186,8 +186,9 @@ namespace TheGame
             var solvedSteps = 3;
 
             // Calculate Coins
-            if (ApplicationManager.instance.GetLevelProgress(currentLevel) == null)
+            if (ApplicationManager.instance.GetLevelProgress(currentLevel).solvedsteps == -1)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
+
 
             AddCoins(coinGain);
             ApplicationManager.instance.UpdateCoins();
@@ -330,6 +331,7 @@ namespace TheGame
 
             viewManager.AddToWordsView(words.Last.Previous.Value);
 
+            currentShufflePage = 0;
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
             textEditor.ResetPluses();
 
@@ -412,6 +414,11 @@ namespace TheGame
 //                btnNextShuffle.interactable = false;
             print($"[Shuffle] Selected:{currentShufflePage}");
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
+
+            EditorLetterHandler.RemoveDelete();
+            textEditor.ResetPluses();
+            AvailableLetter.Reset();
+
             print($"[Shuffle] Chars:{GetRelatedChars(GetLastWord(), currentShufflePage)}");
         }
 
@@ -432,9 +439,6 @@ namespace TheGame
         private void ResetDynamics()
         {
             currentShufflePage = 0;
-            btnPrevShuffle.interactable = false;
-            btnNextShuffle.interactable = false;
-            poolBuyButton.GetComponent<Button>().interactable = true;
 
             EditorLetterHandler.RemoveDelete();
             textEditor.ResetPluses();
@@ -570,13 +574,11 @@ namespace TheGame
 
         private void Win()
         {
-            ApplicationManager.instance.LevelSolved(currentLevel);
-
             var coinGain = 0;
             var solvedSteps = words.Count;
 
             // Calculate Coins
-            if (ApplicationManager.instance.GetLevelProgress(currentLevel) == null)
+            if (ApplicationManager.instance.GetLevelProgress(currentLevel).solvedsteps == -1)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
             AddCoins(coinGain);
 
@@ -688,7 +690,7 @@ namespace TheGame
         private void UpdateCurrentLevelProgress(int gem, int steps)
         {
             print("Gem: " + gem + ", Steps:" + steps);
-            LevelProgression lp = new LevelProgression(currentLevel.chapterId, currentLevel.id, gem, steps);
+            LevelProgression lp = new LevelProgression(currentLevel.chapterId, currentLevel.id, gem, steps, true);
 
             ApplicationManager.instance.UpdateLevelProgress(currentLevel, lp);
         }
@@ -703,7 +705,6 @@ namespace TheGame
         }
 
         #endregion
-
 
         #region Helpers
 

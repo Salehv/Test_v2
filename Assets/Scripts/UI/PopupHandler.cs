@@ -14,6 +14,7 @@ public class PopupHandler : MonoBehaviour
     internal static void ShowDebug(string text)
     {
         instance.CreateNewDebug(text);
+        ViewManager.instance.SetUnEscapable();
     }
 
     internal static void ShowInfo(string text, UnityAction onOk)

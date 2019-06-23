@@ -165,10 +165,6 @@ public class DatabaseManager : MonoBehaviour
         return similars.ToArray();
     }
 
-
-    
-
-
     internal char[] GetPossibleChars(string s)
     {
         try
@@ -270,7 +266,8 @@ public class DatabaseManager : MonoBehaviour
                         lvlid = lvlid % 100;
                         int ss = reader.GetInt32(1);
                         int st = reader.GetInt32(2);
-                        gp.UpdateLevelProgress(new LevelProgression(chapid, lvlid, st, ss));
+                        bool unlocked = reader.GetInt32(4) == 1;
+                        gp.UpdateLevelProgress(new LevelProgression(chapid, lvlid, st, ss, unlocked));
                     }
                 }
             }
@@ -279,8 +276,9 @@ public class DatabaseManager : MonoBehaviour
         return gp;
     }
 
-    internal void UpdateLevelProgress(LevelProgression lp, bool update)
+    internal void UpdateLevelProgress(LevelProgression lp)
     {
+        /*
         if (!update)
         {
             using (IDbConnection dbConnection = new SqliteConnection(progressConnectionString))
@@ -293,7 +291,7 @@ public class DatabaseManager : MonoBehaviour
                     sqlQuery += lp.chapterid * 100 + lp.levelid + ", ";
                     sqlQuery += lp.solvedsteps + ", ";
                     sqlQuery += lp.gemTaken + ", ";
-                    sqlQuery += "0, 0, 0, 0, ''";
+                    sqlQuery += "0, ''";
                     sqlQuery += ");";
 
                     cmd.CommandText = sqlQuery;
@@ -303,22 +301,22 @@ public class DatabaseManager : MonoBehaviour
         }
         else
         {
-            print("Here");
-            using (IDbConnection dbConnection = new SqliteConnection(progressConnectionString))
+        */
+        using (IDbConnection dbConnection = new SqliteConnection(progressConnectionString))
+        {
+            dbConnection.Open();
+
+            using (IDbCommand cmd = dbConnection.CreateCommand())
             {
-                dbConnection.Open();
+                string sqlQuery = "UPDATE `progress` SET `solvedSteps`=" + lp.solvedsteps + ", ";
+                sqlQuery += "`star_taken`=" + lp.gemTaken + ", ";
+                sqlQuery += "`unlocked`=" + lp.unlocked + " ";
+                sqlQuery += "WHERE `levelid`=" + (lp.chapterid * 100 + lp.levelid) + ";";
 
-                using (IDbCommand cmd = dbConnection.CreateCommand())
-                {
-                    string sqlQuery = "UPDATE `progress` SET `solvedSteps`=" + lp.solvedsteps + ", ";
-                    sqlQuery += "`star_taken`=" + lp.gemTaken + " ";
-                    sqlQuery += "WHERE `levelid`=" + (lp.chapterid * 100 + lp.levelid) + ";";
+                // print(sqlQuery);
 
-                    print(sqlQuery);
-
-                    cmd.CommandText = sqlQuery;
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.CommandText = sqlQuery;
+                cmd.ExecuteNonQuery();
             }
         }
     }

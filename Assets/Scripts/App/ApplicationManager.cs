@@ -1,6 +1,7 @@
 ﻿using System;
 using App;
 using GameAnalyticsSDK;
+using GameAnalyticsSDK.Setup;
 using UnityEngine;
 using UnityEngine.UI;
 using TapsellSDK;
@@ -55,16 +56,8 @@ public class ApplicationManager : MonoBehaviour
 
         _keyHandler.Init();
 
-        if (isFirstPlay())
-            FirstPlay();
         view.ShowBlackPage();
         view.ShowMainMenu();
-
-        if (!PlayerPrefs.HasKey("last_level_unlocked"))
-        {
-            PlayerPrefs.SetInt("last_level_unlocked", 1);
-            PlayerPrefs.Save();
-        }
 
         chaptersHandler.InitializeChapters();
         chaptersHandler.UpdateChaptersLockState();
@@ -82,6 +75,9 @@ public class ApplicationManager : MonoBehaviour
         GameAnalytics.Initialize();
 
         AdHandler.instance.Init();
+
+        if (isFirstPlay())
+            FirstPlay();
     }
 
 
@@ -104,6 +100,7 @@ public class ApplicationManager : MonoBehaviour
         PlayerPrefs.Save();
 
         _keyHandler.FirstEnter();
+        view.ShowIntro();
     }
 
     public void IntroEnded()
@@ -182,9 +179,17 @@ public class ApplicationManager : MonoBehaviour
         int chapG = 0;
         for (int l = 0; l < GameManager.instance.chapters[id].levels.Length; l++)
         {
-            if (progress.GetLevelProgress(id, l) != null)
+            try
             {
-                chapG += progress.GetLevelProgress(id, l).gemTaken;
+                if (progress.GetLevelProgress(id, l).solvedsteps != -1)
+                {
+                    chapG += progress.GetLevelProgress(id, l).gemTaken;
+                }
+            }
+            catch (Exception e)
+            {
+                print($"{id}, {l}");
+                throw e;
             }
         }
 
@@ -208,7 +213,8 @@ public class ApplicationManager : MonoBehaviour
 
     public LevelProgression GetLevelProgress(Level lvl)
     {
-        return progress.GetLevelProgress(lvl);
+        return
+            progress.GetLevelProgress(lvl);
     }
 
     public LevelProgression GetLevelProgress(int chapterId, int levelId)
@@ -220,14 +226,7 @@ public class ApplicationManager : MonoBehaviour
 
     public void MainMenu_PlayClicked()
     {
-        if (firstPlay)
-        {
-            view.ShowIntro();
-        }
-        else
-        {
-            view.MainMenuToChapters(progress.GetLastLevel().chapterId);
-        }
+        view.MainMenuToChapters(progress.GetLastLevel().chapterId);
     }
 
 
@@ -236,31 +235,21 @@ public class ApplicationManager : MonoBehaviour
         if (lvl.chapterId < 1)
             return;
 
-        if (lvl.id == progress.GetLastLevel().id && lvl.chapterId == progress.GetLastLevel().chapterId)
-            if (PlayerPrefs.GetInt("last_level_unlocked") == 0)
+        if (!GetLevelProgress(lvl).unlocked)
+        {
+            try
             {
-                try
-                {
-                    _keyHandler.UseEnergy();
-                }
-                catch (NoKeyException e)
-                {
-                    view.ShowNoKeyPanel();
-                    throw e;
-                }
-
-                PlayerPrefs.SetInt("last_level_unlocked", 1);
-                PlayerPrefs.Save();
+                _keyHandler.UseEnergy();
+                LevelProgression lp = new LevelProgression(lvl.chapterId, lvl.id, 0, -1, true);
+                DatabaseManager.instance.UpdateLevelProgress(lp);
+                progress.UpdateLevelProgress(lp);
             }
-    }
-
-    internal void LevelSolved(Level lvl)
-    {
-        if (lvl.id != progress.GetLastLevel().id || lvl.chapterId != progress.GetLastLevel().chapterId)
-            return;
-
-        PlayerPrefs.SetInt("last_level_unlocked", 0);
-        PlayerPrefs.Save();
+            catch (NoKeyException e)
+            {
+                view.ShowNoKeyPanel();
+                throw e;
+            }
+        }
     }
 
     internal void RunLevel(Level level)
@@ -418,15 +407,15 @@ public class ApplicationManager : MonoBehaviour
 
     public void UpdateLevelProgress(Level lvl, LevelProgression lp)
     {
-        if (progress.GetLevelProgress(lp.chapterid, lp.levelid) == null)
+        if (progress.GetLevelProgress(lp.chapterid, lp.levelid).solvedsteps == -1)
         {
             AddGems(lp.gemTaken);
-            DatabaseManager.instance.UpdateLevelProgress(lp, false);
+            DatabaseManager.instance.UpdateLevelProgress(lp);
         }
         else if (lp.gemTaken > progress.GetLevelProgress(lvl).gemTaken)
         {
             AddGems(lp.gemTaken - progress.GetLevelProgress(lvl).gemTaken);
-            DatabaseManager.instance.UpdateLevelProgress(lp, true);
+            DatabaseManager.instance.UpdateLevelProgress(lp);
         }
 
         progress.UpdateLevelProgress(lp);

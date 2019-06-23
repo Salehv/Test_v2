@@ -28,18 +28,18 @@ public class GameProgression
     {
         return GetLevelProgress(lvl.chapterId, lvl.id);
     }
-    
+
     internal Level GetLastLevel()
     {
         Level last = GameManager.instance.GetChapter(0).GetLevel(0);
-        
-        for(int i = 0; i < chapterProg.Length; i++)
-            if(chapterProg[i] != null)    
-                for(int j = 0; j < chapterProg[i].levelProg.Length; j++)
-                    if (chapterProg[i].levelProg[j] != null)
-                        last = GameManager.instance.GetChapter(i).GetLevel(j);
-                    else
-                        return GameManager.instance.GetChapter(i).GetLevel(j);;
+
+        for (int i = 0; i < chapterProg.Length; i++)
+        for (int j = 0; j < chapterProg[i].levelProg.Length; j++)
+            if (chapterProg[i].levelProg[j].solvedsteps != -1)
+                last = GameManager.instance.GetChapter(i).GetLevel(j);
+            else
+                return GameManager.instance.GetChapter(i).GetLevel(j);
+        ;
         return last;
     }
 }
@@ -63,11 +63,12 @@ public class LevelProgression
     public int solvedsteps;
     public bool unlocked;
 
-    public LevelProgression(int chapid, int lvlid, int gem, int solvedsteps)
+    public LevelProgression(int chapid, int lvlid, int gem, int solvedsteps, bool unlocked)
     {
         chapterid = chapid;
         levelid = lvlid;
         gemTaken = gem;
         this.solvedsteps = solvedsteps;
+        this.unlocked = unlocked;
     }
 }

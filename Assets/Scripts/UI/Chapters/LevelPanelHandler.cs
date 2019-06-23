@@ -9,6 +9,7 @@ public class LevelPanelHandler : MonoBehaviour
     public Transform contents;
 
     private List<LevelObject> levels;
+
     internal void Init()
     {
         levels = new List<LevelObject>();
@@ -18,17 +19,17 @@ public class LevelPanelHandler : MonoBehaviour
             levels.Add(contents.GetChild(i).GetComponent<LevelObject>());
         }
     }
-    
+
     internal void SetToChapter(int chapter)
     {
         bool lastLevel = false;
         for (int i = 0; i < GameManager.instance.GetChapter(chapter).levels.Length; i++)
         {
             levels[i].gameObject.SetActive(true);
-            bool isSolved = ApplicationManager.instance.GetLevelProgress(chapter, i) != null;
+            bool isSolved = ApplicationManager.instance.GetLevelProgress(chapter, i).solvedsteps != -1;
 
             SetLevel(levels[i], chapter, i, isSolved, lastLevel);
-            
+
             if (!isSolved && !lastLevel)
                 lastLevel = true;
         }
@@ -39,8 +40,9 @@ public class LevelPanelHandler : MonoBehaviour
         }
     }
 
-    
-    private void SetLevel(LevelObject levelObject, int chapterId, int levelId, bool isSolved = false, bool isLocked = false)
+
+    private void SetLevel(LevelObject levelObject, int chapterId, int levelId, bool isSolved = false,
+        bool isLocked = false)
     {
         levelObject.level = GameManager.instance.GetChapter(chapterId).GetLevel(levelId);
         try
@@ -52,9 +54,9 @@ public class LevelPanelHandler : MonoBehaviour
         {
             levelObject.level.gems = 0;
         }
-        
+
         levelObject.Init();
-        
+
         if (isLocked)
         {
             levelObject.SetLock();
@@ -66,7 +68,7 @@ public class LevelPanelHandler : MonoBehaviour
             levelObject.SetSolved();
             return;
         }
-        
-        levelObject.SetUnSolved(PlayerPrefs.GetInt("last_level_unlocked") == 1);
+
+        levelObject.SetUnSolved(ApplicationManager.instance.GetLevelProgress(chapterId, levelId).unlocked);
     }
 }

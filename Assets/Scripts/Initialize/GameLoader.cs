@@ -163,6 +163,14 @@ namespace Initialize
                 PlayerPrefs.Save();
             }
 
+            if (!PlayerPrefs.HasKey("new_progress_database"))
+            {
+                if (File.Exists(Path.Combine(Application.persistentDataPath, "progress.db3")))
+                    File.Delete(Path.Combine(Application.persistentDataPath, "progress.db3"));
+
+                PlayerPrefs.SetInt("new_progress_database", 1);
+                PlayerPrefs.Save();
+            }
 
             if (!File.Exists(Path.Combine(Application.persistentDataPath, "progress.db3")))
             {
