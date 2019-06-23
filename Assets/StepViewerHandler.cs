@@ -27,10 +27,10 @@ public class StepViewerHandler : MonoBehaviour
 
     public void Init(int steps)
     {
-        gem2.SetActive(true);
-        gem3.SetActive(true);
+        gem3.GetComponent<Image>().color = Color.white;
+        gem2.GetComponent<Image>().color = Color.white;
 
-        steps--;
+        steps-= 2;
 
         currentStep = 0;
         progressBar.value = 1;
@@ -45,8 +45,8 @@ public class StepViewerHandler : MonoBehaviour
             steps2 = (int) steps / 3;
         }
 
-        textStep1.text = "" + steps1;
-        textStep2.text = "" + (steps1 + steps2);
+        textStep1.text = "" + (steps1 + 1);
+        textStep2.text = "" + (steps1 + steps2 +1);
     }
 
     public void StepForward()
