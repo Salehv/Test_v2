@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:8476a0f05ac51f4a82d93220214995a5:3f30e7afb76c54554e08c3f3f71a8204:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:e559608e82f74d55b6fc4da156fe1c05:a0fa00d6a6ba9b46d2e9231dec89b3bc:65b6e72418b136aebb682b32e80fcc76$
 #
 :format=40300
 :texture=ChapterBG-0.png
@@ -19,13 +19,8 @@ Chapter01PlayBtn;2;93;93;111; 0.5;0.5; 0;0;0;0
 Chapter02BG;521;206;517;919; 0.5;0.5; 0;0;0;0
 Chapter03BG;1040;1127;517;919; 0.5;0.5; 0;0;0;0
 Chapter04BG;1040;206;517;919; 0.5;0.5; 0;0;0;0
-ChapterLock01;1559;843;383;413; 0.5;0.5; 0;0;0;0
-ChapterLock02;1559;428;383;413; 0.5;0.5; 0;0;0;0
-ChapterLock03;1559;13;383;413; 0.5;0.5; 0;0;0;0
-ChestClosed;1559;1653;479;393; 0.5;0.5; 0;0;0;0
-ChesxtOpen;1559;1258;479;393; 0.5;0.5; 0;0;0;0
+Character_Pose1;1559;1395;479;651; 0.5;0.5; 0;0;0;0
+Character_Pose2;1559;742;479;651; 0.5;0.5; 0;0;0;0
+ChestClosed;1559;347;479;393; 0.5;0.5; 0;0;0;0
 Hooray;2;30;61;61; 0.5;0.5; 0;0;0;0
-Lantern1;2000;642;44;614; 0.5;0.5; 0;0;0;0
-Lantern2;1944;349;43;386; 0.5;0.5; 0;0;0;0
-Lantern3;1944;737;54;519; 0.5;0.5; 0;0;0;0
-PlayChain;1989;242;14;398; 0.5;0.5; 0;0;0;0
+WinPanel_Header;1559;53;383;292; 0.5;0.5; 0;0;0;0
