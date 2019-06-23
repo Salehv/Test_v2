@@ -391,6 +391,7 @@ public class DatabaseManager : MonoBehaviour
         return 0;
     }
 
+
     public void ResetProgress()
     {
         using (IDbConnection dbConnection = new SqliteConnection(progressConnectionString))
@@ -399,7 +400,7 @@ public class DatabaseManager : MonoBehaviour
 
             using (IDbCommand cmd = dbConnection.CreateCommand())
             {
-                string sqlQuery = "DELETE FROM `progress` WHERE TRUE;";
+                string sqlQuery = "UPDATE `progress` SET `solvedSteps`=-1, `star_taken`=0 WHERE TRUE;";
                 cmd.CommandText = sqlQuery;
                 cmd.ExecuteNonQuery();
             }

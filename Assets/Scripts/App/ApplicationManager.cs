@@ -377,12 +377,11 @@ public class ApplicationManager : MonoBehaviour
     public void DEV_FirstPlay()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("developer", 1373);
         PlayerPrefs.Save();
-        DatabaseManager.instance.ResetProgress();
         UpdateGems();
         UpdateCoins();
         chaptersHandler.UpdateChaptersLockState();
+        DatabaseManager.instance.ResetProgress();
     }
 
     public void DEV_SolveLevel()

@@ -378,6 +378,7 @@ namespace App
                     {
                         gameCanvas.SetActive(true);
                         arcadeView.SetActive(true);
+                        introView.SetActive(false);
                         menuCanvas.SetActive(false);
                         state = ViewState.ARCADE;
                         ApplicationManager.instance.RunArcade();
