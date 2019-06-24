@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Data;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 using App;
 using GameAnalyticsSDK;
+using Mono.Data.SqliteClient;
 using TheGame;
 using UnityEngine;
 
@@ -165,10 +168,29 @@ namespace Initialize
                 PlayerPrefs.Save();
             }
 
+            int lastCoin = 0;
+            string path = "URI=file:" + Application.persistentDataPath + "/progress.db3";
             if (!PlayerPrefs.HasKey("new_progress_database"))
             {
                 if (File.Exists(Path.Combine(Application.persistentDataPath, "progress.db3")))
+                {
+                    using (IDbConnection pConn = new SqliteConnection(path))
+                    {
+                        pConn.Open();
+                        using (IDbCommand cmd = pConn.CreateCommand())
+                        {
+                            string sqlQuery = "SELECT * FROM `datas` WHERE `option`='coin';";
+                            cmd.CommandText = sqlQuery;
+                            using (IDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                    lastCoin = reader.GetInt32(1);
+                            }
+                        }
+                    }
+
                     File.Delete(Path.Combine(Application.persistentDataPath, "progress.db3"));
+                }
 
                 PlayerPrefs.SetInt("new_progress_database", 1);
                 PlayerPrefs.Save();
@@ -187,6 +209,17 @@ namespace Initialize
                     File.WriteAllBytes(Path.Combine(Application.persistentDataPath, "progress.db3"), load2.bytes);
                     Debug.Log(
                         "Copied Progress_Database to " + Path.Combine(Application.persistentDataPath, "progress.db3"));
+
+                    using (IDbConnection pConn = new SqliteConnection(path))
+                    {
+                        pConn.Open();
+                        using (IDbCommand cmd = pConn.CreateCommand())
+                        {
+                            string sqlQuery = $"UPDATE `datas` SET `value` ={lastCoin} WHERE `option`='coin';";
+                            cmd.CommandText = sqlQuery;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
                 }
             }
         }
