@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Xml.Serialization;
 using App;
+using GameAnalyticsSDK;
 using TheGame;
 using UnityEngine;
 
@@ -49,6 +50,7 @@ namespace Initialize
         {
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             Input.multiTouchEnabled = false;
+            GameAnalytics.Initialize();
 
             LoadGameLevels();
 
