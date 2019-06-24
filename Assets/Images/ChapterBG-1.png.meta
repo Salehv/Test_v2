@@ -89,6 +89,9 @@ TextureImporter:
   - first:
       213: -1783385868317691048
     second: TransitionUp
+  - first:
+      213: 4927969714591270107
+    second: ChestClosed
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -160,13 +163,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chapter06BG
+      name: ChapterLock01
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1444
-        width: 339
-        height: 602
+        x: 1266
+        y: 692
+        width: 504
+        height: 544
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28bb32080398fb24fa3144a775b18c40
-      internalID: -2101042713465515296
+      spriteID: 4990b269f840ddd42aac4650352ccd50
+      internalID: 4957688005299248046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChapterLock
+      name: ChapterLock02
       rect:
         serializedVersion: 2
-        x: 2
-        y: 840
-        width: 339
-        height: 602
+        x: 1326
+        y: 1502
+        width: 504
+        height: 544
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +198,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b73ecb332ed7a64c9f1e41d6f475966
-      internalID: 5065311263215661669
+      spriteID: 1fb0fdab7771b85479d0826c5cfd5456
+      internalID: 7140142522197426076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapterLock03
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 125
+        width: 504
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94591cbae32145449fb9a3647c4a972
+      internalID: 6823078620062941484
       vertices: []
       indices: 
       edges: []
@@ -205,10 +229,10 @@ TextureImporter:
       name: ChapterLock04
       rect:
         serializedVersion: 2
-        x: 343
-        y: 1656
-        width: 361
-        height: 390
+        x: 707
+        y: 644
+        width: 504
+        height: 544
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +240,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 806873c66a37c0f49a3b8bb373d5c973
+      spriteID: 8fcc68e384992d3499af3fbc54931ca4
       internalID: -6922498253887718886
       vertices: []
       indices: 
@@ -226,10 +250,10 @@ TextureImporter:
       name: ChapterLock05
       rect:
         serializedVersion: 2
-        x: 706
-        y: 1656
-        width: 361
-        height: 390
+        x: 707
+        y: 98
+        width: 504
+        height: 544
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,41 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 404a00558206854499b25dafb0e1e968
+      spriteID: 8d818188243db6f4789eb17dc6cf3fd8
       internalID: -4870439700125140312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_Dialogue
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 100
-        width: 301
-        height: 346
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dde9900b222d6644aac63e75066d8e5b
-      internalID: -2913733169546119899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InGame01TEP
+      name: Character_Pose1
       rect:
         serializedVersion: 2
         x: 2
-        y: 236
-        width: 339
-        height: 602
+        y: 1190
+        width: 630
+        height: 856
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b5335463fc878941a4a635a0165dc52
-      internalID: 295062274530320306
+      spriteID: 89027d2c24d76e94c99d4ce99eddf710
+      internalID: -4681418724905940507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InGame02TEP
+      name: Character_Pose2
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 1444
-        width: 339
-        height: 602
+        x: 634
+        y: 1190
+        width: 630
+        height: 856
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 906329f62d0b07442885d7a46774befe
-      internalID: -6497845130014826947
+      spriteID: 489d0fc79be715f469daf8776a7237df
+      internalID: 6195424918780814615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InGame03TEP
+      name: ChestClosed
       rect:
         serializedVersion: 2
-        x: 1410
-        y: 1444
-        width: 339
-        height: 602
+        x: 2
+        y: 671
+        width: 630
+        height: 517
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f01ef41ad861c0340bbbebe874cff171
-      internalID: 7412750819503278479
+      spriteID: 1250a5656c7cdff408bb6d7be7349cd5
+      internalID: 4927969714591270107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InGame04TEP
+      name: ChesxtOpen
       rect:
         serializedVersion: 2
-        x: 343
-        y: 1052
-        width: 339
-        height: 602
+        x: 1213
+        y: 173
+        width: 630
+        height: 517
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdce9a84f937b324cb54a55f9d3b39a1
-      internalID: 113165832256449062
+      spriteID: 3894cb45b046e634ba312b7588977453
+      internalID: 3631427753842240048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InGame05TEP
+      name: Lantern1
       rect:
         serializedVersion: 2
-        x: 684
-        y: 1052
-        width: 339
-        height: 602
+        x: 1266
+        y: 1238
+        width: 58
+        height: 808
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,20 +366,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4294a8658c8d38b429f4ffae5338d30a
-      internalID: 6117714030602341294
+      spriteID: 8db8165cb6f84ac4380eb7fd636175da
+      internalID: 6247072073633344140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InGame06TEP
+      name: Lantern2
       rect:
         serializedVersion: 2
-        x: 343
-        y: 448
-        width: 339
-        height: 602
+        x: 529
+        y: 161
+        width: 56
+        height: 508
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6723931ff4ec5cc4384c670eaa0f3e06
-      internalID: 4616370434843588116
+      spriteID: f1763481dcfc92b41afdf380a3afc120
+      internalID: -2177685549579597603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Staff
+      name: Lantern3
       rect:
         serializedVersion: 2
-        x: 684
-        y: 448
-        width: 339
-        height: 602
+        x: 634
+        y: 504
+        width: 71
+        height: 684
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,20 +408,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78c943c0a7eddfb4bb0420ef76cfac1d
-      internalID: 8759871349884944488
+      spriteID: 58df095ee4b8d3c479826f9e856bd7af
+      internalID: -9066375726257480448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TransitionDown
+      name: PlayChain
       rect:
         serializedVersion: 2
-        x: 1025
-        y: 840
-        width: 339
-        height: 602
+        x: 508
+        y: 145
+        width: 19
+        height: 524
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,29 +429,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 520aa9a2026b5294a8d51305d64c14c0
-      internalID: 65088921106527997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TransitionUp
-      rect:
-        serializedVersion: 2
-        x: 1025
-        y: 236
-        width: 339
-        height: 602
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c36ef66a95a374b4cb478c82edf3229d
-      internalID: -1783385868317691048
+      spriteID: edbdfb0769b98d346b450819d71c545e
+      internalID: 8979431339867779886
       vertices: []
       indices: 
       edges: []
