@@ -8,7 +8,6 @@ tpsheetFileNames:
 - Assets/Images/ChapterBG.tpsheet
 - Assets/Images/ChapterBG-0.tpsheet
 - Assets/Images/ChapterBG-1.tpsheet
-- Assets/Images/ChapterBG-2.tpsheet
 - Assets/Resources/Letters.tpsheet
 textureFileNames:
 - Assets/Images/Blured.png
@@ -18,10 +17,8 @@ textureFileNames:
 - Assets/Images/ChapterBG.png
 - Assets/Images/ChapterBG-0.png
 - Assets/Images/ChapterBG-1.png
-- Assets/Images/ChapterBG-2.png
 - Assets/Resources/Letters.png
 normalmapFileNames:
-- 
 - 
 - 
 - 

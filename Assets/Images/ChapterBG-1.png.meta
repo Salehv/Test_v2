@@ -71,6 +71,24 @@ TextureImporter:
   - first:
       213: 8979431339867779886
     second: PlayChain
+  - first:
+      213: 113165832256449062
+    second: InGame04TEP
+  - first:
+      213: 6117714030602341294
+    second: InGame05TEP
+  - first:
+      213: 4616370434843588116
+    second: InGame06TEP
+  - first:
+      213: 8759871349884944488
+    second: Staff
+  - first:
+      213: 65088921106527997
+    second: TransitionDown
+  - first:
+      213: -1783385868317691048
+    second: TransitionUp
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -142,34 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chapter05BG
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1127
-        width: 517
-        height: 919
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 141e7a2487be9ff41bab8edcbc815c77
-      internalID: 2509165409642109433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Chapter06BG
       rect:
         serializedVersion: 2
         x: 2
-        y: 206
-        width: 517
-        height: 919
+        y: 1444
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cb9c8426652ac34dbfb11e68ace671c
+      spriteID: 28bb32080398fb24fa3144a775b18c40
       internalID: -2101042713465515296
       vertices: []
       indices: 
@@ -187,10 +184,10 @@ TextureImporter:
       name: ChapterLock
       rect:
         serializedVersion: 2
-        x: 521
-        y: 1127
-        width: 517
-        height: 919
+        x: 2
+        y: 840
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 292ee9b11a28e5445921b9c132cbda8e
+      spriteID: 2b73ecb332ed7a64c9f1e41d6f475966
       internalID: 5065311263215661669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChapterLock01
+      name: ChapterLock04
       rect:
         serializedVersion: 2
-        x: 1559
-        y: 1238
-        width: 383
-        height: 413
+        x: 343
+        y: 1656
+        width: 361
+        height: 390
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9298e350fcde7d34fa5d45cf9fdd1c5a
-      internalID: 4957688005299248046
+      spriteID: 806873c66a37c0f49a3b8bb373d5c973
+      internalID: -6922498253887718886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChapterLock02
+      name: ChapterLock05
       rect:
         serializedVersion: 2
-        x: 1559
-        y: 823
-        width: 383
-        height: 413
+        x: 706
+        y: 1656
+        width: 361
+        height: 390
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,29 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e144532ee0fc9e547aeee0ac050d51d5
-      internalID: 7140142522197426076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChapterLock03
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 408
-        width: 383
-        height: 413
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a1ad49302f132e4896dd741714659d1
-      internalID: 6823078620062941484
+      spriteID: 404a00558206854499b25dafb0e1e968
+      internalID: -4870439700125140312
       vertices: []
       indices: 
       edges: []
@@ -271,10 +247,10 @@ TextureImporter:
       name: Character_Dialogue
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 131
-        width: 239
-        height: 275
+        x: 343
+        y: 100
+        width: 301
+        height: 346
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,29 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35581e2dddcbf264a8b34f090abfdb58
+      spriteID: dde9900b222d6644aac63e75066d8e5b
       internalID: -2913733169546119899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChesxtOpen
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 1653
-        width: 479
-        height: 393
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bcfd937a7d1c01148a0d70ce3b0289db
-      internalID: 3631427753842240048
       vertices: []
       indices: 
       edges: []
@@ -313,10 +268,10 @@ TextureImporter:
       name: InGame01TEP
       rect:
         serializedVersion: 2
-        x: 521
-        y: 206
-        width: 517
-        height: 919
+        x: 2
+        y: 236
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,7 +279,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39b0b8aeadb2f5d43be2ac332e2d0eee
+      spriteID: 3b5335463fc878941a4a635a0165dc52
       internalID: 295062274530320306
       vertices: []
       indices: 
@@ -334,10 +289,10 @@ TextureImporter:
       name: InGame02TEP
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 1127
-        width: 517
-        height: 919
+        x: 1069
+        y: 1444
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,7 +300,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a37e384f35a3a245b399b91b3f05d36
+      spriteID: 906329f62d0b07442885d7a46774befe
       internalID: -6497845130014826947
       vertices: []
       indices: 
@@ -355,10 +310,10 @@ TextureImporter:
       name: InGame03TEP
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 206
-        width: 517
-        height: 919
+        x: 1410
+        y: 1444
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eaa901060bd51e54982500009da67167
+      spriteID: f01ef41ad861c0340bbbebe874cff171
       internalID: 7412750819503278479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lantern1
+      name: InGame04TEP
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1037
-        width: 44
-        height: 614
+        x: 343
+        y: 1052
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c450d7bb1c1d0994886a1638de95c16c
-      internalID: 6247072073633344140
+      spriteID: bdce9a84f937b324cb54a55f9d3b39a1
+      internalID: 113165832256449062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lantern2
+      name: InGame05TEP
       rect:
         serializedVersion: 2
-        x: 1944
-        y: 744
-        width: 43
-        height: 386
+        x: 684
+        y: 1052
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,20 +363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f79cafc7e05e344fad35bf850e8db4a
-      internalID: -2177685549579597603
+      spriteID: 4294a8658c8d38b429f4ffae5338d30a
+      internalID: 6117714030602341294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lantern3
+      name: InGame06TEP
       rect:
         serializedVersion: 2
-        x: 1944
-        y: 1132
-        width: 54
-        height: 519
+        x: 343
+        y: 448
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,20 +384,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ce2fd9b96244924f84100710a575060
-      internalID: -9066375726257480448
+      spriteID: 6723931ff4ec5cc4384c670eaa0f3e06
+      internalID: 4616370434843588116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayChain
+      name: Staff
       rect:
         serializedVersion: 2
-        x: 1559
-        y: 8
-        width: 14
-        height: 398
+        x: 684
+        y: 448
+        width: 339
+        height: 602
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,8 +405,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d38e723b19bc21a4ba121d7b48559269
-      internalID: 8979431339867779886
+      spriteID: 78c943c0a7eddfb4bb0420ef76cfac1d
+      internalID: 8759871349884944488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TransitionDown
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 840
+        width: 339
+        height: 602
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520aa9a2026b5294a8d51305d64c14c0
+      internalID: 65088921106527997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TransitionUp
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 236
+        width: 339
+        height: 602
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36ef66a95a374b4cb478c82edf3229d
+      internalID: -1783385868317691048
       vertices: []
       indices: 
       edges: []

@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:e559608e82f74d55b6fc4da156fe1c05:a0fa00d6a6ba9b46d2e9231dec89b3bc:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:a2d2e42e437c15a6c9ad655be60dfd4b:64072a4a994a315f36c07fa49dcf3abd:f7ff36536e5db473670720a017834faa$
 #
 :format=40300
 :texture=ChapterBG-0.png
@@ -12,15 +12,25 @@
 :pivotpoints=enabled
 :borders=disabled
 
-BG-Blured;2;1127;517;919; 0.5;0.5; 0;0;0;0
-BG;2;206;517;919; 0.5;0.5; 0;0;0;0
-Chapter01BG;521;1127;517;919; 0.5;0.5; 0;0;0;0
-Chapter01PlayBtn;2;93;93;111; 0.5;0.5; 0;0;0;0
-Chapter02BG;521;206;517;919; 0.5;0.5; 0;0;0;0
-Chapter03BG;1040;1127;517;919; 0.5;0.5; 0;0;0;0
-Chapter04BG;1040;206;517;919; 0.5;0.5; 0;0;0;0
-Character_Pose1;1559;1395;479;651; 0.5;0.5; 0;0;0;0
-Character_Pose2;1559;742;479;651; 0.5;0.5; 0;0;0;0
-ChestClosed;1559;347;479;393; 0.5;0.5; 0;0;0;0
-Hooray;2;30;61;61; 0.5;0.5; 0;0;0;0
-WinPanel_Header;1559;53;383;292; 0.5;0.5; 0;0;0;0
+BG-Blured;1210;1444;339;602; 0.5;0.5; 0;0;0;0
+BG;606;452;339;602; 0.5;0.5; 0;0;0;0
+Chapter01BG;1551;1444;339;602; 0.5;0.5; 0;0;0;0
+Chapter01PlayBtn;1579;1303;117;139; 0.5;0.5; 0;0;0;0
+Chapter02BG;947;452;339;602; 0.5;0.5; 0;0;0;0
+Chapter03BG;1288;537;339;602; 0.5;0.5; 0;0;0;0
+Chapter04BG;1629;669;339;602; 0.5;0.5; 0;0;0;0
+Chapter05BG;1629;65;339;602; 0.5;0.5; 0;0;0;0
+ChapterLock01;486;16;361;390; 0.5;0.5; 0;0;0;0
+ChapterLock02;849;60;361;390; 0.5;0.5; 0;0;0;0
+ChapterLock03;1212;60;361;390; 0.5;0.5; 0;0;0;0
+Character_Pose1;2;1228;602;818; 0.5;0.5; 0;0;0;0
+Character_Pose2;2;408;602;818; 0.5;0.5; 0;0;0;0
+Character_ٍError;1210;1141;367;301; 0.5;0.5; 0;0;0;0
+ChestClosed;606;1552;602;494; 0.5;0.5; 0;0;0;0
+ChesxtOpen;606;1056;602;494; 0.5;0.5; 0;0;0;0
+Hooray;1288;458;77;77; 0.5;0.5; 0;0;0;0
+Lantern1;1962;1273;55;773; 0.5;0.5; 0;0;0;0
+Lantern2;1970;785;54;486; 0.5;0.5; 0;0;0;0
+Lantern3;1892;1393;68;653; 0.5;0.5; 0;0;0;0
+PlayChain;2019;1545;18;501; 0.5;0.5; 0;0;0;0
+WinPanel_Header;2;39;482;367; 0.5;0.5; 0;0;0;0

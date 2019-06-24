@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:e559608e82f74d55b6fc4da156fe1c05:a0fa00d6a6ba9b46d2e9231dec89b3bc:65b6e72418b136aebb682b32e80fcc76$
+# $TexturePacker:SmartUpdate:a2d2e42e437c15a6c9ad655be60dfd4b:64072a4a994a315f36c07fa49dcf3abd:f7ff36536e5db473670720a017834faa$
 #
 :format=40300
 :texture=ChapterBG-1.png
@@ -12,18 +12,17 @@
 :pivotpoints=enabled
 :borders=disabled
 
-Chapter05BG;2;1127;517;919; 0.5;0.5; 0;0;0;0
-Chapter06BG;2;206;517;919; 0.5;0.5; 0;0;0;0
-ChapterLock;521;1127;517;919; 0.5;0.5; 0;0;0;0
-ChapterLock01;1559;1238;383;413; 0.5;0.5; 0;0;0;0
-ChapterLock02;1559;823;383;413; 0.5;0.5; 0;0;0;0
-ChapterLock03;1559;408;383;413; 0.5;0.5; 0;0;0;0
-Character_Dialogue;1575;131;239;275; 0.5;0.5; 0;0;0;0
-ChesxtOpen;1559;1653;479;393; 0.5;0.5; 0;0;0;0
-InGame01TEP;521;206;517;919; 0.5;0.5; 0;0;0;0
-InGame02TEP;1040;1127;517;919; 0.5;0.5; 0;0;0;0
-InGame03TEP;1040;206;517;919; 0.5;0.5; 0;0;0;0
-Lantern1;2000;1037;44;614; 0.5;0.5; 0;0;0;0
-Lantern2;1944;744;43;386; 0.5;0.5; 0;0;0;0
-Lantern3;1944;1132;54;519; 0.5;0.5; 0;0;0;0
-PlayChain;1559;8;14;398; 0.5;0.5; 0;0;0;0
+Chapter06BG;2;1444;339;602; 0.5;0.5; 0;0;0;0
+ChapterLock;2;840;339;602; 0.5;0.5; 0;0;0;0
+ChapterLock04;343;1656;361;390; 0.5;0.5; 0;0;0;0
+ChapterLock05;706;1656;361;390; 0.5;0.5; 0;0;0;0
+Character_Dialogue;343;100;301;346; 0.5;0.5; 0;0;0;0
+InGame01TEP;2;236;339;602; 0.5;0.5; 0;0;0;0
+InGame02TEP;1069;1444;339;602; 0.5;0.5; 0;0;0;0
+InGame03TEP;1410;1444;339;602; 0.5;0.5; 0;0;0;0
+InGame04TEP;343;1052;339;602; 0.5;0.5; 0;0;0;0
+InGame05TEP;684;1052;339;602; 0.5;0.5; 0;0;0;0
+InGame06TEP;343;448;339;602; 0.5;0.5; 0;0;0;0
+Staff;684;448;339;602; 0.5;0.5; 0;0;0;0
+TransitionDown;1025;840;339;602; 0.5;0.5; 0;0;0;0
+TransitionUp;1025;236;339;602; 0.5;0.5; 0;0;0;0
