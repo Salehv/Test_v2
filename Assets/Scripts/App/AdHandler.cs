@@ -83,7 +83,7 @@ public class AdHandler : MonoBehaviour
         ShowLoading();
         Tapsell.requestAd(
             ad_zone_coin,
-            true,
+            false,
             AdAvailable,
             AdNotAvailable,
             AdError,
@@ -108,7 +108,7 @@ public class AdHandler : MonoBehaviour
         ShowLoading();
         Tapsell.requestAd(
             ad_zone_winDoublePrize,
-            true,
+            false,
             AdAvailable,
             AdNotAvailable,
             AdError,
@@ -121,7 +121,7 @@ public class AdHandler : MonoBehaviour
         ShowLoading();
         Tapsell.requestAd(
             ad_zone_key,
-            true,
+            false,
             AdAvailable,
             AdNotAvailable,
             AdError,

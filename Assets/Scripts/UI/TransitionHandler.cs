@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using App;
 using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,12 +30,12 @@ public class TransitionHandler : MonoBehaviour
         textTop.text = lvl.begin;
         textBottom.text = lvl.end;
         selectedLevel = lvl;
-        
+
         levelID.text = $"{GameManager.instance.chapters[lvl.chapterId].name} - مرحله {lvl.id + 1:00}";
-        
+
         animatorTop.SetBool("Close", true);
         animatorBottom.SetBool("Close", true);
-        
+
         GetComponent<Image>().raycastTarget = true;
     }
 
