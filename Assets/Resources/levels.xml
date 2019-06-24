@@ -311,10 +311,10 @@
             </End>
             <Way>
                 <Word>
-                    کال
+                    کاه
                 </Word>
                 <Word>
-                    کاه
+                    کال
                 </Word>
             </Way>
         </Level>
@@ -343,10 +343,7 @@
             </End>
             <Way>
                 <Word>
-                    شام
-                </Word>
-                <Word>
-                    نام
+                    شامه
                 </Word>
             </Way>
         </Level>
@@ -581,7 +578,7 @@
             </End>
             <Way>
                 <Word>
-                    شمر
+                    شار
                 </Word>
                 <Word>
                     شمار
@@ -711,9 +708,6 @@
                 </Word>
                 <Word>
                     سراب
-                </Word>
-                <Word>
-                    سهراب
                 </Word>
             </Way>
         </Level>
@@ -1221,6 +1215,9 @@
                 <Word>
                     نور
                 </Word>
+                <Word>
+                    نو
+                </Word>
             </Way>
         </Level>
         <Level id="20" type="3">
@@ -1389,9 +1386,6 @@
                 </Word>
                 <Word>
                     ارس
-                </Word>
-                <Word>
-                    فارس
                 </Word>
             </Way>
         </Level>
@@ -3213,6 +3207,9 @@
                 </Word>
                 <Word>
                     ارش
+                </Word>
+                <Word>
+                    اش
                 </Word>
                 <Word>
                     کاش
