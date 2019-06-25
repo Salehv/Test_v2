@@ -40,6 +40,9 @@ namespace TheGame.Arcade
         private void Awake()
         {
             instance = this;
+            
+            int hs = PlayerPrefs.GetInt("arcade_high_score");
+            realTimeScore.text = "" + hs;
         }
 
         public void StartArcade()
@@ -54,7 +57,7 @@ namespace TheGame.Arcade
         {
             if (started)
             {
-                
+                realTimeScore.text = "" + score;
                 
                 timeText.text = Utilities.GetTimeFormat(remainingTime);
                 remainingTime -= Time.deltaTime;
