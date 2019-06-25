@@ -87994,8 +87994,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1496918049}
-        m_MethodName: ShowTabligh
+      - m_Target: {fileID: 1496918058}
+        m_MethodName: RequestCoinAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -92783,21 +92783,15 @@ MonoBehaviour:
   - {fileID: 7412750819503278479, guid: dd1e386c337f47445af50ee01fe8ba8d, type: 3}
   - {fileID: 6117714030602341294, guid: dd1e386c337f47445af50ee01fe8ba8d, type: 3}
   - {fileID: 4616370434843588116, guid: dd1e386c337f47445af50ee01fe8ba8d, type: 3}
-  levelsViewMusics:
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
-  - {fileID: 8300000, guid: 3bdd11e3787140c49937dc04804a84aa, type: 3}
+  levelsViewMusics: []
   inGameMusic:
-  - {fileID: 8300000, guid: 039a087dfd09be045a47e80b06f04a28, type: 3}
-  - {fileID: 8300000, guid: 6c846b0e30716e4409752a84d54859bd, type: 3}
-  - {fileID: 8300000, guid: 039a087dfd09be045a47e80b06f04a28, type: 3}
-  - {fileID: 8300000, guid: 6c846b0e30716e4409752a84d54859bd, type: 3}
-  - {fileID: 8300000, guid: 039a087dfd09be045a47e80b06f04a28, type: 3}
-  - {fileID: 8300000, guid: 6c846b0e30716e4409752a84d54859bd, type: 3}
-  mainMenuMusic: {fileID: 8300000, guid: 71b398c8d460af242bbe60013d2dd815, type: 3}
+  - {fileID: 8300000, guid: e3c28e9dc8939784e8343558a3987df8, type: 3}
+  - {fileID: 8300000, guid: ef0556792d310fc45a0c707caf0a465f, type: 3}
+  - {fileID: 8300000, guid: 1c1806b187f59b14a99e75b1d814679e, type: 3}
+  - {fileID: 8300000, guid: 1c1806b187f59b14a99e75b1d814679e, type: 3}
+  - {fileID: 8300000, guid: 927b5a983f08a124a847cd3fb2d4f8e7, type: 3}
+  - {fileID: 8300000, guid: d05d995a107d0b64bb49f7d402ba220d, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: cd8874d05ec295a44a280ab948b74df3, type: 3}
 --- !u!114 &1496918062
 MonoBehaviour:
   m_ObjectHideFlags: 0

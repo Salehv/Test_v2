@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Initialize;
@@ -41,26 +42,25 @@ public class Level
 
     internal int CalculateCoinGain(int steps)
     {
-        int diff = steps - way.Length;
-        return (int)(10 - diff * 1.5);
+        int best = way.Length;
+        if (steps <= best)
+            return 10;
+        if (steps < (Math.Min(best + (int) best * 2 / 3, best + 2)))
+            return 8;
+
+        return 5;
     }
 
-    
+
     internal int CalculateGemGain(int steps)
     {
-        int diff = steps - way.Length;
-        
-        if (diff == 0)
-        {
+        int best = way.Length;
+        if (steps <= best)
             return 3;
-        }
-        
-        else if (way.Length > 2)
-        {
-            return diff <= way.Length / 3 ? 2 : 1;
-        }
+        if (steps < (Math.Min(best + (int) best * 2 / 3, best + 2)))
+            return 2;
 
-        return diff == 1 ? 2 : 1;
+        return 1;
     }
 
     public override string ToString()

@@ -8,8 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     internal static AudioManager instance;
 
-    [Header("Audio Clips")] 
-    public AudioClip[] sfxClips;
+    [Header("Audio Clips")] public AudioClip[] sfxClips;
 
     private bool musicOn = true, sfxOn = true;
 
@@ -68,7 +67,7 @@ public class AudioManager : MonoBehaviour
     {
         PlayNewSfx(sfxClips[(int) sfx]);
     }
-    
+
     public void PlayNewSfx(AudioClip sfx)
     {
         if (!sfxOn)
@@ -140,12 +139,6 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
-
-
-    public AudioClip GetChapterMusic(int chapterId)
-    {
-        return ResourceManager.GetLevelsViewMusic(chapterId);
-    }
 }
 
 public enum SFX

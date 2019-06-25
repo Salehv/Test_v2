@@ -141,7 +141,7 @@ namespace App
         {
             levelsCanvas.SetActive(true);
             levelsHandler.SetToChapter(chapterId);
-            AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
+            // AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
             levelsBackground.sprite = ResourceManager.GetChapterBluredBackground(chapterId);
 
