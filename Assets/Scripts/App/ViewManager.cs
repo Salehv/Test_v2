@@ -23,7 +23,6 @@ namespace App
 
         private bool escapable = true;
         public ViewState state;
-        private bool keyTutorial;
 
         #region Init
 
@@ -161,7 +160,19 @@ namespace App
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
 
             state = ViewState.LEVELS;
+            
+            if (chapterId == 1)
+            {
+                if (!PlayerPrefs.HasKey("keyTutorialShown"))
+                {
+                    ShowKeyTutorial();
+                    PlayerPrefs.SetInt("keyTutorialShown",1);
+                    PlayerPrefs.Save();
+                    return;
+                }
+            }
         }
+
 
         public void LevelClicked(Level level)
         {
@@ -184,6 +195,8 @@ namespace App
         }
 
         #endregion
+
+        
 
         #region Game
 
@@ -242,6 +255,7 @@ namespace App
         public Panel questionForm;
         public Panel noKeyPanel;
         public Panel keyShopPanel;
+        public Panel keyTutorialPanel;
         public GameObject transition;
 
         private void HideAllFrontPanels()
@@ -288,6 +302,11 @@ namespace App
         public void ShowKeyShop()
         {
             ShowPanel(keyShopPanel);
+        }
+        
+        private void ShowKeyTutorial()
+        {
+            ShowPanel(keyTutorialPanel);
         }
 
         #endregion

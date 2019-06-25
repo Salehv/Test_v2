@@ -341,6 +341,7 @@ public class TutorialHandler : MonoBehaviour
     {
         ApplicationManager.instance.IntroEnded();
 
+        DeleteMessage();
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
         TimeManager.instance.DiscardTimer("IntroTimer");
         AnalyticsHandler.Intro_Finished(timeTaken);
