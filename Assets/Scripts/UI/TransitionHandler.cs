@@ -62,13 +62,4 @@ public class TransitionHandler : MonoBehaviour
         selectedLevel = null;
         GetComponent<Image>().raycastTarget = false;
     }
-
-//    
-//    private void Update()
-//    {
-//        if (Input.GetKeyDown(KeyCode.Space))
-//        {
-//            StartTransition("خر", "سگ");
-//        }
-//    }
 }

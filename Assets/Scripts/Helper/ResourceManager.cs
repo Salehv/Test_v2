@@ -18,6 +18,7 @@ public class ResourceManager : MonoBehaviour
     [SerializeField] private AudioClip[] inGameMusic;
     [SerializeField] private SFXClip[] sfxClips;
     [Space(15)] [SerializeField] private AudioClip mainMenuMusic;
+    [SerializeField] private AudioClip chaptersMusic;
 
 
     private void Awake()
@@ -30,7 +31,7 @@ public class ResourceManager : MonoBehaviour
         return instance.levelMenuSprites[chapter];
     }
 
-    internal static Sprite GetChapterBluredBackground(int chapter)
+    internal static Sprite GetChapterBlurredBackground(int chapter)
     {
         return instance.chapterBluredBackgrounds[chapter];
     }
@@ -68,5 +69,10 @@ public class ResourceManager : MonoBehaviour
     internal static SFXClip[] GetSfxClips()
     {
         return instance.sfxClips;
+    }
+
+    public static AudioClip GetChaptersMusic()
+    {
+        return instance.chaptersMusic;
     }
 }

@@ -148,6 +148,7 @@ public enum SFX
     UI_PANEL_IN,
     UI_PANEL_OUT,
     UI_WHOOSH,
+    UI_WHOOSH_REV,
     UI_UNLOCKED,
     UI_DENIED,
     GAME_WRONG_WORD,

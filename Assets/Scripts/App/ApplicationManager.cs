@@ -31,7 +31,6 @@ namespace App
 
         private GameProgression progress;
 
-
         void Awake()
         {
             if (instance != null)
@@ -42,7 +41,6 @@ namespace App
 
             instance = this;
         }
-
 
         internal void Init()
         {
@@ -74,7 +72,6 @@ namespace App
             if (isFirstPlay())
                 FirstPlay();
         }
-
 
         #region First Play
 
@@ -128,7 +125,6 @@ namespace App
     */
 
         #endregion
-
 
         #region Coins and Gems
 
@@ -197,7 +193,6 @@ namespace App
         }
 
         #endregion
-
 
         #region Advertisement
 

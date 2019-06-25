@@ -27,7 +27,7 @@ public class ChaptersHandler : MonoBehaviour
     {
         chapter.id = id;
         chapter.background.sprite = ResourceManager.GetChapterSprite(id);
-        chapter.chapterLockBackground.sprite = ResourceManager.GetChapterBluredBackground(id);
+        chapter.chapterLockBackground.sprite = ResourceManager.GetChapterBlurredBackground(id);
         chapter.chapterName.text = GameManager.instance.chapters[id].name;
 
         chapter.CreateOnClick();

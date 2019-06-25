@@ -87,6 +87,8 @@ namespace App
 
             chapterScroller.SetPage(lastChapter);
 
+            audio.PlayNewSfx(SFX.GAME_UNDO);
+            audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
             // TODO: Audio to chapter
             state = ViewState.CHAPTERS;
         }
@@ -149,7 +151,7 @@ namespace App
             levelsHandler.SetToChapter(chapterId);
             // AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
-            levelsBackground.sprite = ResourceManager.GetChapterBluredBackground(chapterId);
+            levelsBackground.sprite = ResourceManager.GetChapterBlurredBackground(chapterId);
 
             foreach (Animator a in levelsTransitions)
             {
@@ -210,18 +212,21 @@ namespace App
 
         public void GameToMenu()
         {
+            Escape();
             ShowBlackPage(true);
         }
 
         public void ShowArcade()
         {
             blackPageDestination = "arcade";
+            audio.PlayNewMusic(ResourceManager.GetInGameMusic(4));
             ShowBlackPage(true);
         }
 
         public void EndArcade()
         {
             blackPageDestination = "main";
+            audio.PlayNewMusic(ResourceManager.GetMainMenuMusic());
             ShowBlackPage(true);
         }
 
@@ -372,7 +377,6 @@ namespace App
 
                 case ViewState.INTRO:
                     menuCanvas.SetActive(false);
-
                     gameCanvas.SetActive(true);
                     gameView.SetActive(false);
                     arcadeView.SetActive(false);
@@ -457,6 +461,7 @@ namespace App
                         a.SetTrigger(TRIG_CHAPTERS_TO_MAIN);
                     }
 
+                    audio.PlayNewMusic(ResourceManager.GetMainMenuMusic());
                     state = ViewState.MAIN_MENU;
                     print("[ViewManager] State is now " + state.ToString());
                     break;
@@ -468,7 +473,7 @@ namespace App
                         a.SetTrigger(TRIG_LEVELS_TO_CHAPTER);
                     }
 
-                    // AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+                    AudioManager.instance.PlayNewSfx(SFX.UI_WHOOSH_REV);
 
                     state = ViewState.CHAPTERS;
                     print("[ViewManager] State is now " + state.ToString());
