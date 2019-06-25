@@ -11,6 +11,7 @@ namespace App
     public class ViewManager : MonoBehaviour
     {
         internal static ViewManager instance;
+        private AudioManager audio;
 
         // Triggers
         private static readonly int TRIG_TO_CHAPTERS = Animator.StringToHash("to_chapters");
@@ -40,6 +41,7 @@ namespace App
         private void Start()
         {
             state = ViewState.MAIN_MENU;
+            audio = AudioManager.instance;
         }
 
         #endregion
@@ -84,12 +86,14 @@ namespace App
 
             chapterScroller.SetPage(lastChapter);
 
+            // TODO: Audio to chapter
             state = ViewState.CHAPTERS;
         }
 
 
         public void SettingsToggled(Toggle t)
         {
+            audio.PlayNewSfx(SFX.UI_BUTTON_PRESSED);
             settings.GetComponent<Animator>().SetTrigger(t.isOn ? "open" : "close");
         }
 
@@ -105,7 +109,6 @@ namespace App
 
         public void ShowIntro()
         {
-            // ShowBlackPage(true);
             menuCanvas.SetActive(false);
 
             gameCanvas.SetActive(true);
@@ -114,7 +117,7 @@ namespace App
             introView.SetActive(true);
 
             TutorialHandler.instance.PlayTutorial_01();
-            AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(0));
+            AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(5));
 
             state = ViewState.INTRO;
         }
@@ -139,6 +142,8 @@ namespace App
 
         public void ChaptersToLevels(int chapterId)
         {
+            audio.PlayNewSfx(SFX.UI_WHOOSH);
+
             levelsCanvas.SetActive(true);
             levelsHandler.SetToChapter(chapterId);
             // AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
@@ -157,6 +162,7 @@ namespace App
 
         public void LevelClicked(Level level)
         {
+            audio.PlayNewSfx(SFX.UI_BUTTON_PRESSED);
             try
             {
                 ApplicationManager.instance.LevelStartRequest(level);
@@ -327,7 +333,9 @@ namespace App
 
         internal void ShowPanel(Panel panel)
         {
+            audio.PlayNewSfx(SFX.UI_PANEL_IN);
             panelHandler.ShowPanel(panel);
+
             if (lastState == ViewState.ONSCREEN)
                 lastState = state;
             state = ViewState.ONSCREEN;
@@ -425,6 +433,7 @@ namespace App
             switch (state)
             {
                 case ViewState.ONSCREEN:
+                    audio.PlayNewSfx(SFX.UI_PANEL_OUT);
                     panelHandler.HideTopMostPanel();
                     if (!panelHandler.isAnyPanelActive())
                     {
@@ -458,7 +467,7 @@ namespace App
                         a.SetTrigger(TRIG_LEVELS_TO_CHAPTER);
                     }
 
-                    AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+                    // AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
 
                     state = ViewState.CHAPTERS;
                     print("[ViewManager] State is now " + state.ToString());

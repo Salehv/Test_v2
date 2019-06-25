@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using App;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,8 +9,6 @@ public class AudioManager : MonoBehaviour
 {
     internal static AudioManager instance;
 
-    [Header("Audio Clips")] public AudioClip[] sfxClips;
-
     private bool musicOn = true, sfxOn = true;
 
     private void Awake()
@@ -17,23 +16,17 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
+    private Dictionary<SFX, AudioClip> sfxClips;
 
-    public AudioClip GetGameMusic(int chapterId)
+    internal void Init()
     {
-        return ResourceManager.GetInGameMusic(chapterId);
-    }
+        sfxClips = new Dictionary<SFX, AudioClip>();
+        SFXClip[] clips = ResourceManager.GetSfxClips();
 
-    public void PlaySFX(int sfx)
-    {
-        if (sfxOn)
+        foreach (SFXClip sfxClip in clips)
         {
-            PlayNewSfx(sfxClips[sfx]);
+            sfxClips[sfxClip.name] = sfxClip.clip;
         }
-    }
-
-    public void PlaySFX(SFX sfx)
-    {
-        PlaySFX((int) sfx);
     }
 
 
@@ -65,10 +58,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayNewSfx(SFX sfx)
     {
-        PlayNewSfx(sfxClips[(int) sfx]);
+        PlayNewSfx(sfxClips[sfx]);
     }
 
-    public void PlayNewSfx(AudioClip sfx)
+    private void PlayNewSfx(AudioClip sfx)
     {
         if (!sfxOn)
             return;
@@ -141,15 +134,28 @@ public class AudioManager : MonoBehaviour
     #endregion
 }
 
+[System.Serializable]
+public struct SFXClip
+{
+    [SerializeField] public SFX name;
+    [SerializeField] public AudioClip clip;
+}
+
+[System.Serializable]
 public enum SFX
 {
-    WIN_1 = 9,
-    WIN_2 = 10,
-    WIN_3 = 11,
-    GEM_TAKEN = 3,
-    WIN = 4,
-    CORRECT_WORD = 5,
-    WRONG_WORD = 6,
-    WHOOSH = 7,
-    COLLISION = 8
+    UI_BUTTON_PRESSED,
+    UI_PANEL_IN,
+    UI_PANEL_OUT,
+    UI_WHOOSH,
+    UI_UNLOCKED,
+    UI_DENIED,
+    GAME_WRONG_WORD,
+    GAME_CORRECT_WORD,
+    GAME_UNDO,
+    GAME_WIN_1,
+    GAME_WIN_2,
+    GAME_WIN_3,
+    GATES,
+    GATES_COLLISION
 }

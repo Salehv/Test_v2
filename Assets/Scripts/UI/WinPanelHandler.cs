@@ -29,28 +29,28 @@ public class WinPanelHandler : MonoBehaviour
         switch (s)
         {
             case 1:
-                AudioManager.instance.PlaySFX(SFX.WIN_1);
+                AudioManager.instance.PlayNewSfx(SFX.GAME_WIN_1);
                 popAnim.SetTrigger("1Gem");
-                yield return new WaitForSeconds(0.2f);
-                ShowGem(0);
+                /*yield return new WaitForSeconds(0.2f);
+                ShowGem(0);*/
                 break;
             case 2:
-                AudioManager.instance.PlaySFX(SFX.WIN_2);
+                AudioManager.instance.PlayNewSfx(SFX.GAME_WIN_2);
                 popAnim.SetTrigger("2Gem");
-                yield return new WaitForSeconds(0.2f);
+                /*yield return new WaitForSeconds(0.2f);
                 ShowGem(0);
                 yield return new WaitForSeconds(0.4f);
-                ShowGem(1);
+                ShowGem(1);*/
                 break;
             case 3:
-                AudioManager.instance.PlaySFX(SFX.WIN_3);
+                AudioManager.instance.PlayNewSfx(SFX.GAME_WIN_3);
                 popAnim.SetTrigger("3Gem");
-                yield return new WaitForSeconds(0.2f);
+                /*yield return new WaitForSeconds(0.2f);
                 ShowGem(0);
                 yield return new WaitForSeconds(0.52f);
                 ShowGem(1);
                 yield return new WaitForSeconds(0.85f);
-                ShowGem(2);
+                ShowGem(2);*/
                 break;
             default:
                 yield break;

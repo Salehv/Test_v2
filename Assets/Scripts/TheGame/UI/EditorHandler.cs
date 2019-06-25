@@ -173,7 +173,7 @@ public class EditorHandler : MonoBehaviour
             CorrectLetter(IT_to_X(i));
         }
 
-        AudioManager.instance.PlaySFX(SFX.CORRECT_WORD);
+        AudioManager.instance.PlayNewSfx(SFX.GAME_CORRECT_WORD);
     }
 
     public void Error()
@@ -183,7 +183,7 @@ public class EditorHandler : MonoBehaviour
             ErrorLetter(IT_to_X(i));
         }
 
-        AudioManager.instance.PlaySFX(SFX.WRONG_WORD);
+        AudioManager.instance.PlayNewSfx(SFX.GAME_WRONG_WORD);
     }
 
 

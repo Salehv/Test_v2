@@ -13,10 +13,10 @@ public class PlusHandler : MonoBehaviour, IPointerDownHandler
     {
         _editor = editor;
         xPosition = xpos;
-        
+
         (transform as RectTransform).anchorMax = new Vector2(0f, 0.7f);
         (transform as RectTransform).anchorMin = new Vector2(0f, 0.7f);
-        
+
         (transform as RectTransform).anchoredPosition = upos;
     }
 
@@ -37,7 +37,7 @@ public class PlusHandler : MonoBehaviour, IPointerDownHandler
         {
             Red();
             _editor.Error();
-            AudioManager.instance.PlaySFX(SFX.WRONG_WORD);
+            AudioManager.instance.PlayNewSfx(SFX.GAME_WRONG_WORD);
         }
     }
 

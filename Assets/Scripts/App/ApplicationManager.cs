@@ -61,6 +61,7 @@ namespace App
 
             progress = DatabaseManager.instance.GetProgressData();
 
+            AudioManager.instance.Init();
             AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
 
             UpdateCoins();
@@ -233,7 +234,8 @@ namespace App
             {
                 try
                 {
-                    _keyHandler.UseEnergy();
+                    _keyHandler.UseKey();
+
                     LevelProgression lp = new LevelProgression(lvl.chapterId, lvl.id, 0, -1, true);
                     DatabaseManager.instance.UpdateLevelProgress(lp);
                     progress.UpdateLevelProgress(lp);

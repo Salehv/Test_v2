@@ -218,6 +218,10 @@ namespace Initialize
                             string sqlQuery = $"UPDATE `datas` SET `value` ={lastCoin} WHERE `option`='coin';";
                             cmd.CommandText = sqlQuery;
                             cmd.ExecuteNonQuery();
+
+                            sqlQuery = $"UPDATE `datas` SET `value` ={(int) (lastCoin / 3.5)} WHERE `option`='gem';";
+                            cmd.CommandText = sqlQuery;
+                            cmd.ExecuteNonQuery();
                         }
                     }
                 }

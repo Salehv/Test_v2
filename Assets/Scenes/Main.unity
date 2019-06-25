@@ -73664,7 +73664,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1060138080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74244,17 +74244,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1496918053}
-        m_MethodName: PlaySFX
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -92421,19 +92410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764b88377828cbe45ac80e78fef4e198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxClips:
-  - {fileID: 8300000, guid: 89c59f90d5c67f34d8697f06c5f15f6f, type: 3}
-  - {fileID: 8300000, guid: 8b12d6f7feb14284aa42ab3908241aa0, type: 3}
-  - {fileID: 8300000, guid: bef3ff282a684104183267f862841379, type: 3}
-  - {fileID: 8300000, guid: 2637f4167ea8a5445a802afb7d5c29c2, type: 3}
-  - {fileID: 8300000, guid: 71c57b6f62ed93d4791c861dfe105eac, type: 3}
-  - {fileID: 8300000, guid: a6f6ef3191772a9418a025d1313c47ba, type: 3}
-  - {fileID: 8300000, guid: 080389a05082b0a49857b6f68b0f99a4, type: 3}
-  - {fileID: 8300000, guid: 461f27d4a28b3d643b5cfe4a6e67947f, type: 3}
-  - {fileID: 8300000, guid: c7b4d80944af5144091ad9e77ea66dd9, type: 3}
-  - {fileID: 8300000, guid: 0a8819b21fd9166488b58dd5de240039, type: 3}
-  - {fileID: 8300000, guid: 54336a119e19dae4e812e07420157512, type: 3}
-  - {fileID: 8300000, guid: 978c0a9ef3ecbe944b944c04e6c85779, type: 3}
   audioObject: {fileID: 24477887}
   audioSourcePrefab: {fileID: 1058465952339888, guid: b8a82213c57eacf47ae7a1e4158256b2,
     type: 3}
@@ -92791,6 +92767,35 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1c1806b187f59b14a99e75b1d814679e, type: 3}
   - {fileID: 8300000, guid: 927b5a983f08a124a847cd3fb2d4f8e7, type: 3}
   - {fileID: 8300000, guid: d05d995a107d0b64bb49f7d402ba220d, type: 3}
+  sfxClips:
+  - name: 0
+    clip: {fileID: 8300000, guid: bef3ff282a684104183267f862841379, type: 3}
+  - name: 1
+    clip: {fileID: 8300000, guid: 9769e83a0a937a34c8f47ca3d462f0bb, type: 3}
+  - name: 2
+    clip: {fileID: 8300000, guid: cade741c4abdeff4a920861a649bf981, type: 3}
+  - name: 12
+    clip: {fileID: 8300000, guid: 8a124d06c2bd37a40add2d86bbfe3707, type: 3}
+  - name: 13
+    clip: {fileID: 8300000, guid: 0fcc3e56d6309d64fa5c4dad1223e901, type: 3}
+  - name: 3
+    clip: {fileID: 8300000, guid: cbafa4abe9370d14a802796d03d373e7, type: 3}
+  - name: 4
+    clip: {fileID: 8300000, guid: 8b12d6f7feb14284aa42ab3908241aa0, type: 3}
+  - name: 5
+    clip: {fileID: 8300000, guid: 12dba2492620e7a41b1f8880b09f92fe, type: 3}
+  - name: 6
+    clip: {fileID: 8300000, guid: 652457906e08d74408e5a15daef9ed98, type: 3}
+  - name: 7
+    clip: {fileID: 8300000, guid: d8ec66d5c8f39fa4481a630a3d25513f, type: 3}
+  - name: 8
+    clip: {fileID: 8300000, guid: d2652712a89df37428f336aefb11b407, type: 3}
+  - name: 9
+    clip: {fileID: 8300000, guid: 0a8819b21fd9166488b58dd5de240039, type: 3}
+  - name: 10
+    clip: {fileID: 8300000, guid: 54336a119e19dae4e812e07420157512, type: 3}
+  - name: 11
+    clip: {fileID: 8300000, guid: 978c0a9ef3ecbe944b944c04e6c85779, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: cd8874d05ec295a44a280ab948b74df3, type: 3}
 --- !u!114 &1496918062
 MonoBehaviour:
@@ -102441,7 +102446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000038146973, y: 0}
   m_SizeDelta: {x: 650, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652411377

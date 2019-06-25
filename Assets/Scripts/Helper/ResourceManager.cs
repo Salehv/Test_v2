@@ -4,8 +4,7 @@ public class ResourceManager : MonoBehaviour
 {
     private static ResourceManager instance;
 
-    [Header("Sprites")] 
-    [SerializeField] private Sprite[] levelMenuSprites;
+    [Header("Sprites")] [SerializeField] private Sprite[] levelMenuSprites;
 
     [SerializeField] private Sprite[] chapterBluredBackgrounds;
     [SerializeField] private Sprite[] chapterBackgrounds;
@@ -13,12 +12,14 @@ public class ResourceManager : MonoBehaviour
     [SerializeField] private Sprite[] inGameBacks;
     [SerializeField] private Sprite[] inGameFeatures;
 
-    [Header("Music & Sounds")] 
-    [SerializeField] private AudioClip[] levelsViewMusics;
+    [Header("Music & Sounds")] [SerializeField]
+    private AudioClip[] levelsViewMusics;
+
     [SerializeField] private AudioClip[] inGameMusic;
-    [SerializeField] private AudioClip mainMenuMusic;
-    
-    
+    [SerializeField] private SFXClip[] sfxClips;
+    [Space(15)] [SerializeField] private AudioClip mainMenuMusic;
+
+
     private void Awake()
     {
         instance = this;
@@ -62,5 +63,10 @@ public class ResourceManager : MonoBehaviour
     public static AudioClip GetMainMenuMusic()
     {
         return instance.mainMenuMusic;
+    }
+
+    internal static SFXClip[] GetSfxClips()
+    {
+        return instance.sfxClips;
     }
 }

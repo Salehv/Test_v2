@@ -152,7 +152,7 @@ public class KeyHandler : MonoBehaviour
     }
 
 
-    public void UseEnergy()
+    public void UseKey()
     {
         if (energy > 0)
         {
@@ -171,10 +171,12 @@ public class KeyHandler : MonoBehaviour
             if (debugMode)
                 print($"[EnergyHandler] Energy Used!. Now you have {energy} energies.");
 
+            AudioManager.instance.PlayNewSfx(SFX.UI_UNLOCKED);
             GraphicalUpdate();
         }
         else
         {
+            AudioManager.instance.PlayNewSfx(SFX.UI_DENIED);
             throw new NoKeyException();
         }
     }
@@ -238,7 +240,7 @@ public class KeyHandler : MonoBehaviour
         if (initiated)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                UseEnergy();
+                UseKey();
 
 
             EnergyCountDownTimerUpdate();
