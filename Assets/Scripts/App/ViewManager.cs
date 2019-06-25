@@ -23,6 +23,7 @@ namespace App
 
         private bool escapable = true;
         public ViewState state;
+        private bool keyTutorial;
 
         #region Init
 

@@ -41,8 +41,6 @@ namespace TheGame.Arcade
         {
             instance = this;
             
-            int hs = PlayerPrefs.GetInt("arcade_high_score");
-            realTimeScore.text = "" + hs;
         }
 
         public void StartArcade()
@@ -103,6 +101,8 @@ namespace TheGame.Arcade
 
             ViewManager.instance.SetUnEscapable();
             ViewManager.instance.ShowPanel(introPanel);
+            int hs = PlayerPrefs.GetInt("arcade_high_score");
+            realTimeScore.text = "" + hs;
         }
 
 
