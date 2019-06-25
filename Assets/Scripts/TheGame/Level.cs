@@ -45,10 +45,15 @@ public class Level
         int best = way.Length;
         if (steps <= best)
             return 10;
-        if (steps < (Math.Min(best + best * 2 / 3, best + 2)))
+
+        if (steps - best < 9)
+            return 10 - (steps - best);
+
+        return 1;
+        /*if (steps < (Math.Min(best + (int) best * 2 / 3, best + 2)))
             return 8;
 
-        return 5;
+        return 5;*/
     }
 
 
@@ -57,7 +62,7 @@ public class Level
         int best = way.Length;
         if (steps <= best)
             return 3;
-        if (steps < (Math.Min(best + (best * 2 / 3), best + 2)))
+        if (steps < (Math.Max(best + (best * 2 / 3), best + 2)))
             return 2;
 
         return 1;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using App;
 using UnityEngine;
@@ -14,13 +15,16 @@ namespace TheGame.Arcade
         public Panel endPanel;
         public Panel pausePanel;
         public Panel introPanel;
+        public Text realTimeScore;
         public Text endScore;
         public Text highScore;
+        public Text winningCoin;
 
         public GameObject highScoreBeaten;
 
         public Text timeText;
         private float remainingTime;
+        private int score;
 
 
         public bool debugMode;
@@ -42,6 +46,7 @@ namespace TheGame.Arcade
         {
             ViewManager.instance.SetEscapable();
             ViewManager.instance.Escape();
+            score = 0;
             started = true;
         }
 
@@ -49,11 +54,13 @@ namespace TheGame.Arcade
         {
             if (started)
             {
+                
+                
                 timeText.text = Utilities.GetTimeFormat(remainingTime);
                 remainingTime -= Time.deltaTime;
                 if (remainingTime < 10)
                 {
-                    timeText.color = Color.red;
+                    timeText.color = new Color(0.87f ,0.02f ,0.06f ,255);
                 }
                 else
                 {
@@ -114,12 +121,16 @@ namespace TheGame.Arcade
             words.Add(word);
             letterPool.Init(editor, GetRandomCharacters());
             editor.ResetPluses();
+
+            score += (int) Math.Pow(2,word.Length);
+            print(score);
         }
 
 
         private void End()
         {
-            int score = words.Count - 1;
+            int coinPrize = (int) score / 10;
+            //int score = words.Count - 1;
             started = false;
 
             ViewManager.instance.SetUnEscapable();
@@ -136,6 +147,9 @@ namespace TheGame.Arcade
             }
 
             highScore.text = hs + "";
+            
+            GameManager.instance.AddCoins(coinPrize);
+            winningCoin.text = "" + coinPrize;
         }
 
         public void Stop()

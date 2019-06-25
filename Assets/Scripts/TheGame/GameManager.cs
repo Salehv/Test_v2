@@ -580,6 +580,7 @@ namespace TheGame
             // Calculate Coins
             if (ApplicationManager.instance.GetLevelProgress(currentLevel).solvedsteps == -1)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
+            
             AddCoins(coinGain);
 
             _collectedCoinWaitingForReward = coinGain;
