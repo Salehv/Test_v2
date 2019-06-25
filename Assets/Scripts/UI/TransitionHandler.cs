@@ -25,7 +25,7 @@ public class TransitionHandler : MonoBehaviour
 
     public void StartTransition(Level lvl)
     {
-        Invoke($"PlayTransition", 0.5f);
+        Invoke($"PlayTransition", 0.7f);
         AudioManager.instance.PlayNewSfx(SFX.GATES);
         AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(lvl.chapterId));
         textTop.text = lvl.begin;
