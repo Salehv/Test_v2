@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace TheGame
 {
-    public class GameManager : DynamicsHandler
+    public class
+        GameManager : DynamicsHandler
     {
         internal static GameManager instance;
         public bool debugMode;
@@ -640,7 +641,6 @@ namespace TheGame
         public void DoublePrizeReward()
         {
             AddCoins(_collectedCoinWaitingForReward);
-            PopupHandler.ShowDebug("ایول! سکه شما دو برابر شد!");
             AnalyticsHandler.PrizeUsed(currentLevel.chapterId, currentLevel.id, _collectedCoinWaitingForReward);
             Exit();
         }
