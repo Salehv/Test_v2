@@ -2,28 +2,22 @@
     <Chapter name="جنگل ابر" cost="0" id="00">
         <Level id="00" type="1">
             <Start>
-                اب
+                کوزه
             </Start>
             <End>
-                گل
+                کوره
             </End>
             <Way>
-                <Word>
-                    ال
-                </Word>
             </Way>
         </Level>
         <Level id="01" type="1">
             <Start>
-                کم
+                تیشه
             </Start>
             <End>
-                پر
+                ریشه
             </End>
             <Way>
-                <Word>
-                    کر
-                </Word>
             </Way>
         </Level>
         <Level id="02" type="1">
@@ -275,7 +269,7 @@
             </Way>
         </Level>
     </Chapter>          <!-- 0   55 -->
-    <Chapter name="تخت جمشید" cost="35" id="01">
+    <Chapter name="تخت جمشید" cost="30" id="01">
         <Level id="00" type="3">
             <Start>
                 تاج

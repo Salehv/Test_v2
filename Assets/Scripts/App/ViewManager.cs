@@ -74,6 +74,14 @@ namespace App
             chaptersView.SetActive(true);
 
             state = ViewState.MAIN_MENU;
+
+            /*if (!PlayerPrefs.HasKey("MainMenuPointer"))
+            {
+                ShowPointerClick();
+                PlayerPrefs.SetInt("MainMenuPointer", 1);
+                PlayerPrefs.Save();
+                return;
+            }*/
         }
 
 
@@ -89,6 +97,15 @@ namespace App
             audio.PlayNewSfx(SFX.GAME_UNDO);
             audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
             state = ViewState.CHAPTERS;
+            
+            
+            /*if (!PlayerPrefs.HasKey("ChapterPointer"))
+            {
+                ShowPointerClick();
+                PlayerPrefs.SetInt("ChapterPointer", 1);
+                PlayerPrefs.Save();
+                return;
+            }*/
         }
 
 
@@ -160,6 +177,7 @@ namespace App
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
 
             state = ViewState.LEVELS;
+/*
 
             if (chapterId == 1)
             {
@@ -170,7 +188,7 @@ namespace App
                     PlayerPrefs.Save();
                     return;
                 }
-            }
+            }*/
         }
 
 
@@ -258,6 +276,7 @@ namespace App
         public Panel keyShopPanel;
         public Panel keyTutorialPanel;
         public GameObject transition;
+        public GameObject pointer;
 
         private void HideAllFrontPanels()
         {
@@ -312,6 +331,35 @@ namespace App
             ShowPanel(keyTutorialPanel);
         }
 
+        #region Pointer
+        public void ShowPointerClick(Transform targetObject = null)
+        {
+            pointer.SetActive(true);
+            if (targetObject != null)
+            {
+                pointer.transform.position = targetObject.position;
+            }
+            pointer.GetComponent<Animator>().SetTrigger("Click");
+        }
+        
+        public void ShowPointerSlideLeft()
+        {
+            pointer.SetActive(true);
+            pointer.GetComponent<Animator>().SetTrigger("SlideLeft");
+        }
+        public void ShowPointerSlideRight()
+        {
+            pointer.SetActive(true);
+            pointer.GetComponent<Animator>().SetTrigger("SlideRight");
+        }
+
+        public void DeactivePointer()
+        {
+            pointer.SetActive(false);
+        }
+
+        #endregion
+        
         #endregion
 
 

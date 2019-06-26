@@ -72,10 +72,18 @@ namespace Initialize
                     game.chapters[c].levels[l].start = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].start);
                     game.chapters[c].levels[l].end = Utilities.GetOnlyFarsi(game.chapters[c].levels[l].end);
 
-                    for (int w = 0; w < game.chapters[c].levels[l].way.words.Length; w++)
+                    try
                     {
-                        game.chapters[c].levels[l].way.words[w] =
-                            Utilities.GetOnlyFarsi(game.chapters[c].levels[l].way.words[w]);
+                        for (int w = 0; w < game.chapters[c].levels[l].way.words.Length; w++)
+                        {
+                            game.chapters[c].levels[l].way.words[w] =
+                                Utilities.GetOnlyFarsi(game.chapters[c].levels[l].way.words[w]);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+//                        Console.WriteLine(e);
+//                        throw;
                     }
                 }
             }

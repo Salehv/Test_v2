@@ -119,8 +119,8 @@ namespace TheGame
             // Undo
             if (lvl.id == 1 && lvl.chapterId == 0)
             {
-                AddCorrectWord(Utilities.GetNormalizedFarsi("کن"));
-                textEditor.Initialize(this, "کن", LevelDynamicsFlag);
+                AddCorrectWord(Utilities.GetNormalizedFarsi("بیشه"));
+                textEditor.Initialize(this, "بیشه", LevelDynamicsFlag);
                 TutorialHandler.instance.Play_Tutorial_02();
                 state = GameState.TUTORIAL;
                 return;
