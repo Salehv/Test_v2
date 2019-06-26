@@ -19,6 +19,8 @@ public class ResourceManager : MonoBehaviour
     [SerializeField] private SFXClip[] sfxClips;
     [Space(15)] [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioClip chaptersMusic;
+    [SerializeField] private AudioClip introMusic;
+    [SerializeField] private AudioClip arcadeMusic;
 
 
     private void Awake()
@@ -74,5 +76,15 @@ public class ResourceManager : MonoBehaviour
     public static AudioClip GetChaptersMusic()
     {
         return instance.chaptersMusic;
+    }
+
+    public static AudioClip GetIntroMusic()
+    {
+        return instance.chaptersMusic;
+    }
+
+    public static AudioClip GetArcadeMusic()
+    {
+        return instance.arcadeMusic;
     }
 }

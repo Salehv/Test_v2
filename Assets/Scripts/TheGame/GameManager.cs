@@ -319,6 +319,7 @@ namespace TheGame
             textEditor.Initialize(this, words.Last.Value, currentLevel.flags);
             ResetDynamics();
 
+            AudioManager.instance.PlayNewSfx(SFX.GAME_UNDO);
             letterPool.Init(textEditor, GetRelatedChars(GetLastWord(), currentShufflePage));
         }
 
@@ -580,7 +581,7 @@ namespace TheGame
             // Calculate Coins
             if (ApplicationManager.instance.GetLevelProgress(currentLevel).solvedsteps == -1)
                 coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
-            
+
             AddCoins(coinGain);
 
             _collectedCoinWaitingForReward = coinGain;

@@ -25,9 +25,10 @@ public class TransitionHandler : MonoBehaviour
 
     public void StartTransition(Level lvl)
     {
-        Invoke($"PlayTransition", 0.7f);
         AudioManager.instance.PlayNewSfx(SFX.GATES);
         AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(lvl.chapterId));
+        animatorTop.SetBool("Close", true);
+        animatorBottom.SetBool("Close", true);
         textTop.text = lvl.begin;
         textBottom.text = lvl.end;
         selectedLevel = lvl;
@@ -35,12 +36,6 @@ public class TransitionHandler : MonoBehaviour
         levelID.text = $"{GameManager.instance.chapters[lvl.chapterId].name} - مرحله {lvl.id + 1:00}";
 
         GetComponent<Image>().raycastTarget = true;
-    }
-
-    private void PlayTransition()
-    {
-        animatorTop.SetBool("Close", true);
-        animatorBottom.SetBool("Close", true);
     }
 
 

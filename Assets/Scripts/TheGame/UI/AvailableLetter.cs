@@ -36,6 +36,7 @@ public class AvailableLetter : MonoBehaviour, IPointerDownHandler //, IPointerUp
         {
             currentLetter = null;
             _editor.HidePluses();
+            AudioManager.instance.PlayNewSfx(SFX.GAME_LETTER_DESELECT);
             return;
         }
 
@@ -47,6 +48,7 @@ public class AvailableLetter : MonoBehaviour, IPointerDownHandler //, IPointerUp
 
         SetShine(true);
         currentLetter = this;
+        AudioManager.instance.PlayNewSfx(SFX.GAME_LETTER_SELECT);
     }
 
 

@@ -88,7 +88,6 @@ namespace App
 
             audio.PlayNewSfx(SFX.GAME_UNDO);
             audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
-            // TODO: Audio to chapter
             state = ViewState.CHAPTERS;
         }
 
@@ -109,7 +108,7 @@ namespace App
                 t.isOn = !sfxOn;
         }
 
-        public void ShowIntro()
+        public void ShowIntro(bool clicked = false)
         {
             menuCanvas.SetActive(false);
 
@@ -119,7 +118,9 @@ namespace App
             introView.SetActive(true);
 
             TutorialHandler.instance.PlayTutorial_01();
-            AudioManager.instance.PlayNewMusic(ResourceManager.GetInGameMusic(5));
+            if (clicked)
+                audio.PlayNewSfx(SFX.UI_BUTTON_PRESSED);
+            audio.PlayNewMusic(ResourceManager.GetIntroMusic());
 
             state = ViewState.INTRO;
         }
@@ -148,7 +149,6 @@ namespace App
 
             levelsCanvas.SetActive(true);
             levelsHandler.SetToChapter(chapterId);
-            // AudioManager.instance.PlayNewMusic(AudioManager.instance.GetChapterMusic(chapterId));
 
             levelsBackground.sprite = ResourceManager.GetChapterBlurredBackground(chapterId);
 
@@ -160,13 +160,13 @@ namespace App
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
 
             state = ViewState.LEVELS;
-            
+
             if (chapterId == 1)
             {
                 if (!PlayerPrefs.HasKey("keyTutorialShown"))
                 {
                     ShowKeyTutorial();
-                    PlayerPrefs.SetInt("keyTutorialShown",1);
+                    PlayerPrefs.SetInt("keyTutorialShown", 1);
                     PlayerPrefs.Save();
                     return;
                 }
@@ -196,7 +196,6 @@ namespace App
 
         #endregion
 
-        
 
         #region Game
 
@@ -229,10 +228,12 @@ namespace App
             ShowBlackPage(true);
         }
 
-        public void ShowArcade()
+        public void ShowArcade(bool clicked = false)
         {
             blackPageDestination = "arcade";
-            audio.PlayNewMusic(ResourceManager.GetInGameMusic(4));
+            if (clicked)
+                audio.PlayNewSfx(SFX.UI_BUTTON_PRESSED);
+            audio.PlayNewMusic(ResourceManager.GetArcadeMusic());
             ShowBlackPage(true);
         }
 
@@ -270,9 +271,11 @@ namespace App
             ShowPanel(aboutUsPanel);
         }
 
-        public void ShowShop()
+        public void ShowShop(bool clicked = false)
         {
             frontCanvas.SetActive(true);
+            if (clicked)
+                audio.PlayNewSfx(SFX.UI_BUTTON_PRESSED);
             ShowPanel(shopPanel);
 
             // ANALYTICS
@@ -303,7 +306,7 @@ namespace App
         {
             ShowPanel(keyShopPanel);
         }
-        
+
         private void ShowKeyTutorial()
         {
             ShowPanel(keyTutorialPanel);
@@ -390,6 +393,7 @@ namespace App
                     menuCanvas.SetActive(true);
                     levelsCanvas.SetActive(true);
                     levelsHandler.SetToChapter(selectedChapter);
+                    audio.PlayNewMusic(ResourceManager.GetMainMenuMusic());
                     state = ViewState.LEVELS;
                     print("[ViewManager] State is now " + state.ToString());
                     break;

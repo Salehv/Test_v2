@@ -15,9 +15,6 @@ public enum TutorialState
     INTRO_02,
     INTRO_03,
     INTRO_04,
-    INTRO_05,
-    INTRO_06,
-    INTRO_07,
     TUT_01_01,
     TUT_01_02,
     TUT_01_03,
@@ -90,8 +87,14 @@ public class TutorialHandler : MonoBehaviour
 
         TutELetter.selected = 25;
         TUT01_05_Letter.GetComponent<TutELetter>().ChangeLetter();
+
         TutELetter.selected = 26;
         TUT01_03_Letter.GetComponent<TutELetter>().ChangeLetter();
+
+        foreach (GameObject introCharacter in Intro_Characters)
+        {
+            introCharacter.SetActive(false);
+        }
     }
 
     private void ResetTut02()
@@ -132,7 +135,6 @@ public class TutorialHandler : MonoBehaviour
         tut0401Letter.SetActive(false);
     }
 
-
     private void ResetTut05()
     {
         tut05.SetActive(false);
@@ -147,6 +149,9 @@ public class TutorialHandler : MonoBehaviour
 
 
     #region Tut01
+
+    [Header("Intro")] public GameObject[] Intro_Characters;
+
 
     [Header("Tutorial 01")] public GameObject TUT01;
     public GameObject Tut01_MsgParent;
@@ -172,9 +177,10 @@ public class TutorialHandler : MonoBehaviour
 
         Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
         TUT01_IntroPages[0].SetActive(true);
-
+        Intro_Characters[0].SetActive(true);
 
         CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+        AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
 
         AnalyticsHandler.Intro_Started();
         TimeManager.instance.SetTimer("IntroTimer");
@@ -182,46 +188,50 @@ public class TutorialHandler : MonoBehaviour
         state = TutorialState.INTRO_01;
     }
 
-    public void Intro_01()
+    public void Intro_Clicked()
     {
-        if (state != TutorialState.INTRO_01) return;
+        if (state != TutorialState.INTRO_01 && state != TutorialState.INTRO_02 &&
+            state != TutorialState.INTRO_03) return;
 
+        if (state == TutorialState.INTRO_01)
+        {
+            DeleteMessage();
+            CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, false);
+            AudioManager.instance.PlayNewSfx(SFX.BLAH_2);
+
+
+            Intro_Characters[0].GetComponent<Animator>().SetTrigger("hide");
+            Intro_Characters[1].SetActive(true);
+
+            state = TutorialState.INTRO_02;
+            return;
+        }
+
+        if (state == TutorialState.INTRO_02)
+        {
+            DeleteMessage();
+            CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+
+            AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
+            Intro_Characters[0].SetActive(false);
+            Intro_Characters[1].SetActive(false);
+            Intro_Characters[2].SetActive(true);
+
+            state = TutorialState.INTRO_03;
+            return;
+        }
+
+        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
         TUT01_IntroPages[0].SetActive(false);
         TUT01_IntroPages[1].SetActive(true);
 
         DeleteMessageImmediate();
-
-        CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_02;
-    }
-
-    public void Intro_02()
-    {
-        if (state != TutorialState.INTRO_02) return;
-
-        TUT01_IntroPages[1].SetActive(false);
-        TUT01_IntroPages[2].SetActive(true);
-
-        DeleteMessageImmediate();
-        CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
-
-        state = TutorialState.INTRO_03;
-    }
-
-    public void Intro_03()
-    {
-        if (state != TutorialState.INTRO_03) return;
-
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
-        TUT01_IntroPages[2].SetActive(false);
-        TUT01_IntroPages[3].SetActive(true);
-
-        DeleteMessageImmediate();
         CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, true);
+
 
         state = TutorialState.TUT_01_01;
     }
+
 
     public void Tutorial_01_ScreenClicked()
     {
@@ -285,7 +295,6 @@ public class TutorialHandler : MonoBehaviour
         AnalyticsHandler.Intro_FirstCharacterChanged();
     }
 
-
     public void Tutorial_01_SecondCharacter()
     {
         if (state != TutorialState.TUT_01_04)
@@ -320,17 +329,16 @@ public class TutorialHandler : MonoBehaviour
         AnalyticsHandler.Intro_SecondCharacterChanged();
     }
 
-
-    public void Intro_04()
+    private void Intro_04()
     {
         if (state != TutorialState.TUT_01_06) return;
 
-        TUT01_IntroPages[3].SetActive(false);
-        TUT01_IntroPages[4].SetActive(true);
+        TUT01_IntroPages[1].SetActive(false);
+        TUT01_IntroPages[2].SetActive(true);
 
         Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
 
-        DeleteMessage();
+        DeleteMessageImmediate();
         CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
 
         state = TutorialState.INTRO_04;
@@ -339,9 +347,9 @@ public class TutorialHandler : MonoBehaviour
 
     public void Tutorial_01_Completed()
     {
+        DeleteMessage();
         ApplicationManager.instance.IntroEnded();
 
-        DeleteMessage();
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
         TimeManager.instance.DiscardTimer("IntroTimer");
         AnalyticsHandler.Intro_Finished(timeTaken);

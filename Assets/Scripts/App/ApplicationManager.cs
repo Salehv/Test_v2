@@ -299,8 +299,6 @@ namespace App
         internal void Game_ExitToMenu(int chapter)
         {
             view.GameToMenu();
-            // AudioManager.instance.PlayNewMusic(ResourceManager.GetLevelsViewMusic(chapter));
-            AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
             chaptersHandler.UpdateChaptersLockState();
         }
 
