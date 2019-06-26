@@ -103,7 +103,7 @@ public class QuestionFormHandler : MonoBehaviour
         }
 
         if (isIntended)
-            PopupHandler.ShowInfo("ازینکه پرسشنامه رو پر کردین متشکریم :)", reward);
+            PopupHandler.ShowInfo("ازینکه پرسشنامه رو پر کردین متشکریم!", reward);
 
         yield return null;
     }

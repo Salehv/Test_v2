@@ -597,6 +597,7 @@ namespace TheGame
 
             // Calculate Gems
             var gem = currentLevel.CalculateGemGain(solvedSteps - 2);
+            print($"[GameManager] Gem Taken: {gem}");
 
             ResetDynamics();
             viewManager.ShowWinPanel(gem, coinGain);
@@ -621,7 +622,7 @@ namespace TheGame
                 lvlTime);
 
 
-            UpdateCurrentLevelProgress(gem - oldGem, solvedSteps);
+            UpdateCurrentLevelProgress(gem, solvedSteps);
 
             ApplicationManager.instance.UpdateGems();
 
