@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Initialize;
+using UnityEngine.XR.WSA.Input;
 
 [System.Serializable]
 public class Chapter
@@ -54,7 +55,7 @@ public class Chapter
             else
                 levels[i].SetDynamicFlags(DynamicsFlag.DF_FULL);
 
-            levels[i].SetWay(chapter.levels[i].way.words);
+            levels[i].SetWay(chapter.levels[i].way.words ?? new string[0]);
 
             AddLevel(i, levels[i]);
         }

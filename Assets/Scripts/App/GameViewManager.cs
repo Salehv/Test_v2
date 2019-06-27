@@ -75,6 +75,7 @@ namespace App
 
         public void InitStepViewer(int steps)
         {
+            StepViewerHandler.instance.gameObject.SetActive(true);
             StepViewerHandler.instance.Init(steps);
         }
 
@@ -144,6 +145,11 @@ namespace App
                     view.ShowPanel(pausePanel);
                     break;
             }
+        }
+
+        public void HideStepViewer()
+        {
+            StepViewerHandler.instance.gameObject.SetActive(false);
         }
     }
 }
