@@ -319,7 +319,10 @@ namespace TheGame
         public void Undo()
         {
             if (words.Count < 2)
+            {
+                AudioManager.instance.PlayNewSfx(SFX.UI_DENIED);
                 return;
+            }
 
             words.RemoveLast();
             viewManager.RemoveLastWord();

@@ -61,8 +61,7 @@ namespace App
             progress = DatabaseManager.instance.GetProgressData();
 
             AudioManager.instance.Init();
-            AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
-
+            
             UpdateCoins();
             UpdateGems();
 
@@ -72,6 +71,9 @@ namespace App
 
             if (isFirstPlay())
                 FirstPlay();
+            else
+                AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+
         }
 
         #region First Play

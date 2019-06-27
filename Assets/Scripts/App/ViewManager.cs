@@ -94,7 +94,7 @@ namespace App
 
             chapterScroller.SetPage(lastChapter);
 
-            audio.PlayNewSfx(SFX.GAME_UNDO);
+            audio.PlayNewSfx(SFX.UI_PANEL_IN);
             audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
             state = ViewState.CHAPTERS;
             
@@ -412,7 +412,7 @@ namespace App
                     menuCanvas.SetActive(true);
                     levelsCanvas.SetActive(true);
                     levelsHandler.SetToChapter(selectedChapter);
-                    audio.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+                    audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
                     state = ViewState.LEVELS;
                     print("[ViewManager] State is now " + state.ToString());
                     break;
@@ -503,6 +503,7 @@ namespace App
                         a.SetTrigger(TRIG_CHAPTERS_TO_MAIN);
                     }
 
+                    audio.PlayNewSfx(SFX.UI_PANEL_OUT);
                     audio.PlayNewMusic(ResourceManager.GetMainMenuMusic());
                     state = ViewState.MAIN_MENU;
                     print("[ViewManager] State is now " + state.ToString());
