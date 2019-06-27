@@ -409,6 +409,19 @@ namespace App
 
             progress.UpdateLevelProgress(lp);
         }
+
+
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            if (pauseStatus)
+            {
+                Debug.Log("Paused");
+            }
+            else
+            {
+                Debug.Log("UnPaused");
+            }
+        }
     }
 
     enum ApplicationState
