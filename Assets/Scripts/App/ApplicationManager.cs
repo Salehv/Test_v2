@@ -1,6 +1,7 @@
 ﻿using System;
 using TheGame;
 using TheGame.Arcade;
+using Unity.Notifications.Android;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -415,11 +416,27 @@ namespace App
         {
             if (pauseStatus)
             {
-                Debug.Log("Paused");
+                // Paused
+                var channel = new AndroidNotificationChannel()
+                {
+                    Id = "channel_id",
+                    Name = "Default Channel",
+                    Importance = Importance.High,
+                    Description = "Generic notifications",
+                };
+                
+                AndroidNotificationCenter.RegisterNotificationChannel(channel);
+                
+                var notification = new AndroidNotification();
+                notification.Title = "SomeTitle";
+                notification.Text = "SomeText";
+                notification.FireTime = System.DateTime.Now.AddMinutes(1);
+
+                AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
             else
             {
-                Debug.Log("UnPaused");
+                
             }
         }
     }
@@ -427,6 +444,5 @@ namespace App
     enum ApplicationState
     {
         INGAME,
-        FIRSTTUT,
     }
 }
