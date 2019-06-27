@@ -330,44 +330,6 @@ namespace App
         {
             ShowPanel(keyTutorialPanel);
         }
-
-        #region Pointer
-        public void ShowPointerClick(Transform targetObject = null, string mode = "")
-        {
-            if (mode == "" || mode == "Click")
-            {
-                pointer.SetActive(true);
-                if (targetObject != null)
-                {
-                    pointer.transform.position = targetObject.position;
-                }
-
-                pointer.GetComponent<Animator>().SetTrigger("Click");
-            }
-
-            if (mode == "Slide")
-            {
-                
-            }
-        }
-        
-        public void ShowPointerSlideLeft()
-        {
-            pointer.SetActive(true);
-            pointer.GetComponent<Animator>().SetTrigger("SlideLeft");
-        }
-        public void ShowPointerSlideRight()
-        {
-            pointer.SetActive(true);
-            pointer.GetComponent<Animator>().SetTrigger("SlideRight");
-        }
-
-        public void DeactivePointer()
-        {
-            pointer.SetActive(false);
-        }
-
-        #endregion
         
         #endregion
 
