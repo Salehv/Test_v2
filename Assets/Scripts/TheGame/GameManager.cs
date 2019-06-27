@@ -535,11 +535,16 @@ namespace TheGame
             catch (NoMoneyException e)
             {
                 PopupHandler.ShowNoMoney(showWayHintCost - coins);
-                print("poool nadari gooooooooooooozoooooooooooooo");
+                print("poool nadari");
                 return;
             }
 
-            AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.WAY);
+            if (currentLevel.chapterId != 0 || currentLevel.id != 4)
+            {
+                print("Hint Show Way Using Analitic Data Sent On Chapter: " + currentLevel.chapterId + " and Level: " + currentLevel.id);
+
+                AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.WAY);
+            }
 
             hint_showWayPanel.SetActive(true);
         }

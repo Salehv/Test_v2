@@ -434,6 +434,7 @@ public class TutorialHandler : MonoBehaviour
     public Button tut03_BtnShop;
     public Button tut03_BtnBuy;
     public GameObject tut03_HintPanel;
+    public Button btnHintShowWay;
     public GameObject tut03_PopupNoMoney;
     public GameObject tut03_ShopPanel;
 
@@ -466,7 +467,7 @@ public class TutorialHandler : MonoBehaviour
         PopupHandler.instance.DeleteArrow();
         PopupHandler.instance.CreateMessage("خب! حالا اگه این گزینه رو انتخاب کنی کل مسیر رسیدن به کلمه هدف رو می بینی", Size.Medium,
             Direction.Downmost, TUT03);
-        PopupHandler.instance.CreateArrow(GameManager.instance.btnHintShowWay.transform, Direction.Right, TUT03);
+        PopupHandler.instance.CreateArrow(btnHintShowWay.transform, Direction.Right, TUT03);
 
         tut03_HintPanel.SetActive(true);
 

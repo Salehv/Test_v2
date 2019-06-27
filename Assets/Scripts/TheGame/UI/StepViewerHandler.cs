@@ -53,7 +53,7 @@ public class StepViewerHandler : MonoBehaviour
     {
         if (currentStep < steps1)
         {
-            progressBar.value -= (float) (0.33 / (steps1+1));
+            progressBar.value -= (float) (0.33 / steps1);
             step3Counter = 6;
             gem3.GetComponent<Image>().color = Color.white;
             gem2.GetComponent<Image>().color = Color.white;
@@ -86,7 +86,7 @@ public class StepViewerHandler : MonoBehaviour
     {
         if (currentStep <= steps1)
         {
-            progressBar.value += (float) (0.33 / (steps1+1));
+            progressBar.value += (float) (0.33 / steps1);
             step3Counter = 6;
             gem3.GetComponent<Image>().color = Color.white;
             gem2.GetComponent<Image>().color = Color.white;
