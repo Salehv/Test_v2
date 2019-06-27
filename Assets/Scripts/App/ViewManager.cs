@@ -74,14 +74,6 @@ namespace App
             chaptersView.SetActive(true);
 
             state = ViewState.MAIN_MENU;
-
-            /*if (!PlayerPrefs.HasKey("MainMenuPointer"))
-            {
-                ShowPointerClick();
-                PlayerPrefs.SetInt("MainMenuPointer", 1);
-                PlayerPrefs.Save();
-                return;
-            }*/
         }
 
 
@@ -98,6 +90,11 @@ namespace App
             audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
             state = ViewState.CHAPTERS;
             
+            
+            if (PlayerPrefs.HasKey("MainMenuPointer"))
+            {
+                PopupHandler.instance.DeactivePointer();
+            }
             
             /*if (!PlayerPrefs.HasKey("ChapterPointer"))
             {

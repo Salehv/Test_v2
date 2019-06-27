@@ -186,6 +186,9 @@ public class TutorialHandler : MonoBehaviour
         TimeManager.instance.SetTimer("IntroTimer");
 
         state = TutorialState.INTRO_01;
+
+
+        PopupHandler.instance.DeactivePointer();
     }
 
     public void Intro_Clicked()
@@ -353,6 +356,14 @@ public class TutorialHandler : MonoBehaviour
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
         TimeManager.instance.DiscardTimer("IntroTimer");
         AnalyticsHandler.Intro_Finished(timeTaken);
+        
+        if (!PlayerPrefs.HasKey("MainMenuPointer"))
+        {
+            print("Main Menu Pointer Shown");
+            PopupHandler.instance.ShowPointerClick();
+            PlayerPrefs.SetInt("MainMenuPointer", 1);
+            PlayerPrefs.Save();
+        }
     }
 
 
