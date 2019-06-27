@@ -179,7 +179,7 @@ public class TutorialHandler : MonoBehaviour
         TUT01_IntroPages[0].SetActive(true);
         Intro_Characters[0].SetActive(true);
 
-        CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+        CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
         AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
 
         AnalyticsHandler.Intro_Started();
@@ -196,7 +196,7 @@ public class TutorialHandler : MonoBehaviour
         if (state == TutorialState.INTRO_01)
         {
             DeleteMessage();
-            CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, false);
+            CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, true, false);
             AudioManager.instance.PlayNewSfx(SFX.BLAH_2);
 
 
@@ -210,7 +210,7 @@ public class TutorialHandler : MonoBehaviour
         if (state == TutorialState.INTRO_02)
         {
             DeleteMessage();
-            CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+            CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
 
             AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
             Intro_Characters[0].SetActive(false);
@@ -226,7 +226,7 @@ public class TutorialHandler : MonoBehaviour
         TUT01_IntroPages[1].SetActive(true);
 
         DeleteMessageImmediate();
-        CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, true);
+        CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, true, true);
 
 
         state = TutorialState.TUT_01_01;
@@ -339,7 +339,7 @@ public class TutorialHandler : MonoBehaviour
         Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
 
         DeleteMessageImmediate();
-        CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, false);
+        CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
 
         state = TutorialState.INTRO_04;
     }
@@ -717,7 +717,7 @@ public class TutorialHandler : MonoBehaviour
 
 
     public void CreateMessage(string msg, Size size, Direction direction, GameObject destinationPanel,
-        bool haveIcon = true)
+        bool haveNextBtn = false, bool haveIcon = true)
     {
         _currentMessage = Instantiate(tutMessagePrefab, destinationPanel.transform, true);
         _currentMessage.GetComponentInChildren<RtlText>().text = msg;
@@ -725,16 +725,20 @@ public class TutorialHandler : MonoBehaviour
         if (size == Size.Large)
         {
             _currentMessage.GetComponent<RectTransform>().sizeDelta = messageLargeSize;
+            _currentMessage.transform.GetChild(2).transform.position = new Vector3(_currentMessage.transform.GetChild(2).transform.position.x, -messageLargeSize.y/2-20);
+            
         }
 
         if (size == Size.Medium)
         {
             _currentMessage.GetComponent<RectTransform>().sizeDelta = messageMediumSize;
+            _currentMessage.transform.GetChild(2).transform.position = new Vector3(_currentMessage.transform.GetChild(2).transform.position.x, -messageMediumSize.y/2-20);
         }
 
         if (size == Size.Small)
         {
             _currentMessage.GetComponent<RectTransform>().sizeDelta = messagesmallSize;
+            _currentMessage.transform.GetChild(2).transform.position = new Vector3(_currentMessage.transform.GetChild(2).transform.position.x, -messagesmallSize.y/2-20);
         }
 
 
@@ -745,11 +749,19 @@ public class TutorialHandler : MonoBehaviour
             _currentMessage.transform.GetChild(1).gameObject.SetActive(false);
             messageX = 0.45f;
         }
-
         else
         {
             _currentMessage.transform.GetChild(1).gameObject.SetActive(true);
             messageX = 0.5f;
+        }
+        
+        if (haveNextBtn == false)
+        {
+            _currentMessage.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            _currentMessage.transform.GetChild(2).gameObject.SetActive(true);
         }
 
         _currentMessage.GetComponent<RectTransform>().localScale = Vector3.one;

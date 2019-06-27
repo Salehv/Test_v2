@@ -332,14 +332,23 @@ namespace App
         }
 
         #region Pointer
-        public void ShowPointerClick(Transform targetObject = null)
+        public void ShowPointerClick(Transform targetObject = null, string mode = "")
         {
-            pointer.SetActive(true);
-            if (targetObject != null)
+            if (mode == "" || mode == "Click")
             {
-                pointer.transform.position = targetObject.position;
+                pointer.SetActive(true);
+                if (targetObject != null)
+                {
+                    pointer.transform.position = targetObject.position;
+                }
+
+                pointer.GetComponent<Animator>().SetTrigger("Click");
             }
-            pointer.GetComponent<Animator>().SetTrigger("Click");
+
+            if (mode == "Slide")
+            {
+                
+            }
         }
         
         public void ShowPointerSlideLeft()
