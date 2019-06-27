@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -102,6 +103,11 @@ namespace App
             Destroy(wordsView.GetChild(wordsView.childCount - 1).gameObject);
 
             StepViewerHandler.instance.StepBackward();
+        }
+
+        internal void HideStepViewer()
+        {
+            StepViewerHandler.instance.gameObject.SetActive(false);
         }
 
         #endregion

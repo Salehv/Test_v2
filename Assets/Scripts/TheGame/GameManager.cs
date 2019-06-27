@@ -97,8 +97,15 @@ namespace TheGame
             viewManager.ClearWordsView();
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
-            viewManager.InitStepViewer(currentLevel.way.Length + 2);
-
+            try
+            { 
+                viewManager.InitStepViewer(currentLevel.way.Length + 2);
+            }
+            catch(NullReferenceException e)
+            {
+                viewManager.HideStepViewer();
+            }
+            
             print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));

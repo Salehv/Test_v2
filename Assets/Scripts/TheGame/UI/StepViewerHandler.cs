@@ -20,13 +20,14 @@ public class StepViewerHandler : MonoBehaviour
     private int stage;
     private int currentStep;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
 
     public void Init(int steps)
     {
+        gameObject.SetActive(true);
         gem3.GetComponent<Image>().color = Color.white;
         gem2.GetComponent<Image>().color = Color.white;
 

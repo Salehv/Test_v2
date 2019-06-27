@@ -54,7 +54,10 @@ public class Chapter
             else
                 levels[i].SetDynamicFlags(DynamicsFlag.DF_FULL);
 
-            levels[i].SetWay(chapter.levels[i].way.words);
+            if (chapter.levels[i].way.words != null)
+                levels[i].SetWay(chapter.levels[i].way.words);
+            else
+                levels[i].SetWay(new string[0]);
 
             AddLevel(i, levels[i]);
         }
