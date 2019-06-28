@@ -74,6 +74,8 @@ namespace App
             else
                 AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
 
+            /*notifID = PlayerPrefs.GetInt("notif_id");
+            AndroidNotificationCenter.CancelNotification(notifID);*/
         }
 
         #region First Play
@@ -399,47 +401,62 @@ namespace App
 
         public void UpdateLevelProgress(Level lvl, LevelProgression lp)
         {
-            if (progress.GetLevelProgress(lp.chapterid, lp.levelid).solvedsteps == -1)
+            print($"[ApplicationManager] LevelStatus: [Gem: {progress.GetLevelProgress(lvl).gemTaken}, Steps:{progress.GetLevelProgress(lvl).solvedsteps}]");
+            print($"[ApplicationManager] LevelStatus: [Gem: {lp.gemTaken}, Steps:{lp.solvedsteps}]");
+            
+            if (progress.GetLevelProgress(lvl).solvedsteps == -1)
             {
+                print("Will add all gems");
                 AddGems(lp.gemTaken);
                 DatabaseManager.instance.UpdateLevelProgress(lp);
             }
             else if (lp.gemTaken > progress.GetLevelProgress(lvl).gemTaken)
             {
+                print($"Will add {lp.gemTaken - progress.GetLevelProgress(lvl).gemTaken}");
                 AddGems(lp.gemTaken - progress.GetLevelProgress(lvl).gemTaken);
                 DatabaseManager.instance.UpdateLevelProgress(lp);
+            }
+            else
+            {
+                return;
             }
 
             progress.UpdateLevelProgress(lp);
         }
 
 
+        private int notifID;
         private void OnApplicationPause(bool pauseStatus)
         {
+            /*
             if (pauseStatus)
             {
                 // Paused
                 var channel = new AndroidNotificationChannel()
                 {
-                    Id = "channel_id",
-                    Name = "Default Channel",
+                    Id = "key_notifier",
+                    Name = "Key Channel",
                     Importance = Importance.High,
-                    Description = "Generic notifications",
+                    Description = "",
                 };
                 
                 AndroidNotificationCenter.RegisterNotificationChannel(channel);
                 
                 var notification = new AndroidNotification();
-                notification.Title = "SomeTitle";
-                notification.Text = "SomeText";
-                notification.FireTime = System.DateTime.Now.AddMinutes(1);
+                notification.Title = "کلید 10/10";
+                notification.Text = "بیا دوباره کلی کلید پیدا کردم!";
+                notification.FireTime = System.DateTime.Now.AddSeconds(KeyHandler.instance.GetTimeToRefill());
 
-                AndroidNotificationCenter.SendNotification(notification, "channel_id");
+                notifID = AndroidNotificationCenter.SendNotification(notification, "key_notifier");
+                PlayerPrefs.SetInt("notif_id", notifID);
+                PlayerPrefs.Save();
             }
             else
             {
-                
+                notifID = PlayerPrefs.GetInt("notif_id");
+                AndroidNotificationCenter.CancelNotification(notifID);
             }
+        */
         }
     }
 

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "262608952572",
+    "firebase_url": "https://kalanjar-5f1b2.firebaseio.com",
+    "project_id": "kalanjar-5f1b2",
+    "storage_bucket": "kalanjar-5f1b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262608952572:android:e8bd1dde389ce262",
+        "android_client_info": {
+          "package_name": "ir.qolenj.kalanjar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262608952572-27g60ievjhdbh5831nqr5fs89uqrirbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8LLX0_-TRONFr9e2It4cfzrJ-4T4La-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262608952572-27g60ievjhdbh5831nqr5fs89uqrirbt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

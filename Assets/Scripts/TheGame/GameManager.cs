@@ -707,7 +707,7 @@ namespace TheGame
 
         private void UpdateCurrentLevelProgress(int gem, int steps)
         {
-            print("Gem: " + gem + ", Steps:" + steps);
+            print($"[GameManager] LevelCompleted: [Gem:{gem}, Steps:{steps}]");
             LevelProgression lp = new LevelProgression(currentLevel.chapterId, currentLevel.id, gem, steps, true);
 
             ApplicationManager.instance.UpdateLevelProgress(currentLevel, lp);

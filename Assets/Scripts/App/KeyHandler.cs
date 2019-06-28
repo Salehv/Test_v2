@@ -25,7 +25,7 @@ public class KeyHandler : MonoBehaviour
 
     private bool isCharging;
 
-    private int energyChargeTime = 300;
+    private int keyChargeTime = 300;
 
     public GameObject energyItemParent;
     public GameObject energyItemsPrefab;
@@ -103,10 +103,10 @@ public class KeyHandler : MonoBehaviour
         if (debugMode)
             print($"[EnergyHandler] Absent Time:{absentTime}");
 
-        while (absentTime > energyChargeTime)
+        while (absentTime > keyChargeTime)
         {
             IncreaseEnergy();
-            absentTime -= energyChargeTime;
+            absentTime -= keyChargeTime;
         }
 
         if (debugMode)
@@ -134,7 +134,7 @@ public class KeyHandler : MonoBehaviour
         PlayerPrefs.Save();
 
         if (!purchase)
-            lastChargeTime += energyChargeTime;
+            lastChargeTime += keyChargeTime;
         PlayerPrefs.SetString("lastChargeTime", "" + lastChargeTime);
         PlayerPrefs.Save();
 
@@ -226,7 +226,7 @@ public class KeyHandler : MonoBehaviour
         if (isCharging)
             foreach (var t in energyCountdownTimer)
             {
-                t.text = Utilities.GetTimeFormat(energyChargeTime - (Now() - lastChargeTime) + 1);
+                t.text = Utilities.GetTimeFormat(keyChargeTime - (Now() - lastChargeTime) + 1);
             }
         else
             foreach (var t in energyCountdownTimer)
@@ -245,7 +245,7 @@ public class KeyHandler : MonoBehaviour
 
             EnergyCountDownTimerUpdate();
 
-            if (Now() - lastChargeTime > energyChargeTime && isCharging)
+            if (Now() - lastChargeTime > keyChargeTime && isCharging)
                 IncreaseEnergy();
         }
     }
@@ -303,5 +303,14 @@ public class KeyHandler : MonoBehaviour
 
         ViewManager.instance.Escape();
         ViewManager.instance.Escape();
+    }
+
+    public double GetTimeToRefill()
+    {
+        if (lastChargeTime == -1)
+            return 0;
+
+        long remaining = (maxEnergy - energy) * keyChargeTime - (Now() - lastChargeTime);
+        return remaining + 40;
     }
 }
