@@ -174,7 +174,7 @@ namespace App
             levelsChapterName.text = GameManager.instance.chapters[chapterId].name;
 
             state = ViewState.LEVELS;
-/*
+
 
             if (chapterId == 1)
             {
@@ -183,9 +183,8 @@ namespace App
                     ShowKeyTutorial();
                     PlayerPrefs.SetInt("keyTutorialShown", 1);
                     PlayerPrefs.Save();
-                    return;
                 }
-            }*/
+            }
         }
 
 
