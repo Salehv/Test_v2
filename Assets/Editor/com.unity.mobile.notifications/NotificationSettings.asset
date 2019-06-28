@@ -42,11 +42,6 @@ MonoBehaviour:
     AssetMDPI: {fileID: 0}
     AssetHDPI: {fileID: 0}
     AssetLDPI: {fileID: 0}
-    isValid: 0
-    errors:
-    - no valid texture is assigned
-    previewTexture: {fileID: 0}
-    showOtherSizes: 0
   - Id: large
     Type: 1
     Asset: {fileID: 2800000, guid: 073709069a826b242975111eb6987b7f, type: 3}
@@ -55,9 +50,3 @@ MonoBehaviour:
     AssetMDPI: {fileID: 0}
     AssetHDPI: {fileID: 0}
     AssetLDPI: {fileID: 0}
-    isValid: 0
-    errors:
-    - no valid texture is assigned
-    previewTexture: {fileID: 0}
-    showOtherSizes: 0
-  <CustomEditor>k__BackingField: {fileID: 0}
