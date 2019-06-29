@@ -21,15 +21,18 @@ public class InAppStore : MonoBehaviour, IBillingListener
     public void OnBillingServiceSetupFinished()
     {
         GetComponent<StoreHandler>().UpdatePurchasesAndDetails(products);
+        print("[IABHandler] Setup Finished");
     }
 
 
     public void OnPurchasesUpdated(List<Purchase> purchases)
     {
+        purchases.ForEach(OnPurchaseFinished);
     }
 
     public void OnPurchasesAndDetailsUpdated(List<Purchase> purchases, List<ProductDetail> productDetails)
     {
+        purchases.ForEach(OnPurchaseFinished);
     }
 
     public void OnUserCancelPurchase(string errorMessage)
@@ -38,14 +41,17 @@ public class InAppStore : MonoBehaviour, IBillingListener
 
     public void OnPurchaseFinished(Purchase purchase)
     {
+        GetComponent<StoreHandler>().ConsumePurchase(purchase.productId, purchase.purchaseToken);
     }
 
     public void OnConsumeFinished(String productId, String purchaseToken)
     {
+        IABHandler.instance.OnConsumeFinished(productId, purchaseToken);
     }
 
     public void OnError(Int32 errorCode, String errorMessage)
     {
+        print("[RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR]");
         switch (errorCode)
         {
             case 1: // error illegal State

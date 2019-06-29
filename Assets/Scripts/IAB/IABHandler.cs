@@ -2,8 +2,9 @@
 using TheGame;
 using UnityEngine;
 
-public class IABHandler : MonoBehaviour, IBillingListener
+public class IABHandler : MonoBehaviour
 {
+    internal static IABHandler instance;
     [SerializeField] [Header("Shop items")]
     public bool debugMode;
 
@@ -28,14 +29,6 @@ public class IABHandler : MonoBehaviour, IBillingListener
         {
             itemMap.Add(item.productId, item);
         }
-
-        InitMyket();
-    }
-
-    private void InitMyket()
-    {
-        storeHandler.SetUpBillingService(this);
-        storeHandler.UpdatePurchases();
     }
 
 
@@ -45,29 +38,6 @@ public class IABHandler : MonoBehaviour, IBillingListener
             print($"[IABHandler] Purchase item {id}");
 
         inAppStore.purchaseProduct(int.Parse(id.Split('_')[1]));
-    }
-
-    public void OnBillingServiceSetupFinished()
-    {
-        print("[IABHandler] Setup Finished");
-    }
-
-    public void OnPurchasesUpdated(List<Purchase> purchases)
-    {
-        purchases.ForEach(OnPurchaseFinished);
-    }
-
-    public void OnPurchasesAndDetailsUpdated(List<Purchase> purchases, List<ProductDetail> products)
-    {
-    }
-
-    public void OnUserCancelPurchase(string errorMessage)
-    {
-    }
-
-    public void OnPurchaseFinished(Purchase purchase)
-    {
-        storeHandler.ConsumePurchase(purchase.productId, purchase.purchaseToken);
     }
 
     public void OnConsumeFinished(string productId, string purchaseToken)
