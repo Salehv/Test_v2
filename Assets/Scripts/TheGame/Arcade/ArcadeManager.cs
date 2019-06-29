@@ -40,7 +40,6 @@ namespace TheGame.Arcade
         private void Awake()
         {
             instance = this;
-            
         }
 
         public void StartArcade()
@@ -49,6 +48,7 @@ namespace TheGame.Arcade
             ViewManager.instance.Escape();
             score = 0;
             started = true;
+            AnalyticsHandler.ArcadeStarted();
         }
 
         private void Update()
@@ -56,12 +56,12 @@ namespace TheGame.Arcade
             if (started)
             {
                 realTimeScore.text = "" + score;
-                
+
                 timeText.text = Utilities.GetTimeFormat(remainingTime);
                 remainingTime -= Time.deltaTime;
                 if (remainingTime < 10)
                 {
-                    timeText.color = new Color(0.87f ,0.02f ,0.06f ,255);
+                    timeText.color = new Color(0.87f, 0.02f, 0.06f, 255);
                 }
                 else
                 {
@@ -78,6 +78,7 @@ namespace TheGame.Arcade
 
         internal void PlayArcade(string start, float time)
         {
+            finished = false;
             highScoreBeaten.SetActive(false);
             endPanel.gameObject.SetActive(false);
 
@@ -125,13 +126,15 @@ namespace TheGame.Arcade
             letterPool.Init(editor, GetRandomCharacters());
             editor.ResetPluses();
 
-            score += (int) Math.Pow(2,word.Length);
+            score += (int) Math.Pow(2, word.Length);
             print(score);
         }
 
+        private bool finished = false;
 
         private void End()
         {
+            finished = true;
             int coinPrize = (int) score / 10;
             //int score = words.Count - 1;
             started = false;
@@ -150,13 +153,17 @@ namespace TheGame.Arcade
             }
 
             highScore.text = hs + "";
-            
+
             GameManager.instance.AddCoins(coinPrize);
             winningCoin.text = "" + coinPrize;
+
+            AnalyticsHandler.ArcadeFinished(coinPrize);
         }
 
         public void Stop()
         {
+            if (!finished)
+                AnalyticsHandler.ArcadeLeaved();
             started = false;
             ViewManager.instance.EndArcade();
         }

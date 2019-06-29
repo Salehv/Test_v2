@@ -4,12 +4,20 @@
           package="${applicationId}"
           android:versionCode="1"
           android:versionName="1.0">
-  <application android:label="@string/app_name"
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"/>
+
+    <application android:label="@string/app_name"
                android:icon="@drawable/app_icon">
     <!-- The MessagingUnityPlayerActivity is a class that extends
          UnityPlayerActivity to work around a known issue when receiving
          notification data payloads in the background. -->
-    <activity android:name="com.google.firebase.MessagingUnityPlayerActivity"
+
+        <meta-data android:name="billing.service" android:value="bazaar.BazaarIabService"/>
+        <activity android:name="com.bazaar.BazaarIABProxyActivity"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+        <activity android:name="com.google.firebase.MessagingUnityPlayerActivity"
               android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -17,7 +25,12 @@
       </intent-filter>
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
     </activity>
-    <service android:name="com.google.firebase.messaging.MessageForwardingService"
+
+        <activity android:name="ir.tapsell.sdk.TapsellAdActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <service android:name="com.google.firebase.messaging.MessageForwardingService"
              android:exported="false"/>
   </application>
 

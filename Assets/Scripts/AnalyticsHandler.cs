@@ -151,6 +151,21 @@ public class AnalyticsHandler : MonoBehaviour
         GameAnalytics.NewDesignEvent(string.Format("LevelTime_{0:00}-{1:00}", chapter, level), time);
     }
 
+    internal static void ArcadeStarted()
+    {
+        GameAnalytics.NewDesignEvent("ArcadeStarted");
+    }
+
+    internal static void ArcadeLeaved()
+    {
+        GameAnalytics.NewDesignEvent("ArcadeLeaved");
+    }
+
+    internal static void ArcadeFinished(int score)
+    {
+        GameAnalytics.NewDesignEvent("ArcadeFinished", score);
+    }
+
     #endregion
 
 
