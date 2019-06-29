@@ -1,9 +1,8 @@
-//#define USE_SharpZipLib
+﻿//#define USE_SharpZipLib
 
 #if !UNITY_WEBPLAYER
 #define USE_FileIO
 #endif
-
 /* * * * *
  * A simple JSON Parser / builder
  * ------------------------------
@@ -18,6 +17,8 @@
  * Written by Bunny83 
  * 2012-06-09
  * 
+ * Modified by oPless, 2014-09-21 to round-trip properly
+ *
  * Features / attributes:
  * - provides strongly typed node classes and lists / dictionaries
  * - provides easy access to class members / array items / data values
@@ -62,7 +63,7 @@ namespace SimpleJSON
         FloatValue = 7,
     }
 
-    public class JSONNode
+    public abstract class JSONNode
     {
         #region common interface
 
@@ -113,17 +114,17 @@ namespace SimpleJSON
             return aNode;
         }
 
-        public virtual IEnumerable<JSONNode> Childs
+        public virtual IEnumerable<JSONNode> Children
         {
             get { yield break; }
         }
 
-        public IEnumerable<JSONNode> DeepChilds
+        public IEnumerable<JSONNode> DeepChildren
         {
             get
             {
-                foreach (var C in Childs)
-                foreach (var D in C.DeepChilds)
+                foreach (var C in Children)
+                foreach (var D in C.DeepChildren)
                     yield return D;
             }
         }
@@ -138,9 +139,13 @@ namespace SimpleJSON
             return "JSONNode";
         }
 
+        public abstract string ToJSON(int prefix);
+
         #endregion common interface
 
         #region typecasting properties
+
+        public virtual JSONBinaryTag Tag { get; set; }
 
         public virtual int AsInt
         {
@@ -151,7 +156,11 @@ namespace SimpleJSON
                     return v;
                 return 0;
             }
-            set { Value = value.ToString(); }
+            set
+            {
+                Value = value.ToString();
+                Tag = JSONBinaryTag.IntValue;
+            }
         }
 
         public virtual float AsFloat
@@ -163,7 +172,11 @@ namespace SimpleJSON
                     return v;
                 return 0.0f;
             }
-            set { Value = value.ToString(); }
+            set
+            {
+                Value = value.ToString();
+                Tag = JSONBinaryTag.FloatValue;
+            }
         }
 
         public virtual double AsDouble
@@ -175,7 +188,11 @@ namespace SimpleJSON
                     return v;
                 return 0.0;
             }
-            set { Value = value.ToString(); }
+            set
+            {
+                Value = value.ToString();
+                Tag = JSONBinaryTag.DoubleValue;
+            }
         }
 
         public virtual bool AsBool
@@ -187,7 +204,11 @@ namespace SimpleJSON
                     return v;
                 return !string.IsNullOrEmpty(Value);
             }
-            set { Value = (value) ? "true" : "false"; }
+            set
+            {
+                Value = (value) ? "true" : "false";
+                Tag = JSONBinaryTag.BoolValue;
+            }
         }
 
         public virtual JSONArray AsArray
@@ -275,6 +296,49 @@ namespace SimpleJSON
             return result;
         }
 
+        static JSONData Numberize(string token)
+        {
+            bool flag = false;
+            int integer = 0;
+            double real = 0;
+
+            if (int.TryParse(token, out integer))
+            {
+                return new JSONData(integer);
+            }
+
+            if (double.TryParse(token, out real))
+            {
+                return new JSONData(real);
+            }
+
+            if (bool.TryParse(token, out flag))
+            {
+                return new JSONData(flag);
+            }
+
+            throw new NotImplementedException(token);
+        }
+
+        static void AddElement(JSONNode ctx, string token, string tokenName, bool tokenIsString)
+        {
+            if (tokenIsString)
+            {
+                if (ctx is JSONArray)
+                    ctx.Add(token);
+                else
+                    ctx.Add(tokenName, token); // assume dictionary/object
+            }
+            else
+            {
+                JSONData number = Numberize(token);
+                if (ctx is JSONArray)
+                    ctx.Add(number);
+                else
+                    ctx.Add(tokenName, number);
+            }
+        }
+
         public static JSONNode Parse(string aJSON)
         {
             Stack<JSONNode> stack = new Stack<JSONNode>();
@@ -283,6 +347,7 @@ namespace SimpleJSON
             string Token = "";
             string TokenName = "";
             bool QuoteMode = false;
+            bool TokenIsString = false;
             while (i < aJSON.Length)
             {
                 switch (aJSON[i])
@@ -320,6 +385,7 @@ namespace SimpleJSON
                         if (ctx != null)
                         {
                             TokenName = TokenName.Trim();
+
                             if (ctx is JSONArray)
                                 ctx.Add(stack.Peek());
                             else if (TokenName != "")
@@ -346,10 +412,14 @@ namespace SimpleJSON
                         if (Token != "")
                         {
                             TokenName = TokenName.Trim();
-                            if (ctx is JSONArray)
-                                ctx.Add(Token);
-                            else if (TokenName != "")
-                                ctx.Add(TokenName, Token);
+                            /*
+							if (ctx is JSONArray)
+								ctx.Add (Token);
+							else if (TokenName != "")
+								ctx.Add (TokenName, Token);
+								*/
+                            AddElement(ctx, Token, TokenName, TokenIsString);
+                            TokenIsString = false;
                         }
 
                         TokenName = "";
@@ -367,10 +437,12 @@ namespace SimpleJSON
 
                         TokenName = Token;
                         Token = "";
+                        TokenIsString = false;
                         break;
 
                     case '"':
                         QuoteMode ^= true;
+                        TokenIsString = QuoteMode == true ? true : TokenIsString;
                         break;
 
                     case ',':
@@ -382,14 +454,20 @@ namespace SimpleJSON
 
                         if (Token != "")
                         {
-                            if (ctx is JSONArray)
-                                ctx.Add(Token);
-                            else if (TokenName != "")
-                                ctx.Add(TokenName, Token);
+                            /*
+							if (ctx is JSONArray) {
+								ctx.Add (Token);
+							} else if (TokenName != "") {
+								ctx.Add (TokenName, Token);
+							}
+							*/
+                            AddElement(ctx, Token, TokenName, TokenIsString);
+                            TokenIsString = false;
                         }
 
                         TokenName = "";
                         Token = "";
+                        TokenIsString = false;
                         break;
 
                     case '\r':
@@ -427,7 +505,9 @@ namespace SimpleJSON
                                 case 'u':
                                 {
                                     string s = aJSON.Substring(i + 1, 4);
-                                    Token += (char) int.Parse(s, System.Globalization.NumberStyles.AllowHexSpecifier);
+                                    Token += (char) int.Parse(
+                                        s,
+                                        System.Globalization.NumberStyles.AllowHexSpecifier);
                                     i += 4;
                                     break;
                                 }
@@ -466,37 +546,39 @@ namespace SimpleJSON
         }
 
 #if USE_SharpZipLib
-        public void SaveToCompressedStream(System.IO.Stream aData)
-        {
-            using (var gzipOut = new ICSharpCode.SharpZipLib.BZip2.BZip2OutputStream(aData))
-            {
-                gzipOut.IsStreamOwner = false;
-                SaveToStream(gzipOut);
-                gzipOut.Close();
-            }
-        }
+		public void SaveToCompressedStream(System.IO.Stream aData)
+		{
+			using (var gzipOut = new ICSharpCode.SharpZipLib.BZip2.BZip2OutputStream(aData))
+			{
+				gzipOut.IsStreamOwner = false;
+				SaveToStream(gzipOut);
+				gzipOut.Close();
+			}
+		}
  
-        public void SaveToCompressedFile(string aFileName)
-        {
-            #if USE_FileIO
-            System.IO.Directory.CreateDirectory((new System.IO.FileInfo(aFileName)).Directory.FullName);
-            using(var F = System.IO.File.OpenWrite(aFileName))
-            {
-                SaveToCompressedStream(F);
-            }
-            #else
-            throw new Exception("Can't use File IO stuff in webplayer");
-            #endif
-        }
-        public string SaveToCompressedBase64()
-        {
-            using (var stream = new System.IO.MemoryStream())
-            {
-                SaveToCompressedStream(stream);
-                stream.Position = 0;
-                return System.Convert.ToBase64String(stream.ToArray());
-            }
-        }
+		public void SaveToCompressedFile(string aFileName)
+		{
+ 
+#if USE_FileIO
+			System.IO.Directory.CreateDirectory((new System.IO.FileInfo(aFileName)).Directory.FullName);
+			using(var F = System.IO.File.OpenWrite(aFileName))
+			{
+				SaveToCompressedStream(F);
+			}
+ 
+#else
+			throw new Exception("Can't use File IO stuff in webplayer");
+#endif
+		}
+		public string SaveToCompressedBase64()
+		{
+			using (var stream = new System.IO.MemoryStream())
+			{
+				SaveToCompressedStream(stream);
+				stream.Position = 0;
+				return System.Convert.ToBase64String(stream.ToArray());
+			}
+		}
  
 #else
         public void SaveToCompressedStream(System.IO.Stream aData)
@@ -527,7 +609,7 @@ namespace SimpleJSON
                 SaveToStream(F);
             }
 #else
-            throw new Exception("Can't use File IO stuff in webplayer");
+			throw new Exception ("Can't use File IO stuff in webplayer");
 #endif
         }
 
@@ -596,29 +678,29 @@ namespace SimpleJSON
         }
 
 #if USE_SharpZipLib
-        public static JSONNode LoadFromCompressedStream(System.IO.Stream aData)
-        {
-            var zin = new ICSharpCode.SharpZipLib.BZip2.BZip2InputStream(aData);
-            return LoadFromStream(zin);
-        }
-        public static JSONNode LoadFromCompressedFile(string aFileName)
-        {
-            #if USE_FileIO
-            using(var F = System.IO.File.OpenRead(aFileName))
-            {
-                return LoadFromCompressedStream(F);
-            }
-            #else
-            throw new Exception("Can't use File IO stuff in webplayer");
-            #endif
-        }
-        public static JSONNode LoadFromCompressedBase64(string aBase64)
-        {
-            var tmp = System.Convert.FromBase64String(aBase64);
-            var stream = new System.IO.MemoryStream(tmp);
-            stream.Position = 0;
-            return LoadFromCompressedStream(stream);
-        }
+		public static JSONNode LoadFromCompressedStream(System.IO.Stream aData)
+		{
+			var zin = new ICSharpCode.SharpZipLib.BZip2.BZip2InputStream(aData);
+			return LoadFromStream(zin);
+		}
+		public static JSONNode LoadFromCompressedFile(string aFileName)
+		{
+#if USE_FileIO
+			using(var F = System.IO.File.OpenRead(aFileName))
+			{
+				return LoadFromCompressedStream(F);
+			}
+#else
+			throw new Exception("Can't use File IO stuff in webplayer");
+#endif
+		}
+		public static JSONNode LoadFromCompressedBase64(string aBase64)
+		{
+			var tmp = System.Convert.FromBase64String(aBase64);
+			var stream = new System.IO.MemoryStream(tmp);
+			stream.Position = 0;
+			return LoadFromCompressedStream(stream);
+		}
 #else
         public static JSONNode LoadFromCompressedFile(string aFileName)
         {
@@ -655,7 +737,7 @@ namespace SimpleJSON
                 return LoadFromStream(F);
             }
 #else
-            throw new Exception("Can't use File IO stuff in webplayer");
+			throw new Exception ("Can't use File IO stuff in webplayer");
 #endif
         }
 
@@ -666,7 +748,8 @@ namespace SimpleJSON
             stream.Position = 0;
             return LoadFromStream(stream);
         }
-    } // End of JSONNode
+    }
+    // End of JSONNode
 
     public class JSONArray : JSONNode, IEnumerable
     {
@@ -720,7 +803,7 @@ namespace SimpleJSON
             return aNode;
         }
 
-        public override IEnumerable<JSONNode> Childs
+        public override IEnumerable<JSONNode> Children
         {
             get
             {
@@ -764,6 +847,22 @@ namespace SimpleJSON
             return result;
         }
 
+        public override string ToJSON(int prefix)
+        {
+            string s = new string(' ', (prefix + 1) * 2);
+            string ret = "[ ";
+            foreach (JSONNode n in m_List)
+            {
+                if (ret.Length > 3)
+                    ret += ", ";
+                ret += "\n" + s;
+                ret += n.ToJSON(prefix + 1);
+            }
+
+            ret += "\n" + s + "]";
+            return ret;
+        }
+
         public override void Serialize(System.IO.BinaryWriter aWriter)
         {
             aWriter.Write((byte) JSONBinaryTag.Array);
@@ -773,7 +872,8 @@ namespace SimpleJSON
                 m_List[i].Serialize(aWriter);
             }
         }
-    } // End of JSONArray
+    }
+    // End of JSONArray
 
     public class JSONClass : JSONNode, IEnumerable
     {
@@ -865,7 +965,7 @@ namespace SimpleJSON
             }
         }
 
-        public override IEnumerable<JSONNode> Childs
+        public override IEnumerable<JSONNode> Children
         {
             get
             {
@@ -909,6 +1009,22 @@ namespace SimpleJSON
             return result;
         }
 
+        public override string ToJSON(int prefix)
+        {
+            string s = new string(' ', (prefix + 1) * 2);
+            string ret = "{ ";
+            foreach (KeyValuePair<string, JSONNode> n in m_Dict)
+            {
+                if (ret.Length > 3)
+                    ret += ", ";
+                ret += "\n" + s;
+                ret += string.Format("\"{0}\": {1}", n.Key, n.Value.ToJSON(prefix + 1));
+            }
+
+            ret += "\n" + s + "}";
+            return ret;
+        }
+
         public override void Serialize(System.IO.BinaryWriter aWriter)
         {
             aWriter.Write((byte) JSONBinaryTag.Class);
@@ -919,21 +1035,28 @@ namespace SimpleJSON
                 m_Dict[K].Serialize(aWriter);
             }
         }
-    } // End of JSONClass
+    }
+    // End of JSONClass
 
     public class JSONData : JSONNode
     {
         private string m_Data;
 
+
         public override string Value
         {
             get { return m_Data; }
-            set { m_Data = value; }
+            set
+            {
+                m_Data = value;
+                Tag = JSONBinaryTag.Value;
+            }
         }
 
         public JSONData(string aData)
         {
             m_Data = aData;
+            Tag = JSONBinaryTag.Value;
         }
 
         public JSONData(float aData)
@@ -964,6 +1087,21 @@ namespace SimpleJSON
         public override string ToString(string aPrefix)
         {
             return "\"" + Escape(m_Data) + "\"";
+        }
+
+        public override string ToJSON(int prefix)
+        {
+            switch (Tag)
+            {
+                case JSONBinaryTag.DoubleValue:
+                case JSONBinaryTag.FloatValue:
+                case JSONBinaryTag.IntValue:
+                    return m_Data;
+                case JSONBinaryTag.Value:
+                    return string.Format("\"{0}\"", Escape(m_Data));
+                default:
+                    throw new NotSupportedException("This shouldn't be here: " + Tag.ToString());
+            }
         }
 
         public override void Serialize(System.IO.BinaryWriter aWriter)
@@ -1005,7 +1143,8 @@ namespace SimpleJSON
             aWriter.Write((byte) JSONBinaryTag.Value);
             aWriter.Write(m_Data);
         }
-    } // End of JSONData
+    }
+    // End of JSONData
 
     internal class JSONLazyCreator : JSONNode
     {
@@ -1108,6 +1247,11 @@ namespace SimpleJSON
             return "";
         }
 
+        public override string ToJSON(int prefix)
+        {
+            return "";
+        }
+
         public override int AsInt
         {
             get
@@ -1187,7 +1331,8 @@ namespace SimpleJSON
                 return tmp;
             }
         }
-    } // End of JSONLazyCreator
+    }
+    // End of JSONLazyCreator
 
     public static class JSON
     {
