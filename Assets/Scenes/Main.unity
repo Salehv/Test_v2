@@ -40762,6 +40762,132 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 705704858}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &705797124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1753000403122584, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_Name
+      value: MyketUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094028851619106, guid: 38b542745423a2a42851f338c6741451, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114761318558630406, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: publicKey
+      value: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVFSNv/G+lc9DTABSbV61RxbO3R5sLkzvP3/2c4M9rdYTXnkwEQCGs/XbGXCd0oYH/wb47aYXnxQ30Nkh8YAB3uRRCw8mqinLk4i69h5IlB9xItVZmb9537o0IXEfKOaVfqZWVevi0CLxFXOyFutkQw8xrO1/cpCRGW6afLsj/swIDAQAB
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[3].productId
+      value: coin_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[3].type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[0].productId
+      value: coin_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[1].productId
+      value: coin_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[2].productId
+      value: coin_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[2].type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+        type: 3}
+      propertyPath: products.Array.data[1].type
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38b542745423a2a42851f338c6741451, type: 3}
+--- !u!114 &705797125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114017244369590858, guid: 38b542745423a2a42851f338c6741451,
+    type: 3}
+  m_PrefabInstance: {fileID: 705797124}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b8cfe137af09d429edbf60c79b7b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &705797126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114761318558630406, guid: 38b542745423a2a42851f338c6741451,
+    type: 3}
+  m_PrefabInstance: {fileID: 705797124}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aeb46b7bfc7928488ed15fc8327e901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &706687842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93372,6 +93498,8 @@ MonoBehaviour:
   - {fileID: 1129053163}
   - {fileID: 1162509513}
   shopLock: {fileID: 0}
+  storeHandler: {fileID: 705797126}
+  inAppStore: {fileID: 705797125}
 --- !u!114 &1496918058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103172,7 +103300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00000023841858, y: 0}
   m_SizeDelta: {x: 650, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652411377
