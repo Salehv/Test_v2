@@ -50,10 +50,6 @@ public class Level
             return 10 - (steps - best);
 
         return 1;
-        /*if (steps < (Math.Min(best + (int) best * 2 / 3, best + 2)))
-            return 8;
-
-        return 5;*/
     }
 
 

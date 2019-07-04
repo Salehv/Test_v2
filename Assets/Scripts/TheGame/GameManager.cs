@@ -105,7 +105,7 @@ namespace TheGame
             {
                 viewManager.HideStepViewer();
             }
-            
+
             print((lvl.flags));
             textEditor.Initialize(this, lvl.begin, lvl.flags);
             words.AddFirst(Utilities.GetNormalizedFarsi(lvl.begin));
@@ -541,7 +541,8 @@ namespace TheGame
 
             if (currentLevel.chapterId != 0 || currentLevel.id != 4)
             {
-                print("Hint Show Way Using Analitic Data Sent On Chapter: " + currentLevel.chapterId + " and Level: " + currentLevel.id);
+                print("Hint Show Way Using Analitic Data Sent On Chapter: " + currentLevel.chapterId + " and Level: " +
+                      currentLevel.id);
 
                 AnalyticsHandler.HintUsed(currentLevel.chapterId, currentLevel.id, HintType.WAY);
             }
@@ -591,14 +592,13 @@ namespace TheGame
 
         private void Win()
         {
-            var coinGain = 0;
             var solvedSteps = words.Count;
+            var coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
 
-            // Calculate Coins
-            if (ApplicationManager.instance.GetLevelProgress(currentLevel).solvedsteps == -1)
-                coinGain = currentLevel.CalculateCoinGain(solvedSteps - 2);
+            LevelProgression progress = ApplicationManager.instance.GetLevelProgress(currentLevel);
 
-            AddCoins(coinGain);
+            if (progress.solvedsteps != -1)
+                coinGain = Math.Max(coinGain - currentLevel.CalculateCoinGain(progress.solvedsteps - 2), 0);
 
             _collectedCoinWaitingForReward = coinGain;
 
@@ -607,6 +607,8 @@ namespace TheGame
             else
                 prizeButton.SetActive(true);
 
+
+            AddCoins(coinGain);
 
             ApplicationManager.instance.UpdateCoins();
 
