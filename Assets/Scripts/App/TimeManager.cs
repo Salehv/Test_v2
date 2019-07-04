@@ -17,17 +17,31 @@ public class TimeManager : MonoBehaviour
 
     internal void SetRealTimer(string timer)
     {
-        PlayerPrefs.SetString(timer, (DateTime.UtcNow.ToFileTimeUtc() / 10000000) + "");
+        PlayerPrefs.SetString("RTIME_" + timer, (Now()) + "");
         PlayerPrefs.Save();
     }
 
     internal int GetCurrentRealTime(string timer)
     {
-        if (!PlayerPrefs.HasKey(timer))
+        if (!PlayerPrefs.HasKey("RTIME_" + timer))
             return -1;
 
-        string time = PlayerPrefs.GetString(timer);
-        return (int) ((DateTime.UtcNow.ToFileTimeUtc() / 10000000) - long.Parse(time));
+        string time = PlayerPrefs.GetString("RTIME_" + timer);
+
+        try
+        {
+            return (int) (Now() - long.Parse(time));
+        }
+        catch (Exception e)
+        {
+            print(time);
+            throw e;
+        }
+    }
+
+    public bool HasRealTimer(string timer)
+    {
+        return PlayerPrefs.HasKey("RTIME_" + timer);
     }
 
     internal void DiscardRealTimer(string timer)

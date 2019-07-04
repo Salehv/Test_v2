@@ -61,7 +61,7 @@ namespace App
             progress = DatabaseManager.instance.GetProgressData();
 
             AudioManager.instance.Init();
-            
+
             UpdateCoins();
             UpdateGems();
 
@@ -73,6 +73,8 @@ namespace App
                 FirstPlay();
             else
                 AudioManager.instance.PlayNewMusic(ResourceManager.GetMainMenuMusic());
+
+            DailyRewardHandler.instance.Init();
 
             /*notifID = PlayerPrefs.GetInt("notif_id");
             AndroidNotificationCenter.CancelNotification(notifID);*/
@@ -401,9 +403,10 @@ namespace App
 
         public void UpdateLevelProgress(Level lvl, LevelProgression lp)
         {
-            print($"[ApplicationManager] LevelStatus: [Gem: {progress.GetLevelProgress(lvl).gemTaken}, Steps:{progress.GetLevelProgress(lvl).solvedsteps}]");
+            print(
+                $"[ApplicationManager] LevelStatus: [Gem: {progress.GetLevelProgress(lvl).gemTaken}, Steps:{progress.GetLevelProgress(lvl).solvedsteps}]");
             print($"[ApplicationManager] LevelStatus: [Gem: {lp.gemTaken}, Steps:{lp.solvedsteps}]");
-            
+
             if (progress.GetLevelProgress(lvl).solvedsteps == -1)
             {
                 print("Will add all gems");
@@ -426,6 +429,7 @@ namespace App
 
 
         private int notifID;
+
         private void OnApplicationPause(bool pauseStatus)
         {
             /*

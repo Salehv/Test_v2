@@ -34,7 +34,7 @@ public class PanelHandler : MonoBehaviour
             HideTopMostPanel();
         }
     }
-    
+
     public bool isAnyPanelActive()
     {
         return activePanels.Count > 0;
