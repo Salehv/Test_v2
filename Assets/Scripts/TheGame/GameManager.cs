@@ -95,8 +95,10 @@ namespace TheGame
             state = GameState.MAIN_VIEW;
 
             viewManager.ClearWordsView();
+            viewManager.AddToWordsView(Utilities.GetNormalizedFarsi(lvl.begin));
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
+
             try
             {
                 viewManager.InitStepViewer(currentLevel.way.Length + 2);
@@ -341,7 +343,7 @@ namespace TheGame
 
             words.AddLast(s);
 
-            viewManager.AddToWordsView(words.Last.Previous.Value);
+            viewManager.AddToWordsView(words.Last.Value);
 
             currentShufflePage = 0;
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
@@ -852,9 +854,6 @@ namespace TheGame
     enum GameState
     {
         MAIN_VIEW,
-        PAUSE,
-        HINT_PANEL,
-        SHUFFLE_MENU,
         TUTORIAL,
     }
 

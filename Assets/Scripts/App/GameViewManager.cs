@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UPersian.Components;
 
 namespace App
 {
@@ -20,7 +22,10 @@ namespace App
         public Image inGameFeatures;
 
 
-        [Header("Objects")] public Transform wordsView;
+        [Header("Objects")] public RtlText currentWord;
+        public RtlText prevWord;
+        public RtlText prevPrevWord;
+
         public GameObject acceptedWordPrefab;
 
         public Text hintSimilarCostText;
@@ -31,6 +36,7 @@ namespace App
 
 
         private GameViewState state;
+        private List<string> words;
 
         private void Awake()
         {
@@ -86,21 +92,38 @@ namespace App
 
         public void ClearWordsView()
         {
-            for (int i = 0; i < wordsView.childCount; i++)
-                Destroy(wordsView.GetChild(i).gameObject);
+            currentWord.text = "";
+            prevWord.text = "";
+            prevPrevWord.text = "";
+            words = new List<string>();
         }
 
         public void AddToWordsView(string word)
         {
-            GameObject g = Instantiate(acceptedWordPrefab, wordsView);
-            g.GetComponentInChildren<Text>().text = word;
+            prevPrevWord.text = prevWord.BaseText;
+            prevWord.text = currentWord.BaseText;
+            currentWord.text = word;
+
+            words.Add(word);
 
             StepViewerHandler.instance.StepForward();
         }
 
         public void RemoveLastWord()
         {
-            Destroy(wordsView.GetChild(wordsView.childCount - 1).gameObject);
+            currentWord.text = prevWord.BaseText;
+            prevWord.text = prevPrevWord.BaseText;
+
+            try
+            {
+                prevPrevWord.text = words[words.Count - 4];
+            }
+            catch (Exception e)
+            {
+                prevPrevWord.text = "";
+            }
+
+            words.RemoveAt(words.Count - 1);
 
             StepViewerHandler.instance.StepBackward();
         }

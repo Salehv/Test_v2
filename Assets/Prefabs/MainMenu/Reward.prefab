@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 7747161754457373649}
   - component: {fileID: 5568269273129333140}
   - component: {fileID: 1657113746464150481}
-  - component: {fileID: 5506265987225039797}
   m_Layer: 5
   m_Name: RtlText(Clone)
   m_TagString: Untagged
@@ -155,18 +154,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u062F\u0631\u064A\u0627\u0641\u062A"
---- !u!114 &5506265987225039797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3496839493903100528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4728b011492ad4c981d2e16136bad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4899754214848368726
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +467,6 @@ GameObject:
   - component: {fileID: 5505216820511234568}
   - component: {fileID: 7626220734112133837}
   - component: {fileID: 6110663861597512547}
-  - component: {fileID: 5476054597656946572}
   m_Layer: 5
   m_Name: Amount
   m_TagString: Untagged
@@ -549,15 +535,3 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100
---- !u!114 &5476054597656946572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9190171717439330282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4728b011492ad4c981d2e16136bad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

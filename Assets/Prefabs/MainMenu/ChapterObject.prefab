@@ -5695,7 +5695,6 @@ GameObject:
   - component: {fileID: 597440252626328400}
   - component: {fileID: 595473733498274268}
   - component: {fileID: 775711849774103402}
-  - component: {fileID: 775666862703765708}
   m_Layer: 5
   m_Name: RemainingGems
   m_TagString: Untagged
@@ -5764,18 +5763,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 05/75
---- !u!114 &775666862703765708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816188533479739172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4728b011492ad4c981d2e16136bad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &816250814989739646
 GameObject:
   m_ObjectHideFlags: 0
