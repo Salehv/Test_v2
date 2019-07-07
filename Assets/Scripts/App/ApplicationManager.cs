@@ -76,8 +76,8 @@ namespace App
 
             DailyRewardHandler.instance.Init();
 
-            /*notifID = PlayerPrefs.GetInt("notif_id");
-            AndroidNotificationCenter.CancelNotification(notifID);*/
+            notifID = PlayerPrefs.GetInt("notif_id");
+            AndroidNotificationCenter.CancelNotification(notifID);
         }
 
         #region First Play
@@ -432,7 +432,6 @@ namespace App
 
         private void OnApplicationPause(bool pauseStatus)
         {
-            /*
             if (pauseStatus)
             {
                 // Paused
@@ -443,9 +442,9 @@ namespace App
                     Importance = Importance.High,
                     Description = "",
                 };
-                
+
                 AndroidNotificationCenter.RegisterNotificationChannel(channel);
-                
+
                 var notification = new AndroidNotification();
                 notification.Title = "کلید 10/10";
                 notification.Text = "بیا دوباره کلی کلید پیدا کردم!";
@@ -460,7 +459,6 @@ namespace App
                 notifID = PlayerPrefs.GetInt("notif_id");
                 AndroidNotificationCenter.CancelNotification(notifID);
             }
-        */
         }
     }
 
