@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using App;
 using Initialize;
-using TapsellSDK;
 using UnityEngine;
 using UnityEngine.UI;
 

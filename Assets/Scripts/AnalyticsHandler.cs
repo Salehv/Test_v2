@@ -1,5 +1,4 @@
-﻿using Firebase.Analytics;
-using GameAnalyticsSDK;
+﻿using GameAnalyticsSDK;
 using TheGame;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ public class AnalyticsHandler : MonoBehaviour
 {
     private void Start()
     {
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        /*Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             var dependencyStatus = task.Result;
             if (dependencyStatus == Firebase.DependencyStatus.Available)
@@ -24,7 +23,7 @@ public class AnalyticsHandler : MonoBehaviour
                     "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
                 // Firebase Unity SDK is not safe to use here.
             }
-        });
+        });*/
     }
 
     #region Intro
@@ -32,25 +31,25 @@ public class AnalyticsHandler : MonoBehaviour
     public static void Intro_Started()
     {
         GameAnalytics.NewDesignEvent("Intro:01_Started");
-        FirebaseAnalytics.LogEvent("Intro:01_Started");
+//        FirebaseAnalytics.LogEvent("Intro:01_Started");
     }
 
     public static void Intro_FirstCharacterChanged()
     {
         GameAnalytics.NewDesignEvent("Intro:02_1stChanged");
-        FirebaseAnalytics.LogEvent("Intro:02_1stChanged");
+//        FirebaseAnalytics.LogEvent("Intro:02_1stChanged");
     }
 
     public static void Intro_SecondCharacterChanged()
     {
         GameAnalytics.NewDesignEvent("Intro:03_2ndChanged");
-        FirebaseAnalytics.LogEvent("Intro:03_2ndChanged");
+//        FirebaseAnalytics.LogEvent("Intro:03_2ndChanged");
     }
 
     public static void Intro_Finished(int time)
     {
         GameAnalytics.NewDesignEvent("Intro:04_Finished", time);
-        FirebaseAnalytics.LogEvent("Intro:04_Finished");
+//        FirebaseAnalytics.LogEvent("Intro:04_Finished");
     }
 
     #endregion
@@ -85,7 +84,7 @@ public class AnalyticsHandler : MonoBehaviour
             return;
 
         GameAnalytics.NewDesignEvent("Tutorial:Completed02");
-        FirebaseAnalytics.LogEvent("Tutorial:Completed02");
+//        FirebaseAnalytics.LogEvent("Tutorial:Completed02");
     }
 
     internal static void Tutorial_Completed03()
@@ -94,7 +93,7 @@ public class AnalyticsHandler : MonoBehaviour
             return;
 
         GameAnalytics.NewDesignEvent("Tutorial:Completed03");
-        FirebaseAnalytics.LogEvent("Tutorial:Completed03");
+//        FirebaseAnalytics.LogEvent("Tutorial:Completed03");
     }
 
     internal static void Tutorial_Completed04()
@@ -103,7 +102,7 @@ public class AnalyticsHandler : MonoBehaviour
             return;
 
         GameAnalytics.NewDesignEvent("Tutorial:Completed04");
-        FirebaseAnalytics.LogEvent("Tutorial:Completed04");
+//        FirebaseAnalytics.LogEvent("Tutorial:Completed04");
     }
 
     internal static void Tutorial_Completed05()
@@ -112,7 +111,7 @@ public class AnalyticsHandler : MonoBehaviour
             return;
 
         GameAnalytics.NewDesignEvent("Tutorial:Completed05");
-        FirebaseAnalytics.LogEvent("Tutorial:Completed05");
+//        FirebaseAnalytics.LogEvent("Tutorial:Completed05");
     }
 
     internal static void Chapter_Finished(int chapter, int time)
@@ -121,13 +120,13 @@ public class AnalyticsHandler : MonoBehaviour
             return;
 
         GameAnalytics.NewDesignEvent(string.Format("Chapter:Completed{0:00}", chapter));
-        FirebaseAnalytics.LogEvent(string.Format("Chapter:Completed{0:00}", chapter));
+//        FirebaseAnalytics.LogEvent(string.Format("Chapter:Completed{0:00}", chapter));
 
         GameAnalytics.NewDesignEvent(string.Format("TotalCoin:Chapter{0:00}", chapter),
             DatabaseManager.instance.GetCoins());
 
-        FirebaseAnalytics.LogEvent(string.Format("TotalCoin:Chapter{0:00}", chapter), "coin",
-            DatabaseManager.instance.GetCoins());
+//        FirebaseAnalytics.LogEvent(string.Format("TotalCoin:Chapter{0:00}", chapter), "coin",
+//            DatabaseManager.instance.GetCoins());
 
         // TODO: Add Chapter start and end realtimer
     }

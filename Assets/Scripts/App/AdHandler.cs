@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using App;
-using TapsellSDK;
 using TheGame;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,14 +24,14 @@ public class AdHandler : MonoBehaviour
 
     public void Init()
     {
-        Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
-        Tapsell.setRewardListener(AdReward);
+        /*Tapsell.initialize("bjnpopendfnitrefsliijjmdfcebmrberrfnqrcjlthaefiloekpabokjlqbhmglhlhkng");
+        Tapsell.setRewardListener(AdReward);*/
     }
 
 
     public void RequestCoinAd()
     {
-        if (!PlayerPrefs.HasKey("lastAdWatched"))
+        /*if (!PlayerPrefs.HasKey("lastAdWatched"))
         {
             ShowCoinAd();
             CoinAdWatched();
@@ -57,7 +56,7 @@ public class AdHandler : MonoBehaviour
         }
 
         ShowCoinAd();
-        CoinAdWatched();
+        CoinAdWatched();*/
     }
 
     private void CoinAdWatched()
@@ -69,18 +68,18 @@ public class AdHandler : MonoBehaviour
 
     private void ShowLoading()
     {
-        adLoading.SetActive(true);
+        /*adLoading.SetActive(true);*/
     }
 
     private void HideLoading()
     {
-        adLoading.SetActive(false);
+        /*adLoading.SetActive(false);*/
     }
 
 
     private void ShowCoinAd()
     {
-        ShowLoading();
+        /*ShowLoading();
         Tapsell.requestAd(
             ad_zone_coin,
             false,
@@ -90,22 +89,13 @@ public class AdHandler : MonoBehaviour
             AdNetworkNotAvailable,
             AdExpire,
             Open,
-            Close);
+            Close);*/
     }
 
-    private void Close(TapsellAd obj)
-    {
-        HideLoading();
-    }
-
-    private void Open(TapsellAd obj)
-    {
-        HideLoading();
-    }
 
     public void ShowPrizeAd()
     {
-        ShowLoading();
+        /*ShowLoading();
         Tapsell.requestAd(
             ad_zone_winDoublePrize,
             false,
@@ -113,12 +103,12 @@ public class AdHandler : MonoBehaviour
             AdNotAvailable,
             AdError,
             AdNetworkNotAvailable,
-            AdExpire);
+            AdExpire);*/
     }
 
     public void ShowKeyAd()
     {
-        ShowLoading();
+        /*ShowLoading();
         Tapsell.requestAd(
             ad_zone_key,
             false,
@@ -126,12 +116,13 @@ public class AdHandler : MonoBehaviour
             AdNotAvailable,
             AdError,
             AdNetworkNotAvailable,
-            AdExpire);
+            AdExpire);*/
     }
 
 
     #region Tapsell Actions
 
+/*
     private void AdAvailable(TapsellAd result)
     {
         HideLoading();
@@ -166,11 +157,22 @@ public class AdHandler : MonoBehaviour
         HideLoading();
         Debug.LogError($"[AdHandler] Expired! {result.zoneId}");
     }
+    
+    private void Close(TapsellAd obj)
+    {
+        HideLoading();
+    }
+
+    private void Open(TapsellAd obj)
+    {
+        HideLoading();
+    }
+*/
 
     #endregion
 
 
-    private void AdReward(TapsellAdFinishedResult result)
+    /*private void AdReward(TapsellAdFinishedResult result)
     {
         if (result.rewarded && result.completed)
         {
@@ -191,5 +193,5 @@ public class AdHandler : MonoBehaviour
                 PopupHandler.ShowDebug("3 عدد کلید دریافت شد!");
             }
         }
-    }
+    }*/
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using BazaarPlugin;
 using TheGame;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +11,7 @@ public class IABHandler : MonoBehaviour
 {
     [SerializeField] [Header("Shop items")]
     public bool debugMode;
+
     public IABItem[] items;
 
     [Header("UI Objects")] public GameObject shopLock;
@@ -29,7 +29,7 @@ public class IABHandler : MonoBehaviour
         {
             itemMap.Add(item.productId, item);
         }
-        
+
         InitCafeBazaar();
     }
 
@@ -38,20 +38,20 @@ public class IABHandler : MonoBehaviour
     {
         InitEvents();
 
-        BazaarIAB.init(
+        /*BazaarIAB.init(
             "MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwCooaFh1ZJhgj1fHE6inFBGTKXIzeWYC7d6gdonZ1AxdAWZykxjbhIN1YbNpEc22hwz/A" +
             "bQdxhMXO8jLRnUdbuCp/9k0BYQuPVkmCa0wo3jdthokV2jClTMrDhAj3rNBFQ+s49K0h2SN/iH7+AcTszoqSMGtsG5Hhm0eZYyWBHf6IUOU5E0Tex+ku" +
-            "9BaSf5LdEYh/QTXznV0GOhJ0MEzaLWRCPnZmzyaCvU7qeHk8ECAwEAAQ==");
+            "9BaSf5LdEYh/QTXznV0GOhJ0MEzaLWRCPnZmzyaCvU7qeHk8ECAwEAAQ==");*/
     }
 
     private void InitEvents()
     {
-        IABEventManager.billingSupportedEvent += BillingSupported;
+        /*IABEventManager.billingSupportedEvent += BillingSupported;
         IABEventManager.billingNotSupportedEvent += BillingNotSupported;
         IABEventManager.querySkuDetailsSucceededEvent += SkuDetailsQuerySucceed;
         IABEventManager.querySkuDetailsFailedEvent += SkuDetailQueryFailed;
         IABEventManager.purchaseSucceededEvent += PurchaseSucceed;
-        IABEventManager.consumePurchaseSucceededEvent += consumeSucceed;
+        IABEventManager.consumePurchaseSucceededEvent += consumeSucceed;*/
     }
 
 
@@ -69,18 +69,18 @@ public class IABHandler : MonoBehaviour
 
     private void UpdateShopItems()
     {
-        string[] details = itemMap.Keys.ToArray();
-        BazaarIAB.querySkuDetails(details);
+        /*string[] details = itemMap.Keys.ToArray();
+        BazaarIAB.querySkuDetails(details);*/
     }
 
 
-    private void SkuDetailsQuerySucceed(List<BazaarSkuInfo> skus)
+    /*private void SkuDetailsQuerySucceed(List<BazaarSkuInfo> skus)
     {
         foreach (BazaarSkuInfo sku in skus)
         {
             itemMap[sku.ProductId].priceText.text = sku.Price;
         }
-    }
+    }*/
 
     private void SkuDetailQueryFailed(string error)
     {
@@ -93,11 +93,14 @@ public class IABHandler : MonoBehaviour
     }
 
 
+/*
     private void PurchaseSucceed(BazaarPurchase purchase)
     {
         BazaarIAB.consumeProduct(purchase.ProductId);
     }
+*/
 
+/*
     private void consumeSucceed(BazaarPurchase purchase)
     {
         PopupHandler.ShowDebug("خرید موفقیت آمیز بود");
@@ -105,13 +108,16 @@ public class IABHandler : MonoBehaviour
         AnalyticsHandler.ItemBought(itemMap[purchase.ProductId].type, itemMap[purchase.ProductId].price,
             itemMap[purchase.ProductId].amount);
     }
+*/
 
 
     public void PurchaseItem(string id)
     {
-        if(debugMode)
+        if (debugMode)
             print($"[IABHandler] Purchase item {id}");
+/*
         BazaarIAB.purchaseProduct(id);
+*/
     }
 }
 

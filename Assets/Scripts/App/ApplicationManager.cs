@@ -1,7 +1,6 @@
 ﻿using System;
 using TheGame;
 using TheGame.Arcade;
-using Unity.Notifications.Android;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,8 +75,8 @@ namespace App
 
             DailyRewardHandler.instance.Init();
 
-            notifID = PlayerPrefs.GetInt("notif_id");
-            AndroidNotificationCenter.CancelNotification(notifID);
+            /*notifID = PlayerPrefs.GetInt("notif_id");
+            AndroidNotificationCenter.CancelNotification(notifID);*/
         }
 
         #region First Play
@@ -432,7 +431,7 @@ namespace App
 
         private void OnApplicationPause(bool pauseStatus)
         {
-            if (pauseStatus)
+            /*if (pauseStatus)
             {
                 // Paused
                 var channel = new AndroidNotificationChannel()
@@ -458,7 +457,7 @@ namespace App
             {
                 notifID = PlayerPrefs.GetInt("notif_id");
                 AndroidNotificationCenter.CancelNotification(notifID);
-            }
+            }*/
         }
     }
 
