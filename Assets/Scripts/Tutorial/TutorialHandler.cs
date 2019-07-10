@@ -73,23 +73,10 @@ public class TutorialHandler : MonoBehaviour
     {
         TUT01.SetActive(false);
 
-        foreach (var arrow in TUT01_Arrows)
-        {
-            arrow.SetActive(false);
-        }
-
-        TUT01_03_LetterShine.SetActive(false);
-
         foreach (var page in TUT01_IntroPages)
         {
             page.SetActive(false);
         }
-
-        TutELetter.selected = 25;
-        TUT01_05_Letter.GetComponent<TutELetter>().ChangeLetter();
-
-        TutELetter.selected = 26;
-        TUT01_03_Letter.GetComponent<TutELetter>().ChangeLetter();
 
         foreach (GameObject introCharacter in Intro_Characters)
         {
@@ -152,20 +139,19 @@ public class TutorialHandler : MonoBehaviour
 
     [Header("Intro")] public GameObject[] Intro_Characters;
 
-
-    [Header("Tutorial 01")] public GameObject TUT01;
+    [Header("Tutorial 01")] 
+    public GameObject TUT01;
     public GameObject Tut01_MsgParent;
-    public GameObject[] TUT01_Arrows;
     public GameObject[] TUT01_IntroPages;
     [TextArea(1, 6)] public string[] TUT01_Texts;
+    [Space(10)]
+    public GameObject[] tut01Panels;
+    public LetterPoolHandler letterPool;
+    [Space(10)] 
+    public GameObject tut0101ALetter;
+    public GameObject tut0102ELetter;
 
-    [Header("Tutorial 01_03")] public GameObject TUT01_03_LetterShine;
-    public Animator TUT01_03_Letter;
-    public Image TUT01_03_ALetterImage;
-
-    [Header("Tutorial 01_05")] public Animator TUT01_05_Letter;
-    public GameObject TUT01_05_Shine;
-    public Image TUT01_05_ALetterImage;
+    
 
     public void PlayTutorial_01()
     {
@@ -175,18 +161,16 @@ public class TutorialHandler : MonoBehaviour
         TimeManager.instance.SetTimer("IntroTimer");
         AnalyticsHandler.Intro_Started();
 
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
         TUT01_IntroPages[0].SetActive(true);
         Intro_Characters[0].SetActive(true);
 
-        PopupHandler.instance.CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
+        PopupHandler.CreateMessage(TUT01_Texts[0], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
         AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
 
         AnalyticsHandler.Intro_Started();
         TimeManager.instance.SetTimer("IntroTimer");
 
         state = TutorialState.INTRO_01;
-
 
         PopupHandler.instance.DeactivePointer();
     }
@@ -198,10 +182,11 @@ public class TutorialHandler : MonoBehaviour
 
         if (state == TutorialState.INTRO_01)
         {
-            PopupHandler.instance.DeleteMessage();
-            PopupHandler.instance.CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, true, false);
+            PopupHandler.DeleteMessage();
+            PopupHandler.CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, true, false);
             AudioManager.instance.PlayNewSfx(SFX.BLAH_2);
 
+            
 
             Intro_Characters[0].GetComponent<Animator>().SetTrigger("hide");
             Intro_Characters[1].SetActive(true);
@@ -212,8 +197,8 @@ public class TutorialHandler : MonoBehaviour
 
         if (state == TutorialState.INTRO_02)
         {
-            PopupHandler.instance.DeleteMessage();
-            PopupHandler.instance.CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
+            PopupHandler.DeleteMessage();
+            PopupHandler.CreateMessage(TUT01_Texts[2], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
 
             AudioManager.instance.PlayNewSfx(SFX.BLAH_1);
             Intro_Characters[0].SetActive(false);
@@ -224,113 +209,54 @@ public class TutorialHandler : MonoBehaviour
             return;
         }
 
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
+        StartGameTutorial();
+    }
+
+    private void StartGameTutorial()
+    {
         TUT01_IntroPages[0].SetActive(false);
         TUT01_IntroPages[1].SetActive(true);
-
-        PopupHandler.instance.DeleteMessageImmediate();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[3], Size.Large, Direction.Topmost, Tut01_MsgParent, true, true);
-
-
+                
+        PopupHandler.DeleteMessageImmediate();
+        PopupHandler.CreateMessage(TUT01_Texts[3], Size.Small, Direction.Topmost, Tut01_MsgParent, false, true);
+        
+        tut01Panels[0].SetActive(true);
+        
+        PopupHandler.ShowPointerClick(tut0101ALetter.transform);
+        
+        tut0101ALetter.SetActive(true);
+        tut0102ELetter.SetActive(false);
+        
         state = TutorialState.TUT_01_01;
     }
-
-
-    public void Tutorial_01_ScreenClicked()
+    
+    public void Tutorial_01_01_CharacterSelected()
     {
-        if (state != TutorialState.TUT_01_01 && state != TutorialState.TUT_01_06)
+        if (state != TutorialState.TUT_01_01)
             return;
+        
+        PopupHandler.instance.DeactivePointer();
+        PopupHandler.ShowPointerClick(tut0102ELetter.transform);
+        
+        // Turn off shine
+        tut0101ALetter.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        tut0101ALetter.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = 
+            GameManager.instance.GetLetterSprite(3, SpriteMode.SHINE);
+        
+        tut0102ELetter.SetActive(true);
+        
+        state = TutorialState.TUT_01_02;        
+    }
 
-        if (state == TutorialState.TUT_01_01)
-        {
-            state = TutorialState.TUT_01_02;
-
-            TUT01_Arrows[0].SetActive(false);
-            TUT01_Arrows[1].SetActive(true);
-
-            PopupHandler.instance.DeleteMessage();
-            PopupHandler.instance.CreateMessage(TUT01_Texts[4], Size.Small, Direction.Topmost, Tut01_MsgParent);
-
-            Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
-            return;
-        }
-
-        //Tutorial_01_Completed();
-        Intro_04();
+    public void Tutorial_01_02_EditCharacterSelected()
+    {
+        // TODO: 
     }
 
 
-    public void Tutoial_01_FirstCharClicked()
-    {
-        if (state != TutorialState.TUT_01_02)
-            return;
+    
 
-        TUT01_03_ALetterImage.sprite = GameManager.instance.GetLetterSprite(12, SpriteMode.SHINE);
-        TUT01_03_LetterShine.SetActive(true);
-
-        TUT01_Arrows[1].SetActive(false);
-        TUT01_Arrows[2].SetActive(true);
-
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[5], Size.Medium, Direction.Topmost, Tut01_MsgParent);
-
-        state = TutorialState.TUT_01_03;
-    }
-
-    public void Tutorial_01_EditCharacter01Clicked()
-    {
-        if (state != TutorialState.TUT_01_03)
-            return;
-
-        TutELetter.selected = 12;
-        TUT01_03_Letter.SetTrigger("rotate");
-        TUT01_Arrows[2].SetActive(false);
-        TUT01_Arrows[3].SetActive(true);
-
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[6], Size.Medium, Direction.Topmost, Tut01_MsgParent);
-
-        TUT01_03_ALetterImage.sprite = GameManager.instance.GetLetterSprite(12, SpriteMode.NORMAL);
-
-        TUT01_03_LetterShine.SetActive(false);
-
-        state = TutorialState.TUT_01_04;
-        AnalyticsHandler.Intro_FirstCharacterChanged();
-    }
-
-    public void Tutorial_01_SecondCharacter()
-    {
-        if (state != TutorialState.TUT_01_04)
-            return;
-
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[7], Size.Small, Direction.Topmost, Tut01_MsgParent);
-
-        TUT01_Arrows[3].SetActive(false);
-        TUT01_Arrows[4].SetActive(true);
-
-        TUT01_05_Shine.SetActive(true);
-        TUT01_05_ALetterImage.sprite = GameManager.instance.GetLetterSprite(11, SpriteMode.SHINE);
-
-        state = TutorialState.TUT_01_05;
-    }
-
-    public void Tutorial_01_EditCharacter02Clicked()
-    {
-        if (state != TutorialState.TUT_01_05)
-            return;
-
-        TutELetter.selected = 11;
-        TUT01_05_Letter.SetTrigger("rotate");
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[8], Size.Large, Direction.Topmost, Tut01_MsgParent);
-        TUT01_Arrows[4].SetActive(false);
-        TUT01_05_Shine.SetActive(false);
-        TUT01_05_ALetterImage.sprite = GameManager.instance.GetLetterSprite(11, SpriteMode.NORMAL);
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = true;
-        state = TutorialState.TUT_01_06;
-        AnalyticsHandler.Intro_SecondCharacterChanged();
-    }
+    
 
     private void Intro_04()
     {
@@ -341,8 +267,8 @@ public class TutorialHandler : MonoBehaviour
 
         Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
 
-        PopupHandler.instance.DeleteMessageImmediate();
-        PopupHandler.instance.CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
+        PopupHandler.DeleteMessageImmediate();
+        PopupHandler.CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
 
         state = TutorialState.INTRO_04;
     }
@@ -350,7 +276,7 @@ public class TutorialHandler : MonoBehaviour
 
     public void Tutorial_01_Completed()
     {
-        PopupHandler.instance.DeleteMessage();
+        PopupHandler.DeleteMessage();
         ApplicationManager.instance.IntroEnded();
 
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
@@ -360,23 +286,16 @@ public class TutorialHandler : MonoBehaviour
         if (!PlayerPrefs.HasKey("MainMenuPointer"))
         {
             print("Main Menu Pointer Shown");
-            PopupHandler.instance.ShowPointerClick();
+            PopupHandler.ShowPointerClick();
             PlayerPrefs.SetInt("MainMenuPointer", 1);
             PlayerPrefs.Save();
         }
     }
 
-
-    public void ExitTutorial_01()
-    {
-        TUT01.SetActive(false);
-    }
-
     #endregion
 
-    #region Tut02
-
-    [FormerlySerializedAs("TUT02")] [Space(30)] [Header("Tutorial 2")]
+    #region Tut02    
+    [Header("Tutorial 2")]
     public GameObject tut02Object;
 
     [TextArea(0, 4)] public string[] tut02Messages;
@@ -390,7 +309,7 @@ public class TutorialHandler : MonoBehaviour
         ResetAll();
         tut02Object.SetActive(true);
 
-        PopupHandler.instance.CreateMessage(tut02Messages[0], Size.Medium, Direction.Down, tut02Object);
+        PopupHandler.CreateMessage(tut02Messages[0], Size.Medium, Direction.Down, tut02Object);
         PopupHandler.instance.CreateArrow(tut0201Placeholder.transform, Direction.Top, tut02Object);
 
         state = TutorialState.TUT_02_01;
@@ -401,10 +320,10 @@ public class TutorialHandler : MonoBehaviour
         if (state != TutorialState.TUT_02_01)
             return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
 
-        PopupHandler.instance.CreateMessage(tut02Messages[1], Size.Medium, Direction.Down, tut02Object);
+        PopupHandler.CreateMessage(tut02Messages[1], Size.Medium, Direction.Down, tut02Object);
         PopupHandler.instance.CreateArrow(tut0202Undo.transform, Direction.Top, tut02Object);
 
         tut0202Undo.SetActive(true);
@@ -414,8 +333,8 @@ public class TutorialHandler : MonoBehaviour
 
     public void Tutorial_02_UndoClicked()
     {
-        PopupHandler.instance.DeleteMessageImmediate();
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteMessageImmediate();
+        PopupHandler.DeleteArrow();
 
         GameManager.instance.Undo();
         tut02Object.SetActive(false);
@@ -442,7 +361,7 @@ public class TutorialHandler : MonoBehaviour
     {
         ResetAll();
         TUT03.SetActive(true);
-        PopupHandler.instance.CreateMessage("حالا وقتشه که از راهنمایی استفاده کنی!", Size.Small, Direction.Topmost, TUT03);
+        PopupHandler.CreateMessage("حالا وقتشه که از راهنمایی استفاده کنی!", Size.Small, Direction.Topmost, TUT03);
         state = TutorialState.TUT_03_01;
     }
 
@@ -450,8 +369,8 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_03_01) return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage("آیکون راهنمایی رو لمس کن", Size.Small, Direction.Topmost, TUT03);
+        PopupHandler.DeleteMessage();
+        PopupHandler.CreateMessage("آیکون راهنمایی رو لمس کن", Size.Small, Direction.Topmost, TUT03);
         PopupHandler.instance.CreateArrow(GameManager.instance.btnHint.transform, Direction.Top, TUT03);
 
         tut03_BtnHint.gameObject.SetActive(true);
@@ -463,9 +382,9 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_03_02) return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
-        PopupHandler.instance.CreateMessage("خب! حالا اگه این گزینه رو انتخاب کنی کل مسیر رسیدن به کلمه هدف رو می بینی", Size.Medium,
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
+        PopupHandler.CreateMessage("خب! حالا اگه این گزینه رو انتخاب کنی کل مسیر رسیدن به کلمه هدف رو می بینی", Size.Medium,
             Direction.Downmost, TUT03);
         PopupHandler.instance.CreateArrow(btnHintShowWay.transform, Direction.Right, TUT03);
 
@@ -478,9 +397,9 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_03_03) return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
-        PopupHandler.instance.CreateMessage("با ورود به فروشگاه می تونی خیلی سریع سکه بخری!", Size.Small, Direction.Downmost, TUT03);
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
+        PopupHandler.CreateMessage("با ورود به فروشگاه می تونی خیلی سریع سکه بخری!", Size.Small, Direction.Downmost, TUT03);
         PopupHandler.instance.CreateArrow(tut03_BtnShop.transform, Direction.Right, TUT03, new Vector2(150, 0));
 
         tut03_HintPanel.SetActive(false);
@@ -493,9 +412,9 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_03_04) return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
-        PopupHandler.instance.CreateMessage("این گزینه رو لمس کن تا مجانی سکه بگیری", Size.Small, Direction.Middle, TUT03);
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
+        PopupHandler.CreateMessage("این گزینه رو لمس کن تا مجانی سکه بگیری", Size.Small, Direction.Middle, TUT03);
         PopupHandler.instance.CreateArrow(tut03_BtnBuy.transform, Direction.Right, TUT03);
 
 
@@ -509,9 +428,9 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_03_05) return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
-        PopupHandler.instance.CreateMessage("حالا که سکه خریدی می تونی راهنمایی رو ببینی", Size.Small, Direction.Middle,
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
+        PopupHandler.CreateMessage("حالا که سکه خریدی می تونی راهنمایی رو ببینی", Size.Small, Direction.Middle,
             TUT03);
 
         state = TutorialState.TUT_03_06;
@@ -522,7 +441,7 @@ public class TutorialHandler : MonoBehaviour
         if (state != TutorialState.TUT_03_06) return;
 
         Destroy(PopupHandler.instance.currentMessage);
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteArrow();
         ResetAll();
 
         state = TutorialState.TUT_03_PASSED;
@@ -550,7 +469,7 @@ public class TutorialHandler : MonoBehaviour
         ResetAll();
         tut04.SetActive(true);
 
-        PopupHandler.instance.CreateMessage(tut04Messages[0], Size.Medium, Direction.Downmost, tut04);
+        PopupHandler.CreateMessage(tut04Messages[0], Size.Medium, Direction.Downmost, tut04);
         PopupHandler.instance.CreateArrow(tut0401Letter.transform, Direction.Right, tut04, new Vector3(20, 0));
 
 
@@ -568,9 +487,9 @@ public class TutorialHandler : MonoBehaviour
         if (state != TutorialState.TUT_04_01)
             return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
-        PopupHandler.instance.CreateMessage(tut04Messages[1], Size.Small, Direction.Downmost, tut04);
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
+        PopupHandler.CreateMessage(tut04Messages[1], Size.Small, Direction.Downmost, tut04);
         PopupHandler.instance.CreateArrow(tut0402Pluses[1].transform, Direction.Top, tut04, new Vector3(0, 100));
 
         // Shine
@@ -595,10 +514,10 @@ public class TutorialHandler : MonoBehaviour
         GameManager.instance.AddLetter(1, 0);
         GameManager.instance.textEditor.Correct();
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteMessage();
+        PopupHandler.DeleteArrow();
 
-        PopupHandler.instance.CreateMessage(tut04Messages[2], Size.Large, Direction.Down, tut04);
+        PopupHandler.CreateMessage(tut04Messages[2], Size.Large, Direction.Down, tut04);
 
         // Hide E Letters
         foreach (var letter in tut04ELetters)
@@ -629,7 +548,7 @@ public class TutorialHandler : MonoBehaviour
     {
         if (state != TutorialState.TUT_04_03)
             return;
-        PopupHandler.instance.DeleteMessageImmediate();
+        PopupHandler.DeleteMessageImmediate();
         tut04.SetActive(false);
         GameManager.instance.TutorialEnded();
         AnalyticsHandler.Tutorial_Completed04();
@@ -651,7 +570,7 @@ public class TutorialHandler : MonoBehaviour
 
 
         tut05.SetActive(true);
-        PopupHandler.instance.CreateMessage(tut05Messages[0], Size.Medium, Direction.Down, tut05);
+        PopupHandler.CreateMessage(tut05Messages[0], Size.Medium, Direction.Down, tut05);
         PopupHandler.instance.CreateArrow(tut05ELetters[0].transform, Direction.Top, tut05);
 
         foreach (var letter in tut05ELetters)
@@ -671,10 +590,10 @@ public class TutorialHandler : MonoBehaviour
 
         state = TutorialState.TUT_05_02;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(tut05Messages[1], Size.Medium, Direction.Down, tut05);
+        PopupHandler.DeleteMessage();
+        PopupHandler.CreateMessage(tut05Messages[1], Size.Medium, Direction.Down, tut05);
 
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteArrow();
         PopupHandler.instance.CreateArrow(tut05ELetters[0].transform.GetChild(0), Direction.Left, tut05, new Vector2(-10, 130));
 
         tut05ELetters[0].transform.GetChild(0).GetComponent<Animator>().SetTrigger("show");
@@ -685,10 +604,10 @@ public class TutorialHandler : MonoBehaviour
         if (state != TutorialState.TUT_05_02)
             return;
 
-        PopupHandler.instance.DeleteMessage();
-        PopupHandler.instance.CreateMessage(tut05Messages[2], Size.Medium, Direction.Down, tut05);
+        PopupHandler.DeleteMessage();
+        PopupHandler.CreateMessage(tut05Messages[2], Size.Medium, Direction.Down, tut05);
 
-        PopupHandler.instance.DeleteArrow();
+        PopupHandler.DeleteArrow();
 
 
         foreach (var letter in tut05ELetters)
@@ -708,7 +627,7 @@ public class TutorialHandler : MonoBehaviour
         if (state != TutorialState.TUT_05_03)
             return;
 
-        PopupHandler.instance.DeleteMessageImmediate();
+        PopupHandler.DeleteMessageImmediate();
         tut05.SetActive(false);
         GameManager.instance.TutorialEnded();
         AnalyticsHandler.Tutorial_Completed05();

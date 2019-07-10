@@ -48,7 +48,8 @@ namespace App
 
         #region Menu
 
-        [Header("Menu")] public GameObject menuCanvas;
+        [Header("Menu")] 
+        public GameObject menuCanvas;
         public GameObject menuView;
         public GameObject chaptersView;
         public GameObject settings;
@@ -232,6 +233,9 @@ namespace App
             HideAllGamePanels();
             gameCanvas.SetActive(true);
             gameView.SetActive(true);
+            introView.SetActive(false);
+            arcadeView.SetActive(false);
+            
             gameViewManager.ShowGame();
             state = ViewState.IN_GAME;
         }
@@ -271,6 +275,7 @@ namespace App
         public Panel noKeyPanel;
         public Panel keyShopPanel;
         public Panel keyTutorialPanel;
+        public Panel dailyRewardPanel;
         public GameObject transition;
         public GameObject pointer;
 
@@ -325,6 +330,11 @@ namespace App
         private void ShowKeyTutorial()
         {
             ShowPanel(keyTutorialPanel);
+        }
+
+        public void ShowDailyReward()
+        {
+            ShowPanel((dailyRewardPanel));
         }
         
         #endregion

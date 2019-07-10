@@ -22,9 +22,7 @@ namespace App
         public Image inGameFeatures;
 
 
-        [Header("Objects")] public RtlText currentWord;
-        public RtlText prevWord;
-        public RtlText prevPrevWord;
+        [Header("Objects")] 
 
         public GameObject acceptedWordPrefab;
 
@@ -90,6 +88,12 @@ namespace App
 
         #region WordsView
 
+        [Header("Words View")]
+        public RtlText currentWord;
+        public RtlText prevWord;
+        public RtlText prevPrevWord;
+        public Animator[] wvAnimators;
+        
         public void ClearWordsView()
         {
             currentWord.text = "";
@@ -103,6 +107,10 @@ namespace App
             prevPrevWord.text = prevWord.BaseText;
             prevWord.text = currentWord.BaseText;
             currentWord.text = word;
+            foreach (var wvAnimator in wvAnimators)
+            {
+                wvAnimator.SetTrigger("roll_in");
+            }
 
             words.Add(word);
 

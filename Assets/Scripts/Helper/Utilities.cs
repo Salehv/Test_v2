@@ -208,4 +208,12 @@ public static class Utilities
         v.y = (sin * tx) + (cos * ty);
         return v;
     }
+
+    internal static string GetFarsiDailyTime(int seconds)
+    {
+        if (seconds > 3600)
+            return $"{seconds / 3600:00} ساعت و  {(seconds % 3600) / 60:00} دقیقه";
+
+        return GetTimeFormat(seconds);
+    }
 }

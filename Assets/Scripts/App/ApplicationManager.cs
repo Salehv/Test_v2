@@ -76,9 +76,10 @@ namespace App
 
             DailyRewardHandler.instance.Init();
 
-            notifID = PlayerPrefs.GetInt("notif_id");
-            AndroidNotificationCenter.CancelNotification(notifID);
+            RemoveNotifications();
         }
+
+        
 
         #region First Play
 
@@ -428,8 +429,6 @@ namespace App
         }
 
 
-        private int notifID;
-
         private void OnApplicationPause(bool pauseStatus)
         {
             if (pauseStatus)
@@ -437,8 +436,8 @@ namespace App
                 // Paused
                 var channel = new AndroidNotificationChannel()
                 {
-                    Id = "key_notifier",
-                    Name = "Key Channel",
+                    Id = "kalanjar",
+                    Name = "Kalanjar Channel",
                     Importance = Importance.High,
                     Description = "",
                 };
@@ -449,16 +448,51 @@ namespace App
                 notification.Title = "کلید 10/10";
                 notification.Text = "بیا دوباره کلی کلید پیدا کردم!";
                 notification.FireTime = System.DateTime.Now.AddSeconds(KeyHandler.instance.GetTimeToRefill());
+                var notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
+                PlayerPrefs.SetInt("notif_id_key", notifID);
 
-                notifID = AndroidNotificationCenter.SendNotification(notification, "key_notifier");
-                PlayerPrefs.SetInt("notif_id", notifID);
+                
+                notification = new AndroidNotification();
+                notification.Title = "کلنجار";
+                notification.Text = "چند وقته به ما سر نزدین!";
+                notification.FireTime = System.DateTime.Now.AddDays(3);
+                notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
+                PlayerPrefs.SetInt("notif_id_day_3", notifID);
+                
+                
+                notification = new AndroidNotification();
+                notification.Title = "کلنجار";
+                notification.Text = "چند وقته به ما سر نزدین!";
+                notification.FireTime = System.DateTime.Now.AddDays(6);
+                notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
+                PlayerPrefs.SetInt("notif_id_day_6", notifID);
+
+                
+                notification = new AndroidNotification();
+                notification.Title = "کلنجار";
+                notification.Text = "چند وقته به ما سر نزدین!";
+                notification.FireTime = System.DateTime.Now.AddDays(13);                
+                notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
+                PlayerPrefs.SetInt("notif_id_day_13", notifID);
+
                 PlayerPrefs.Save();
             }
             else
             {
-                notifID = PlayerPrefs.GetInt("notif_id");
-                AndroidNotificationCenter.CancelNotification(notifID);
+                RemoveNotifications();
             }
+        }
+        
+        private void RemoveNotifications()
+        {
+            var notifID = PlayerPrefs.GetInt("notif_id_key");
+            AndroidNotificationCenter.CancelNotification(notifID);
+            notifID = PlayerPrefs.GetInt("notif_id_day_3");
+            AndroidNotificationCenter.CancelNotification(notifID);
+            notifID = PlayerPrefs.GetInt("notif_id_day_6");
+            AndroidNotificationCenter.CancelNotification(notifID);
+            notifID = PlayerPrefs.GetInt("notif_id_day_13");
+            AndroidNotificationCenter.CancelNotification(notifID);
         }
     }
 

@@ -80,29 +80,29 @@ public class PopupHandler : MonoBehaviour
     private GameObject currentArrow;
 
 
-    public void CreateMessage(string msg, Size size, Direction direction, GameObject destinationPanel,
+    public static void CreateMessage(string msg, Size size, Direction direction, GameObject destinationPanel,
         bool haveNextBtn = false, bool haveIcon = true)
     {
-        currentMessage = Instantiate(tutMessagePrefab, destinationPanel.transform, true);
-        currentMessage.GetComponentInChildren<RtlText>().text = msg;
+        instance.currentMessage = Instantiate(instance.tutMessagePrefab, destinationPanel.transform, true);
+        instance.currentMessage.GetComponentInChildren<RtlText>().text = msg;
 
         if (size == Size.Large)
         {
-            currentMessage.GetComponent<RectTransform>().sizeDelta = messageLargeSize;
-            currentMessage.transform.GetChild(2).transform.position = new Vector3(currentMessage.transform.GetChild(2).transform.position.x, -messageLargeSize.y/2-20);
+            instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageLargeSize;
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageLargeSize.y/2-20);
             
         }
 
         if (size == Size.Medium)
         {
-            currentMessage.GetComponent<RectTransform>().sizeDelta = messageMediumSize;
-            currentMessage.transform.GetChild(2).transform.position = new Vector3(currentMessage.transform.GetChild(2).transform.position.x, -messageMediumSize.y/2-20);
+            instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageMediumSize;
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageMediumSize.y/2-20);
         }
 
         if (size == Size.Small)
         {
-            currentMessage.GetComponent<RectTransform>().sizeDelta = messageSmallSize;
-            currentMessage.transform.GetChild(2).transform.position = new Vector3(currentMessage.transform.GetChild(2).transform.position.x, -messageSmallSize.y/2-20);
+            instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageSmallSize;
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageSmallSize.y/2-20);
         }
 
 
@@ -110,29 +110,29 @@ public class PopupHandler : MonoBehaviour
 
         if (haveIcon == false)
         {
-            currentMessage.transform.GetChild(1).gameObject.SetActive(false);
+            instance.currentMessage.transform.GetChild(1).gameObject.SetActive(false);
             messageX = 0.45f;
         }
         else
         {
-            currentMessage.transform.GetChild(1).gameObject.SetActive(true);
+            instance.currentMessage.transform.GetChild(1).gameObject.SetActive(true);
             messageX = 0.5f;
         }
         
         if (haveNextBtn == false)
         {
-            currentMessage.transform.GetChild(2).gameObject.SetActive(false);
+            instance.currentMessage.transform.GetChild(2).gameObject.SetActive(false);
         }
         else
         {
-            currentMessage.transform.GetChild(2).gameObject.SetActive(true);
+            instance.currentMessage.transform.GetChild(2).gameObject.SetActive(true);
         }
 
-        currentMessage.GetComponent<RectTransform>().localScale = Vector3.one;
+        instance.currentMessage.GetComponent<RectTransform>().localScale = Vector3.one;
 
         if (direction == Direction.Top)
         {
-            RectTransform rt = currentMessage.transform as RectTransform;
+            RectTransform rt = instance.currentMessage.transform as RectTransform;
             rt.anchorMax = new Vector2(messageX, 0.7f);
             rt.anchorMin = new Vector2(messageX, 0.7f);
             rt.anchoredPosition = new Vector2(38, 0);
@@ -140,7 +140,7 @@ public class PopupHandler : MonoBehaviour
 
         if (direction == Direction.Topmost)
         {
-            RectTransform rt = currentMessage.transform as RectTransform;
+            RectTransform rt = instance.currentMessage.transform as RectTransform;
             rt.anchorMax = new Vector2(messageX, 0.8f);
             rt.anchorMin = new Vector2(messageX, 0.8f);
             rt.anchoredPosition = new Vector2(38, 0);
@@ -148,7 +148,7 @@ public class PopupHandler : MonoBehaviour
 
         if (direction == Direction.Down)
         {
-            RectTransform rt = currentMessage.transform as RectTransform;
+            RectTransform rt = instance.currentMessage.transform as RectTransform;
             rt.anchorMax = new Vector2(messageX, 0.3f);
             rt.anchorMin = new Vector2(messageX, 0.3f);
             rt.anchoredPosition = new Vector2(38, 0);
@@ -156,7 +156,7 @@ public class PopupHandler : MonoBehaviour
 
         if (direction == Direction.Downmost)
         {
-            RectTransform rt = currentMessage.transform as RectTransform;
+            RectTransform rt = instance.currentMessage.transform as RectTransform;
             rt.anchorMax = new Vector2(messageX, 0.13f);
             rt.anchorMin = new Vector2(messageX, 0.13f);
             rt.anchoredPosition = new Vector2(38, 0);
@@ -164,24 +164,24 @@ public class PopupHandler : MonoBehaviour
 
         if (direction == Direction.Middle)
         {
-            RectTransform rt = currentMessage.transform as RectTransform;
+            RectTransform rt = instance.currentMessage.transform as RectTransform;
             rt.anchorMax = new Vector2(messageX, 0.5f);
             rt.anchorMin = new Vector2(messageX, 0.5f);
             rt.anchoredPosition = new Vector2(38, 0);
         }
     }
 
-    public void DeleteMessage()
+    public static void DeleteMessage()
     {
-        foreach (var animator in currentMessage.GetComponentsInChildren<Animator>())
+        foreach (var animator in instance.currentMessage.GetComponentsInChildren<Animator>())
         {
             animator.SetTrigger("Hide");
         }
     }
 
-    public void DeleteMessageImmediate()
+    public static void DeleteMessageImmediate()
     {
-        Destroy(currentMessage);
+        Destroy(instance.currentMessage);
     }
 
 
@@ -208,9 +208,9 @@ public class PopupHandler : MonoBehaviour
         }
     }
 
-    public void DeleteArrow()
+    public static  void DeleteArrow()
     {
-        Destroy(currentArrow.gameObject);
+        Destroy(instance.currentArrow.gameObject);
     }
 
     public void ShineObjects(GameObject[] go)
@@ -225,27 +225,27 @@ public class PopupHandler : MonoBehaviour
     [Header("Pointer")]
     public GameObject pointer;
 
-    public void ShowPointerClick(Transform targetObject = null, string mode = "")
+    public static void ShowPointerClick(Transform targetObject = null, string mode = "Click")
     {
-        if (mode == "" || mode == "Click")
+        if (mode == "Click")
         {
-            pointer.SetActive(true);
+            instance.pointer.SetActive(true);
             if (targetObject != null)
             {
-                pointer.transform.position = targetObject.position;
+                instance.pointer.transform.position = targetObject.position;
             }
 
-            pointer.GetComponent<Animator>().SetTrigger("Click");
+            instance.pointer.GetComponent<Animator>().SetTrigger("Click");
         }
         if (mode == "SlideLeft")
         {
-            pointer.SetActive(true);
-            pointer.GetComponent<Animator>().SetTrigger("SlideLeft");
+            instance.pointer.SetActive(true);
+            instance.pointer.GetComponent<Animator>().SetTrigger("SlideLeft");
         }
         if (mode == "SlideRight")
         {
-            pointer.SetActive(true);
-            pointer.GetComponent<Animator>().SetTrigger("SlideRight");
+            instance.pointer.SetActive(true);
+            instance.pointer.GetComponent<Animator>().SetTrigger("SlideRight");
         }
     }
 

@@ -11,10 +11,12 @@ namespace App
     public class DailyRewardHandler : MonoBehaviour
     {
         internal static DailyRewardHandler instance;
+        public int rewardTime;
         public Transform rewardsParent;
         private DailyReward[] rewards;
         private int collectedRewards;
 
+        
         private void Awake()
         {
             instance = this;
@@ -65,10 +67,10 @@ namespace App
                 return;
 
 
-            if (timePassed > 24 * 60 * 60)
+            if (timePassed > rewardTime)
                 rewards[collected + 1].SetAsAvailable();
             else
-                rewards[collected + 1].SetAsUnavailable();
+                rewards[collected + 1].SetAsUnavailable(rewardTime - timePassed);
 
 
             for (int i = collected + 2; i < rewards.Length; i++)
