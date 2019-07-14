@@ -48,8 +48,7 @@ namespace App
 
         #region Menu
 
-        [Header("Menu")] 
-        public GameObject menuCanvas;
+        [Header("Menu")] public GameObject menuCanvas;
         public GameObject menuView;
         public GameObject chaptersView;
         public GameObject settings;
@@ -90,13 +89,13 @@ namespace App
             audio.PlayNewSfx(SFX.UI_PANEL_IN);
             audio.PlayNewMusic(ResourceManager.GetChaptersMusic());
             state = ViewState.CHAPTERS;
-            
-            
+
+
             if (PlayerPrefs.HasKey("MainMenuPointer"))
             {
                 PopupHandler.instance.DeactivePointer();
             }
-            
+
             /*if (!PlayerPrefs.HasKey("ChapterPointer"))
             {
                 ShowPointerClick();
@@ -235,10 +234,24 @@ namespace App
             gameView.SetActive(true);
             introView.SetActive(false);
             arcadeView.SetActive(false);
-            
+
             gameViewManager.ShowGame();
             state = ViewState.IN_GAME;
         }
+
+
+        public void ShowGameIntro()
+        {
+            HideAllGamePanels();
+            gameCanvas.SetActive(true);
+            gameView.SetActive(true);
+            introView.SetActive(false);
+            arcadeView.SetActive(false);
+
+            gameViewManager.ShowGameIntro();
+            state = ViewState.IN_GAME_INTRO;
+        }
+
 
         public void GameToMenu()
         {
@@ -336,7 +349,7 @@ namespace App
         {
             ShowPanel((dailyRewardPanel));
         }
-        
+
         #endregion
 
 
@@ -562,5 +575,6 @@ public enum ViewState
     AD,
     EXITING,
     INTRO,
-    ARCADE
+    ARCADE,
+    IN_GAME_INTRO
 }

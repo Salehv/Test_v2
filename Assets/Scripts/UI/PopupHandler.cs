@@ -65,13 +65,13 @@ public class PopupHandler : MonoBehaviour
         popupNoMoney.GetComponent<PopupNoMoney>().mainText.text = title;
         ViewManager.instance.ShowPanel(popupNoMoney);
     }
-    
-    
-    
+
+
     #region TutorialAutomation
 
     [Header("Tutorial Automation")] public GameObject tutMessagePrefab;
     public GameObject arrowTut;
+    public GameObject defaultMessageParent;
     public Vector2 messageLargeSize;
     public Vector2 messageMediumSize;
     public Vector2 messageSmallSize;
@@ -80,29 +80,37 @@ public class PopupHandler : MonoBehaviour
     private GameObject currentArrow;
 
 
-    public static void CreateMessage(string msg, Size size, Direction direction, GameObject destinationPanel,
+    public static void CreateMessage(string msg, Size size, Direction direction, GameObject destinationPanel = null,
         bool haveNextBtn = false, bool haveIcon = true)
     {
+        if (destinationPanel == null)
+            destinationPanel = instance.defaultMessageParent;
+
         instance.currentMessage = Instantiate(instance.tutMessagePrefab, destinationPanel.transform, true);
         instance.currentMessage.GetComponentInChildren<RtlText>().text = msg;
 
         if (size == Size.Large)
         {
             instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageLargeSize;
-            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageLargeSize.y/2-20);
-            
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(
+                instance.currentMessage.transform.GetChild(2).transform.position.x,
+                -instance.messageLargeSize.y / 2 - 20);
         }
 
         if (size == Size.Medium)
         {
             instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageMediumSize;
-            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageMediumSize.y/2-20);
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(
+                instance.currentMessage.transform.GetChild(2).transform.position.x,
+                -instance.messageMediumSize.y / 2 - 20);
         }
 
         if (size == Size.Small)
         {
             instance.currentMessage.GetComponent<RectTransform>().sizeDelta = instance.messageSmallSize;
-            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(instance.currentMessage.transform.GetChild(2).transform.position.x, -instance.messageSmallSize.y/2-20);
+            instance.currentMessage.transform.GetChild(2).transform.position = new Vector3(
+                instance.currentMessage.transform.GetChild(2).transform.position.x,
+                -instance.messageSmallSize.y / 2 - 20);
         }
 
 
@@ -118,7 +126,7 @@ public class PopupHandler : MonoBehaviour
             instance.currentMessage.transform.GetChild(1).gameObject.SetActive(true);
             messageX = 0.5f;
         }
-        
+
         if (haveNextBtn == false)
         {
             instance.currentMessage.transform.GetChild(2).gameObject.SetActive(false);
@@ -208,7 +216,7 @@ public class PopupHandler : MonoBehaviour
         }
     }
 
-    public static  void DeleteArrow()
+    public static void DeleteArrow()
     {
         Destroy(instance.currentArrow.gameObject);
     }
@@ -218,12 +226,10 @@ public class PopupHandler : MonoBehaviour
     }
 
     #endregion
-    
+
     #region Pointer
 
-    
-    [Header("Pointer")]
-    public GameObject pointer;
+    [Header("Pointer")] public GameObject pointer;
 
     public static void ShowPointerClick(Transform targetObject = null, string mode = "Click")
     {
@@ -237,11 +243,13 @@ public class PopupHandler : MonoBehaviour
 
             instance.pointer.GetComponent<Animator>().SetTrigger("Click");
         }
+
         if (mode == "SlideLeft")
         {
             instance.pointer.SetActive(true);
             instance.pointer.GetComponent<Animator>().SetTrigger("SlideLeft");
         }
+
         if (mode == "SlideRight")
         {
             instance.pointer.SetActive(true);
@@ -255,5 +263,4 @@ public class PopupHandler : MonoBehaviour
     }
 
     #endregion
-
 }

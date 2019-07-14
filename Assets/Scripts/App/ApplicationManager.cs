@@ -54,6 +54,7 @@ namespace App
             view.ShowBlackPage();
             view.ShowMainMenu();
 
+
             chaptersHandler.InitializeChapters();
             chaptersHandler.UpdateChaptersLockState();
             chapterScroller.Init();
@@ -79,7 +80,6 @@ namespace App
             RemoveNotifications();
         }
 
-        
 
         #region First Play
 
@@ -451,15 +451,15 @@ namespace App
                 var notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
                 PlayerPrefs.SetInt("notif_id_key", notifID);
 
-                
+
                 notification = new AndroidNotification();
                 notification.Title = "کلنجار";
                 notification.Text = "چند وقته به ما سر نزدین!";
                 notification.FireTime = System.DateTime.Now.AddDays(3);
                 notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
                 PlayerPrefs.SetInt("notif_id_day_3", notifID);
-                
-                
+
+
                 notification = new AndroidNotification();
                 notification.Title = "کلنجار";
                 notification.Text = "چند وقته به ما سر نزدین!";
@@ -467,11 +467,11 @@ namespace App
                 notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
                 PlayerPrefs.SetInt("notif_id_day_6", notifID);
 
-                
+
                 notification = new AndroidNotification();
                 notification.Title = "کلنجار";
                 notification.Text = "چند وقته به ما سر نزدین!";
-                notification.FireTime = System.DateTime.Now.AddDays(13);                
+                notification.FireTime = System.DateTime.Now.AddDays(13);
                 notifID = AndroidNotificationCenter.SendNotification(notification, "kalanjar");
                 PlayerPrefs.SetInt("notif_id_day_13", notifID);
 
@@ -482,7 +482,7 @@ namespace App
                 RemoveNotifications();
             }
         }
-        
+
         private void RemoveNotifications()
         {
             var notifID = PlayerPrefs.GetInt("notif_id_key");

@@ -4,16 +4,18 @@ using System.Runtime.InteropServices;
 using App;
 using Initialize;
 using TapsellSDK;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheGame
 {
-    public class
-        GameManager : DynamicsHandler
+    public class GameManager : DynamicsHandler
     {
         internal static GameManager instance;
         public bool debugMode;
+
+        #region Fields
 
         [Header("Game Design")] public int similarHintCost;
         public int showWayHintCost;
@@ -44,6 +46,8 @@ namespace TheGame
 
         private int coins;
         private HintState hintState;
+
+        #endregion
 
 
         #region Initialize
@@ -85,9 +89,31 @@ namespace TheGame
 
         #endregion
 
+
+        internal string tutorialAcceptingWord;
+
+        public void InitTutorial(string firstWord, string endWord)
+        {
+            ResetGameStatus();
+            state = GameState.TUTORIAL;
+
+            viewManager.ClearWordsView();
+            viewManager.AddToWordsView(Utilities.GetNormalizedFarsi(firstWord));
+            words.AddLast(Utilities.GetNormalizedFarsi(firstWord));
+            viewManager.SetInGameGraphics(5);
+
+            currentEndWord = endWord;
+
+            textEditor.Initialize(this, Utilities.GetNormalizedFarsi(firstWord), DynamicsFlag.DF_ONLY_CHANGE);
+            letterPool.Init(textEditor, new int[] {0, 1, 2, 3, 14, 19, 21, 25, 31});
+
+            viewManager.HideStepViewer();
+        }
+
         internal void PlayLevel(Level lvl)
         {
             ResetGameStatus();
+            state = GameState.MAIN_VIEW;
 
             currentLevel = lvl;
             currentEndWord = Utilities.GetNormalizedFarsi(lvl.end);
@@ -258,6 +284,21 @@ namespace TheGame
             if (debugMode)
                 Debug.Log("Word Request: " + s);
 
+            if (state == GameState.TUTORIAL)
+            {
+                if (s == tutorialAcceptingWord)
+                {
+                    AddCorrectWord(s);
+                    textEditor.ChangeLetter(inTextPosition, code);
+
+                    TutorialHandler.instance.Tutorial_01_WordCreated();
+
+                    return true;
+                }
+
+                return false;
+            }
+
             if (DatabaseManager.instance.IsCorrect(s))
             {
                 if (s == words.Last.Value)
@@ -349,7 +390,8 @@ namespace TheGame
             letterPool.Init(textEditor, GetRelatedChars(s, currentShufflePage));
             textEditor.ResetPluses();
 
-            CheckWin();
+            if (state != GameState.TUTORIAL)
+                CheckWin();
         }
 
         #endregion

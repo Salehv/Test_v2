@@ -35,7 +35,9 @@ public enum TutorialState
     TUT_05_01,
     TUT_05_02,
     TUT_05_03,
-    TUT_02_02
+    TUT_02_02,
+    TUT_01_07,
+    TUT_01_08
 }
 
 public class TutorialHandler : MonoBehaviour
@@ -82,6 +84,11 @@ public class TutorialHandler : MonoBehaviour
         {
             introCharacter.SetActive(false);
         }
+
+        tut0102ELetters[0].transform.GetChild(1).GetComponent<Image>().sprite =
+            GameManager.instance.GetLetterSprite(11, SpriteMode.NORMAL);
+
+        tut0102ELetters[0].transform.GetChild(0).gameObject.SetActive(false);
     }
 
     private void ResetTut02()
@@ -139,19 +146,16 @@ public class TutorialHandler : MonoBehaviour
 
     [Header("Intro")] public GameObject[] Intro_Characters;
 
-    [Header("Tutorial 01")] 
-    public GameObject TUT01;
+    [Header("Tutorial 01")] public GameObject TUT01;
     public GameObject Tut01_MsgParent;
     public GameObject[] TUT01_IntroPages;
     [TextArea(1, 6)] public string[] TUT01_Texts;
-    [Space(10)]
-    public GameObject[] tut01Panels;
+    [Space(10)] public GameObject[] tut01Panels;
     public LetterPoolHandler letterPool;
-    [Space(10)] 
-    public GameObject tut0101ALetter;
-    public GameObject tut0102ELetter;
+    [Space(10)] public GameObject tut0101ALetter;
+    public GameObject[] tut0102ELetters;
+    public GameObject tut0103EndWord;
 
-    
 
     public void PlayTutorial_01()
     {
@@ -186,7 +190,6 @@ public class TutorialHandler : MonoBehaviour
             PopupHandler.CreateMessage(TUT01_Texts[1], Size.Small, Direction.Downmost, Tut01_MsgParent, true, false);
             AudioManager.instance.PlayNewSfx(SFX.BLAH_2);
 
-            
 
             Intro_Characters[0].GetComponent<Animator>().SetTrigger("hide");
             Intro_Characters[1].SetActive(true);
@@ -215,62 +218,148 @@ public class TutorialHandler : MonoBehaviour
     private void StartGameTutorial()
     {
         TUT01_IntroPages[0].SetActive(false);
-        TUT01_IntroPages[1].SetActive(true);
-                
+
+        ViewManager.instance.ShowGameIntro();
+        GameManager.instance.InitTutorial("ریشه", "زیره");
+
+
         PopupHandler.DeleteMessageImmediate();
-        PopupHandler.CreateMessage(TUT01_Texts[3], Size.Small, Direction.Topmost, Tut01_MsgParent, false, true);
-        
-        tut01Panels[0].SetActive(true);
-        
+        PopupHandler.CreateMessage(TUT01_Texts[3], Size.Small, Direction.Topmost);
+
         PopupHandler.ShowPointerClick(tut0101ALetter.transform);
-        
+
         tut0101ALetter.SetActive(true);
-        tut0102ELetter.SetActive(false);
-        
+
+        foreach (var letter in tut0102ELetters)
+        {
+            letter.SetActive(false);
+        }
+
         state = TutorialState.TUT_01_01;
     }
-    
+
     public void Tutorial_01_01_CharacterSelected()
     {
         if (state != TutorialState.TUT_01_01)
             return;
-        
+
         PopupHandler.instance.DeactivePointer();
-        PopupHandler.ShowPointerClick(tut0102ELetter.transform);
-        
+        PopupHandler.ShowPointerClick(tut0102ELetters[0].transform);
+
         // Turn off shine
         tut0101ALetter.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
-        tut0101ALetter.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = 
+        tut0101ALetter.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite =
             GameManager.instance.GetLetterSprite(3, SpriteMode.SHINE);
-        
-        tut0102ELetter.SetActive(true);
-        
-        state = TutorialState.TUT_01_02;        
+
+        foreach (var letter in tut0102ELetters)
+        {
+            letter.SetActive(true);
+        }
+
+        tut0102ELetters[0].transform.GetChild(0).gameObject.SetActive(true);
+
+        state = TutorialState.TUT_01_02;
     }
 
     public void Tutorial_01_02_EditCharacterSelected()
     {
-        // TODO: 
+        if (state != TutorialState.TUT_01_02)
+            return;
+
+        tut01Panels[0].GetComponent<Animator>().SetTrigger("fade");
+
+        PopupHandler.instance.DeactivePointer();
+
+        state = TutorialState.TUT_01_03;
+    }
+
+    public void Tutorial_01_FadedOut()
+    {
+        if (state != TutorialState.TUT_01_03)
+            return;
+
+        foreach (var letter in tut0102ELetters)
+        {
+            letter.SetActive(false);
+        }
+
+        PopupHandler.DeleteMessage();
+        PopupHandler.CreateMessage(TUT01_Texts[4], Size.Small, Direction.Topmost, null, true);
+
+        tut0101ALetter.SetActive(false);
+        GameManager.instance.tutorialAcceptingWord = Utilities.GetNormalizedFarsi("تیشه");
+        GameManager.instance.textEditor.ChangeLetterRequest(3, EditorHandler.IT_to_X(4, 0));
+
+        state = TutorialState.TUT_01_04;
+    }
+
+    public void Tutorial_01_03_ScreenClicked()
+    {
+        if (state != TutorialState.TUT_01_04 && state != TutorialState.TUT_01_06 && state != TutorialState.TUT_01_08)
+            return;
+
+        if (state == TutorialState.TUT_01_04)
+        {
+            PopupHandler.DeleteMessage();
+            PopupHandler.CreateMessage(TUT01_Texts[5], Size.Small, Direction.Top);
+
+            GameViewManager.instance.SetEndWord(Utilities.GetNormalizedFarsi("تیره"));
+            GameManager.instance.tutorialAcceptingWord = Utilities.GetNormalizedFarsi("تیره");
+
+            tut01Panels[0].SetActive(false);
+
+            state = TutorialState.TUT_01_05;
+            return;
+        }
+
+        if (state == TutorialState.TUT_01_06)
+        {
+            PopupHandler.DeleteMessage();
+            PopupHandler.CreateMessage(TUT01_Texts[7], Size.Small, Direction.Top);
+
+
+            tut01Panels[0].SetActive(false);
+            state = TutorialState.TUT_01_07;
+            return;
+        }
+
+        GameManager.instance.TutorialEnded();
+        Tutorial_01_Completed();
     }
 
 
-    
-
-    
-
-    private void Intro_04()
+    public void Tutorial_01_WordCreated()
     {
-        if (state != TutorialState.TUT_01_06) return;
+        if (state != TutorialState.TUT_01_05 && state != TutorialState.TUT_01_07)
+            return;
 
-        TUT01_IntroPages[1].SetActive(false);
-        TUT01_IntroPages[2].SetActive(true);
+        if (state == TutorialState.TUT_01_05)
+        {
+            GameViewManager.instance.SetEndWord(Utilities.GetNormalizedFarsi("زیره"));
+            GameManager.instance.tutorialAcceptingWord = Utilities.GetNormalizedFarsi("زیره");
 
-        Tut01_MsgParent.GetComponent<Image>().raycastTarget = false;
 
-        PopupHandler.DeleteMessageImmediate();
-        PopupHandler.CreateMessage(TUT01_Texts[9], Size.Medium, Direction.Topmost, Tut01_MsgParent, true, false);
+            PopupHandler.DeleteMessage();
+            PopupHandler.CreateMessage(TUT01_Texts[6], Size.Small, Direction.Top, null, true);
 
-        state = TutorialState.INTRO_04;
+            tut01Panels[0].SetActive(true);
+            foreach (var letter in tut0102ELetters)
+            {
+                letter.SetActive(false);
+            }
+
+            tut0101ALetter.SetActive(false);
+
+
+            state = TutorialState.TUT_01_06;
+            return;
+        }
+
+
+        PopupHandler.DeleteMessage();
+        PopupHandler.CreateMessage(TUT01_Texts[8], Size.Small, Direction.Topmost, null, true, false);
+        state = TutorialState.TUT_01_08;
+        tut01Panels[0].SetActive(true);
     }
 
 
@@ -282,7 +371,7 @@ public class TutorialHandler : MonoBehaviour
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
         TimeManager.instance.DiscardTimer("IntroTimer");
         AnalyticsHandler.Intro_Finished(timeTaken);
-        
+
         if (!PlayerPrefs.HasKey("MainMenuPointer"))
         {
             print("Main Menu Pointer Shown");
@@ -295,8 +384,8 @@ public class TutorialHandler : MonoBehaviour
     #endregion
 
     #region Tut02    
-    [Header("Tutorial 2")]
-    public GameObject tut02Object;
+
+    [Header("Tutorial 2")] public GameObject tut02Object;
 
     [TextArea(0, 4)] public string[] tut02Messages;
 
@@ -384,7 +473,8 @@ public class TutorialHandler : MonoBehaviour
 
         PopupHandler.DeleteMessage();
         PopupHandler.DeleteArrow();
-        PopupHandler.CreateMessage("خب! حالا اگه این گزینه رو انتخاب کنی کل مسیر رسیدن به کلمه هدف رو می بینی", Size.Medium,
+        PopupHandler.CreateMessage("خب! حالا اگه این گزینه رو انتخاب کنی کل مسیر رسیدن به کلمه هدف رو می بینی",
+            Size.Medium,
             Direction.Downmost, TUT03);
         PopupHandler.instance.CreateArrow(btnHintShowWay.transform, Direction.Right, TUT03);
 
@@ -399,7 +489,8 @@ public class TutorialHandler : MonoBehaviour
 
         PopupHandler.DeleteMessage();
         PopupHandler.DeleteArrow();
-        PopupHandler.CreateMessage("با ورود به فروشگاه می تونی خیلی سریع سکه بخری!", Size.Small, Direction.Downmost, TUT03);
+        PopupHandler.CreateMessage("با ورود به فروشگاه می تونی خیلی سریع سکه بخری!", Size.Small, Direction.Downmost,
+            TUT03);
         PopupHandler.instance.CreateArrow(tut03_BtnShop.transform, Direction.Right, TUT03, new Vector2(150, 0));
 
         tut03_HintPanel.SetActive(false);
@@ -594,7 +685,8 @@ public class TutorialHandler : MonoBehaviour
         PopupHandler.CreateMessage(tut05Messages[1], Size.Medium, Direction.Down, tut05);
 
         PopupHandler.DeleteArrow();
-        PopupHandler.instance.CreateArrow(tut05ELetters[0].transform.GetChild(0), Direction.Left, tut05, new Vector2(-10, 130));
+        PopupHandler.instance.CreateArrow(tut05ELetters[0].transform.GetChild(0), Direction.Left, tut05,
+            new Vector2(-10, 130));
 
         tut05ELetters[0].transform.GetChild(0).GetComponent<Animator>().SetTrigger("show");
     }
@@ -635,7 +727,7 @@ public class TutorialHandler : MonoBehaviour
 
     #endregion
 
-   
+
     public void Escape()
     {
     }

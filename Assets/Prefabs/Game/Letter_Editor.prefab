@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224108271015774448}
   - component: {fileID: 114051038004325758}
-  - component: {fileID: 111511081576365860}
   - component: {fileID: 222693827329275388}
   - component: {fileID: 114019798835041160}
   - component: {fileID: 95549128128222092}
@@ -58,21 +57,6 @@ MonoBehaviour:
   code: 0
   letterImage: {fileID: 114162838732717058}
   delete: {fileID: 1387861655673150}
---- !u!111 &111511081576365860
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377248259766342}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!222 &222693827329275388
 CanvasRenderer:
   m_ObjectHideFlags: 0

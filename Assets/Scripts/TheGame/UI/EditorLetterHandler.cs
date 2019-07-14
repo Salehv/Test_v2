@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Animation))]
 public class EditorLetterHandler : MonoBehaviour, IPointerDownHandler
 {
     private static EditorLetterHandler selected = null;

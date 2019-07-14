@@ -38,6 +38,8 @@ public class FullPageHorizontalScrollSnap : MonoBehaviour, IBeginDragHandler, ID
         else
             screenWidth = GetComponentInParent<CanvasScaler>().referenceResolution.x;
 
+        GetComponentInChildren<Mask>().enabled = true;
+
         _children = new List<RectTransform>();
         for (int i = 0; i < content.childCount; i++)
         {

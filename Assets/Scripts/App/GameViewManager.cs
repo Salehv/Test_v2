@@ -16,16 +16,16 @@ namespace App
         [SerializeField] private Panel pausePanel;
         [SerializeField] private Panel hintPanel;
         [SerializeField] private Panel hintSimilarWordsPanel;
+        [SerializeField] private GameObject tut01Panel;
 
 
         [Header("Game View")] public Image inGameBack;
         public Image inGameFeatures;
 
 
-        [Header("Objects")] 
+        [Header("Objects")] public GameObject acceptedWordPrefab;
 
-        public GameObject acceptedWordPrefab;
-
+        public GameObject stepViewer;
         public Text hintSimilarCostText;
         public Text hintWayCostText;
 
@@ -52,8 +52,36 @@ namespace App
             hintPanel.gameObject.SetActive(false);
             hintSimilarWordsPanel.gameObject.SetActive(false);
             winPanel.gameObject.SetActive(false);
+            tut01Panel.SetActive(false);
+            stepViewer.SetActive(true);
             TutorialHandler.instance.ResetAll();
             state = GameViewState.MAIN_VIEW;
+        }
+
+
+        [Header("Game Intro")] public GameObject btnHint;
+        public GameObject btnShuffle;
+        public GameObject btnPause;
+        public GameObject btnUndo;
+        public GameObject endWord;
+
+        public void ShowGameIntro()
+        {
+            gamePanelsObject.SetActive(true);
+            pausePanel.gameObject.SetActive(false);
+            hintPanel.gameObject.SetActive(false);
+            hintSimilarWordsPanel.gameObject.SetActive(false);
+            winPanel.gameObject.SetActive(false);
+
+            tut01Panel.SetActive(true);
+            btnHint.SetActive(false);
+            btnShuffle.SetActive(false);
+            btnPause.SetActive(false);
+            btnUndo.SetActive(false);
+            endWord.SetActive(false);
+            HideStepViewer();
+
+            state = GameViewState.INTRO;
         }
 
 
@@ -66,6 +94,7 @@ namespace App
 
         public void SetEndWord(string end)
         {
+            endWord.SetActive(true);
             for (int i = 0; i < endWordHandler.contents.childCount; i++)
             {
                 Destroy(endWordHandler.contents.GetChild(i).gameObject);
@@ -88,12 +117,11 @@ namespace App
 
         #region WordsView
 
-        [Header("Words View")]
-        public RtlText currentWord;
+        [Header("Words View")] public RtlText currentWord;
         public RtlText prevWord;
         public RtlText prevPrevWord;
         public Animator[] wvAnimators;
-        
+
         public void ClearWordsView()
         {
             currentWord.text = "";
@@ -180,7 +208,7 @@ namespace App
 
         public void HideStepViewer()
         {
-            StepViewerHandler.instance.gameObject.SetActive(false);
+            stepViewer.SetActive(false);
         }
     }
 }
@@ -188,5 +216,6 @@ namespace App
 public enum GameViewState
 {
     MAIN_VIEW,
-    WIN
+    WIN,
+    INTRO
 }

@@ -244,22 +244,22 @@ public class EditorHandler : MonoBehaviour
      *   0  1  2  3  4  5  6  7  8 
      * */
 
-    internal int X_to_IT(int xPosition)
+    private int X_to_IT(int xPosition)
     {
         return currentText.Length - ((xPosition + 1) / 2);
     }
 
-    internal int IT_to_X(int inTextPosition)
+    private int IT_to_X(int inTextPosition)
     {
-        return currentText.Length * 2 - (inTextPosition * 2 + 1);
+        return IT_to_X(currentText.Length, inTextPosition);
     }
 
-    internal int IT_to_AP(int inTextPosition)
+    private int IT_to_AP(int inTextPosition)
     {
         return currentText.Length - inTextPosition - 1;
     }
 
-    internal int AP_to_IT(int absPosition)
+    private int AP_to_IT(int absPosition)
     {
         return currentText.Length - absPosition - 1;
     }
@@ -268,5 +268,10 @@ public class EditorHandler : MonoBehaviour
     public void ResetPluses()
     {
         pluses.Reset();
+    }
+
+    internal static int IT_to_X(int length, int inTextPosition)
+    {
+        return length * 2 - (inTextPosition * 2 + 1);
     }
 }
