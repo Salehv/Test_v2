@@ -141,8 +141,8 @@ public class PopupHandler : MonoBehaviour
         if (direction == Direction.Top)
         {
             RectTransform rt = instance.currentMessage.transform as RectTransform;
-            rt.anchorMax = new Vector2(messageX, 0.7f);
-            rt.anchorMin = new Vector2(messageX, 0.7f);
+            rt.anchorMax = new Vector2(messageX, 0.65f);
+            rt.anchorMin = new Vector2(messageX, 0.65f);
             rt.anchoredPosition = new Vector2(38, 0);
         }
 
