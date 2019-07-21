@@ -210,6 +210,14 @@ namespace App
         {
             stepViewer.SetActive(false);
         }
+
+        public void ShowAllButtons()
+        {
+            btnHint.SetActive(true);
+            btnUndo.SetActive(true);
+            btnPause.SetActive(true);
+            btnShuffle.SetActive(true);
+        }
     }
 }
 

@@ -123,6 +123,7 @@ namespace TheGame
             viewManager.AddToWordsView(Utilities.GetNormalizedFarsi(lvl.begin));
             viewManager.SetInGameGraphics(lvl.chapterId);
             viewManager.SetEndWord(currentEndWord);
+            viewManager.ShowAllButtons();
 
             try
             {

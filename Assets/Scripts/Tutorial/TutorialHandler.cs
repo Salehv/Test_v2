@@ -293,6 +293,9 @@ public class TutorialHandler : MonoBehaviour
         state = TutorialState.TUT_01_04;
     }
 
+
+    private bool tut01_hintNeeded = false;
+
     public void Tutorial_01_03_ScreenClicked()
     {
         if (state != TutorialState.TUT_01_04 && state != TutorialState.TUT_01_06 && state != TutorialState.TUT_01_08)
@@ -309,6 +312,8 @@ public class TutorialHandler : MonoBehaviour
             tut01Panels[0].SetActive(false);
 
             state = TutorialState.TUT_01_05;
+            tut01_hintNeeded = true;
+            Invoke(nameof(ShowTut0104Help), 3);
             return;
         }
 
@@ -325,6 +330,30 @@ public class TutorialHandler : MonoBehaviour
 
         GameManager.instance.TutorialEnded();
         Tutorial_01_Completed();
+    }
+
+    internal void Tut01ALetterSelected(int code)
+    {
+        if (state == TutorialState.TUT_01_05)
+        {
+            if (code == 11)
+            {
+                tut01_hintNeeded = false;
+                PopupHandler.instance.DeactivePointer();
+            }
+
+            else
+            {
+                tut01_hintNeeded = true;
+                ShowTut0104Help();
+            }
+        }
+    }
+
+    private void ShowTut0104Help()
+    {
+        if (tut01_hintNeeded)
+            PopupHandler.ShowPointerClick(letterPool.transform.GetChild(2));
     }
 
 

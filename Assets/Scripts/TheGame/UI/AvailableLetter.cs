@@ -49,6 +49,8 @@ public class AvailableLetter : MonoBehaviour, IPointerDownHandler //, IPointerUp
         SetShine(true);
         currentLetter = this;
         AudioManager.instance.PlayNewSfx(SFX.GAME_LETTER_SELECT);
+
+        TutorialHandler.instance.Tut01ALetterSelected(this.code);
     }
 
 
