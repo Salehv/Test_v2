@@ -141,7 +141,6 @@ public class TutorialHandler : MonoBehaviour
 
     #endregion
 
-
     #region Tut01
 
     [Header("Intro")] public GameObject[] Intro_Characters;
@@ -149,9 +148,12 @@ public class TutorialHandler : MonoBehaviour
     [Header("Tutorial 01")] public GameObject TUT01;
     public GameObject Tut01_MsgParent;
     public GameObject[] TUT01_IntroPages;
+
     [TextArea(1, 6)] public string[] TUT01_Texts;
     [Space(10)] public GameObject[] tut01Panels;
+
     public LetterPoolHandler letterPool;
+
     [Space(10)] public GameObject tut0101ALetter;
     public GameObject[] tut0102ELetters;
     public GameObject tut0103EndWord;
@@ -340,6 +342,7 @@ public class TutorialHandler : MonoBehaviour
             {
                 tut01_hintNeeded = false;
                 PopupHandler.instance.DeactivePointer();
+                PopupHandler.ShowPointerClick(tut0102ELetters[2].transform);
             }
 
             else
@@ -364,6 +367,8 @@ public class TutorialHandler : MonoBehaviour
 
         if (state == TutorialState.TUT_01_05)
         {
+            PopupHandler.instance.DeactivePointer();
+
             GameViewManager.instance.SetEndWord(Utilities.GetNormalizedFarsi("زیره"));
             GameManager.instance.tutorialAcceptingWord = Utilities.GetNormalizedFarsi("زیره");
 
