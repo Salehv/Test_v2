@@ -230,8 +230,9 @@ public class PopupHandler : MonoBehaviour
     #region Pointer
 
     [Header("Pointer")] public GameObject pointer;
+    public Transform pointerParent;
 
-    public static void ShowPointerClick(Transform targetObject = null, string mode = "Click")
+    public static void ShowPointerClick(Transform targetObject = null, Transform parent = null, string mode = "Click")
     {
         if (mode == "Click")
         {
@@ -239,6 +240,11 @@ public class PopupHandler : MonoBehaviour
             if (targetObject != null)
             {
                 instance.pointer.transform.position = targetObject.position;
+
+                if (parent != null)
+                {
+                    instance.pointer.transform.SetParent(parent, true);
+                }
             }
 
             instance.pointer.GetComponent<Animator>().SetTrigger("Click");
@@ -260,6 +266,7 @@ public class PopupHandler : MonoBehaviour
     public void DeactivePointer()
     {
         pointer.SetActive(false);
+        pointer.transform.SetParent(pointerParent);
     }
 
     #endregion

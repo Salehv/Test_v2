@@ -396,6 +396,9 @@ public class TutorialHandler : MonoBehaviour
         tut01Panels[0].SetActive(true);
     }
 
+    [Header("First Enterance")] public GameObject btnMainMenuPlat;
+    public GameObject btnFirstChapter;
+    public GameObject btnFirstLevel;
 
     public void Tutorial_01_Completed()
     {
@@ -405,14 +408,6 @@ public class TutorialHandler : MonoBehaviour
         int timeTaken = (int) TimeManager.instance.GetCurrentTime("IntroTimer");
         TimeManager.instance.DiscardTimer("IntroTimer");
         AnalyticsHandler.Intro_Finished(timeTaken);
-
-        if (!PlayerPrefs.HasKey("MainMenuPointer"))
-        {
-            print("Main Menu Pointer Shown");
-            PopupHandler.ShowPointerClick();
-            PlayerPrefs.SetInt("MainMenuPointer", 1);
-            PlayerPrefs.Save();
-        }
     }
 
     #endregion

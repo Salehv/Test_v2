@@ -96,13 +96,14 @@ namespace App
                 PopupHandler.instance.DeactivePointer();
             }
 
-            /*if (!PlayerPrefs.HasKey("ChapterPointer"))
+            if (!PlayerPrefs.HasKey("ChapterPointer"))
             {
-                ShowPointerClick();
+                PopupHandler.ShowPointerClick(TutorialHandler.instance.btnFirstChapter.transform,
+                    TutorialHandler.instance.btnFirstChapter.transform);
                 PlayerPrefs.SetInt("ChapterPointer", 1);
                 PlayerPrefs.Save();
                 return;
-            }*/
+            }
         }
 
 
@@ -175,6 +176,20 @@ namespace App
 
             state = ViewState.LEVELS;
 
+
+            if (PlayerPrefs.HasKey("ChapterPointer"))
+            {
+                PopupHandler.instance.DeactivePointer();
+            }
+
+            if (!PlayerPrefs.HasKey("LevelPointer"))
+            {
+                PopupHandler.ShowPointerClick(TutorialHandler.instance.btnFirstLevel.transform,
+                    TutorialHandler.instance.btnFirstLevel.transform);
+                PlayerPrefs.SetInt("LevelPointer", 1);
+                PlayerPrefs.Save();
+                return;
+            }
 
             if (chapterId == 1)
             {
@@ -465,6 +480,14 @@ namespace App
                         menuCanvas.SetActive(true);
                         state = ViewState.MAIN_MENU;
                         print("[ViewManager] State is now " + state.ToString());
+
+                        if (!PlayerPrefs.HasKey("MainMenuPointer"))
+                        {
+                            print("Main Menu Pointer Shown");
+                            PopupHandler.ShowPointerClick(TutorialHandler.instance.btnMainMenuPlat.transform);
+                            PlayerPrefs.SetInt("MainMenuPointer", 1);
+                            PlayerPrefs.Save();
+                        }
                     }
 
                     break;
